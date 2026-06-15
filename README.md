@@ -21,7 +21,7 @@ Multiple national governments are using **Splink** — a free, open-source proba
 - Open-source library developed by the **MoJ data linking team**, funded by **ADR UK** under the **"Data First"** programme. Implements the **Fellegi–Sunter** model (the industry-standard statistical method for record linkage), estimated via Expectation-Maximisation, building on FastLink's R implementation. *(High confidence — GOV.UK; peer-reviewed IJPDS art. 1794, authored by the developers; official Splink docs; GitHub.)*
 - Designed for **scale**: built to link **~100 million records**; MoJ has linked ~15 million in under an hour. Backend-agnostic (DuckDB / Spark / AWS Athena). *(High.)*
 - **The maths is sound.** This report does **not** allege the algorithm is inaccurate or biased by design. Fellegi–Sunter is mainstream and the published accuracy is high. The concern is *governance of what the accurate output enables*, not a technical flaw.
-- **This report is strictly about data-linkage governance.** It is unrelated to any software security issue.
+- **This report is strictly about data-linkage governance.** It is unrelated to any software security issue. A separate Splink security advisory exists and is linked at the foot of this page — the two are deliberately kept distinct and should not be read as one narrative.
 
 ---
 
@@ -114,3 +114,9 @@ The fair framing: the safeguards are real but **largely internal and researcher-
 - GOV.UK — The Five Safes framework
 - Georgina Sturge, *"The silent creep of data linkage"* (commentary/blog — framing reference, flagged as non-primary)
 *Verification: 6 search angles → 22 sources fetched → 102 candidate claims → 25 adversarially verified (2-of-3 refutation vote required to kill a claim) → 25 confirmed, 0 killed → synthesized to 9 findings.*
+
+---
+
+## Related — separate track
+
+A software-security advisory for Splink is published separately: [**splink-sql-injection-advisory.md**](splink-sql-injection-advisory.md) — an unquoted SQL-identifier interpolation issue (CWE-89) in the backend `DatabaseAPI`. It concerns **secure coding in multi-tenant wrappers**, not the lawful-linkage governance question this report addresses. The two are kept deliberately distinct: the privacy concern is about *governance of lawful linkage*; the bug is about *code that builds SQL*. Mixing them would misrepresent both.
