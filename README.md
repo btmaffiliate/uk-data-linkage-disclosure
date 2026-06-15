@@ -2,7 +2,7 @@
 
 *Investigation · Data & Civil Liberties · June 2026*
 
-[↓ Download the full report (PDF)](the-quiet-joining-up.pdf)
+[↓ Download the full report (PDF)](https://github.com/btmaffiliate/uk-data-linkage-disclosure/raw/main/the-quiet-joining-up.pdf)
 
 ### How governments link their citizens' records with Splink — and why citizens weren't really told
 
