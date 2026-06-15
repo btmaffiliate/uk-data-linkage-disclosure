@@ -1,0 +1,181 @@
+{
+  "_meta": {
+    "project": "city-of-london-investigation",
+    "description": "Evidence-first, non-accusatory documentation of the City of London Corporation across two tracks: (1) its data-linkage/data-sharing footprint (City of London Police, NFIB, Action Fraud -> Report Fraud); (2) its governance & transparency (City's Cash, the business-vote franchise, the Remembrancer, FOI coverage). Status-graded; gaps become FOI requests.",
+    "tracks": {
+      "T1": "data linkage / data sharing",
+      "T2": "governance / transparency"
+    },
+    "status_flag_values": [
+      "LIVE",
+      "BLOCKED?",
+      "UNCLEAR",
+      "DEAD"
+    ],
+    "seeded": "2026-06-10",
+    "note": "Sources flagged BLOCKED? returned HTTP 403 to the WebFetch client used here; the source-checker (browser UA) may still reach them. Claims resting only on a BLOCKED?/LIVE-but-unread source are graded LIKELY, not CONFIRMED, until the page text is read in a browser.",
+    "unverified_dropped": [
+      {
+        "title": "City of London Police — National Lead Force",
+        "url": "https://www.cityoflondon.police.uk/police-forces/city-of-london-police/areas/city-of-london/about-us/about-us/national-lead-force/",
+        "reason": "HTTP 403 to every client here (WebFetch + checker). Could not verify resolution, so not recorded. T1-01 is carried by S01 (verified)."
+      },
+      {
+        "title": "City of London Police — written evidence to Parliament",
+        "url": "https://committees.parliament.uk/writtenevidence/108031/html/",
+        "reason": "HTTP 403 to checker. Not recorded; T1-01 carried by S01."
+      },
+      {
+        "title": "City of London Corporation — FOI requests (WhatDoTheyKnow)",
+        "url": "https://www.whatdotheyknow.com/body/city_of_london",
+        "reason": "HTTP 403 to checker. Not recorded; useful pointer for City's Cash FOI refusals but verify in a browser. T2-05 carried by S05 (live)."
+      }
+    ]
+  },
+  "links": [
+    {
+      "id": "S01",
+      "title": "National Fraud Intelligence Bureau",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/National_Fraud_Intelligence_Bureau",
+      "pub_date": null,
+      "access_date": "2026-06-10",
+      "track": "T1",
+      "status_flag": "LIVE",
+      "claim_refs": [
+        "T1-01",
+        "T1-02",
+        "T1-03",
+        "T1-07"
+      ],
+      "note": "Fetched & read 2026-06-10. Confirms CoLP runs NFIB (national lead force, Home Office funded); automated analysis/linking of reports into intelligence packages; Action Fraud (2013) -> Report Fraud 4 Dec 2025; 2019 Times + 2018 Which? criticism. Does NOT name Palantir/Microsoft."
+    },
+    {
+      "id": "S02",
+      "title": "City of London Corporation",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/City_of_London_Corporation",
+      "pub_date": null,
+      "access_date": "2026-06-10",
+      "track": "T2",
+      "status_flag": "LIVE",
+      "claim_refs": [
+        "T2-01",
+        "T2-02",
+        "T2-04",
+        "T2-06"
+      ],
+      "note": "Fetched & read 2026-06-10. Business-vote franchise (abolished elsewhere 1969; ~24,000 business voters by 2009); City's Cash ~£1.3bn (2012 disclosure) / £2.3bn net assets (Mar 2016); Remembrancer handles legislative matters."
+    },
+    {
+      "id": "S03",
+      "title": "Report Fraud — Privacy information",
+      "publisher": "City of London Police (reportfraud.police.uk)",
+      "url": "https://www.reportfraud.police.uk/privacy-information/",
+      "pub_date": null,
+      "access_date": "2026-06-10",
+      "track": "T1",
+      "status_flag": "LIVE",
+      "claim_refs": [
+        "T1-04",
+        "T1-05",
+        "T1-08"
+      ],
+      "note": "URL verified LIVE (HTTP 200) by source-checker 2026-06-10; blocks WebFetch so full page text not personally read here — claims kept at LIKELY. WebFetch 403 here; search index shows: CoLP is data controller; lists Report Fraud Crime Management / Data Migration / Intelligence / Prevention / Victim Services DPIAs with published summaries; DPO data.protection@cityoflondon.police.uk. Read in a browser to confirm."
+    },
+    {
+      "id": "S05",
+      "title": "Freedom of Information Act 2000 (City of London)",
+      "publisher": "City of London Corporation (cityoflondon.gov.uk)",
+      "url": "https://www.cityoflondon.gov.uk/about-us/access-to-information/freedom-of-information",
+      "pub_date": null,
+      "access_date": "2026-06-10",
+      "track": "T2",
+      "status_flag": "LIVE",
+      "claim_refs": [
+        "T2-05"
+      ],
+      "note": "URL verified LIVE (HTTP 200) by source-checker 2026-06-10; blocks WebFetch so full page text not personally read here — claims kept at LIKELY. WebFetch 403; search index indicates FOIA applies to public functions; City's Cash / privately-funded activities stated outside FOI. Read in browser to confirm exact wording."
+    },
+    {
+      "id": "S06",
+      "title": "Remembrancer's Office — Working with Parliament",
+      "publisher": "City of London Corporation",
+      "url": "https://www.cityoflondon.gov.uk/about-us/about-the-city-of-london-corporation/remembrancers-office",
+      "pub_date": null,
+      "access_date": "2026-06-10",
+      "track": "T2",
+      "status_flag": "LIVE",
+      "claim_refs": [
+        "T2-06"
+      ],
+      "note": "URL verified LIVE (HTTP 200) by source-checker 2026-06-10; blocks WebFetch so full page text not personally read here — claims kept at LIKELY. WebFetch 403; the Corporation's own description of the Remembrancer's parliamentary-engagement role."
+    },
+    {
+      "id": "S07",
+      "title": "Business/worker vote registration",
+      "publisher": "City of London Corporation",
+      "url": "https://www.cityoflondon.gov.uk/about-us/voting-elections/business-vote-registration",
+      "pub_date": null,
+      "access_date": "2026-06-10",
+      "track": "T2",
+      "status_flag": "LIVE",
+      "claim_refs": [
+        "T2-01",
+        "T2-03"
+      ],
+      "note": "URL verified LIVE (HTTP 200) by source-checker 2026-06-10; blocks WebFetch so full page text not personally read here — claims kept at LIKELY. WebFetch 403; the Corporation's own business-vote registration page (franchise mechanics)."
+    },
+    {
+      "id": "S09",
+      "title": "Streets paved with gold: the council that works for banks",
+      "publisher": "The Bureau of Investigative Journalism",
+      "url": "https://www.thebureauinvestigates.com/stories/2012-07-09/streets-paved-with-gold-the-council-that-works-for-banks",
+      "pub_date": "2012-07-09",
+      "access_date": "2026-06-10",
+      "track": "T2",
+      "status_flag": "UNCLEAR",
+      "claim_refs": [
+        "T2-05",
+        "T2-06"
+      ],
+      "note": "Investigative secondary source on the Corporation/Remembrancer/City's Cash; dated 2012 — treat as historical context, verify current facts against primary."
+    },
+    {
+      "id": "S11",
+      "title": "London Police selects Capita and PwC for Action Fraud upgrade work",
+      "publisher": "Consultancy.uk",
+      "url": "https://www.consultancy.uk/news/34612/capita-and-pwc-selected-for-new-fraud-reporting-service",
+      "pub_date": null,
+      "access_date": "2026-06-11",
+      "track": "T1",
+      "status_flag": "LIVE",
+      "claim_refs": ["T1-06"],
+      "note": "Fetched & read 2026-06-11. Names suppliers for the Action Fraud replacement / NFIB tech: Capita (£50m, victim/customer management); PwC (tech for crime & intelligence management underpinning NFIB); and PALANTIR as PwC's 'technology alliance partner' delivering that technology. SINGLE trade-press source — grade LIKELY; corroborate with PwC/CoLP primary or procurement record."
+    },
+    {
+      "id": "S12",
+      "title": "Palantir, the controversy, the contracts and the campaign against the FDP",
+      "publisher": "The Lowdown (lowdownnhs.info)",
+      "url": "https://lowdownnhs.info/topics/accountablility/palantir-the-controversy-the-contracts-and-the-campaign/",
+      "pub_date": null,
+      "access_date": "2026-06-11",
+      "track": "T1",
+      "status_flag": "UNCLEAR",
+      "claim_refs": ["T1-09"],
+      "note": "Context for Palantir's broader UK footprint (NHS FDP £330m etc.). Secondary/advocacy source — use for orientation; cite primaries (contract notices, parliamentary records) for any published claim."
+    },
+    {
+      "id": "S13",
+      "title": "Palantir and PwC UK sign multi-year deal as preferred partners",
+      "publisher": "PwC UK (press release) / BusinessWire",
+      "url": "https://www.pwc.co.uk/press-room/press-releases/corporate-news/palantir-and-pwc-uk-sign-a-multi-year--multi-million-pound-deal-.html",
+      "pub_date": "2025-11-18",
+      "access_date": "2026-06-11",
+      "track": "T1",
+      "status_flag": "UNCLEAR",
+      "claim_refs": ["T1-06"],
+      "note": "Corroborates that PwC+Palantir are a FORMAL UK alliance (preferred partners) — but this is a GENERAL AI-transformation deal, NOT NFIB-specific. WebFetch timed out (not read here); checker to verify liveness. Strengthens plausibility of the NFIB link; does not by itself confirm Palantir on the NFIB contract."
+    }
+  ]
+}
