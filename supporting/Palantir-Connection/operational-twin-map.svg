@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 840" role="img" aria-label="The Operational Twin: how Splink and Palantir connect across UK government departments">
+<defs>
+  <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .overlap{stroke:#f4b740;stroke-width:2.4;stroke-dasharray:9 7;animation:flow 1.1s linear infinite}
+    .direct{stroke:#3fd07f;stroke-width:4;stroke-dasharray:12 8;filter:url(#glow);animation:flow 0.8s linear infinite,pulse 1.7s ease-in-out infinite}
+    .thematic{stroke:#8a93a0;stroke-width:1.7;stroke-dasharray:2 8;animation:flow 1.6s linear infinite;opacity:.7}
+    .thin{stroke:#39475a;stroke-width:1.3}
+    .none{stroke:#ff5d5d;stroke-width:1.6;stroke-dasharray:3 6;opacity:.4}
+    @keyframes flow{to{stroke-dashoffset:-32}}
+    @keyframes pulse{0%,100%{opacity:.6}50%{opacity:1}}
+    @keyframes breathe{0%,100%{opacity:.85}50%{opacity:1}}
+    .splinkbox,.palbox{animation:breathe 3s ease-in-out infinite}
+  </style>
+</defs>
+<rect width="1000" height="840" fill="#0b0d10"/>
+<text x="500.0" y="50" text-anchor="middle" fill="#5aa9ff" font-family="Courier,monospace" font-size="14" letter-spacing="3">PUBLIC-INTEREST INVESTIGATION · brandonmyers.net</text>
+<text x="500.0" y="92" text-anchor="middle" fill="#fff" font-family="Georgia,serif" font-size="34" font-weight="700">The Operational Twin</text>
+<text x="500.0" y="120" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="15">Same departments. Same citizen data. No shared pipeline.</text>
+<path class="overlap" d="M360,178 C309.0,178 309.0,430 258,430" fill="none"/><path class="overlap" d="M640,178 C691.0,178 691.0,430 742,430" fill="none"/><path class="overlap" d="M360,262 C309.0,262 309.0,430 258,430" fill="none"/><path class="overlap" d="M640,262 C691.0,262 691.0,430 742,430" fill="none"/><path class="thin" d="M360,346 C309.0,346 309.0,430 258,430" fill="none"/><path class="direct" d="M640,346 C691.0,346 691.0,430 742,430" fill="none"/><path class="thin" d="M360,430 C309.0,430 309.0,430 258,430" fill="none"/><path class="overlap" d="M640,430 C691.0,430 691.0,430 742,430" fill="none"/><path class="overlap" d="M360,514 C309.0,514 309.0,430 258,430" fill="none"/><path class="thematic" d="M640,514 C691.0,514 691.0,430 742,430" fill="none"/><path class="thin" d="M360,598 C309.0,598 309.0,430 258,430" fill="none"/><path class="thematic" d="M640,598 C691.0,598 691.0,430 742,430" fill="none"/><path class="overlap" d="M360,682 C309.0,682 309.0,430 258,430" fill="none"/><path class="none" d="M640,682 C691.0,682 691.0,430 742,430" fill="none"/>
+<g class="splinkbox">
+  <rect x="40" y="352" width="218" height="156" rx="14" fill="#0e1a12" stroke="#3fd07f" stroke-width="2"/>
+  <text x="149" y="390" text-anchor="middle" fill="#3fd07f" font-family="Georgia,serif" font-size="26" font-weight="700">SPLINK</text>
+  <text x="149" y="416" text-anchor="middle" fill="#cfe9d8" font-family="Helvetica" font-size="12">statistical · open-source</text>
+  <text x="149" y="434" text-anchor="middle" fill="#cfe9d8" font-family="Helvetica" font-size="12">MoJ-built · no consent</text>
+  <text x="149" y="460" text-anchor="middle" fill="#7fae90" font-family="Helvetica" font-size="11">it COUNTS you</text>
+</g>
+<g class="palbox">
+  <rect x="742" y="352" width="218" height="156" rx="14" fill="#1a0e10" stroke="#ff5d5d" stroke-width="2"/>
+  <text x="851" y="390" text-anchor="middle" fill="#ff8a8a" font-family="Georgia,serif" font-size="24" font-weight="700">PALANTIR</text>
+  <text x="851" y="416" text-anchor="middle" fill="#f0d0d0" font-family="Helvetica" font-size="12">operational · proprietary</text>
+  <text x="851" y="434" text-anchor="middle" fill="#f0d0d0" font-family="Helvetica" font-size="12">US-owned · real-time</text>
+  <text x="851" y="460" text-anchor="middle" fill="#cf8f8f" font-family="Helvetica" font-size="11">it ACTS on you</text>
+</g>
+<g>
+      <rect x="360" y="152" width="280" height="52" rx="11" fill="#161b22" stroke="#2a323c"/>
+      <text x="500" y="174" text-anchor="middle" fill="#fff" font-family="Helvetica,Arial" font-size="18" font-weight="700">NHS England</text>
+      <text x="500" y="193" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="11.5">FDP/Foundry · Data Linkage Hub</text>
+    </g><g>
+      <rect x="360" y="236" width="280" height="52" rx="11" fill="#161b22" stroke="#2a323c"/>
+      <text x="500" y="258" text-anchor="middle" fill="#fff" font-family="Helvetica,Arial" font-size="18" font-weight="700">Ministry of Defence</text>
+      <text x="500" y="277" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="11.5">Foundry · ONS Splink (veterans)</text>
+    </g><g>
+      <rect x="360" y="320" width="280" height="52" rx="11" fill="#161b22" stroke="#2a323c"/>
+      <text x="500" y="342" text-anchor="middle" fill="#fff" font-family="Helvetica,Arial" font-size="18" font-weight="700">Cabinet Office</text>
+      <text x="500" y="361" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="11.5">border/customs Foundry</text>
+    </g><g>
+      <rect x="360" y="404" width="280" height="52" rx="11" fill="#161b22" stroke="#2a323c"/>
+      <text x="500" y="426" text-anchor="middle" fill="#fff" font-family="Helvetica,Arial" font-size="18" font-weight="700">Home Office</text>
+      <text x="500" y="445" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="11.5">border data · exemption ruled unlawful</text>
+    </g><g>
+      <rect x="360" y="488" width="280" height="52" rx="11" fill="#161b22" stroke="#2a323c"/>
+      <text x="500" y="510" text-anchor="middle" fill="#fff" font-family="Helvetica,Arial" font-size="18" font-weight="700">MoJ / HMPPS</text>
+      <text x="500" y="529" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="11.5">Splink ops · Palantir pitch only</text>
+    </g><g>
+      <rect x="360" y="572" width="280" height="52" rx="11" fill="#161b22" stroke="#2a323c"/>
+      <text x="500" y="594" text-anchor="middle" fill="#fff" font-family="Helvetica,Arial" font-size="18" font-weight="700">UK Policing</text>
+      <text x="500" y="613" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="11.5">MoJ PNC feed · 'Nectar' fusion</text>
+    </g><g>
+      <rect x="360" y="656" width="280" height="52" rx="11" fill="#161b22" stroke="#2a323c"/>
+      <text x="500" y="678" text-anchor="middle" fill="#fff" font-family="Helvetica,Arial" font-size="18" font-weight="700">ONS</text>
+      <text x="500" y="697" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="11.5">Splink census/indices</text>
+    </g><text x="712" y="687" text-anchor="middle" fill="#ff5d5d" font-family="Helvetica" font-size="22" font-weight="700">✕</text>
+<g font-family="Courier,monospace" font-size="12">
+  <line x1="70" y1="796" x2="100" y2="796" class="direct"/><text x="108" y="800" fill="#9aa7b4">Direct documented link</text>
+  <line x1="300" y1="796" x2="330" y2="796" class="overlap"/><text x="338" y="800" fill="#9aa7b4">Same-department overlap</text>
+  <line x1="560" y1="796" x2="590" y2="796" class="thematic"/><text x="598" y="800" fill="#9aa7b4">Thematic adjacency</text>
+  <text x="760" y="800" fill="#ff5d5d">✕ no link (ONS)</text>
+</g>
+<text x="500.0" y="824" text-anchor="middle" fill="#6b7682" font-family="Courier,monospace" font-size="11">Palantir does not run Splink. They are two layers of one joined-up state — where Splink counts, Palantir acts.</text>
+</svg>
