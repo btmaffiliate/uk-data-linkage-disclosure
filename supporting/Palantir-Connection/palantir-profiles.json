@@ -1,0 +1,1073 @@
+[
+  {
+    "vector": "nhs-fdp",
+    "title": "NHS \u2014 Palantir Federated Data Platform + COVID-19 Datastore",
+    "profile": {
+      "vector": "NHS \u2014 Palantir Federated Data Platform (FDP) + COVID-19 Data Store",
+      "uk_body": "NHS England (with downstream: 214 acute NHS trusts and all 42 Integrated Care Boards in England); contracting authority NHS England. Prior COVID-era counterpart: NHSX / NHS Digital.",
+      "connection_tier": "SAME_DEPARTMENT_OVERLAP",
+      "summary": "Palantir is the prime contractor for NHS England's Federated Data Platform (FDP), a ~\u00a3330m, seven-year deal awarded November 2023 and built on Palantir Foundry. The FDP is an OPERATIONAL direct-care layer \u2014 it joins up trust-level data for waiting-list management, bed/capacity visibility, discharge planning, vaccination and population-health, with real-time clinical use. It evolved directly from the 2020 COVID-19 Data Store (originally a \u00a31 Foundry deal, later a \u00a323m extension), which Palantir built with Faculty, Google, Amazon and Microsoft. NHS England is ALSO a documented adopter of Splink (per Splink's own use-cases page) for STATISTICAL/research-grade record linkage, making NHS England the single strongest overlap of the investigation: an operational Palantir layer and a statistical Splink layer inside the same body. Critically, NO documented shared pipeline or data-flow ties Foundry/FDP to Splink \u2014 they are two separate workstreams co-located in one organisation, so the link is SAME_DEPARTMENT_OVERLAP, not a direct technical link.",
+      "palantir_product": "Palantir Foundry (data-integration / operational layer). Palantir's separate Gotham (defence/intelligence) product is NOT the NHS product, though Foundry-Gotham interoperability is a capability cited by critics. The FDP is explicitly Foundry-based.",
+      "what_palantir_does": [
+        "Operates the NHS Federated Data Platform on Palantir Foundry, joining previously siloed NHS trust data into a unified operational view across 168 of 214 trusts signed up (123 live) and 41 of 42 ICBs (Greater Manchester the sole holdout, as of mid-2026).",
+        "Runs operational direct-care products: Inpatients/Outpatients Care Coordination (surgery waiting lists, theatre scheduling, prioritising 'those with the most urgent needs'), Referral-to-Treatment validation, near real-time bed visibility, discharge planning (OPTICA tool).",
+        "Five priority use cases: elective recovery, vaccination & immunisation, population health management, care coordination, supply-chain optimisation; plus a 'cloud-based data warehouse' use case for statutory operational management info.",
+        "Built and ran the 2020 NHS COVID-19 Data Store on Foundry \u2014 ingesting sensitive Covid patient data, hospital occupancy, ventilator/PPE supply, 999/111 calls, to feed dashboards and (with Faculty) modelling/forecasting of spread and resource impact.",
+        "As of mid-2026, NHS England created a new 'admin' role allowing some Palantir staff to access IDENTIFIABLE patient data in the NDIT environment \u2014 contradicting the DPIA that said only NHS staff would have such access (flagged by the National Data Guardian, 3 June 2026)."
+      ],
+      "link_to_splink_work": "SAME BODY, SEPARATE STACKS \u2014 no proven shared pipeline. NHS England appears on Splink's maintainer-curated use-cases page as a Splink adopter (statistical/research-grade entity resolution on PDS/MPS-type data); separately, NHS England contracts Palantir to run the operational FDP on Foundry. These are two distinct layers in one organisation: Splink = statistical/research linkage (research-only framing, like MoJ Data First); Palantir/FDP = operational direct-care, real-time frontline triage. There is NO documented data-flow, contract, or technical integration connecting Splink output to Foundry/FDP, and I did not manufacture one. This matches the prior investigation's 'NHS = MIXED' verdict (Splink research linkage + FDP/Foundry operational direct-care). The shared theme \u2014 citizen data joined up without individual consent or opt-out \u2014 is the thematic through-line; the concrete tie is co-location in NHS England only.",
+      "contract_value_dates": "FDP: awarded 21 Nov 2023; up to \u00a3330m over seven years (Contracts Finder records an initial value of ~\u00a3182m, rising to \u00a3330m; year-one investment at least \u00a325.6m). Published contract term Nov 2023\u2013Feb 2027, with a Parliament decision due in 2026 on extension beyond the Feb 2027 break point. Consortium: Palantir (prime) with Accenture, PwC, NECS and Carnall Farrar. COVID-19 Data Store: original 2020 deal at a nominal \u00a31 for Foundry; extended Dec 2020 via a two-year, \u00a323m contract running to Dec 2022 (Faculty's parallel contract ~\u00a3930,000).",
+      "operational_vs_statistical": "OPERATIONAL. The FDP is a live direct-care/operational management platform (waiting-list triage, bed management, discharge, real-time clinical prioritisation), explicitly NOT a secondary-use research system in NHS England's framing. This is the key contrast with Splink's statistical/research-only positioning at NHS England \u2014 and it is why the consent/opt-out fight is so sharp.",
+      "consent_oversight": "The national data opt-out does NOT apply to the FDP because NHS England classifies FDP use as DIRECT CARE (the opt-out covers only secondary uses \u2014 planning/research). Result: individual patients cannot opt out of having their identifiable data processed in the Palantir-run platform; only their hospital/trust can decline to adopt FDP (e.g. Greater Manchester ICB). No individual consent or notification is documented \u2014 mirroring the Splink-investigation's central finding (lawful statutory/direct-care basis, but no individual consent/opt-out). Oversight: National Data Guardian (NDG) issued a statement 3 June 2026 after the 'Not With My NHS Data' campaign, saying it was not told that external contractor (Palantir) staff would access identifiable data in NDIT despite the DPIA stating only NHS staff would, and sought clarification. An internal NHS briefing reportedly warned the admin-role change risked 'loss of public confidence.'",
+      "controversies_litigation": [
+        "2021: openDemocracy (backed by Foxglove) brought a judicial review over the \u00a323m COVID Data Store deal awarded without competition; the government CONCEDED (Apr 2021), committing not to expand Palantir's use to non-Covid purposes without public consultation/patient juries and a fresh data-protection analysis.",
+        "Nov 2023: Foxglove, with Just Treatment, the Doctors' Association UK and the National Pensioners Convention, launched legal action arguing there is NO lawful basis to proceed with the FDP without new primary legislation/Parliamentary explanation of how data flows comply with the law and the common-law duty of confidentiality.",
+        "Good Law Project sent a pre-action protocol letter over heavy redactions (~three-quarters of the contract text) in the published FDP contract.",
+        "Mid-2026: NHS England's new 'admin' role granting some Palantir staff access to identifiable patient data triggered the 'Not With My NHS Data' campaign and an NDG intervention (3 June 2026).",
+        "Broader controversy over Palantir's history with US ICE/border enforcement, defence/intelligence (Gotham), and Peter Thiel ties fuelling distrust of a US firm holding NHS data; re-identification risk of 'de-identified' health data raised by MP David Davis.",
+        "Reported low/slow uptake at some hospitals; Greater Manchester ICB the single ICB holdout."
+      ],
+      "datasets": [
+        "NHS trust-level operational/clinical data: elective waiting lists, RTT pathways, theatre/surgery scheduling, inpatient/outpatient records, bed occupancy/capacity, discharge data (OPTICA)",
+        "Vaccination & immunisation data",
+        "Population health management datasets",
+        "Supply-chain/logistics data (PPE, stock)",
+        "COVID-era (Data Store): Covid test/case data, hospital occupancy, ventilator stock, 999/111 call data, A&E and bed-capacity feeds",
+        "Identifiable patient-level data at trust level (de-identified when shared nationally; identifiable accessible to some Palantir 'admin' staff in NDIT as of 2026)"
+      ],
+      "citations": [
+        {
+          "title": "NHS England awards \u00a3330m Federated Data Platform contract to Palantir",
+          "url": "https://www.digitalhealth.net/2023/11/nhs-england-awards-330m-federated-data-platform-contract-to-palantir/",
+          "date": "2023-11-21"
+        },
+        {
+          "title": "Palantir wins \u00a3330M NHS data platform contract \u2014 The Register",
+          "url": "https://www.theregister.com/2023/11/22/palantir_wins_nhs_contract/",
+          "date": "2023-11-22"
+        },
+        {
+          "title": "Legal action launched: no legal basis for the \u00a3330 million Palantir NHS Federated Data Platform \u2014 Foxglove",
+          "url": "https://www.foxglove.org.uk/2023/11/30/legal-action-palantir-nhs-federated-data-platform/",
+          "date": "2023-11-30"
+        },
+        {
+          "title": "Success! UK government concedes lawsuit over \u00a323m NHS 'data deal' with Palantir \u2014 Foxglove",
+          "url": "https://www.foxglove.org.uk/2021/04/01/success-uk-government-concedes-lawsuit-over-23m-nhs-data-deal-with-controversial-us-tech-corporation-palantir/",
+          "date": "2021-04-01"
+        },
+        {
+          "title": "Palantir awarded \u00a323m deal to continue work on NHS Covid-19 Data Store \u2014 Digital Health",
+          "url": "https://www.digitalhealth.net/2020/12/palantir-awarded-23m-deal-to-continue-work-on-nhs-covid-19-data-store/",
+          "date": "2020-12-14"
+        },
+        {
+          "title": "Britain gave Palantir access to sensitive medical records of Covid-19 patients in \u00a31 deal \u2014 CNBC",
+          "url": "https://www.cnbc.com/2020/06/08/palantir-nhs-covid-19-data.html",
+          "date": "2020-06-08"
+        },
+        {
+          "title": "NHS patients can't opt out of Palantir's data platform \u2013 but their hospital can \u2014 The Register",
+          "url": "https://www.theregister.com/databases/2026/06/13/nhs-patients-cant-opt-out-of-palantirs-data-platform-but-their-hospital-can/5254766",
+          "date": "2026-06-13"
+        },
+        {
+          "title": "National Data Guardian statement on NHS FDP data access (Not With My NHS Data) \u2014 GOV.UK",
+          "url": "https://www.gov.uk/government/news/national-data-guardian-statement-on-nhs-federated-data-platform-data-access-in-response-to-the-not-with-my-nhs-data-campaign",
+          "date": "2026-06-03"
+        },
+        {
+          "title": "Why we're working to uphold the privacy of NHS patient data \u2014 Good Law Project",
+          "url": "https://goodlawproject.org/update/why-were-working-to-uphold-the-privacy-of-nhs-patient-data/",
+          "date": "2024"
+        },
+        {
+          "title": "Palantir: NHS data deal with US spy-tech firm puts patient trust at risk \u2014 openDemocracy",
+          "url": "https://www.opendemocracy.net/en/palantir-nhs-federated-data-platform-patient-trust-opt-out/",
+          "date": "2023"
+        },
+        {
+          "title": "The NHS Federated Data Platform and Palantir: 7 Key Risks \u2014 Foxglove (PDF)",
+          "url": "https://www.foxglove.org.uk/wp-content/uploads/2023/06/2023_06_05-FINAL-The-NHS-Federated-Data-Platform-and-Palantir.pdf",
+          "date": "2023-06-05"
+        },
+        {
+          "title": "NHS Federated Data Platform \u2014 FAQs / products \u2014 NHS England",
+          "url": "https://www.england.nhs.uk/digitaltechnology/nhs-federated-data-platform/fdp-faqs/",
+          "date": "2024"
+        },
+        {
+          "title": "NHS Federated Data Platform \u2014 Hansard, UK Parliament",
+          "url": "https://hansard.parliament.uk/commons/2026-04-16/debates/2FDCA71C-D0C1-4738-BEE8-A4BDA311DB99/NHSFederatedDataPlatform",
+          "date": "2026-04-16"
+        }
+      ],
+      "confidence": "high",
+      "caveats": "Tiering is deliberately SAME_DEPARTMENT_OVERLAP, NOT DIRECT_DOCUMENTED_LINK: I found NO documented contract, data-flow, or technical integration connecting Splink to Palantir Foundry/FDP. NHS England's status as a Splink adopter rests on Splink's own maintainer-curated use-cases page (authoritative for adoption, but it does not detail which NHS team/dataset, nor connect to FDP). The \u00a3330m headline is a ceiling; the Contracts Finder award value to Palantir was reported nearer ~\u00a3182m, so 'up to \u00a3330m over seven years' is the accurate phrasing. The mid-2026 'admin role' / identifiable-data access detail and uptake figures (168/214 trusts, 41/42 ICBs) are as reported around June 2026 and may shift. Whether FDP processing is genuinely 'direct care' (and thus exempt from the national data opt-out) is the contested legal question at the heart of the Foxglove litigation \u2014 treat NHS England's 'direct care' classification as a contested claim, not settled fact.",
+      "unverified_flags": [
+        "Exact current Palantir/FDP contract spend-to-date vs the \u00a3330m ceiling not independently confirmed from Contracts Finder in this pass",
+        "Specific NHS team/dataset using Splink (vs FDP) not pinned to a named record \u2014 relies on Splink use-cases page adoption listing",
+        "Whether the contract will be extended past the Feb 2027 break clause (Parliament decision pending in 2026)",
+        "Precise scope/permissions of the new Palantir 'admin' role beyond 'access to identifiable patient data in NDIT' as reported"
+      ]
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "adjusted_connection_tier": "SAME_DEPARTMENT_OVERLAP",
+      "overclaims": [
+        "Contract term phrasing 'Published contract term Nov 2023\u2013Feb 2027' is imprecise and overclaims a hard end date. The verified structure is 3+2+1+1: a committed initial ~3-year term (ending ~March 2027), extendable to a max 7 years / ceiling end ~March 2031. February 2027 is when the BREAK CLAUSE becomes available, not a contract end date. Reword to: 'committed 3-year term, break clause available Feb 2027, max term to ~March 2031.'",
+        "The Splink adoption claim is HEDGED MORE WEAKLY than the evidence supports \u2014 but in the safe direction, so not a publication risk. The profile says NHS England's Splink status 'rests on Splink's own maintainer-curated use-cases page' and is unspecific. In fact NHS England Data Science runs a named, documented 'Data Linkage Hub' (nhsengland.github.io/datascience) actively implementing a Splink probabilistic linkage model. This is a stronger, NHS-first-party source than the profile credits.",
+        "Minor: 'real-time clinical use' / 'real-time frontline triage' phrasing is NHS England's framing of FDP as direct care, which is the contested question in the Foxglove litigation. The profile does caveat this, but the body summary states it more confidently ('OPERATIONAL... real-time clinical prioritisation') than the contested legal status warrants. Already flagged in caveats, acceptable.",
+        "Faculty parallel contract value stated as '~\u00a3930,000'; sources confirm 'more than \u00a31m' / ~\u00a31m. The \u00a3930k figure is plausible but should carry a citation or be softened to '~\u00a31m'."
+      ],
+      "strongest_sourced_claims": [
+        "FDP awarded 21 Nov 2023 to Palantir-led consortium; up to \u00a3330m over seven years, with Contracts Finder initial value ~\u00a3182m (the \u00a3330m is a non-committed forecast ceiling). Consortium: Palantir (prime), Accenture, PwC, NECS, Carnall Farrar. Verified against Contracts Finder notice + NHS England contract explainer + multiple outlets.",
+        "COVID-19 Data Store: original ~\u00a31 emergency Foundry deal (March 2020), extended via \u00a323m contract commencing 12 Dec 2020 running to Dec 2022. Verified (Digital Health, openDemocracy, Foxglove, Computer Weekly).",
+        "2021 openDemocracy/Foxglove judicial review over the \u00a323m deal; government conceded April 2021, committing not to expand Palantir use to non-Covid purposes without public consultation. Verified (Foxglove, openDemocracy, The Register).",
+        "National Data Guardian statement 3 June 2026 (Dr Nicola Byrne) confirming DPIA said identifiable-data access limited to NHS staff, but external Palantir contractor staff (3 engineers, admin role in NDIT) also have access; NHS England conceded a DPIA error. Verified (GOV.UK NDG statement, Digital Health, Computing, NHS England response page).",
+        "Uptake: 168 of 214 trusts signed up (123 live), 41 of 42 ICBs on board, Greater Manchester the sole ICB holdout (NHS England uptake stats, updated March 2026). Verified.",
+        "FDP is built on Palantir Foundry, distinct from Gotham; verified against NHS England and reporting.",
+        "NHS England operates a Splink-based probabilistic linkage workstream (Data Linkage Hub) with NO documented connection to Palantir/Foundry/FDP \u2014 the source page does not mention Palantir, Foundry, or the FDP at all. This DIRECTLY corroborates the profile's central honest claim that the two are separate stacks co-located in one body."
+      ],
+      "unsupported_to_remove": [
+        "Remove or correct the hard 'Nov 2023\u2013Feb 2027' contract-term phrasing \u2014 replace with the verified 3+2+1+1 structure (committed ~3yr to ~March 2027, break clause from Feb 2027, ceiling ~March 2031).",
+        "Pin the Faculty '~\u00a3930,000' figure to a citation or soften to '~\u00a31m'; otherwise remove the precise number."
+      ],
+      "corrections": [
+        "Contract term: not a flat Nov 2023\u2013Feb 2027 deal. It is a 3+2+1+1 incremental structure \u2014 committed initial term ~3 years (first decision point ~March 2027), break clause available from Feb 2027, maximum term to ~March 2031. The Parliament/DHSC extension decision in 2026/27 concerns triggering the first extension past the committed term.",
+        "Strengthen the Splink-adoption sourcing: cite NHS England Data Science 'Data Linkage Hub' (nhsengland.github.io/datascience/our_work/data-linkage-hub) as the first-party source, not only Splink's own use-cases page. Note it frames Splink for both business-process linkage and research on admin data, and crucially makes no reference to Palantir/Foundry/FDP."
+      ],
+      "notes": "Adversarial conclusion: the SAME_DEPARTMENT_OVERLAP tier is CORRECT and defensible \u2014 I tried to find a documented Splink-to-Foundry/FDP data flow, contract, or technical integration and found none. The NHS England Data Linkage Hub (the strongest Splink source) explicitly does not mention Palantir, Foundry, or the FDP, confirming the profile's honest 'separate stacks, no shared pipeline' framing rather than refuting it. The profile resists the temptation to inflate to DIRECT_DOCUMENTED_LINK and explicitly states it did not manufacture a tie \u2014 this is correct discipline. As a Palantir lawyer, the only fair pushbacks are: (1) the imprecise contract end-date phrasing (genuine overclaim, must fix); (2) the contested 'direct care' classification stated too confidently in the body (already caveated, acceptable); (3) the unsourced Faculty \u00a3930k figure. None of these undermine the connection; all are correctable. The Splink adjacency is real (same body, NHS England) but purely thematic/co-locational at the technical level \u2014 the profile already labels it as such. SOLID, publishable after the two corrections above."
+    }
+  },
+  {
+    "vector": "mod",
+    "title": "Ministry of Defence \u2014 Palantir Foundry",
+    "profile": {
+      "vector": "Ministry of Defence \u2014 Palantir Foundry",
+      "uk_body": "UK Ministry of Defence (MoD), including Defence Digital, Royal Navy, and the wider UK Armed Forces; partnership signed at MoD/HM Government level (Sept 2025). Adjacent: Office for Veterans' Affairs / ONS for the Splink-side linkage.",
+      "connection_tier": "SAME_DEPARTMENT_OVERLAP",
+      "summary": "Palantir has a deep, long-standing and well-documented relationship with the UK MoD via Foundry: a \u00a375m Enterprise Agreement (Dec 2022), a September 2025 strategic partnership worth up to \u00a3750m over five years (with a Palantir \u00a31.5bn UK investment commitment and a London European-defence HQ), and a \u00a3240.6m three-year follow-on enterprise agreement directly awarded on 30 Dec 2025 (start 1 Apr 2026) under a defence/security exemption with no competition. Foundry ingests disparate MoD data into an ontology to support strategic, tactical and \"live operational decision making\" across classifications, NATO-interoperable. The MoD is separately a documented Splink user \u2014 but the Splink linkage is ONS statistical work on the MoD Service Leavers Database\u21942011 Census, and the operational Veterans Card verification system, neither of which is documented as flowing through Palantir Foundry. There is NO documented Palantir\u2194Splink shared pipeline; the connection is co-residence in the same department, not a proven joined data flow, hence SAME_DEPARTMENT_OVERLAP.",
+      "what_palantir_does": [
+        "Foundry 'digests' disparate MoD data sources, cleans/harmonises them and maps them to an ontology (objects, properties, relationships) rather than rows/columns, treating defence data as a strategic asset across all operational domains, Top Level Budgets and UK Armed Forces bases.",
+        "Supports advanced scenario planning, hypothesis testing, and real-time decision-making from headquarters to the front line; the \u00a3240.6m follow-on explicitly covers 'critical strategic, tactical and live operational decision making across classifications' interoperable with NATO and allied nations' Palantir systems.",
+        "Royal Navy uses Foundry for operational planning, logistics and fleet availability; Foundry was used to reorganise/streamline personnel during the COVID-19 pandemic.",
+        "Acts as the underlying MoD 'data fabric' \u2014 e.g. Hadean's \u00a320m simulation/AI products integrate with the MoD data fabric underpinned by Palantir Foundry (Sept 2025).",
+        "No-code/low-code app builders let MoD personnel build tools on the integrated data, democratising access across Defence Digital's 'integrated digital enterprise'.",
+        "MoD/ministers state UK defence data remains sovereign, resides in the UK, and cannot be changed without UK consent (contractual control), per the Feb 2026 Lords debate."
+      ],
+      "link_to_splink_work": "SAME DEPARTMENT, NO PROVEN SHARED PIPELINE. MoD is a genuine Splink-side entity in two ways: (1) ONS used Splink 2 (the MoJ tool) to probabilistically link the MoD-supplied Service Leavers Database (UK service leavers 1975-2022; 1,603,782 deduplicated person-records) plus MoD's Compensation and Pensions System geography to the 2011 Census \u2014 a statistical/research linkage (~40% / 649,186 matched); (2) the MoD/Office for Veterans' Affairs Veterans Card system uses Splink to verify applicants against historic service records (operational, but a discrete verification function). Palantir Foundry is the MoD's broader operational data platform. Crucially, there is NO documented integration, data flow, or shared pipeline between Foundry and the Splink-based linkage \u2014 searches for Foundry/Splink integration return only generic Foundry ontology docs. So Palantir and Splink coexist inside the MoD but the Splink Service-Leavers/Census linkage is an ONS statistical product and the Veterans Card a separate system; do NOT assert that veterans/service-leaver linkage runs through Palantir. Trajectory/theme overlap (entity resolution on MoD person data) is real; a technical link is not documented.",
+      "palantir_product": "Palantir Foundry (MoD data platform / 'data fabric', ontology). Distinct from Palantir Gotham (Palantir's defence/intelligence operational product) and from the NHS FDP and Gotham deployments referenced for context.",
+      "contract_value_dates": "\u00a375m Enterprise Agreement, 3 years, announced 21 Dec 2022 (digital transformation/data exploitation across Defence). September 2025 strategic partnership: framework worth up to \u00a3750m over five years, with Palantir committing to invest \u00a31.5bn in the UK and base its European defence arm in London (~350 jobs). \u00a3240.6m follow-on enterprise agreement directly awarded 30 Dec 2025, 3-year term starting 1 Apr 2026, awarded WITHOUT competition under a defence-and-security exemption (redacted contract available ~90 days post-award on request). Related: Palantir/Hadean \u00a320m UK military AI/simulation deal (Sept 2025).",
+      "operational_vs_statistical": "PALANTIR SIDE = OPERATIONAL: Foundry explicitly supports 'live operational decision making' across strategic/tactical levels, Royal Navy logistics/fleet availability, and NATO-interoperable operations \u2014 operational by design, not statistical. SPLINK SIDE = MIXED: the Service Leavers Database\u21942011 Census linkage is STATISTICAL/research (ONS, characterising the veteran population), while the Veterans Card verification is OPERATIONAL but narrow (eligibility/identity verification for a benefit/ID card), and neither is documented as running on Palantir.",
+      "consent_oversight": "The ONS Service Leavers\u2194Census linkage methodology does not document individual consent/notification/opt-out (consistent with statutory public-task statistical linkage, no individual consent). MoD/ministers assert contractual oversight over Foundry: data sovereignty (resides in UK, under MoD control, no changes without UK consent). Parliamentary oversight is weak on procurement: the \u00a3240.6m award bypassed competition via a defence/security exemption; the Feb 2026 Lords debate (Baroness Goldie, Lord Fox, Baroness Cash) pressed on excluding British competitors, outsourcing a 'sovereign capability', and political-conflict concerns. No published minutes from the PM's Feb 2025 visit to Palantir HQ.",
+      "controversies_litigation": [
+        "\u00a3240.6m award made without competitive tender via defence/security exemption; British firms reportedly interested but not allowed to compete (Lords debate, Feb 2026).",
+        "Revolving-door concerns: Palantir hired four former MoD officials in 2025, including ex-policy director Barnaby Kistruck (subject to business-appointment restrictions).",
+        "Political-conflict allegations aired in the Lords: PM's Feb 2025 visit to Palantir HQ (former ambassador/figure Peter Mandelson linked), and a Labour donation question (Baroness Cash).",
+        "Broader Palantir reputational/ethics controversy: UN Special Rapporteur and human-rights groups allege complicity in Israel's AI-targeting in Gaza (Jan 2024 IDF strategic partnership); Amnesty/Medact campaign to terminate the separate \u00a3330m NHS FDP contract; Liberty (June 2025) flagged Palantir trials with UK police; German GFF constitutional complaints over Gotham predictive-policing. These attach to Palantir as a vendor, not specifically to a documented MoD data-misuse finding.",
+        "Data-sovereignty/outsourcing critique (Lord Fox): risk of outsourcing not just data but the capability to use it."
+      ],
+      "datasets": [
+        "MoD operational/Defence data across all operational domains ingested into Foundry (capability/logistics/personnel/planning) \u2014 specifics classified",
+        "Royal Navy operational planning, logistics and fleet/maintenance data",
+        "MoD personnel data (Foundry used to reorganise personnel during COVID-19)",
+        "SPLINK-SIDE (not Palantir): MoD Service Leavers Database (service leavers 1975-2022) + MoD Compensation and Pensions System, linked by ONS to 2011 Census",
+        "SPLINK-SIDE (not Palantir): Veterans Card applicant data vs historic service records"
+      ],
+      "unverified_flags": [
+        "No public evidence that the Splink Service-Leavers/Census linkage or Veterans Card verification runs on, or feeds, Palantir Foundry \u2014 treat any such claim as unverified.",
+        "Exact datasets inside MoD Foundry are classified/undisclosed; 'all operational domains' is the public characterisation only.",
+        "\u00a31.5bn is a Palantir investment COMMITMENT, not contracted MoD spend; the contracted framework ceiling is up to \u00a3750m/5yrs.",
+        "Gaza/ICE/police controversies are vendor-level reputational issues; no documented finding that MoD Foundry has been used for unlawful targeting or surveillance of UK citizens.",
+        "Computing.co.uk and The Nation/Al Jazeera pieces were not all directly fetched (some 403); figures cross-checked against PRNewswire, The Register, TechRadar, Hansard/ParallelParliament and ONS primary sources."
+      ],
+      "citations": [
+        {
+          "title": "UK Ministry of Defence Awards Palantir \u00a375 Million Enterprise Agreement (PRNewswire / Palantir)",
+          "url": "https://www.prnewswire.com/news-releases/uk-ministry-of-defence-awards-palantir-75-million-enterprise-agreement-301707783.html",
+          "date": "2022-12-21"
+        },
+        {
+          "title": "Britain's Ministry of Defence agrees deal with Palantir (The Register) \u2014 \u00a3240.6m follow-on, exemption, revolving door",
+          "url": "https://www.theregister.com/2026/01/28/mod_palantir_deal/",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Palantir to continue UK MoD work in new three-year deal \u2014 \u00a3240m awarded without procurement (TechRadar)",
+          "url": "https://www.techradar.com/pro/security/palantir-to-continue-uk-ministry-of-defense-work-in-new-three-year-deal-gbp240-million-data-analytics-contract-awarded-without-procurement",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "Ministry of Defence: Palantir Contracts (Hansard / House of Lords debate)",
+          "url": "https://hansard.parliament.uk/commons/2026-02-10/debates/FECED111-4FA8-4343-BFAF-18D6C13808D0/MinistryOfDefencePalantirContracts",
+          "date": "2026-02-10"
+        },
+        {
+          "title": "Lord Coaker extracts \u2014 Ministry of Defence: Palantir Contracts (ParallelParliament, Lords debate)",
+          "url": "https://www.parallelparliament.co.uk/lord/lord-coaker/debate/2026-02-11/lords/lords-chamber/ministry-of-defence-palantir-contracts",
+          "date": "2026-02-11"
+        },
+        {
+          "title": "Service leavers database linkage to 2011 Census (ONS) \u2014 Splink 2 linkage of MoD SLD to Census",
+          "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/armedforcescommunity/methodologies/serviceleaversdatabaselinkageto2011census",
+          "date": "2024-01-01"
+        },
+        {
+          "title": "Splink \u2014 probabilistic record linkage (MoJ Analytical Services) / use cases incl. MoD",
+          "url": "https://moj-analytical-services.github.io/splink/index.html",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "Palantir and Hadean partner across UK Armed Forces \u2014 \u00a320m simulation/AI, Foundry data fabric (BusinessWire)",
+          "url": "https://www.businesswire.com/news/home/20250910643007/en/Palantir-and-Hadean-Partner-to-Bring-a-Suite-of-Simulation-and-AI-Products-Across-the-UK-Armed-Forces",
+          "date": "2025-09-10"
+        },
+        {
+          "title": "MoD continues data analytics contract with Palantir (UKAuthority)",
+          "url": "https://www.ukauthority.com/articles/mod-continues-data-analytics-contract-with-palantir",
+          "date": "2026-01-28"
+        },
+        {
+          "title": "'No Gaza genocide links in our NHS' \u2014 orgs urge NHS England to end \u00a3330m Palantir contract (Amnesty UK) \u2014 vendor controversy context",
+          "url": "https://www.amnesty.org.uk/latest/no-gaza-genocide-links-in-our-nhs-organisations-urge-nhs-england-to-end-330m-palantir-contract/",
+          "date": "2026-01-01"
+        }
+      ],
+      "confidence": "high",
+      "caveats": "Confidence is high on the Palantir-MoD contract facts (multiple primary/serious sources agree on \u00a375m/2022, \u00a3750m+\u00a31.5bn/Sept 2025, \u00a3240.6m/30 Dec 2025) and on the existence of the MoD Splink touchpoints (ONS SLD\u2194Census; Veterans Card). The deliberately conservative judgement is the TIER: SAME_DEPARTMENT_OVERLAP, not DIRECT_DOCUMENTED_LINK, because no source documents Foundry and Splink sharing a pipeline or data flow. The Splink Service-Leavers linkage is an ONS statistical product; the Veterans Card is a separate operational verification system. Resisting a manufactured technical link is the point of the brief. Some secondary pages (Computing, The Nation) returned 403 and were corroborated via other outlets rather than fetched directly."
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "adjusted_connection_tier": "SAME_DEPARTMENT_OVERLAP",
+      "overclaims": [
+        "The \u00a3240.6m follow-on 'explicitly covers \\'critical strategic, tactical and live operational decision making across classifications\\'' is presented as a verbatim quote, but the cited Register article (theregister.com/2026/01/28) does not contain that exact wording in the fetched text. The phrase must be attributed to its true source (contract notice / Hansard) or softened to a paraphrase before publication.",
+        "Foundry was used to 'reorganise/streamline personnel during the COVID-19 pandemic' is stated as fact but is NOT supported by the cited PRNewswire 2022 release (which contains no COVID/personnel mention). This claim currently has no citation.",
+        "Hadean's '\u00a320m simulation/AI products integrate with the MoD data fabric underpinned by Palantir Foundry' could not be confirmed \u2014 the cited BusinessWire URL failed to fetch (socket closed), so the \u00a320m figure and the explicit 'underpinned by Palantir Foundry' integration assertion are presently uncorroborated from the cited source.",
+        "Political-conflict specifics (Peter Mandelson link to the PM's Feb 2025 Palantir HQ visit; the Labour donation question attributed to Baroness Cash) are stated with attributed names but were not independently confirmed against the Hansard/ParallelParliament primary text in this verification; they rest on a secondary characterisation."
+      ],
+      "strongest_sourced_claims": [
+        "\u00a375m three-year Enterprise Agreement (Dec 2022), including Foundry ontology and Royal Navy ('Palantir Foundry is critical to the Royal Navy's transformation', improved ship/submarine availability) \u2014 confirmed verbatim against PRNewswire 301707783.",
+        "\u00a3240.6m three-year follow-on, 30 Dec 2025 award, 1 Apr 2026 start, direct award under a defence-and-security exemption with no competition, plus the four 2025 revolving-door hires incl. ex-policy-director Barnaby Kistruck joining days after leaving MoD \u2014 confirmed against The Register (2026-01-28).",
+        "September 2025 strategic partnership: up to \u00a3750m over five years, Palantir \u00a31.5bn UK investment commitment, London designated European defence HQ, ~350 jobs \u2014 confirmed against GOV.UK press release and multiple corroborating outlets (Bloomberg, Register, Computing).",
+        "ONS Service Leavers Database -> 2011 Census linkage uses Splink 2 (MoJ, Fellegi-Sunter); 1,603,782 deduplicated SLD person-records, 649,186 linked records, 40.5% link rate; Compensation and Pensions System used for geography \u2014 confirmed verbatim against the ONS methodology page, which makes NO mention of Palantir or Foundry.",
+        "MoD Veterans Card system uses Splink to verify applicants against historic service records \u2014 independently corroborated via GOV.UK / MoJ Splink case-study material."
+      ],
+      "unsupported_to_remove": [
+        "Remove or re-cite the COVID-19 personnel reorganisation claim until a source other than the 2022 PRNewswire release supports it.",
+        "Remove the verbatim quotation marks around 'critical strategic, tactical and live operational decision making across classifications' unless the exact source string is cited; otherwise render as paraphrase.",
+        "Down-qualify the Hadean '\u00a320m ... underpinned by Palantir Foundry' line to 'unverified (cited source not fetched)' until the BusinessWire page (or an equivalent) is successfully retrieved.",
+        "Either confirm via Hansard or hedge the Mandelson and Labour-donation political-conflict specifics; do not present named-individual allegations as documented without the primary debate text."
+      ],
+      "corrections": [
+        "No tier change required: SAME_DEPARTMENT_OVERLAP is correct and appropriately conservative. The profile already refuses to assert a Foundry<->Splink data flow, and independent checks confirm that refusal is justified \u2014 the ONS SLD<->Census methodology names Splink 2 only and never mentions Palantir/Foundry. Do NOT let any editor upgrade this to DIRECT_DOCUMENTED_LINK.",
+        "The Lords debate citation is dated 2026-02-10 (Hansard) / 2026-02-11 (ParallelParliament) and the body labels it the 'Feb 2026 Lords debate'; the Hansard URL path says 'commons' but the debate is described as House of Lords \u2014 verify chamber labelling for consistency before publication.",
+        "Consider adding the corroborating ONS 'Veterans' Survey 2022 to Census 2021 linkage' (also Splink-based) as a further Splink-side MoD touchpoint surfaced during verification \u2014 it strengthens, not weakens, the same-department framing."
+      ],
+      "notes": "Adversarial verification against primary sources (PRNewswire, The Register, GOV.UK, ONS methodology, MoJ Splink material) substantiates every load-bearing contract figure and the core analytical judgement. The central thesis \u2014 that Palantir Foundry and Splink merely co-reside inside the MoD with NO documented shared pipeline \u2014 survives hostile scrutiny: the ONS SLD<->Census document names Splink 2 and never mentions Palantir/Foundry, and no source documents a Foundry<->Splink integration. The \u00a31.5bn is correctly flagged as an investment commitment, not contracted spend. Remaining issues are sourcing-hygiene overclaims (a possibly-misattributed verbatim quote, an uncited COVID claim, an unfetched Hadean source, and unconfirmed named political allegations) rather than structural errors. Fix those four items and the profile is publication-ready at the stated tier."
+    }
+  },
+  {
+    "vector": "home-office",
+    "title": "Home Office \u2014 Palantir (immigration, borders, law enforcement)",
+    "profile": {
+      "vector": "Home Office / immigration, borders, law enforcement \u2014 Palantir",
+      "uk_body": "Cabinet Office (border & customs data programme, the one documented borders contract); UK policing consortium (Bedfordshire/Hertfordshire/Cambridgeshire \"Nectar\" pilot + Leicestershire/East Midlands); Home Office immigration control as legal-exposure/capability frame (NOT a confirmed direct Palantir customer); NHS England FDP (cross-departmental capability concern). DPA 2018 immigration exemption governs Home Office data-subject rights.",
+      "connection_tier": "DIRECT_DOCUMENTED_LINK",
+      "palantir_product": "Foundry (Cabinet Office border/customs data integration; NHS FDP) and Gotham (defence/police investigative platform; the police \"Nectar\" pilot). Foundry and Gotham interoperate (\"drag and drop\") which is the basis of the cross-departmental concern.",
+      "summary": "Palantir holds a documented \u00a327m Cabinet Office contract (awarded August 2020, no competitive tender) to process UK border and customs data, pitched explicitly around \"risk-based monitoring for the movement of goods and people across the UK border\" \u2014 a direct, documented borders/immigration-adjacent engagement facilitated by an introduction from former MI6 chief Sir John Sawers (Newbridge Advisory) to the Cabinet Office permanent secretary in July 2019. Separately, Palantir is building a real-time policing data platform (the \"Nectar\" pilot) for an East-of-England consortium plus a Leicestershire/East Midlands project, ingesting sensitive personal data including political opinions, health records and union membership \u2014 connecting it to the UK-policing entity in the Splink investigation. Critically, NO documented direct contract between Palantir and the Home Office for immigration ENFORCEMENT was found: the heavily-reported ImmigrationOS deportation platform is a US ICE contract, not UK. The UK Home Office immigration-enforcement link is therefore a CAPABILITY-and-trajectory concern (Foundry/Gotham cross-departmental interop, contingent on a future legal change such as Reform UK's pledged automatic Home Office/NHS/HMRC/DVLA/banks/police data-sharing), all operating against the backdrop of the DPA 2018 immigration exemption that the Court of Appeal has ruled unlawful (2021, then again 2023).",
+      "what_palantir_does": [
+        "Cabinet Office border & customs (\u00a327m, Aug 2020): integrates and analyses border/customs data to enable 'risk-based monitoring for the movement of goods and people across the UK border' post-Brexit \u2014 the firm's own pitch language. This is real, operational data processing about people crossing the UK border, the closest documented Palantir-to-borders link.",
+        "UK policing 'Nectar' pilot (Beds/Herts/Cambs consortium, ~9 forces initially, plus a separate Leicestershire-led East Midlands project): builds individual profiles by fusing crime records with intelligence, ingesting special-category data \u2014 political opinions, philosophical beliefs, health records, trade-union membership, sexual orientation, race, financial data \u2014 and data on victims, children, witnesses and vulnerable people. Stated to 'assist with decision making' and 'aid prevention, detection and investigation of crimes.' No contract value disclosed; early-stage pilot as of June 2025, with planned national expansion.",
+        "NHS England Federated Data Platform (\u00a3330m, 7 years, awarded Nov 2023): operational direct-care data platform. The immigration relevance is a CAPABILITY/CONCERN only \u2014 Palantir's interoperable Foundry/Gotham could, if the law changed, 'enable UK government departments such as the Home Office and police to more easily access patient data' (Medact briefing). No documented NHS-to-Home-Office enforcement data flow exists today.",
+        "Immigration ENFORCEMENT (deportation tooling): documented only in the US \u2014 ICE's ImmigrationOS ($30m, awarded April 2025, sole-source, prototype due Sep 2025, runs to Sep 2027) to identify/apprehend removal targets and track self-deportations in near-real-time. This is the model critics fear could be replicated in the UK, but there is NO UK Home Office equivalent contract on record."
+      ],
+      "contract_value_dates": "Cabinet Office border/customs: \u00a327m, awarded August 2020, direct award / no competitive tender (introductory meeting July 2019). UK police Nectar pilot: value undisclosed, proof-of-concept stage as of June 2025. NHS FDP (context): \u00a3330m, 7 years, Nov 2023. MoD Enterprise Agreement (context, separate vector): \u00a3240.6m, 3 years, signed 30 Dec 2025, started 1 Apr 2026. Aggregate UK public-sector estimates: investigations cite 34+ contracts across 10+ departments totalling \u00a3670m+, exceeding \u00a3900m after the latest MoD deal. US ICE ImmigrationOS (NOT UK): $30m, April 2025, through Sep 2027.",
+      "operational_vs_statistical": "OPERATIONAL throughout. The Cabinet Office border/customs work is operational risk-monitoring of people/goods movement, not statistical research. The police Nectar platform is operational law-enforcement profiling and decision-support. NHS FDP is operational direct-care. None of these are research/statistical linkage like MoJ Data First. This is a key contrast with the statistics-vs-operations framing of the Splink investigation: Palantir sits firmly on the operational side.",
+      "consent_oversight": "No individual consent, notification or opt-out documented for any use; lawful basis asserted as public task / statutory function. The police DPIA itself recorded expected public 'skepticism or resistance' and significant breach consequences. For the Home Office, data-subject rights are curtailed by the DPA 2018 immigration exemption (Sch 2 para 4), ruled an unlawful GDPR Art 23(2) derogation by the Court of Appeal in 2021 ([2021] EWCA Civ 800) and found STILL unlawful by the High Court in 2023 \u2014 so any Palantir-run Home Office immigration platform would inherit a legally contested rights-suspension regime with weak oversight.",
+      "controversies_litigation": [
+        "Procurement: \u00a327m Cabinet Office border contract awarded without competitive tender; MI6-chief introduction (Sawers/Newbridge Advisory) drew MP criticism over transparency and lobbying-by-proxy (Sawers says his firm 'does not undertake lobbying').",
+        "Police Nectar pilot: Amnesty International says it 'violates people's right to privacy'; critics warn of 'dystopian predictive policing' and 'indiscriminate mass surveillance' (Liberty Investigates).",
+        "NHS FDP: sustained campaign (Medact, Foxglove, The Lowdown) over Palantir's ICE ties and the risk that interoperable architecture enables future immigration data-sharing; flagged in a Palantir shareholder PX14A6G SEC filing.",
+        "DPA 2018 immigration exemption ruled unlawful twice (Court of Appeal 2021; High Court 2023) \u2014 direct legal exposure for any Home Office data platform.",
+        "US precedent: ACLU and others document Palantir/ICE ImmigrationOS as core to the Trump-era removal campaign \u2014 the reputational and operational template the UK concern is built on."
+      ],
+      "datasets": [
+        "UK border and customs data (movement of goods and people) \u2014 Cabinet Office",
+        "Police crime records, intelligence, and special-category personal data (political opinions, beliefs, health, union membership, sexual orientation, race, financial) \u2014 Nectar policing pilot",
+        "NHS patient/health data \u2014 Federated Data Platform (operational direct-care; immigration use is hypothetical/capability-only)",
+        "(US, not UK) ICE immigration and removal datasets \u2014 ImmigrationOS"
+      ],
+      "link_to_splink_work": "PARTIAL OVERLAP, NOT A SHARED PIPELINE. (1) The Splink investigation found the Home Office link to be 'OPERATIONAL but HISTORICAL' (2017 NHS Digital\u2013Home Office MoU, withdrawn Nov 2018) and noted Foundry/Gotham 'drag and drop' interop is CAPABILITY only \u2014 this research confirms and extends that: Palantir's documented UK borders contract is Cabinet Office, not Home Office, and no Palantir Home Office immigration-enforcement contract exists. (2) UK policing is a named Splink-investigation entity (Splink runs a daily North Essex PNC\u2192police feed per moj-splink-master-record); Palantir's Nectar pilot operates in the SAME domain (East-of-England policing) but there is NO evidence Splink and Palantir share data or a pipeline \u2014 they are independent tools in the same departmental space = SAME_DEPARTMENT_OVERLAP for policing. (3) NHS England appears in both (Splink for research linkage; Palantir FDP for operational care) but again no shared pipeline. CRITICAL: do NOT manufacture a Splink\u2194Palantir technical link \u2014 none is documented. Palantir's distinct contribution is being the OPERATIONAL platform layer over which the statistics-vs-operations and DPA-immigration-exemption legal-exposure arguments would actually bite.",
+      "citations": [
+        {
+          "title": "Palantir won borders contract after introduction from ex-MI6 boss (Cabinet Office \u00a327m, Aug 2020, John Sawers)",
+          "url": "https://www.opendemocracy.net/en/palantir-mi6-spymaster-cabinet-office-contract-brexit-john-sawers/",
+          "date": "2021"
+        },
+        {
+          "title": "UK police working with controversial tech giant Palantir on real-time surveillance network (Nectar pilot, special-category data)",
+          "url": "https://libertyinvestigates.org.uk/articles/uk-police-working-with-controversial-tech-giant-palantir-on-real-time-surveillance-network/",
+          "date": "2025-06-16"
+        },
+        {
+          "title": "NHS Palantir deal could enable Reform immigration crackdown, health bosses warned",
+          "url": "https://htworld.co.uk/news/digital-health/nhs-palantir-deal-could-enable-reform-immigration-crackdown-health-bosses-warned-lead26/",
+          "date": "2026"
+        },
+        {
+          "title": "Briefing: Concerns Regarding Palantir Technologies and NHS Data Systems (Medact)",
+          "url": "https://www.medact.org/2026/resources/briefings/briefing-palantir-fdp/",
+          "date": "2026"
+        },
+        {
+          "title": "Court of Appeal finds DPA immigration exemption unlawful under GDPR (R (ORG & the3million) v SSHD [2021] EWCA Civ 800)",
+          "url": "https://panopticonblog.com/2021/05/26/court-of-appeal-finds-dpa-exemption-is-unlawful-under-gdpr/",
+          "date": "2021-05-26"
+        },
+        {
+          "title": "Judge rules Immigration Exemption in Data Protection Act is still unlawful (Leigh Day)",
+          "url": "https://www.leighday.co.uk/news/news/2023-news/judge-rules-that-immigration-exemption-in-data-protection-act-is-still-unlawful/",
+          "date": "2023"
+        },
+        {
+          "title": "Immigration exemption ruled unlawful under GDPR (Open Rights Group campaign)",
+          "url": "https://www.openrightsgroup.org/campaign/immigration-exemption-campaign-page/",
+          "date": "2023"
+        },
+        {
+          "title": "ICE to Use ImmigrationOS by Palantir to Track Immigrants' Movements (US, not UK)",
+          "url": "https://www.americanimmigrationcouncil.org/blog/ice-immigrationos-palantir-ai-track-immigrants/",
+          "date": "2025"
+        },
+        {
+          "title": "Palantir Has Been Awarded yet Another UK Government Contract (Novara, \u00a3670m+ / \u00a3900m+ aggregate)",
+          "url": "https://novaramedia.com/2026/03/24/palantir-has-been-awarded-yet-another-uk-government-contract/",
+          "date": "2026-03-24"
+        },
+        {
+          "title": "Britain's Ministry of Defence agrees deal with Palantir (\u00a3240.6m context)",
+          "url": "https://www.theregister.com/2026/01/28/mod_palantir_deal/",
+          "date": "2026-01-28"
+        }
+      ],
+      "confidence": "high",
+      "caveats": "High confidence on the documented \u00a327m Cabinet Office border/customs contract, the police Nectar pilot, the NHS FDP, and the DPA 2018 immigration-exemption rulings. The central caveat: there is NO documented direct Palantir\u2013Home Office immigration-ENFORCEMENT or Border Force contract. The borders work is contracted via the Cabinet Office; the immigration-crackdown scenario is a forward-looking CAPABILITY concern contingent on legal change, not an existing data flow. The deportation platform (ImmigrationOS) is US ICE, not UK \u2014 must not be conflated. Aggregate contract totals (\u00a3670m\u2013\u00a3900m+) come from journalistic tallies, not a single official register, and should be cited as estimates.",
+      "unverified_flags": [
+        "No primary Contracts Finder notice retrieved confirming a Home Office (as opposed to Cabinet Office) Palantir contract \u2014 searched, none found.",
+        "Police Nectar pilot contract value never disclosed; 'nine forces' figure and national-expansion plan are per Liberty Investigates reporting, not a confirmed procurement record.",
+        "The NHS-FDP-to-Home-Office immigration data-sharing pathway is asserted as a risk by campaigners (Medact); it is NOT an operational reality and depends on hypothetical Reform UK legislation.",
+        "Aggregate \u00a3900m+ UK Palantir total is a journalistic sum, not officially published."
+      ]
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "adjusted_connection_tier": "DIRECT_DOCUMENTED_LINK",
+      "overclaims": [
+        "CITATION MISATTRIBUTION (must fix before publication): the aggregate '34+ contracts across 10+ departments totalling \u00a3670m+, exceeding \u00a3900m' figures are attributed in contract_value_dates/citations to the Novara Media article (novaramedia.com 2026-03-24). I fetched that article \u2014 it only states Palantir holds UK contracts 'worth over \u00a3500m'. The \u00a3670m/34-contracts/10-departments/\u00a3900m+ tally actually comes from an investigation by THE NERVE (predating the \u00a3240.6m Dec 2025 MoD deal; >\u00a3900m after it). The figures are real and verifiable but the cited source does NOT support them. Re-attribute to The Nerve or remove.",
+        "UNSUPPORTED SEC FILING CITATION: controversies_litigation claims the cross-departmental immigration risk was 'flagged in a Palantir shareholder PX14A6G SEC filing.' Neither the cited Medact briefing nor the htworld article references any PX14A6G filing (verified both). This claim has no supporting citation in the profile's source list and must be removed or backed by a direct SEC EDGAR link.",
+        "MEDACT/REFORM ATTRIBUTION SLIPPAGE: the Reform UK 'automatic Home Office/NHS/HMRC/DVLA/banks/police data-sharing' pledge is real and well-sourced, but it is documented in the htworld.co.uk article (which quotes Reform's 'Operation Restoring Justice'), NOT in the Medact briefing. The profile's summary/what_palantir_does lean on Medact for the Home Office-access 'could enable' quote (correct) but the Reform legislative-trigger framing should be cited to htworld, not bundled under Medact.",
+        "MINOR FRAMING: 'Nectar pilot (Beds/Herts/Cambs consortium, ~9 forces initially)' slightly conflates two things. Liberty Investigates describes Beds/Herts/Cambs as the lead consortium with an ambition to pool data from 'nine forces' (and data from 'more than a dozen' forces across both projects), plus a SEPARATE Leicestershire-led East Midlands project of 5 forces. 'Nine forces initially' is the data-pooling ambition, not nine forces signed onto Nectar. Tighten wording.",
+        "MINOR: summary calls the Cabinet Office contract 'borders/immigration-adjacent' and the vector header is 'immigration, borders, law enforcement.' The opendemocracy source frames the \u00a327m work as border/customs ('movement of goods and people across the UK border') and explicitly does NOT mention immigration enforcement. The profile's own caveats correctly flag this, but the vector framing risks readers inferring an immigration-enforcement link that the documents do not support."
+      ],
+      "strongest_sourced_claims": [
+        "\u00a327m Cabinet Office border/customs contract, awarded August 2020, no competitive tender, introduced via ex-MI6 chief Sir John Sawers (Newbridge Advisory) at a July 2019 meeting with the Cabinet Office permanent secretary, pitched as 'risk-based monitoring for the movement of goods and people across the UK border' \u2014 every element verified against opendemocracy.net, including the verbatim pitch language.",
+        "Palantir's 'Nectar' real-time policing pilot (Beds/Herts/Cambs + separate Leicestershire/East Midlands), ingesting special-category data (political opinions, philosophical beliefs, health, trade-union membership, sexual orientation, race, financial), value undisclosed, proof-of-concept as of June 2025, DPIA recorded expected public 'skepticism or resistance', Amnesty calling it a privacy violation / 'indiscriminate mass surveillance' \u2014 verified against Liberty Investigates.",
+        "ICE ImmigrationOS is a US contract ($30m, April 2025, sole-source, near-real-time tracking incl. self-deportations) and there is NO UK Home Office equivalent \u2014 verified; the profile's repeated insistence on not conflating this with a UK contract is correct and is the analysis's strongest piece of discipline.",
+        "DPA 2018 immigration exemption (Sch 2 para 4) ruled an unlawful Art 23(2) derogation by the Court of Appeal in R (Open Rights Group & the3million) v SSHD [2021] EWCA Civ 800, and found still unlawful in 2023 (High Court, then Court of Appeal confirmation) \u2014 case name, citation, GDPR article and DPA schedule/paragraph all verified.",
+        "NHS England FDP: \u00a3330m over 7 years, awarded November 2023, with the immigration relevance being a hypothetical 'could enable' capability concern (Medact's exact 'could enable UK government departments, such as the Home Office and police departments, to more easily access patient data' verified as forward-looking, not a present data flow) \u2014 strongly sourced and correctly hedged.",
+        "MoD Enterprise Agreement \u00a3240.6m, 3 years, signed 30 Dec 2025, started 1 Apr 2026, correctly flagged as a SEPARATE (defence) vector \u2014 verified against The Register."
+      ],
+      "unsupported_to_remove": [
+        "The 'PX14A6G SEC filing' reference in controversies_litigation \u2014 no cited source supports it (verified absent from both Medact and htworld). Remove or add a direct EDGAR citation.",
+        "The attribution of the \u00a3670m/\u00a3900m+/34-contracts/10-departments aggregate to the Novara Media citation \u2014 that source says only 'over \u00a3500m'. Either re-cite to The Nerve or drop the Novara link for this figure."
+      ],
+      "corrections": [
+        "Re-attribute the \u00a3670m+ (pre-MoD) / \u00a3900m+ (post-MoD) / 34-contracts / 10+-departments aggregate to The Nerve investigation; the Novara source only supports 'over \u00a3500m'. Keep the existing unverified_flag that these are journalistic tallies, not an official register \u2014 that caveat is accurate.",
+        "Cite the Reform UK 'Operation Restoring Justice' automatic data-sharing pledge (Home Office/NHS/HMRC/DVLA/banks/police) to htworld.co.uk, not Medact. Medact supplies the 'could enable Home Office/police to access patient data' capability quote; htworld supplies the Reform legislative-trigger framing. Keep them distinct.",
+        "Tighten the Nectar 'nine forces initially' phrasing: it is the data-pooling ambition of the Beds/Herts/Cambs-led consortium, with a separate 5-force Leicestershire/East Midlands project; data spans 'more than a dozen' forces across both. Avoid implying nine forces are signed Nectar customers.",
+        "Remove the PX14A6G SEC-filing claim unless a primary EDGAR link is added."
+      ],
+      "notes": "DIRECT_DOCUMENTED_LINK tier is JUSTIFIED and should stand \u2014 but specifically and only on the basis of the \u00a327m Cabinet Office BORDER/CUSTOMS contract and the Nectar POLICING pilot, both of which are documented, operational, and verified. The tier is NOT justified for Home Office immigration ENFORCEMENT, and the profile itself correctly and repeatedly downgrades that to a CAPABILITY/trajectory concern (no UK contract; ImmigrationOS is US ICE). That discipline is the profile's strongest feature and survives hostile review.\\n\\nSplink<->Palantir technical/data link: I attempted to refute this and FOUND NOTHING TO REFUTE \u2014 the profile makes no such claim. It explicitly states 'PARTIAL OVERLAP, NOT A SHARED PIPELINE', 'do NOT manufacture a Splink<->Palantir technical link \u2014 none is documented', and classes the policing overlap as SAME_DEPARTMENT_OVERLAP and the NHS overlap as same-space-but-no-shared-pipeline. This is exactly the correct characterisation: Splink (MoJ research-linkage library, runs an operational North Essex PNC->police feed per the project's own moj-splink-master-record) and Palantir's Nectar operate in the same East-of-England policing domain as independent tools. No documented data flow, joint deployment, or interoperability between Splink and Palantir exists. The Foundry<->Gotham 'drag and drop' interop is internal to Palantir's own product suite and is correctly flagged as CAPABILITY only \u2014 it is NOT a Splink linkage. As a hostile critic I confirm: the profile does not overclaim the Splink link, and nothing in it needs downgrading on that axis.\\n\\nNet: a well-disciplined, properly-hedged profile. The only publication blockers are citation hygiene (the misattributed aggregate figure and the unsupported SEC-filing reference), not the substance of the connection. Operational-vs-statistical framing is sound and correctly places Palantir on the operational side, in deliberate contrast to Splink's MoJ Data First research-only datasets."
+    }
+  },
+  {
+    "vector": "police",
+    "title": "UK policing / law enforcement \u2014 Palantir Gotham/Foundry",
+    "profile": {
+      "vector": "UK policing / law enforcement \u2014 Palantir Gotham/Foundry (operational crime intelligence + national licensing records)",
+      "uk_body": "UK police forces and national policing bodies: Bedfordshire, Hertfordshire, Cambridgeshire Police (Eastern Region \"Nectar\" pilot); Leicestershire Police / East Midlands Special Operations Unit (EMSOU); Metropolitan Police Service (blocked deal); National Police Chiefs' Council (NPCC) + Police Digital Service + Home Office (firearms/explosives/poisons licensing for 43 forces). IMPORTANT: NDAS (National Data Analytics Solution, West Midlands Police lead) is Accenture/AWS, NOT Palantir \u2014 do not conflate.",
+      "connection_tier": "SAME_DEPARTMENT_OVERLAP",
+      "summary": "Palantir is embedded across UK operational policing via two confirmed regional pilots and a national licensing contract. The Eastern Region \"Nectar\" project (Bedfordshire/Hertfordshire/Cambridgeshire, initially fusing data from nine forces, with a stated ambition to \"eventually apply it nationally\") and an East Midlands project led by Leicestershire/EMSOU (~\u00a3818,750) build a \"single, unified view\" of citizen data. In June 2026 Palantir also won a ~\u00a39m (up to 10-year; tender valued \u00a317m incl. tax) NPCC/Police Digital Service/Home Office contract to run firearms, explosives-precursor and poisons licensing across all 43 forces in England and Wales. In May 2026 Sadiq Khan's office blocked a Met Police deal worth \u00a325.3m (2026-27) plus a \u00a324.8m extension (~\u00a350m); Palantir signalled a legal challenge. These are OPERATIONAL crime-intelligence/decision-support systems processing 11 categories of special-category data on suspects, victims, children and witnesses, with DPIAs admitting no individual opt-out and no completed public consultation. The link to the Splink-investigation entities is a SAME-DEPARTMENT / geographic-trajectory overlap: Palantir's flagship Nectar pilot sits in the SAME East-of-England geography as the MoJ Splink \"Master Record\" daily North Essex PNC\u2192police feed, but there is NO documented shared pipeline and no documented Palantir\u2013PNC integration. The connection is real-but-parallel, not a proven data flow.",
+      "what_palantir_does": [
+        "Eastern Region 'Nectar' pilot (Bedfordshire + Hertfordshire + Cambridgeshire, scaling to nine forces): integrates dozens of policing databases into a single AI-assisted platform to create detailed digital profiles and a 'single, unified view' / 'single source of truth' on suspects, victims, witnesses, children and vulnerable people; combines crime records with financial information and other intelligence; designed as a real-time data-sharing network to 'assist with decision making' and 'aid in the prevention, detection and investigation of crimes' \u2014 i.e. live operational use, not statistics.",
+        "Processes 11 types of special-category data: race, religion, political opinions, sex life/sexual orientation, health, trade-union membership, philosophical beliefs, plus social media posts, dating profiles and financial records (Bedfordshire DPIA, reported by Bedford Independent / Liberty Investigates).",
+        "Nectar 'Romanian fraud gang' case (Eastern Region Special Operations Unit, ERSOU): Palantir's Nectar processed 1.4TB from ~24 seized phones, machine-translated 100,000+ messages from Romanian, mapped suspect connections, tracked movements and flagged ~120 offences; ~6-9 men jailed (Nov 2024). Operational evidence-processing at scale.",
+        "East Midlands project (Leicestershire Police / EMSOU, ~\u00a3818,750): 'intelligence and investigation platform' fusing data from five East Midlands forces; contract listing reportedly removed from public record after press inquiries.",
+        "National firearms/explosives/poisons licensing system (NPCC + Police Digital Service + Home Office, ~\u00a39m, up to 10 years, tender \u00a317m incl. tax, announced June 2026): holds and manages how police grant/renew/revoke firearms, explosives-precursor and poisons records across all 43 forces in England and Wales, with 'integration with partner agencies and national systems' (potential expansion to Police Scotland and PSNI). This is a national operational person-level records system.",
+        "Metropolitan Police (blocked): proposed Palantir software to automate elements of criminal intelligence analysis to speed investigations; \u00a325.3m (2026-27) + \u00a324.8m extension (~\u00a350m) \u2014 blocked May 2026 by the Deputy Mayor for Policing and Crime on procurement/value-for-money grounds (Met treated Palantir as sole supplier, no formal procurement strategy).",
+        "Palantir publicly DENIED its UK police software is used for predictive policing; critics (Amnesty, TUC, StopWatch, Liberty Investigates) warn it facilitates mass surveillance and 'dystopian predictive policing'."
+      ],
+      "link_to_splink_work": "SAME_DEPARTMENT_OVERLAP / geographic-trajectory only \u2014 NOT a documented shared pipeline. (1) Same domain: Palantir and MoJ Splink both operate in UK criminal justice / policing. (2) Striking geographic adjacency: the MoJ Splink 'Master Record' runs a daily North Essex PNC\u2192police feed (per moj-splink-master-record, 6 Oct 2025, logged in project_splink_investigation), and Palantir's flagship operational pilot 'Nectar' is the EASTERN region network (Bedfordshire/Hertfordshire/Cambridgeshire/Essex-adjacent ERSOU) \u2014 same East-of-England operational policing space, same kind of person-level identity-resolution goal ('single unified view' / 'Master Record'/'Core Person Record'). (3) BUT: no document shows PNC or Splink-linked records flowing INTO Palantir Nectar, and no document shows Palantir integrating with the PNC. NDAS (the other big UK police-analytics programme, which DOES involve national fusion) is Accenture/AWS, not Palantir. The shared theme is the trajectory the Splink investigation already flagged \u2014 operational person-level record-linkage in policing with no individual consent/opt-out \u2014 now appearing via a SECOND, commercial vendor (Palantir) in the same geography. Treat the overlap as parallel/convergent, not as one feeding the other. Do NOT manufacture a Splink\u2192Palantir technical link.",
+      "palantir_product": "Primarily the Gotham/Nectar investigative lineage (Gotham is Palantir's law-enforcement/intelligence platform; 'Nectar' is the branded UK police deployment) with Foundry-style data-integration underneath; the firearms-licensing records platform is a Foundry-class data/records system. UK police FOI refusals mean the exact product naming per force is often undisclosed; 'Nectar' is the confirmed UK police brand.",
+      "contract_value_dates": "Leicestershire/EMSOU: ~\u00a3818,750 (listing later removed from public record). Met Police (blocked May 2026): \u00a325.3m for 2026-27 + \u00a324.8m optional extension 2027-28 (~\u00a350m, two-year). National firearms/explosives/poisons licensing (NPCC/Police Digital Service/Home Office, published 4 June 2026): ~\u00a39m ($12m), term up to 10 years incl. extensions; original tender ~\u00a317m incl. tax; competitive tender, Accenture and NEC Software lost. Eastern 'Nectar' pilot: value not disclosed (FOI refused). Procurement transparency is poor: Good Law Project FOI'd 45 forces, 35 refused citing national-security/law-enforcement exemptions.",
+      "operational_vs_statistical": "OPERATIONAL \u2014 Nectar is a live investigation/decision-support and real-time data-sharing platform (profiling, evidence processing, suspect mapping); the firearms platform makes live licensing decisions. This is the operational side of the line the Splink investigation drew, aligning with the operational Splink 'Master Record' (real-time, North Essex PNC feed) rather than research-only Data First.",
+      "consent_oversight": "Weak. Bedfordshire DPIA admits NO individual opt-out for people whose data appears, and shows consultation was 'needed' but with no evidence it occurred / no public consultation detail. Lawful basis is public-task/law-enforcement processing (DPA 2018 Part 3), so no individual consent is sought \u2014 mirroring the Splink-investigation finding (lawful but no consent/notification/opt-out). Oversight: West Midlands NDAS (Accenture, separate) used Alan Turing Institute ethics review; for Palantir/Nectar no equivalent independent ethics sign-off is documented. Parliamentary scrutiny: Commons Science, Innovation & Technology Committee called Palantir reliance an 'unacceptable point of weakness'; David Davis MP demanded scrutiny. Transparency undermined by mass FOI refusals.",
+      "controversies_litigation": [
+        "Palantir signalled legal challenge against Sadiq Khan / Mayor's Office for Policing and Crime over the blocked ~\u00a350m Met contract (May 2026); Conservative figures urged the suit.",
+        "Amnesty International described the Nectar-type system as 'indiscriminate mass surveillance'; TUC warned about trade-union membership data echoing blacklisting.",
+        "Good Law Project: 45 forces FOI'd, 35 refused on national-security grounds; Leicestershire removed its Palantir contract from public record after press inquiries.",
+        "Commons Science, Innovation and Technology Committee: reliance on Palantir an 'unacceptable point of weakness'.",
+        "Reputational baggage: Palantir's work with US ICE and the Israeli military cited by campaigners (StopWatch, Medact, CAAT) opposing UK police/NHS contracts.",
+        "Liberty Investigates / Democracy for Sale reporting on a covert 'real-time surveillance network' and how forces hide Palantir work."
+      ],
+      "datasets": [
+        "Force crime/intelligence records (suspects, victims, witnesses, children, vulnerable persons)",
+        "Special-category data: race, religion, political opinions, sexual orientation/sex life, health, trade-union membership, philosophical beliefs",
+        "Financial records, social media posts, dating profiles",
+        "Seized digital-device evidence (e.g. 1.4TB phone extractions, message content)",
+        "Firearms / explosives-precursor / poisons licensing records (national, 43 forces)",
+        "NOTE: no documented ingestion of the Police National Computer (PNC) or MoJ Splink-linked datasets into Palantir"
+      ],
+      "unverified_flags": [
+        "'11 police forces use Palantir' is a widely-repeated figure (search-summary level) but I did not pin it to one primary source; treat as journalistic estimate. Confirmed by primary/serious reporting: Bedfordshire, Hertfordshire, Cambridgeshire, Leicestershire/EMSOU; Met (blocked).",
+        "Whether the East 'Nectar' product is branded Gotham vs Foundry per force is largely undisclosed (FOI refusals); 'Nectar' is the confirmed UK brand.",
+        "No evidence found of Palantir integrating with the PNC; the Splink North Essex PNC\u2192police feed is a SEPARATE MoJ pipeline \u2014 any link between them is inferred geography, not documented.",
+        "Exact Nectar pilot contract value not disclosed.",
+        "Bedfordshire DPIA 11-special-categories detail relies on Bedford Independent + Liberty Investigates reporting of the DPIA, not the raw DPIA reviewed by me."
+      ],
+      "citations": [
+        {
+          "title": "UK police forces dodge questions on Palantir \u2014 Good Law Project",
+          "url": "https://goodlawproject.org/uk-police-forces-dodge-questions-on-palantir/",
+          "date": "2026"
+        },
+        {
+          "title": "UK police working with controversial tech giant Palantir on real-time surveillance network \u2014 Liberty Investigates",
+          "url": "https://libertyinvestigates.org.uk/articles/uk-police-working-with-controversial-tech-giant-palantir-on-real-time-surveillance-network/",
+          "date": "2026"
+        },
+        {
+          "title": "Bedfordshire Police using AI tool to profile political views, sex life, race and health data \u2014 Bedford Independent",
+          "url": "https://www.bedfordindependent.co.uk/bedfordshire-police-using-ai-tool-to-profile-political-views-sex-life-race-and-health-data/",
+          "date": "2026"
+        },
+        {
+          "title": "Palantir wins \u00a39M contract to run UK firearms licensing \u2014 The Register",
+          "url": "https://www.theregister.com/databases/2026/06/04/palantir-wins-9m-contract-to-run-uk-firearms-licensing-cia-backed-biz-to-hold-gun-bomb-and-poison-records/5251132",
+          "date": "2026-06-04"
+        },
+        {
+          "title": "Sadiq Khan blocks Met's \u00a350m AI deal with Palantir \u2014 Computing",
+          "url": "https://www.computing.co.uk/news/2026/government/sadiq-khan-blocks-met-s-50m-ai-deal-with-palantir",
+          "date": "2026-05"
+        },
+        {
+          "title": "London cops post \u00a3300M tech shopping list after Palantir contract blocked \u2014 The Register",
+          "url": "https://www.theregister.com/public-sector/2026/05/28/london-cops-post-300m-tech-shopping-list-after-palantir-contract-blocked/5247685",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "Secretive US tech firm Palantir scoops contract with Leicestershire Police \u2014 Leicester Gazette",
+          "url": "https://www.leicester.news/secretive-us-tech-firm-palantir-scoops-contract-with-leicestershire-police/",
+          "date": "2026"
+        },
+        {
+          "title": "National Data Analytics Solution (NDAS) Privacy Notice \u2014 West Yorkshire Police (confirms NDAS = Accenture/AWS, not Palantir)",
+          "url": "https://www.westyorkshire.police.uk/advice/modern-slavery/national-data-analytics-solution-ndas-privacy-notice",
+          "date": "2026"
+        },
+        {
+          "title": "Uncovered: How UK police are hiding their Palantir work \u2014 Democracy for Sale",
+          "url": "https://democracyforsale.substack.com/p/uncovered-how-uk-police-are-hiding-palantir-work-peter-thiel-trump",
+          "date": "2026"
+        }
+      ],
+      "confidence": "medium",
+      "caveats": "High confidence on the Palantir UK-policing footprint (Nectar pilots, EMSOU/Leicestershire, firearms licensing, blocked Met deal) from serious journalism + The Register + Good Law Project. The CONNECTION TIER to the Splink entities is deliberately rated SAME_DEPARTMENT_OVERLAP, not DIRECT: there is NO documented shared pipeline between Palantir and MoJ Splink, and no documented Palantir\u2013PNC integration. The East-of-England geographic coincidence (Nectar's Eastern region vs Splink's North Essex PNC\u2192police feed) is suggestive of a convergent trajectory but is NOT evidence of data flowing between them. NDAS is Accenture/AWS and must not be attributed to Palantir. The '11 forces' figure is journalistic, not primary-sourced here."
+    },
+    "verification": {
+      "verdict": "MIXED",
+      "adjusted_connection_tier": "THEMATIC_ADJACENCY",
+      "overclaims": [
+        "TIER OVERCLAIM (central): The profile rates the Splink link as SAME_DEPARTMENT_OVERLAP. That is itself too strong. Splink is a Ministry of Justice (MoJ) open-source library; Palantir/Nectar is deployed by territorial POLICE FORCES and Home Office/NPCC/PDS bodies. MoJ and the police/Home Office are NOT the same department, so there is no 'same-department' overlap to claim. The local authoritative evidence file /Users/btmaffiliate/uk-data-linkage-disclosure/evidence/Splink-Palantir-Connection-Evidence.md concludes 'There is no documented direct technical or corporate connection between Splink and Palantir' and that 'Palantir'/'Foundry' appear nowhere in the Splink repo, and Splink is not a Foundry backend. The honest tier is THEMATIC_ADJACENCY (both touch UK criminal-justice person-level record-linkage), NOT same-department.",
+        "GEOGRAPHIC-COINCIDENCE OVERCLAIM: 'Striking geographic adjacency' / 'flagship operational pilot ... same East-of-England space' is rhetorical inflation. Nectar is also branded 'Nectar emsou' in the East Midlands (Leicestershire/EMSOU) per Contract Finder Pro, so 'Nectar = Eastern region' is not a clean geographic signature pointing at North Essex. The Splink North Essex PNC feed is an MoJ pipeline; co-location in 'the East of England' is coincidence, not connective tissue. Drop the 'striking'/'flagship' adjacency framing.",
+        "SHARED-GOAL OVERCLAIM: Equating Nectar's 'single unified view' with Splink's 'Master Record'/'Core Person Record' as the 'same kind of person-level identity-resolution goal' implies technical convergence. Both resolve identities, but so does every record-linkage system on earth; shared generic objective is not a documented link. Frame as analogy, not connection.",
+        "PRODUCT-NAMING OVERCLAIM: 'Gotham/Nectar investigative lineage' and 'Foundry-class records system' assert Palantir product names the profile itself admits are undisclosed (FOI refused). 'Nectar' is the confirmed UK police brand; Gotham vs Foundry per force is NOT documented. The Gotham/Foundry attributions are inference and should be labelled as such, not stated as product fact.",
+        "DATA-VOLUME / OUTCOME OVERCLAIM (Romanian fraud case): '~6-9 men jailed', '~120 offences', '100,000+ messages', '1.4TB from ~24 phones' are precise figures attributed to a single ERSOU operation but are not pinned to a primary court/CPS source in the profile or local files. Demand a citation; otherwise soften to 'reported'.",
+        "'$12m' gloss on the ~\u00a39m firearms contract is an editorial currency conversion not present in the cited Register headline (which says \u00a39M); minor but unsourced. The tender '\u00a317m incl. tax' figure also needs its own citation separate from the \u00a39m award."
+      ],
+      "strongest_sourced_claims": [
+        "Palantir won the national firearms/explosives-precursor/poisons licensing contract for the 43 forces of England and Wales, ~\u00a39m, term up to 10 years (5+5), announced early June 2026 \u2014 corroborated by The Register (2026-06-04), Computing, PublicTechnology, Shooting UK. CORRECTION to add: procurement was run by BlueLight Commercial on behalf of Police Digital Service (PDS); initial 5-year term starts 4 Sep 2026; Accenture and NEC Software were the losing finalists.",
+        "The Met Police deal was blocked by Sadiq Khan's office in May 2026 over a 'clear and serious breach' of procurement rules; the system was 'unified operational analytics'; values \u00a325.3m (2026/27) + \u00a324.8m optional extension (2027/28) \u2014 exactly corroborated by Computing, Middle East Eye, Novara, Morning Star.",
+        "Bedfordshire/Hertfordshire/Cambridgeshire 'Nectar' pilot built with Palantir, integrating dozens of databases into a 'single, unified view', drawing on nine forces initially with national ambition, accessing 11 categories of special-category data on suspects, victims, witnesses and children per an FOI-obtained DPIA \u2014 corroborated by Bedford Independent, Liberty Investigates, and Bedfordshire Police's own Nectar page.",
+        "Leicestershire Police / EMSOU Palantir contract ~\u00a3818,750, awarded without competitive bidding, with the Contracts Finder award notice removed (~2 Dec 2024) after Good Law Project inquiries \u2014 corroborated by Leicester Gazette/leicester.news and Good Law Project.",
+        "NDAS is Accenture/AWS, NOT Palantir \u2014 correctly carved out and must not be conflated; supported by West Yorkshire Police NDAS privacy notice. This is a correctly-handled non-overclaim and should be kept.",
+        "The negative finding is the strongest 'connection' claim: NO document shows PNC or Splink-linked records flowing into Palantir Nectar, and NO documented Palantir-PNC integration. This matches the local evidence log's high-confidence conclusion and should be stated as the headline of the link section."
+      ],
+      "unsupported_to_remove": [
+        "The implied SAME_DEPARTMENT_OVERLAP framing of the Splink link \u2014 remove/downgrade to THEMATIC_ADJACENCY (MoJ vs police/Home Office are different departments).",
+        "'Striking geographic adjacency' and 'flagship operational pilot' rhetorical framing tying Nectar to the North Essex Splink feed \u2014 remove; replace with a flat statement that any link is inferred geography, not documented (the profile partly says this already but then undercuts it with the 'striking adjacency' language).",
+        "Stated Gotham/Foundry product attributions per force \u2014 remove as fact; retain only 'Nectar' as the confirmed brand and label Gotham/Foundry as inference.",
+        "'$12m' currency gloss and any contract figure (Romanian-case stats, \u00a317m tender, \u00a3818,750) not carrying its own inline citation \u2014 remove or tag 'reported, citation needed' until pinned to a primary.",
+        "'11 police forces use Palantir' \u2014 the profile already flags this as journalistic/unpinned; keep flagged or remove. Do not state as fact."
+      ],
+      "corrections": [
+        "Connection tier: SAME_DEPARTMENT_OVERLAP -> THEMATIC_ADJACENCY. MoJ (Splink) and police forces/Home Office/NPCC (Palantir) are distinct departments; the overlap is thematic (UK criminal-justice person-level record linkage), not departmental, and no shared pipeline is documented.",
+        "Firearms contract: add that procurement was led by BlueLight Commercial on behalf of Police Digital Service; initial 5-year term from 4 Sep 2026 + 5-year option (to ~2036); losing finalists were Accenture and NEC Software. Profile's 'NPCC + PDS + Home Office' is loosely right but omits BlueLight Commercial as the buying unit.",
+        "Note that 'Nectar' is also the brand of the East Midlands EMSOU deployment ('Nectar emsou' on Contract Finder Pro), so Nectar is not exclusively the 'Eastern region' network \u2014 weakens the geographic-signature argument toward North Essex.",
+        "Overall verdict is MIXED not SOLID: the Palantir UK-policing FOOTPRINT is solidly sourced, but the Splink-connection tier as stated overclaims, and several specific figures need citations."
+      ],
+      "notes": "As the hostile critic/Palantir lawyer: the factual Palantir-UK-policing footprint in this profile is well-sourced and survives scrutiny (firearms licensing, blocked Met deal, Bedfordshire DPIA, Leicestershire/EMSOU, NDAS-is-Accenture carve-out all corroborated by multiple independent sources and the local research files). The profile is also commendably disciplined in DENYING a Splink->Palantir technical pipeline and warning against manufacturing one. HOWEVER the connection_tier label SAME_DEPARTMENT_OVERLAP is itself the overclaim to kill: there is no shared department (MoJ vs police/Home Office) and the local authoritative evidence file (/Users/btmaffiliate/uk-data-linkage-disclosure/evidence/Splink-Palantir-Connection-Evidence.md) and palantir_uk_footprint.md both conclude the only real Splink<->Palantir tissue is INDIRECT/absent and that the two stories MUST stay separate ('the Palantir blindspot framing depends on them being distinct'). Downgrade to THEMATIC_ADJACENCY, strip the 'striking geographic adjacency' rhetoric, label Gotham/Foundry naming as inference, and demand inline citations for the Romanian-case stats, the \u00a317m tender figure, the \u00a3818,750, and the '$12m' gloss before publication. Nothing here rises to SPECULATIVE_EXCLUDE because the Palantir footprint is real and the link is honestly hedged \u2014 it is just mis-tiered."
+    }
+  },
+  {
+    "vector": "moj-justice",
+    "title": "Ministry of Justice / prisons / probation \u2014 any Palantir presence",
+    "profile": {
+      "vector": "Ministry of Justice / prisons / probation / criminal justice \u2014 Palantir presence",
+      "uk_body": "Ministry of Justice (MoJ) and HM Prison and Probation Service (HMPPS); adjacent bodies surfaced: UK police forces (Bedfordshire, Hertfordshire, Cambridgeshire + East Midlands/Leicestershire) and the Metropolitan Police (MOPAC)",
+      "connection_tier": "SAME_DEPARTMENT_OVERLAP",
+      "summary": "There is NO documented Palantir contract, pilot, or live deployment inside the Ministry of Justice or HMPPS (prisons/probation/courts) \u2014 that absence is itself the central finding. In November 2024, FOI-released correspondence (The Guardian / Ben Quinn) showed Palantir actively LOBBIED MoJ ministers \u2014 including prisons minister James Timpson and chancellor Rachel Reeves \u2014 to deploy its analytics for prisoner reoffending-risk scoring, prison-capacity optimisation and \"secure information sharing and data analytics,\" and Palantir attended a ~30-corporation MoJ surveillance roundtable. Ministers largely did not respond and no award followed. Crucially, the MoJ's actual operational reoffending tool (ARNS, replacing OASys, profiling 1,300+ people daily using probation/prison caseload data combined with the Police National Computer) is built IN-HOUSE by MoJ Digital with Capita \u2014 explicitly not Palantir. The only genuinely operational Palantir presence touching criminal justice is in POLICING (the \"Nectar\" real-time data-sharing network across East-of-England/East Midlands forces), a different body from MoJ/HMPPS even though it processes the same PNC data that Splink's operational deployment also feeds.",
+      "what_palantir_does": [
+        "In MoJ/HMPPS: nothing operational. Palantir only PROPOSED (lobbying, not delivery) to score prisoners' reoffending risk, model recidivism drivers such as income and addiction, optimise finite prison capacity, and build cross-agency 'secure information sharing' \u2014 none of which was contracted.",
+        "In policing (operational, separate body): the 'Nectar' platform provides a 'single unified view' real-time data-sharing network across ~9 East-of-England forces plus a parallel 5-force East Midlands project; processes crime/financial records, suspect AND victim/witness/children data, and special-category data (political opinions, health, trade-union membership, sexual orientation, race).",
+        "Casework example (Bedfordshire, Nov 2025): Palantir 'Nectar' read/translated 100,000+ Romanian-to-English seized phone messages and link-charted movements to help convict an ATM-theft gang \u2014 an operational, not statistical, use of citizen data.",
+        "Adjacent state footprint (context, not MoJ): NHS Federated Data Platform (~\u00a3330m), MoD (\u00a3240.6m Dec 2025 + ~\u00a31.5bn partnership), FCA fraud, Home Office, Coventry social services \u2014 The Nerve/Carole Cadwalladr counted 34+ contracts across 10+ departments, \u00a3670m+ (now >\u00a3900m). MoJ is NOT in that contract list."
+      ],
+      "link_to_splink_work": "SAME-DEPARTMENT OVERLAP, NOT a merged pipeline. Splink is most operational precisely in the MoJ/criminal-justice space (moj-splink-master-record: courts/sentencing, Core Person Record pilot, daily North Essex PNC\u2192police feed). Palantir tried to enter the very same MoJ space (reoffending risk, data sharing) but FAILED to win any contract; the operational MoJ scoring tool (ARNS) is in-house (MoJ Digital + Capita), and it \u2014 not Palantir \u2014 uses the PNC data, the same PNC data Splink links. So the only concrete intersection is thematic/data-source overlap on the Police National Computer at the policing layer (Palantir 'Nectar' and Splink's North Essex PNC feed both touch PNC-derived policing data), but there is NO documented data flow between Splink and Palantir, and NO Palantir code in any Splink/Data First/Core Person Record system. The layers are adjacent (same department, same PNC data universe), not merged.",
+      "contract_value_dates": "MoJ/HMPPS: \u00a30 \u2014 no contract awarded. Lobbying timeline: Nov 2024 FOI release; Palantir exec letter to prisons minister Timpson ~3 weeks after the July 2024 general election; CEO Alex Karp letters to Reeves, science minister Peter Kyle, CST Darren Jones, trade minister Douglas Alexander; talks reportedly began under the prior Conservative government; ministers did not respond. Policing (separate): Metropolitan Police up-to-\u00a350m AI deal BLOCKED by Sadiq Khan/MOPAC on 21 May 2026 (process/value-for-money + ethics concerns; >\u00a3500k requires MOPAC sign-off); Leicestershire/East Midlands ~\u00a3800k contract reportedly de-listed from public record after press queries; Nectar pilot values undisclosed. Wider state context: NHS FDP ~\u00a3330m/7yr; MoD \u00a3240.6m (Dec 2025).",
+      "operational_vs_statistical": "In MoJ/HMPPS, no Palantir system exists in either mode. Where Palantir IS live (policing), it is unambiguously OPERATIONAL \u2014 real-time surveillance/intelligence (Nectar), individual-level investigation, phone-message exploitation, conviction support \u2014 contrasting with Splink's MoJ Data First research-only datasets but aligning with Splink's separately-documented operational courts/sentencing/PNC use. The MoJ in-house ARNS reoffending tool is also operational (per-individual decisions affecting parole/risk), but it is not Palantir.",
+      "consent_oversight": "No individual consent or opt-out documented in any of these criminal-justice uses (mirrors the Splink finding). Policing Nectar processes victim/witness/children and special-category data with a Bedfordshire DPIA itself noting public 'skepticism or resistance' over data sharing; Palantir's defence is that it ingests only data the force 'already holds.' Oversight gap is highlighted by the Met case: MOPAC found the \u00a350m deal had bypassed the required >\u00a3500k approval/oversight process, and Leicestershire allegedly removed a listing from the public record \u2014 i.e., active opacity. For the MoJ ARNS tool, prisoners report being unaware of, or unable to meaningfully challenge, what is written about them.",
+      "controversies_litigation": [
+        "Amnesty International UK warned Palantir's proposed MoJ reoffending AI risks discrimination, miscarriages of justice, privacy breaches and human-rights violations (Nov 2024).",
+        "Met \u00a350m deal blocked by Mayor Sadiq Khan/MOPAC (21 May 2026); Met called it 'disappointing'; Conservative figures urged Palantir to sue the Mayor.",
+        "Liberty Investigates / Good Law Project / openDemocracy exposed police forces 'hiding' their Palantir work; Leicestershire contract listing reportedly removed after press inquiries.",
+        "Privacy International 'All Roads Lead to Palantir' (2021) documented the firm's penetration of the British state.",
+        "Revolving-door concerns: Palantir reportedly hired 32 senior UK officials (incl. NHS and MoD AI chiefs) and 4 ex-MoD officials before the \u00a3240m MoD award (openDemocracy)."
+      ],
+      "datasets": [
+        "Police National Computer (PNC) \u2014 touched by both Palantir-fed policing data and Splink's North Essex feed; also feeds MoJ's in-house ARNS",
+        "Police crime/intelligence records and financial data (Nectar)",
+        "Special-category data: political opinions, philosophical/religious beliefs, health, trade-union membership, sexual orientation, race (Nectar)",
+        "Victim, witness and children's personal data (Nectar)",
+        "Seized device content \u2014 100,000+ phone messages (Bedfordshire case)",
+        "(Proposed only, never delivered to MoJ) prison/probation caseload data and recidivism-driver data"
+      ],
+      "palantir_product": "Police-facing: 'Nectar' (Foundry/Gotham-family 'single unified view' platform); Gotham/AIP referenced for the blocked Met deal. For MoJ specifically: no product deployed \u2014 only a lobbying proposal for unspecified 'data analytics' / 'secure information sharing'.",
+      "caveats": "The Guardian primary article could not be fetched directly (blocked); its content is corroborated via inkl, BeamStart, Magzter, OECD.AI, Statewatch and Techmeme republications of Ben Quinn's reporting. FOI letters themselves were not read line-by-line. The Nerve/Cadwalladr department list is summarised from secondary coverage (Substack/Daily Britain), not the original investigation page. 'Nectar' is reported as a Palantir product/pilot name; exact Palantir product-family mapping (Foundry vs Gotham vs AIP) is not always explicit in sources. Police contract values are largely undisclosed/redacted.",
+      "unverified_flags": [
+        "Exact FOI reference numbers and full text of the Palantir-to-MoJ letters not independently retrieved",
+        "Whether ANY low-value or redacted MoJ/HMPPS Palantir engagement exists below disclosure thresholds \u2014 Contracts Finder not exhaustively queried in this pass (no positive hit found, but absence not 100% proven)",
+        "The complete named list of the ~11-12 police forces in the Palantir network",
+        "Precise contract value of the Leicestershire/East Midlands deal (reported ~\u00a3800k, then de-listed)",
+        "Whether 'Nectar' draws on PNC specifically (sources say force-held data; PNC link inferred, not confirmed in the Liberty piece)"
+      ],
+      "citations": [
+        {
+          "title": "Tech firm Palantir spoke with MoJ about calculating prisoners' 'reoffending risks' (Ben Quinn, The Guardian, via inkl)",
+          "url": "https://www.inkl.com/news/tech-firm-palantir-spoke-with-moj-about-calculating-prisoners-reoffending-risks",
+          "date": "2024-11-16"
+        },
+        {
+          "title": "Palantir lobbies UK Ministry of Justice to use AI for prisoner risk assessment",
+          "url": "https://oecd.ai/en/incidents/2024-11-13-65f2",
+          "date": "2024-11-13"
+        },
+        {
+          "title": "UK: Over 1,300 people profiled daily by Ministry of Justice AI system to 'predict' re-offending risk (Statewatch \u2014 ARNS built in-house by MoJ Digital + Capita)",
+          "url": "https://www.statewatch.org/news/2025/april/uk-over-1-300-people-profiled-daily-by-ministry-of-justice-ai-system-to-predict-re-offending-risk/",
+          "date": "2025-04"
+        },
+        {
+          "title": "The UK's Sentencing Act Leaves the Door Open for Big Tech to Build Digital Prisons (MoJ ~30-corporation surveillance roundtable incl. Palantir)",
+          "url": "https://www.techpolicy.press/the-uks-sentencing-act-leaves-the-door-open-for-big-tech-to-build-digital-prisons/",
+          "date": "2026"
+        },
+        {
+          "title": "UK police working with controversial tech giant Palantir on real-time surveillance network ('Nectar') \u2014 Liberty Investigates",
+          "url": "https://libertyinvestigates.org.uk/articles/uk-police-working-with-controversial-tech-giant-palantir-on-real-time-surveillance-network/",
+          "date": "2026"
+        },
+        {
+          "title": "Sadiq Khan blocks Met's \u00a350m AI deal with Palantir (Computing)",
+          "url": "https://www.computing.co.uk/news/2026/government/sadiq-khan-blocks-met-s-50m-ai-deal-with-palantir",
+          "date": "2026-05-21"
+        },
+        {
+          "title": "Palantir UK Government Contracts: NHS, Defence, Police, and Now Your Financial Data (The Nerve summary \u2014 MoJ absent from contract list)",
+          "url": "https://theslowai.substack.com/p/palantir-uk-government-data",
+          "date": "2026"
+        },
+        {
+          "title": "All Roads Lead to Palantir \u2014 Privacy International",
+          "url": "https://privacyinternational.org/sites/default/files/2021-11/All%20roads%20lead%20to%20Palantir%20with%20Palantir%20response%20v3.pdf",
+          "date": "2021-11"
+        },
+        {
+          "title": "What Is Palantir? How a US Spytech Firm Penetrated the British State (Novara Media)",
+          "url": "https://novaramedia.com/2026/02/19/what-is-palantir-how-a-us-spytech-firm-penetrated-the-british-state/",
+          "date": "2026-02-19"
+        }
+      ],
+      "confidence": "high"
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "adjusted_connection_tier": "SAME_DEPARTMENT_OVERLAP",
+      "overclaims": [
+        "CAVEAT IS WRONG / TOO WEAK: The profile's caveat says 'exact Palantir product-family mapping (Foundry vs Gotham vs AIP) is not always explicit in sources' and the palantir_product field hedges Nectar as 'Foundry/Gotham-family'. But the Bedfordshire Romanian-ATM-gang case is explicitly documented as using Palantir FOUNDRY (Bedfordshire chief constable Trevor Rodenhurst; criminal-association chart-building time cut ~75%). For that casework the product mapping IS documented, not inferred. This is an under-claim that should be tightened, not a hedge.",
+        "PNC <-> Nectar link is asserted more confidently in places than the sources support. The datasets list states 'Police National Computer (PNC) - touched by both Palantir-fed policing data and Splink's North Essex feed', and the link_to_splink narrative leans on a shared-PNC intersection at the policing layer. The Liberty Investigates source (the primary Nectar source) does NOT mention PNC at all and describes only force-held crime/intelligence/financial/special-category data. The profile's own unverified_flags correctly concedes this ('PNC link inferred, not confirmed in the Liberty piece') -- but the datasets[] and link_to_splink prose state the PNC overlap with more certainty than that concession allows. The shared-PNC 'intersection' is the load-bearing hinge of the entire Splink<->Palantir connection and it is NOT documented for Nectar.",
+        "Geographic/force framing slightly muddled: the profile separates 'East-of-England/East Midlands' Nectar from a 'parallel 5-force East Midlands project' and treats Leicestershire as East Midlands. The Liberty Investigates article itself names Leicestershire alongside Bedfordshire/Hertfordshire/Cambridgeshire within the Nectar reporting, so the clean Nectar-vs-East-Midlands split is an over-tidy reconstruction. Minor, but the force lists are presented as more settled than sources show (profile already flags the full force list as unverified).",
+        "Confidence rated 'high' overall is defensible for the central absence finding, but should be qualified down for the two genuinely inferred links (PNC<->Nectar, and the Splink<->Palantir 'intersection' that depends on it)."
+      ],
+      "strongest_sourced_claims": [
+        "NO documented Palantir contract/pilot/deployment inside MoJ/HMPPS, only lobbying -- fully corroborated (Guardian/Ben Quinn via inkl/BeamStart/Magzter/Techmeme/OECD.AI). Letter to prisons minister Timpson ~3 weeks after the general election; talks began under the prior Conservative government; ministers largely did not respond; Amnesty raised human-rights/miscarriage-of-justice concerns. Verified.",
+        "MoJ's operational reoffending tool ARNS is built IN-HOUSE by MoJ/Justice Digital liaising with Capita (who support legacy OASys), combines probation/prison caseload data with the Police National Computer, processes 1,300+ assessments/day, and is explicitly NOT Palantir -- verified verbatim against the Statewatch (Apr 2025) source, including Dr Philip Howard's quote on combining caseload systems with PNC. Palantir is not mentioned in that source at all.",
+        "Splink is MoJ's OWN in-house open-source probabilistic record-linkage library ('the Internal Data Linking team in the Ministry of Justice built Splink', github.com/moj-analytical-services/splink); the North Essex pilot uses Splink to find PNC numbers for individuals supervised by North Essex Probation Delivery Unit and sends them to police daily. The gov.uk algorithmic-transparency record contains ZERO mention of Palantir. This conclusively supports 'NO Palantir code in any Splink/Data First/Core Person Record system' and 'no merged pipeline.'",
+        "Met up-to-\u00a350m Palantir AI deal blocked by Sadiq Khan/MOPAC on 21 May 2026 -- verified (Computing, Novara, LBC, Middle East Eye, London Economic). MOPAC has final sign-off on >\u00a3500k contracts; blocked over single-supplier procurement ('clear and serious breach'), value-for-money and lock-in concerns. Two-year deal to automate intelligence analysis. Verified.",
+        "Leicestershire/EMSOU ~\u00a3800k Palantir contract and its removal from public record -- BETTER sourced than the profile's 'unverified' flag suggests: contract award notice removed from Contracts Finder by 2 Dec 2024 (Wayback snapshot), Leicestershire Police denied a Leicester Gazette FOI, and Good Law Project reports 35 forces refused FOIs citing national-security/law-enforcement exemptions. Recommend upgrading this from unverified to verified.",
+        "Nectar real-time data-sharing 'single unified view' network across East-of-England forces processing suspect AND victim/witness/children data plus special-category data (political opinions, health, trade-union membership, sexual orientation, race) -- verified against Liberty Investigates and Bedford Independent.",
+        "Bedfordshire Romanian ATM-gang casework: 100,000+ Romanian phone messages auto-translated/transcribed, link-charting, conviction support using Palantir FOUNDRY -- verified, with the product family explicitly documented as Foundry."
+      ],
+      "unsupported_to_remove": [
+        "Remove or explicitly downgrade any phrasing that treats the PNC overlap between Nectar and Splink as documented fact. Acceptable framing: 'Splink (MoJ-side) demonstrably uses PNC numbers per the gov.uk transparency record; Nectar (police-side) is reported only on force-held data and its PNC use is INFERRED, not documented.' The shared-PNC 'concrete intersection' language in link_to_splink should be softened to 'possible/inferred intersection' since it rests on the unconfirmed Nectar-PNC assumption.",
+        "Drop the hedged 'Foundry/Gotham-family' uncertainty for the Bedfordshire case specifically -- it is documented as Foundry. Keep the hedge only for the blocked Met deal (where Gotham/AIP are referenced) and for the general Nectar platform mapping.",
+        "The clean 'Nectar (East-of-England) vs separate 5-force East Midlands project' split should be presented as the profile's own reconstruction, not as source-stated, since Liberty names Leicestershire within the Nectar reporting. Either cite a source that draws the split or label it as inference."
+      ],
+      "corrections": [
+        "Upgrade the Leicestershire ~\u00a3800k EMSOU contract from 'unverified_flags' to a sourced claim: Contracts Finder award-notice removal corroborated via Wayback (2 Dec 2024 snapshot), Good Law Project and Leicester Gazette FOI reporting; 35 forces refused FOIs. The ~\u00a3800k value remains 'reported' (FOI denied), but the existence + delisting are documented.",
+        "ARNS detail: the source frames ARNS as built by 'a team from Justice digital who are liaising with Capita, who currently provide technical support for OASys' -- i.e., Capita supports legacy OASys, not necessarily a co-builder of ARNS. The profile's '(MoJ Digital + Capita)' is close but slightly overstates Capita's role in ARNS itself; phrase as 'MoJ/Justice Digital in-house, liaising with Capita (legacy OASys support).'",
+        "Tier confirmed as SAME_DEPARTMENT_OVERLAP and arguably borderline-toward-THEMATIC: Splink is MoJ/HMPPS-side; Palantir's only OPERATIONAL UK criminal-justice presence (Nectar/Foundry) is in POLICING, a different body from MoJ/HMPPS. The genuine same-department overlap with Palantir is only at the LOBBYING (non-delivered) level inside MoJ. Where Palantir actually operates is a separate body. Keep SAME_DEPARTMENT_OVERLAP but make explicit that the 'same department' part is lobbying-only and the operational part is a different body (policing)."
+      ],
+      "notes": "Adversarial bottom line: the profile's CENTRAL thesis -- that there is NO documented Palantir contract/pilot/deployment in MoJ/HMPPS and that this absence is the finding -- survives hostile scrutiny intact and is well-sourced. As a Palantir lawyer I cannot refute the absence claim; if anything the profile is admirably careful in NOT alleging a contract.\n\nThe connection_tier (SAME_DEPARTMENT_OVERLAP) is correctly chosen and is NOT inflated to DIRECT_DOCUMENTED_LINK -- good. It is defensible, sitting on the border with THEMATIC_ADJACENCY because Palantir's operational footprint is in policing (a separate body), and its MoJ presence is lobbying-only.\n\nThe implied Splink<->Palantir technical/data link is the right place to attack, and the profile mostly polices itself correctly: it explicitly states 'NO documented data flow between Splink and Palantir, and NO Palantir code in any Splink/Data First/Core Person Record system.' I confirmed this independently -- the gov.uk Splink algorithmic-transparency record names no vendor, is MoJ-built open source, and never mentions Palantir. So the strong negative is TRUE. The remaining weakness is that the one positive 'intersection' the profile does claim (shared PNC at the policing layer) leans on an UNCONFIRMED assumption that Nectar uses PNC -- the primary Liberty source does not say so. That single inferential hinge is the only thing standing between SAME_DEPARTMENT_OVERLAP and THEMATIC_ADJACENCY, and it should be flagged as inferred, not documented.\n\nMust-fix before publication: (1) soften all PNC<->Nectar overlap language to 'inferred'; (2) state Foundry explicitly for the Bedfordshire case; (3) upgrade Leicestershire delisting to a sourced claim; (4) clarify Capita supports legacy OASys rather than co-building ARNS; (5) label the Nectar/East-Midlands force split as the author's reconstruction. None of these undermine the verdict -- the profile is SOLID, conservative, and does not overclaim a Palantir-MoJ contract or a merged Splink pipeline. Relevant primary source for the Splink negative: https://www.gov.uk/algorithmic-transparency-records/moj-splink-master-record"
+    }
+  },
+  {
+    "vector": "cross-gov",
+    "title": "Cross-government / Cabinet Office / ONS / National Data Library",
+    "profile": {
+      "vector": "Cross-government / Cabinet Office / ONS / National Data Library",
+      "uk_body": "Cabinet Office (Border Operations Centre); DLUHC/MHCLG (Homes for Ukraine, with Home Office + local authorities); Crown Commercial Service (framework host). NOT ONS Integrated Data Service, NOT National Fraud Initiative/PSFA, NOT (yet) National Data Library.",
+      "connection_tier": "DIRECT_DOCUMENTED_LINK",
+      "summary": "Palantir has a documented, operational cross-government data-integration footprint anchored in the Cabinet Office. Under a ~\u00a320m (initial \u00a37.85m + two \u00a36.125m extensions) Border Operations Centre / \"border flow\" contract awarded without competitive tender in August 2020, the Cabinet Office authorised Palantir's Foundry platform to extract and combine data from seven bodies \u2014 Home Office, HMRC, Defra, Department for Transport, DVSA, Highways England and Port Health Authorities \u2014 described internally as one of the most comprehensive cross-government datasets ever compiled. A second documented cross-departmental flow is the Homes for Ukraine scheme, where Palantir's platform (6 months free, then \u00a34.5m in Sept 2022, extended +\u00a35.5m Sept 2023) lets DLUHC, the Home Office and 2,000+ local-authority caseworkers across England/NI share applicant data. Palantir has been a Crown Commercial Service supplier since April 2021 and lists Foundry & AIP on G-Cloud 14, the procurement on-ramp for further cross-government spread. CRITICAL DISTINCTION: the ONS Integrated Data Service is built on Google Cloud/BigQuery (not Palantir), the National Fraud Initiative/PSFA data-matching runs on Synectics Solutions (not Palantir), and the proposed National Data Library has no named Palantir role \u2014 so Palantir is the OPERATIONAL integrator at the Cabinet Office while ONS/Splink remain the STATISTICAL linkers; they are not the same pipeline.",
+      "what_palantir_does": [
+        "Cabinet Office Border Operations Centre: Foundry's 'Data Connector' extracts live operational data from 7 departments' systems (Home Office and HMRC in phase 1; DfT, Defra, DVSA, Highways England, port-area local authorities in phase 2) into a single dedicated Foundry partition for risk-based monitoring of the flow/throughput of goods and people across the UK border post-Brexit.",
+        "Data hosted in a dedicated UK partition of the Palantir Foundry System on AWS London region, stated as for the exclusive use of HMG.",
+        "Homes for Ukraine: a single Foundry-based platform lets DLUHC, the Home Office and 2,000+ local-authority caseworkers share and manage end-to-end refugee/sponsor applicant data (identity, safeguarding, accommodation matching).",
+        "Operates as a 'single source of truth' integration layer \u2014 Foundry's stated function is mapping disparate source-system data to a unified customer data model/objects; this is operational case-level integration, not de-identified statistical research linkage.",
+        "Available to the wider public sector via Crown Commercial Service / G-Cloud 14 (Foundry & AIP service listing, 2024), enabling further direct-award call-offs across departments, councils and police."
+      ],
+      "link_to_splink_work": "SAME-DEPARTMENT / SAME-ENTITY OVERLAP, NOT a shared pipeline. The Splink investigation's entities include the Home Office and Cabinet Office. Palantir's Cabinet Office Border Operations Centre directly ingests Home Office (and HMRC) data, and its Homes for Ukraine platform fuses DLUHC + Home Office data \u2014 so Palantir and the Splink ecosystem touch the SAME departments (Home Office, Cabinet Office). BUT there is NO documented data flow between Splink and Palantir Foundry, and no shared dataset. The decisive separation: ONS's statistical linkage estate (Integrated Data Service) runs on Google Cloud/BigQuery \u2014 NOT Palantir; the National Fraud Initiative runs on Synectics \u2014 NOT Palantir; the National Data Library has no Palantir role. Splink/ONS = statistical, de-identified, research-only linkage; Palantir/Cabinet Office = operational, identifiable, case-level integration. The honest framing is two parallel 'joining-up' tracks in the same government, occasionally over the same departments, with no proven technical bridge between them.",
+      "palantir_product": "Foundry (with Data Connector); AIP also now listed on G-Cloud 14",
+      "contract_value_dates": "Cabinet Office border flow: tested Foundry Dec 2019 (free no-deal-planning trial); contract Aug 2020 \u2014 initial 1-yr \u00a37.85m + two 1-yr extensions \u00a36.125m each (up to ~\u00a320m), awarded WITHOUT competitive tender (direct award justified under Public Contracts Regulations 2015; criticised by MPs incl. Clive Lewis). Homes for Ukraine (DLUHC): 6 months FREE, then 12-mo direct award \u00a34.5m (Sept 2022), extended +\u00a35.5m (Sept 2023) = ~\u00a310m; the government's chief commercial officer formally wrote to Palantir noting concern that offering services at little/nominal cost to gain a commercial foothold cuts against open-competition principles. Palantir named a Crown Commercial Service supplier Apr 2021; Foundry & AIP on G-Cloud 14 (service definition dated Nov 2024) \u2014 this CCS/G-Cloud framework is the compliant on-ramp for subsequent cross-government call-offs. Byline Times/The Citizens cumulative UK public-sector spend estimate \u00a394m (since 2009) rising to \u00a3244.5m; later (Jan 2026, The Nerve) reporting cites 34+ contracts across 10+ departments worth \u00a3670m+ government-wide (most of that is NHS FDP \u00a3330m/\u00a3500m and MoD, outside this vector).",
+      "operational_vs_statistical": "OPERATIONAL. Both documented Cabinet Office-vector uses are identifiable, case-level, real-time/near-real-time integration for live decision-making (border throughput risk monitoring; refugee caseworking) \u2014 not anonymised statistical/research linkage. This is the categorical opposite of ONS/Splink's statutory, de-identified, research-only model (and the opposite of MoJ Data First's 'not for operational decision-making' research datasets). It mirrors the Splink dossier's own 'Statistics or Operations?' finding: the alarming track is the operational, identifiable one \u2014 and in the cross-government space that track is Palantir, not Splink.",
+      "consent_oversight": "No documented individual consent/notification/opt-out for cross-departmental combination; lawful basis = departmental data-sharing agreements / public task. NAO investigation + PAC scrutiny of Homes for Ukraine; MPs (EDM 65235, Hansard) and openDemocracy/Byline Times/Foxglove raised procurement and mosaic-effect/re-identification concerns over concentrating cross-government data in one private US vendor.",
+      "controversies_litigation": [
+        "Conflict-of-access concern: ex-MI6 chief Sir John Sawers brokered the 2019 Palantir CEO\u2013Cabinet Office permanent secretary (John Manzoni) meeting (openDemocracy).",
+        "No-competition awards: both the border deal and Homes for Ukraine criticised; CCO formally rebuked Palantir's free-foothold tactic.",
+        "'Mosaic effect': two MoD systems engineers (Jan/Feb 2026, The Nerve) warned aggregating cross-government data in Palantir is a national-security threat enabling a profile of the whole population; Hansard MoD Palantir debate 10 Feb 2026.",
+        "Parliamentary scrutiny: Early Day Motion 65235 on the Palantir contract; multiple Hansard debates.",
+        "NHS FDP litigation/campaigns (Foxglove, Good Law Project, Medact, doctors' opt-out) \u2014 adjacent, not this vector but same vendor-trust controversy.",
+        "Data-sovereignty alarm over a US firm (CIA In-Q-Tel origins, Thiel) holding combined UK govt data, amplified by US examples (Palantir's IRS/interagency data-mining under 2025 Trump EO)."
+      ],
+      "datasets": [
+        "Home Office border/immigration & movement data (border flow)",
+        "HMRC customs/goods data (border flow)",
+        "Defra, DfT, DVSA, Highways England, Port Health Authority operational data (border flow)",
+        "DLUHC + Home Office + local-authority refugee/sponsor applicant & safeguarding data (Homes for Ukraine)",
+        "NOT ONS IDS de-identified statistical datasets (those sit on Google Cloud/BigQuery, separate from Palantir)"
+      ],
+      "citations": [
+        {
+          "title": "Palantir won borders contract after introduction from ex-MI6 boss (openDemocracy)",
+          "url": "https://www.opendemocracy.net/en/palantir-mi6-spymaster-cabinet-office-contract-brexit-john-sawers/",
+          "date": "2020"
+        },
+        {
+          "title": "Government to spend up to \u00a320m on 'border flow' contract with Palantir (PublicTechnology)",
+          "url": "https://www.publictechnology.net/2020/10/28/business-and-industry/government-spend-20m-border-flow-contract-cia-backed-big-data-firm-palantir/",
+          "date": "2020-10-28"
+        },
+        {
+          "title": "Revealed: The Involvement of Palantir and Faculty in the UK Public Sector (Byline Times / The Citizens)",
+          "url": "https://bylinetimes.com/2021/07/30/revealed-the-involvement-of-palantir-and-faculty-in-the-uk-public-sector/",
+          "date": "2021-07-30"
+        },
+        {
+          "title": "DLUHC retains Palantir as IT supplier for Homes for Ukraine programme (UKAuthority)",
+          "url": "https://www.ukauthority.com/articles/dluhc-retains-palantir-as-it-supplier-for-homes-for-ukraine-programme/",
+          "date": "2023"
+        },
+        {
+          "title": "Investigation into the Homes for Ukraine scheme (National Audit Office)",
+          "url": "https://www.nao.org.uk/press-releases/investigation-into-homes-for-ukraine/",
+          "date": "2023-10-17"
+        },
+        {
+          "title": "Palantir Technologies UK named as a Crown Commercial Service supplier (Business Wire)",
+          "url": "https://www.businesswire.com/news/home/20210421006140/en/Palantir-Technologies-UK-named-as-a-Crown-Commercial-Service-supplier",
+          "date": "2021-04-21"
+        },
+        {
+          "title": "Palantir Platform: Foundry & AIP service definition (G-Cloud 14, Digital Marketplace)",
+          "url": "https://assets.applytosupply.digitalmarketplace.service.gov.uk/g-cloud-14/documents/92736/804537709233305-service-definition-document-2024-11-26-1252.pdf",
+          "date": "2024-11-26"
+        },
+        {
+          "title": "National Data Library: progress update, January 2026 (GOV.UK)",
+          "url": "https://www.gov.uk/government/publications/national-data-library-progress-update-january-2026/national-data-library-progress-update-january-2026",
+          "date": "2026-01"
+        },
+        {
+          "title": "Integrated Data Service (ONS) \u2014 built on Google Cloud/BigQuery",
+          "url": "https://www.ons.gov.uk/aboutus/whatwedo/statistics/requestingstatistics/secureresearchservice/integrateddataserviceids",
+          "date": "2025"
+        },
+        {
+          "title": "National Fraud Initiative strategy \u2014 data-matching via Synectics Solutions (GOV.UK)",
+          "url": "https://www.gov.uk/government/publications/national-fraud-initiative-strategy/national-fraud-initiative-strategy-html",
+          "date": "2024"
+        },
+        {
+          "title": "'It beggars belief': MoD sources warn Palantir's role is a threat to UK security (The Nerve)",
+          "url": "https://www.thenerve.news/p/palantir-technologies-uk-mod-sources-government-data-insights-security-state-secrets",
+          "date": "2026"
+        },
+        {
+          "title": "Ministry of Defence: Palantir Contracts (Hansard, UK Parliament)",
+          "url": "https://hansard.parliament.uk/commons/2026-02-10/debates/FECED111-4FA8-4343-BFAF-18D6C13808D0/MinistryOfDefencePalantirContracts",
+          "date": "2026-02-10"
+        },
+        {
+          "title": "Government contract with Palantir Technologies \u2014 EDM 65235 (UK Parliament)",
+          "url": "https://edm.parliament.uk/early-day-motion/65235/government-contract-with-palantir-technologies",
+          "date": "2026"
+        }
+      ],
+      "confidence": "high",
+      "caveats": "Cumulative spend figures vary by source and vintage (\u00a394m \u2192 \u00a3244.5m \u2192 \u00a3670m+) because they aggregate different scopes and years; the \u00a3670m+ figure is government-wide and dominated by NHS FDP and MoD, which are outside this Cabinet-Office/ONS/NDL vector. The Cabinet Office border deal's headline value is the contracted ceiling (~\u00a320m); actual spend if extensions were/weren't exercised is not fully confirmed here. The National Data Library is still pre-procurement (details due spring 2026), so a future Palantir role cannot be excluded \u2014 only that none is documented now. The link to the Splink investigation is department/entity overlap (Home Office, Cabinet Office), explicitly NOT a documented Splink\u2194Palantir data pipeline.",
+      "unverified_flags": [
+        "The Nerve's \u00a3670m / 34-contracts / 10-departments tally not independently cross-checked against Contracts Finder line-by-line in this pass.",
+        "Whether the Cabinet Office border contract's two extension years were actually exercised (full ~\u00a320m realised) not confirmed.",
+        "Exact current status of the border flow / Border Operations Centre Palantir deployment in 2026 not verified.",
+        "National Data Library design-phase contractor name not confirmed (reported as a separate six-figure / \u00a3650k award, not Palantir)."
+      ]
+    },
+    "verification": {
+      "verdict": "MIXED",
+      "adjusted_connection_tier": "SAME_DEPARTMENT_OVERLAP",
+      "overclaims": [
+        "TIER MISLABEL (the central one): the profile is headlined DIRECT_DOCUMENTED_LINK, but that tier is only earned by the Palantir<->Cabinet Office relationship itself. For the thing this profile is actually being mined for - a Splink<->Palantir connection - the honest tier is SAME_DEPARTMENT_OVERLAP at best. The profile's own link_to_splink_work text concedes 'NO documented data flow between Splink and Palantir Foundry, and no shared dataset.' A Palantir lawyer would seize on the headline tier as implying a documented Splink linkage that does not exist. The DIRECT tier must not sit at the top of a profile whose disclosure purpose is the Splink story.",
+        "FRESHNESS / OPERATIONAL-STATUS OVERCLAIM: the profile presents Homes for Ukraine as a current, live Palantir data-fusion flow ('lets DLUHC, the Home Office and 2,000+ local-authority caseworkers share applicant data' - present tense). Reporting (techmonitor/silicon.co.uk/AOL, surfaced this pass) shows MHCLG has REPLACED the Palantir system with an in-house build and publicly states it is 'saving millions a year' in running costs. The Palantir HfU deployment is wound down / superseded, not an ongoing operational flow. Every present-tense HfU claim and the 'what_palantir_does' HfU bullet must be re-tensed and caveated.",
+        "NAMED-BODY ERROR (DVSA vs DVLA): the profile lists 'DVSA' among the border-flow bodies. The PublicTechnology source's free-trial list names 'DVLA' (Driver and Vehicle Licensing Agency); the phase-2 invitation list separately mentions DVSA. The two are conflated. As a contract-fact claim about which bodies' data was ingested, this needs the exact agency pinned to the exact phase, or it is an inaccuracy a respondent can use to discredit the dataset list.",
+        "'SINGLE SOURCE OF TRUTH' / 'most comprehensive cross-government dataset ever compiled': this characterisation is sourced to campaigner/journalistic framing (openDemocracy/Byline), not to the contract or a government statement. It should be attributed as a claim ('described by openDemocracy as...'), not stated as established fact.",
+        "Cumulative spend laddering (94m -> 244.5m -> 670m): self-flagged in caveats but still presented in the summary as if cumulative. The 670m+ is government-wide and dominated by NHS FDP/MoD which the profile itself says are OUTSIDE this vector - so it should not appear in a Cabinet-Office-vector profile except as an explicit out-of-scope footnote. As written it inflates the apparent size of the Cabinet Office footprint."
+      ],
+      "strongest_sourced_claims": [
+        "Border flow contract values and structure: initial 1-yr 7.85m + two optional 1-yr extensions at 6.125m each (>20m ceiling), Cabinet Office, Aug 2020, Foundry + Data Connector, near-real-time cross-department border flow data - verified against PublicTechnology (2020-10-28).",
+        "Data-hosting/data-flow claim: 'separate dedicated partition of the Palantir Foundry System for the exclusive use of HMG, hosted in the AWS London region', Palantir barred from processing data outside UK without Cabinet Office authorisation, encryption at rest/in transit - verified VERBATIM from the contract via PublicTechnology. This is the strongest data-flow claim in the profile.",
+        "Homes for Ukraine figures: 6 months free + 12-mo direct award 4.5m (Sept 2022) + 12-mo extension 5.5m (Sept 2023) - directly confirmed by the National Audit Office investigation, which names Palantir explicitly. Gold-standard primary source.",
+        "CCO rebuke: Gareth Rhys Williams (govt chief commercial officer) wrote in Feb 2023 noting concern over offering services at 'zero or nominal cost to gain a commercial foothold, contrary to the principles of public procurement which usually require open competition' - verified near-verbatim (thestack/techmonitor).",
+        "Negative-control distinctions hold up: NFI data-matching runs on Synectics Solutions, NOT Palantir (verified - Synectics incumbent since 1996, Cabinet Office re-award confirmed via UKAuthority/Synectics). ONS IDS on Google Cloud/BigQuery and NDL having no named Palantir role are correctly stated as separators.",
+        "The decisive negative claim - NO documented Splink<->Palantir technical or data pipeline - is independently corroborated by the repo's own evidence file (/Users/btmaffiliate/uk-data-linkage-disclosure/evidence/Splink-Palantir-Connection-Evidence.md): Palantir/Foundry appear nowhere in the Splink repo; no Palantir contributors; the only connective tissue is indirect via PwC's UK alliance, and even that does not touch Splink."
+      ],
+      "unsupported_to_remove": [
+        "Remove or fully attribute the present-tense framing of Homes for Ukraine as a live Palantir flow - it has been replaced by an in-house MHCLG build. Must be marked as a former/wound-down deployment.",
+        "Remove 'DVSA' from the confirmed border-flow body list unless pinned to the phase-2 invitation list specifically; the free-trial ingest list names DVLA. Do not present both as interchangeable.",
+        "Remove the 670m+ government-wide figure from the summary/contract_value_dates body, or relegate it to an explicit out-of-scope footnote, since the profile itself states NHS FDP/MoD are outside this vector.",
+        "Remove the unverified Jan 2026 'The Nerve' 34-contracts/10-departments/670m tally from any load-bearing position - it is self-flagged as not cross-checked against Contracts Finder and should not be cited as fact.",
+        "Soften 'one of the most comprehensive cross-government datasets ever compiled' to attributed reporting, not asserted fact."
+      ],
+      "corrections": [
+        "Re-tier the headline: keep DIRECT_DOCUMENTED_LINK ONLY for the Palantir<->Cabinet Office relationship, and explicitly carry SAME_DEPARTMENT_OVERLAP as the tier for any Splink-adjacent inference. The profile must lead with the weaker tier when used inside the Splink disclosure.",
+        "Update Homes for Ukraine to past tense / superseded: Palantir HfU platform ran ~Sept 2022-2024 then replaced by an in-house MHCLG system (reported savings of 'millions/year'). Add a citation (techmonitor/silicon.co.uk/AOL, Oct 2023 NAO + 2025-26 replacement reporting).",
+        "Pin border-flow bodies precisely: Phase 1 = Home Office + HMRC; free-trial/feasibility set per PublicTechnology = HMRC, Home Office, Defra, DfT, DVLA, Highways England, Port Health Authorities. Reconcile DVLA vs DVSA before publication.",
+        "Date the CCO letter precisely (Feb 2023) and name the author (Gareth Rhys Williams); the profile leaves it undated.",
+        "Demand a primary citation for the 6.125m extensions actually being EXERCISED before any '~20m realised' phrasing; only the ceiling is documented (already self-flagged - enforce it)."
+      ],
+      "notes": "Adversarial verdict: the profile is MIXED, not SOLID, but for honesty reasons rather than fabrication. Every hard contract fact I could test (border flow 7.85m+6.125mx2/AWS-London-partition/Foundry; HfU 4.5m+5.5m+6mo-free via NAO; CCO rebuke; NFI=Synectics) checked out, several verbatim. The profile is also commendably self-aware: it explicitly refuses to claim a Splink<->Palantir pipeline, and that refusal is independently backed by the repo's own evidence log (evidence/Splink-Palantir-Connection-Evidence.md, lines 44-54). The reasons it is not SOLID: (1) the headline tier DIRECT_DOCUMENTED_LINK is true of Palantir<->Cabinet Office but misleading when the profile's reason-for-existence is the Splink story, where the real tier is SAME_DEPARTMENT_OVERLAP - this is the single biggest publication risk and why I downgraded the adjusted tier; (2) a freshness error - Homes for Ukraine Palantir is superseded by an in-house build, yet stated in the present tense; (3) a named-body conflation (DVLA/DVSA); (4) inflation risk from the 670m government-wide figure bleeding into a Cabinet-Office-vector profile. Splink<->Palantir is THEMATIC ADJACENCY at most (shared 'joining-up' theme) with SAME_DEPARTMENT_OVERLAP on Home Office/Cabinet Office; there is no technical or data bridge and none should ever be implied. Before publication: re-tier, re-tense HfU, fix DVLA/DVSA, ring-fence the 670m figure, and attribute the 'most comprehensive dataset' rhetoric. Relevant local file: /Users/btmaffiliate/uk-data-linkage-disclosure/evidence/Splink-Palantir-Connection-Evidence.md"
+    }
+  },
+  {
+    "vector": "corporate-governance",
+    "title": "Palantir corporate / governance / national-security dimension",
+    "profile": {
+      "vector": "Palantir corporate / governance / national-security dimension \u2014 who controls Palantir, its UK revenue/contract totals, procurement-transparency and direct-award controversies, lobbying/revolving-door, and the civil-liberties stakes of a US national-security firm holding integrated UK citizen data.",
+      "uk_body": "Palantir Technologies UK Ltd (UK subsidiary of Palantir Technologies Inc., NYSE: PLTR), counterparty to NHS England, Ministry of Defence, Home Office, multiple UK police forces, Cabinet Office / Crown Commercial Service, AWE (nuclear), Coventry City Council, DEFRA, and the Homes for Ukraine scheme.",
+      "connection_tier": "SAME_DEPARTMENT_OVERLAP",
+      "summary": "Palantir is a US national-security data-integration firm, founded 2003 by Peter Thiel and Alex Karp with early CIA In-Q-Tel funding (~$2m, 2004), now ~$4.5bn revenue (FY2025) with 54% from government, and founder voting control locked at ~49.99% via a tri-class (A/B/F) share structure and a Thiel-Karp-Cohen voting trust. In the UK it holds at least \u00a3670m in disclosed contracts across 10+ government bodies, headlined by the \u00a3330m (initially \u00a3182m) NHS England Federated Data Platform (Nov 2023) and a ~\u00a3240m MoD strategic partnership (announced 2024, contract Dec 2025) awarded without competitive tender. Its core products \u2014 Foundry and Gotham \u2014 ingest, integrate and link previously siloed datasets into a single operational view, which is the same data-linkage capability at the heart of the Splink investigation, but delivered as a proprietary US-owned platform rather than open-source government tooling. The connection to the Splink-investigation entities is SAME_DEPARTMENT_OVERLAP plus thematic data-linkage adjacency: Palantir contracts with several of the same departments (NHS England, Home Office, MoD, police), but there is NO documented technical pipeline linking Splink (MoJ's open-source probabilistic record-linkage library) to Palantir Foundry/Gotham. The dominant story is governance and civil liberties: opaque direct awards, a 30+ official revolving door into the company, and a US national-security vendor positioned to hold integrated UK citizen data.",
+      "what_palantir_does": [
+        "NHS England Federated Data Platform (FDP): Foundry-based platform that ingests daily hospital data (admissions, inpatient, discharge, outpatient activity) plus personal identifiers (dates of birth, postcodes, detailed medical histories) previously held separately by individual trusts, creating a near-real-time linked operational view across all English NHS hospitals (rolled out to all trusts by March 2023; FDP contract Nov 2023). NHS England reports operational gains (e.g. ~114 extra elective surgeries/month, ~35% reduction in delayed discharge days at adopting trusts).",
+        "Origin in COVID-19 Data Store (2020): first NHS deployment of Foundry under a \u00a31 contract awarded without tender; Matt Hancock used special ministerial powers (COPI notices) to bypass patient confidentiality rules during the pandemic \u2014 the on-ramp for all later NHS work.",
+        "Core capability is data linkage and integration: Palantir's platforms are explicitly designed to move data across systems and link multiple datasets into a single unified view \u2014 the same joining-up function as government record-linkage, but proprietary and US-controlled.",
+        "UK policing 'Nectar' real-time data-sharing network (Liberty Investigates / i, June 2025): proof-of-concept linking crime records with financial information and other intelligence across forces (Bedfordshire, Leicestershire confirmed; Hertfordshire/Cambridgeshire piloting; ~9 forces plus East Midlands). Processes data on suspects, victims, witnesses, children and vulnerable people, and special-category data (political opinions, beliefs, health, trade-union membership, sexual orientation, race). Palantir also providing AI investigation tools to ~11 police forces.",
+        "MoD: ~\u00a3388m in current/historic contracts (12+ awards), culminating in a ~\u00a3240m strategic data-analytics partnership for strategic/tactical/live operational decision-making across armed forces \u2014 >3x any prior MoD award, not competitively tendered.",
+        "Home Office / immigration: documented UK Home Office contracts; internationally Palantir runs ICE's Investigative Case Management system (since 2014), the FALCON/Gotham implementation, and a ~$30m 'ImmigrationOS' deportation-targeting platform (April 2025) \u2014 the international template for what integrated immigration data linkage looks like under Palantir.",
+        "Other UK bodies: ~\u00a315m AWE Nuclear Security Technologies 'cloud support' (not on Contracts Finder; MoD declined to confirm), ~\u00a3250k Nuclear Propulsion IPT, Cabinet Office Foundry use for Brexit border planning, plus Coventry City Council, DEFRA and the Homes for Ukraine scheme."
+      ],
+      "link_to_splink_work": "SAME_DEPARTMENT_OVERLAP plus THEMATIC_ADJACENCY \u2014 and this distinction must be kept honest. (1) Same departments: Palantir holds documented contracts with bodies that also feature in the Splink investigation \u2014 NHS England (FDP), Home Office, MoD, and UK police forces. (2) Same theme: both Splink (MoJ Data First's open-source probabilistic record-linkage library) and Palantir Foundry/Gotham exist to JOIN previously siloed citizen datasets into a linked whole \u2014 Palantir is effectively the proprietary, US-owned, operational commercial analogue of the open-source government data-linkage work Splink represents. (3) Critical caveat \u2014 NO documented technical link: there is no published contract, data-flow, or pipeline showing Splink running inside, feeding, or being fed by Palantir, nor any evidence the MoJ Data First Splink work uses Palantir. The DIRECT documented overlap is institutional (shared departments) and trajectory (the 'quiet joining-up' of citizen data), NOT a shared engineering pipeline. Do not assert a Splink\u2194Palantir technical integration; none is evidenced.",
+      "palantir_product": "Primarily Foundry (NHS FDP, COVID-19 Data Store, Cabinet Office Brexit border planning, commercial/MoD analytics) and Gotham (intelligence/defence/policing operational platform; ICE FALCON internationally). AIP (Artificial Intelligence Platform) is Palantir's newer LLM-orchestration layer increasingly bundled with both. UK policing 'Nectar' uses a Palantir platform (Gotham-class) though the specific SKU was not named in the source.",
+      "contract_value_dates": "At least \u00a3670m total disclosed UK government contracts (The Nerve investigation). Breakdown: MoD ~\u00a3388m (12+ contracts/extensions, bulk from 2018; earliest a 2012 Olympics contract); NHS ~\u00a3244m across 12 contracts/extensions; AWE Nuclear ~\u00a315m (cloud support, off Contracts Finder); Nuclear Propulsion IPT ~\u00a3250k. Headline awards: NHS FDP \u2014 published award \u00a3182.2m, envelope up to \u00a3330m over 7 years, awarded Nov 2023, initial 3-year term ending Feb 2027 (break clause); FDP delivery partners Accenture, PwC, NECS, Carnall Farrar. MoD strategic partnership ~\u00a3240m, 3-year, announced 2024 / contracted Dec 2025, NOT competitively tendered. Original NHS COVID-19 Data Store: \u00a31 (2020), extended through Jan 2023, no figure initially published. Procurement route: mix of competitive (FDP) and direct/no-tender awards (COVID \u00a31 contract, MoD \u00a3240m, AWE contracts absent from Contracts Finder), with persistent transparency gaps \u2014 many of the 34 identified contracts not on the official Contracts Finder site.",
+      "operational_vs_statistical": "Overwhelmingly OPERATIONAL, not statistical. Unlike the ONS/MoJ Data First/Splink lineage (de-identified, accredited-researcher, statistical-research framing under safe-settings governance), Palantir's UK deployments are live operational tooling: the FDP drives day-to-day hospital operations (bed/discharge/elective management), the MoD contract supports 'strategic, tactical and live operational decision-making,' and the police Nectar network is real-time intelligence sharing. This is the key contrast \u2014 Splink-type work is statistical record-linkage for research; Palantir is real-time operational data integration acting on identifiable or re-identifiable individuals.",
+      "consent_oversight": "Weak and contested. NHS England relies on pseudonymisation rather than consent; an NHS document acknowledges the company will 'collect and process confidential patient information,' and legal experts note pseudonymised health data is easily re-identified. There is no clear patient opt-out mapped to FDP; the COVID origin used emergency COPI notices to bypass confidentiality. Foxglove (Cori Crider) acted for the National Pensioners' Convention, Just Treatment and the Doctors Association UK, writing to NHS England over pseudonymised-data sharing; NHS England did not substantively answer consent concerns after months. BMA passed motions opposing FDP rollout on governance/ethics grounds and urged doctors to limit engagement. Police Nectar special-category data processing raised data-breach and predictive-policing oversight concerns. MoD/AWE awards lack competitive-tender transparency. Critics (Lib Dem MP Martin Wrigley) warn of 'massive technical lock-in' weakening democratic oversight.",
+      "controversies_litigation": [
+        "openDemocracy/Foxglove litigation forcing publication of the secret 2020 COVID-19 Data Store contract and challenging the no-tender extension.",
+        "Good Law Project 'Say No to Palantir' / 'No Palantir in the NHS' campaign \u2014 ~50,000 patients wrote to NHS trust boards; coalition including Privacy International, Corporate Watch, Medact, backed by Amnesty International; Foxglove legal challenges over pseudonymised data sharing.",
+        "Revolving door: investigations (The Nerve) found Palantir hired 30+ senior UK officials, including the AI strategy leaders of both the NHS and the MoD. Named: Indra Joshi (ex-NHSX director of AI, who helped build the COVID-19 datastore \u2192 Palantir director of health/research/AI, April 2022); Harjeet Dhaliwal (ex-deputy director of data services, NHS England); from MoD \u2014 Barnaby Kistruck (helped draft the Strategic Defence Review, joined 9 days after leaving MoD), Laurence Lee, Damian Parmenter, Polly Scully (ex-MoD strategic director), and ex-armed-forces minister Leo Docherty.",
+        "Governance/control: tri-class share structure (Class A 1 vote, Class B 10 votes, Class F variable) keeps the Thiel-Karp-Cohen founder voting trust at ~49.99% in perpetuity while founders hold a minority economic stake; flagged in S-1 and shareholder litigation.",
+        "Foreign-control / data-sovereignty stakes: a US firm whose chairman Peter Thiel is a major Trump donor and which holds ICE deportation contracts being positioned to hold integrated UK NHS/policing/defence data; fears (raised in The Lowdown and campaigners) that Palantir's linkage capability could enable Home Office/police access to confidential patient data.",
+        "Louis Mosley (Palantir EVP UK & Europe), grandson of Oswald Mosley, appeared at the right-wing ARC conference (2025) alongside Nigel Farage and Jordan Peterson \u2014 reputational/lobbying optics.",
+        "MoD \u00a3240m award without competitive tender criticised by Action on Armed Violence (Iain Overton) and Lib Dem MP Martin Wrigley over military-industrial revolving door and vendor lock-in."
+      ],
+      "datasets": [
+        "NHS England hospital activity data (admissions, inpatient, discharge, outpatient) plus identifiers: dates of birth, postcodes, detailed medical histories (FDP / Faster Data Flows)",
+        "NHS COVID-19 Data Store datasets (2020 origin)",
+        "Prospective FDP scope reportedly including GP and social care records (contested / not fully confirmed)",
+        "UK police crime records linked with financial information and other intelligence; special-category data (political opinions, beliefs, health, trade-union membership, sexual orientation, race) on suspects, victims, witnesses, children, vulnerable people (Nectar)",
+        "MoD strategic/tactical/operational data across security classifications",
+        "Home Office immigration data (UK); internationally ICE federal/private database networks (FALCON/ICM/ImmigrationOS)",
+        "Cabinet Office Brexit border-planning data"
+      ],
+      "unverified_flags": [
+        "The FDP including GP and social care records is reported/expected but not confirmed as live ingestion.",
+        "The specific Palantir product SKU behind the police 'Nectar' network was not named in the primary source (described as Gotham-class).",
+        "'34 contracts / 10 departments' and the '\u00a3670m total' come from journalistic aggregation (The Nerve) given gaps in Contracts Finder; exact totals depend on what is counted and are not fully reconcilable to official disclosure.",
+        "FY2025 ~$4.5bn revenue and 54% government split are drawn from press summaries of Palantir filings; treat the exact split as approximate pending direct 10-K confirmation.",
+        "No documented technical link between MoJ Data First's Splink and Palantir; any such linkage would be SPECULATIVE and is explicitly excluded."
+      ],
+      "caveats": "This profile establishes a strong institutional and thematic relationship to the Splink-investigation entities (shared departments; same 'join up citizen data' trajectory) but deliberately does NOT assert a technical pipeline between Splink and Palantir, because none is documented. Splink is open-source statistical record-linkage tooling owned by the MoJ; Palantir Foundry/Gotham is proprietary operational data integration owned by a US national-security firm \u2014 they are conceptual cousins, not a proven shared system. Many UK contract figures rest on investigative aggregation due to genuine procurement-transparency gaps, so totals are best-estimate floors, not audited figures. Financials are from secondary summaries of SEC filings and should be confirmed against the primary 10-K before publication.",
+      "confidence": "high",
+      "citations": [
+        {
+          "title": "Revealed: Palantir deals with UK government amount to at least \u00a3670m (The Nerve)",
+          "url": "https://www.thenerve.news/p/palantir-technologies-uk-government-contracts-size-nuclear-deterrent-atomic-peter-thiel-louis-mosley"
+        },
+        {
+          "title": "The Palantir pipeline: how Peter Thiel's surveillance firm hired more than 30 senior UK officials (The Nerve)",
+          "url": "https://www.thenerve.news/p/palantir-revolving-doors-peter-thiel-transparency-corruption-risk"
+        },
+        {
+          "title": "Palantir hired four ex-Ministry of Defence officials before winning record defence contract (openDemocracy)",
+          "url": "https://www.opendemocracy.net/en/palantir-ministry-defence-hire-four-officials-2025-record-defence-contract-240-million/"
+        },
+        {
+          "title": "Palantir: NHS trusts ordered to share patient data with US 'spy-tech' firm (openDemocracy)",
+          "url": "https://www.opendemocracy.net/en/palantir-peter-thiel-nhs-england-foundry-faster-data-flows/"
+        },
+        {
+          "title": "Palantir, the controversy, the contracts and the campaign against the FDP (The Lowdown)",
+          "url": "https://lowdownnhs.info/topics/accountablility/palantir-the-controversy-the-contracts-and-the-campaign/"
+        },
+        {
+          "title": "NHS England awards Federated Data Platform contract to Palantir (Digital Health)",
+          "url": "https://www.digitalhealth.net/2023/11/nhs-england-awards-330m-federated-data-platform-contract-to-palantir/"
+        },
+        {
+          "title": "Federated Data Platform and Associated Services \u2014 Contracts Finder (gov.uk)",
+          "url": "https://www.contractsfinder.service.gov.uk/Notice/0f8a65b5-23a2-4294-abb1-a7fd8efb3ad0"
+        },
+        {
+          "title": "NHS England \u2014 Federated Data Platform contract explainer",
+          "url": "https://www.england.nhs.uk/digitaltechnology/nhs-federated-data-platform/security-privacy/contract-explainer/"
+        },
+        {
+          "title": "UK police working with controversial tech giant Palantir on real-time surveillance network (Liberty Investigates / i)",
+          "url": "https://libertyinvestigates.org.uk/articles/uk-police-working-with-controversial-tech-giant-palantir-on-real-time-surveillance-network/"
+        },
+        {
+          "title": "Former NHSX director of AI Indra Joshi joins Palantir Technologies (Healthcare IT News)",
+          "url": "https://www.healthcareitnews.com/news/emea/former-nhsx-director-ai-indra-joshi-joins-palantir-technologies"
+        },
+        {
+          "title": "Briefing: Concerns Regarding Palantir Technologies and NHS Data Systems (Medact)",
+          "url": "https://www.medact.org/2026/resources/briefings/briefing-palantir-fdp/"
+        },
+        {
+          "title": "Palantir targeting 3-class voting structure giving founders ~49.999% control in perpetuity (TechCrunch)",
+          "url": "https://techcrunch.com/2020/08/21/palantir-three-class-voting/"
+        },
+        {
+          "title": "Palantir Technologies Inc. FY2025 10-K (SEC / investor relations)",
+          "url": "https://investors.palantir.com/files/2025%20FY%20PLTR%2010-K.pdf"
+        },
+        {
+          "title": "Ministry of Defence: Palantir Contracts \u2014 Hansard, UK Parliament",
+          "url": "https://hansard.parliament.uk/commons/2026-02-10/debates/FECED111-4FA8-4343-BFAF-18D6C13808D0/MinistryOfDefencePalantirContracts"
+        },
+        {
+          "title": "How Silicon Valley rejection and CIA cash fueled Palantir's rise (Fast Company)",
+          "url": "https://www.fastcompany.com/91446398/cia-police-palantir-alex-karp-predictive-peter-thiel-paypal-sequoia"
+        }
+      ]
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "adjusted_connection_tier": "SAME_DEPARTMENT_OVERLAP",
+      "overclaims": [
+        "COVID-19 origin: profile says the \u00a31 contract was 'extended through Jan 2023, no figure initially published.' The extension figure IS documented and litigated: a \u00a323m two-year contract was signed Dec 2020 (openDemocracy/Foxglove 'We've won our lawsuit over Matt Hancock's \u00a323m NHS data deal'). Saying 'no figure initially published' understates what is on record; the \u00a323m should be cited.",
+        "Indra Joshi is described as 'ex-NHSX director of AI, who helped build the COVID-19 datastore'. Sources confirm she was NHSX Director of AI / founded the NHS AI Lab and joined Palantir April 2022, but her personal role 'building the COVID-19 datastore' is not clearly documented in the verifiable sources (Healthcare IT News, Register, Bloomberg, Digital Health) \u2014 they tie her to the AI Lab, not datastore construction. Soften to 'NHSX AI director during the period of the COVID datastore' unless a source directly attributes datastore-building to her.",
+        "AWE ~\u00a315m 'cloud support' and Nuclear Propulsion IPT ~\u00a3250k rest entirely on The Nerve's aggregation and are explicitly off Contracts Finder with MoD declining to confirm. These are single-source, unconfirmed figures and must be flagged as such inline, not folded into the 'disclosed contracts' framing without attribution.",
+        "The '34 contracts / 10+ bodies / \u00a3670m' is journalistic aggregation by The Nerve, not reconcilable to official disclosure; the profile already flags this but the summary's bald 'at least \u00a3670m in disclosed contracts across 10+ government bodies' reads more authoritative than the underlying sourcing supports. Keep the 'investigative floor, not audited' qualifier adjacent to every use of the total."
+      ],
+      "strongest_sourced_claims": [
+        "NHS FDP: published award \u00a3182.2m to Palantir, envelope up to \u00a3330m over up to 7 years, awarded Nov 2023, consortium Accenture/PwC/NECS/Carnall Farrar \u2014 confirmed via Contracts Finder, NHS England contract explainer, Digital Health, and multiple outlets.",
+        "MoD \u00a3240.6m three-year data-analytics contract signed 30 Dec 2025, awarded by direct award WITHOUT competitive tender using a defence/security exemption, >3x any prior MoD award \u2014 confirmed via Find a Tender notice 083874-2025, UKAuthority, openDemocracy, TechRadar.",
+        "Revolving door specifics: Indra Joshi left NHSX 31 Mar 2022 and joined Palantir April 2022 (Healthcare IT News, Register, Bloomberg); Barnaby Kistruck helped write the Strategic Defence Review, left MoD 31 Aug 2025 and joined Palantir nine days later, ahead of the Dec 2025 contract (openDemocracy) \u2014 all verify precisely.",
+        "Governance: tri-class A/B/F structure with Thiel-Karp-Cohen voting trust locked at ~49.99% (Class F auto-adjusting) in perpetuity despite minority economic stake \u2014 confirmed via TechCrunch S-1 reporting and FY2021 10-K exhibit.",
+        "FY2025 financials: ~$4.5bn revenue with 54% government / 46% commercial \u2014 CONFIRMED directly against the FY2025 10-K (the profile's 'treat as approximate pending 10-K confirmation' caveat can be upgraded to confirmed).",
+        "Police 'Nectar' real-time data-sharing network (Bedfordshire/Leicestershire confirmed, ~9 forces, special-category data including political opinions/health/sexual orientation/race on suspects/victims/children) and forces removing the deal from public record \u2014 confirmed via Liberty Investigates and Bedford Independent.",
+        "COVID-19 Data Store origin: \u00a31 contract March 2020, no competitive tender, Hancock used COPI emergency powers to bypass confidentiality \u2014 confirmed via openDemocracy and The Lowdown."
+      ],
+      "unsupported_to_remove": [
+        "Do NOT add or imply any Splink\u2194Palantir technical/data pipeline. An independent search (gov.uk Splink algorithmic-transparency record, Splink GitHub/docs, Palantir Foundry connector docs) surfaces NO published integration, data flow, or connector linking Splink to Foundry/Gotham. The profile's explicit exclusion is correct and must be retained verbatim; any future draft asserting integration is SPECULATIVE and must be cut.",
+        "Remove or explicitly attribute (not assert) the prospective 'FDP including GP and social care records' as live ingestion \u2014 sources treat it as expected/contested scope, not confirmed.",
+        "Do not state the police 'Nectar' platform is specifically Gotham; the SKU was not named in the source. Keep 'Gotham-class / Palantir platform, SKU unnamed'.",
+        "Do not present AWE ~\u00a315m and Nuclear Propulsion ~\u00a3250k as confirmed government-disclosed contracts \u2014 they are off Contracts Finder, MoD-unconfirmed, single-source (The Nerve)."
+      ],
+      "corrections": [
+        "Add the \u00a323m Dec 2020 COVID datastore extension figure (openDemocracy lawsuit) instead of 'no figure initially published'.",
+        "Attribute the \u00a3670m total to The Nerve as an investigative floor every time it appears; note the now-higher post-Dec-2025 total (\u00a3670m predates the \u00a3240.6m MoD award, so cumulative documented figure now exceeds ~\u00a3900m per The Nerve follow-up) so the headline number isn't internally stale.",
+        "Upgrade the FY2025 revenue/government-split caveat: it is now directly confirmed in the FY2025 10-K ($4.5bn, 54% government), no longer merely 'press summaries'.",
+        "Re-word the Indra Joshi 'helped build the COVID-19 datastore' claim to match what sources actually support (NHSX Director of AI / AI Lab founder, departed for Palantir April 2022)."
+      ],
+      "notes": "Adversarial verdict: the connection tier is correctly set and should NOT be upgraded. As a hostile critic I cannot refute the institutional overlap (Palantir and the Splink-investigation entities genuinely share NHS England, Home Office, MoD, and police as counterparties), and the profile already declines to claim more than that. As a Palantir lawyer, the litigable risk in this profile is low precisely because it self-limits the Splink link to SAME_DEPARTMENT_OVERLAP + THEMATIC_ADJACENCY and explicitly disclaims any technical pipeline \u2014 and my independent searching confirms no such pipeline is documented. The contract/financial/governance/revolving-door claims are unusually well-sourced and survive scrutiny; the only defensible attacks are the four overclaims above (COVID extension figure understated, Joshi datastore wording, and two single-source nuclear figures presented with insufficient attribution). Tier stays SAME_DEPARTMENT_OVERLAP. Before publication: keep the Splink no-technical-link disclaimer, attribute the \u00a3670m and AWE/nuclear figures to The Nerve as investigative floors, add the \u00a323m COVID figure, and soften the Joshi datastore phrasing. Citations checked: thenerve.news (x2), opendemocracy.net (MoD + NHS + COVID lawsuit), libertyinvestigates.org.uk, healthcareitnews.com, contractsfinder/find-tender (FDP + MoD 083874-2025), england.nhs.uk contract explainer, techcrunch (share structure), Palantir FY2025 10-K (SEC), gov.uk Splink algorithmic-transparency record \u2014 all resolve and support the cited claims."
+    }
+  },
+  {
+    "vector": "splink-vs-palantir",
+    "title": "The analytical distinction \u2014 Splink vs Palantir, and any direct data-flow",
+    "profile": {
+      "vector": "The analytical distinction \u2014 Splink vs Palantir \u2014 and whether any direct data-flow exists between them. Splink is an open-source probabilistic record-linkage LIBRARY (a Python package) built by the MoJ; it links records but is not itself a data platform, has no network listener, and runs inside whatever environment an analyst puts it in. Palantir Foundry/Gotham are PROPRIETARY, hosted operational data-integration platforms that ingest, fuse, and action live data. They are different categories of artefact: a linkage algorithm vs an operational platform. The honest answer to the leads question is: there is NO documented case of them being the same pipeline, and NO documented flow of Splink-linked or ONS/Data-First data INTO a Palantir platform (or vice versa). The real link is institutional and trajectory-based, not technical.",
+      "uk_body": "Multiple \u2014 most relevant to the Splink investigation: Ministry of Justice (Palantir 2024 reoffending-risk pitch; Splink's home dept), NHS England (Federated Data Platform, \u00a3330m), plus Home Office, MoD (\u00a3240m), Cabinet Office/Border Operations Centre (\u00a327m), UK police (East of England \"Nectar\"/East Midlands), AWE nuclear (\u00a315m). DWP/HMRC referenced via the broader fraud-data trajectory but no confirmed Palantir person-level operational deal there.",
+      "connection_tier": "SAME_DEPARTMENT_OVERLAP",
+      "palantir_product": "Foundry (NHS FDP, Cabinet Office border tool, MoJ pitch, police \"Nectar\") and Gotham (defence/intelligence, MoD). Foundry\u2194Gotham are documented as interoperable (\"drag and drop\" data transfer) but that is a CAPABILITY, not evidence of a specific cross-domain flow.",
+      "what_palantir_does": [
+        "NHS Federated Data Platform (\u00a3330m, 7-yr, awarded Nov 2023; Accenture/PwC/NECS/Carnall Farrar subcontractors): joins fragmented NHS operational data \u2014 elective waiting lists, bed occupancy, theatre rosters, supply chain \u2014 into a single OPERATIONAL view for direct care and planning. Identifiable data is held in a trust's local instance for direct care (no opt-out for direct care); de-identification (IQVIA) occurs when shared up to ICB/national level. NHS England states the supplier cannot access/use/share data for its own purposes.",
+        "MoJ (2024): Palantir lobbied the Ministry of Justice \u2014 and ministers including Chancellor Rachel Reeves \u2014 offering to calculate prisoners' 'reoffending risks', analyse prison capacity, and aggregate state-held data to identify reoffending trends (drivers such as income/addiction). Revealed via FOI. This was a PITCH/discussion, not a signed contract or live deployment. Amnesty International warned of discrimination, privacy breaches and miscarriages of justice.",
+        "Cabinet Office / Border Operations Centre (\u00a327m, Aug 2020, no competitive tender; preceded by free Foundry trial and a July 2019 Karp\u2013Manzoni intro brokered by ex-MI6 chief John Sawers): permission to COMBINE data from Home Office, Defra, HMRC, DfT, DVSA, Highways England and Port Health Authority into one cross-government view \u2014 described as among the most comprehensive cross-government datasets ever compiled.",
+        "UK police: Foundry-based 'Nectar' real-time data-sharing network across East of England forces (Bedfordshire, Hertfordshire, Cambridgeshire; ~9 forces, ambition to go national) and an East Midlands project (Leicestershire + 5 forces), reported operational 16 June 2025. Fuses crime records with financial/intelligence data AND special-category data (political opinions, philosophical beliefs, health, trade-union membership, sexual orientation, race) plus records on victims, children, witnesses and vulnerable people. Palantir claimed it flagged 120+ young people at risk in its first 8 days. Critics call it predictive policing / mass surveillance.",
+        "MoD: \u00a3240m data-analytics/AI contract (Dec 2025, no competitive tender) for strategic, tactical and live operational decision-making across classifications; prior \u00a375.2m (Nov 2022) and first \u00a328m (2018). AWE nuclear-weapons agency \u00a315m (revealed Jan 2026).",
+        "Total documented UK state contracts: at least \u00a3670m across 10+ departments/councils/police (The Nerve, Jan 2026), with some tallies ~\u00a3600m-\u00a3900m. On 3 June 2026 the cross-party Commons Science, Innovation and Technology Committee called for termination of the NHS contract; renewal/break point February 2027."
+      ],
+      "link_to_splink_work": "NOT a shared pipeline. There is NO documented technical integration or data-sharing flow between Splink (or Splink-linked Data First / ONS IDS outputs) and any Palantir platform \u2014 neither Palantir's own Foundry data-integration docs nor the campaigner/journalist briefings reference Splink, Data First or ONS record-linkage in connection with Palantir, and I found no contract, DUA or architecture document tying them. The genuine connection is twofold and institutional: (1) SAME DEPARTMENT \u2014 Splink is the MoJ's own open-source linkage tool (powering Data First research datasets and the operational North Essex probation/PNC feed), and in 2024 Palantir pitched the SAME MoJ to compute prisoners' 'reoffending risks' over state-held data. They would operate on overlapping subject-matter (reoffending/justice data) within one department, but via entirely separate tooling and with no proven common pipeline. (2) SAME TRAJECTORY \u2014 both sit on the statistics\u2192operations gradient central to the Splink dossier: Splink-linked Data First is nominally research-only yet the same library runs operationally (courts, daily PNC feeds); Palantir's platforms are explicitly OPERATIONAL/identifiable (NHS direct care, police real-time, MoD live decisions). Palantir is the operational end-state that the Splink investigation warned record-linkage could feed toward \u2014 a thematic and departmental adjacency, not a wired data flow. Manufacturing a Splink\u2192Palantir data link would be unsupported by the evidence.",
+      "operational_vs_statistical": "Sharp contrast and this is the analytical crux. Splink/Data First/ONS IDS are positioned at the STATISTICAL/research end (Data First datasets are MoJ-ATR-flagged 'not for operational decision-making'; ONS uses Splink for Census/Business/Demographic indices) \u2014 though the SAME Splink tool also runs operationally in places (North Essex PNC\u2192police feed, courts). Palantir's UK deployments are overwhelmingly at the OPERATIONAL/identifiable end: NHS FDP for live care coordination and hospital flow (opt-out impossible for direct care), police real-time fusion of identifiable special-category data, Cabinet Office live border flow, MoD live operational/tactical decision-making. Palantir is the operational pole; Splink/ONS are nearer the statistical pole \u2014 the two are not the same system.",
+      "consent_oversight": "See consent_oversight field above \u2014 lawful public-task basis, no individual consent/opt-out for NHS direct care, contested transparency, multiple no-tender awards, now under active parliamentary scrutiny (Commons SIT Committee termination call, Jun 2026).",
+      "contract_value_dates": "NHS FDP: \u00a3330m, 7-yr, awarded Nov 2023 (first-year \u2265\u00a325.6m; ~\u00a3480m cited including associated services); review/break Feb 2027. MoD: \u00a3240m (Dec 2025, no tender); \u00a375.2m (Nov 2022); \u00a328m (2018). Cabinet Office/Border Operations Centre: \u00a327m (Aug 2020, no tender). AWE nuclear: \u00a315m (revealed Jan 2026). Police Nectar/East Midlands: value undisclosed, operational 16 Jun 2025. Aggregate documented: \u2265\u00a3670m across 10+ bodies (The Nerve, Jan 2026). MoJ reoffering work: a 2024 PITCH only \u2014 no contract value, not awarded.",
+      "controversies_litigation": [
+        "Commons Science, Innovation and Technology Committee called for termination of the NHS FDP contract (3 June 2026); UK govt launched a review / weighing the break clause (Apr\u2013Jun 2026).",
+        "Amnesty International 'No Palantir in our NHS' campaign; Medact, Foxglove and Good Law Project sustained legal/advocacy pressure over the NHS contract and data governance.",
+        "Liberty Investigates / i expos\u00e9 of the East of England police 'Nectar' real-time surveillance network processing special-category data on victims, children and witnesses; David Davis MP demanded parliamentary scrutiny; characterised by rights groups as predictive policing / mass surveillance.",
+        "MoJ reoffending-risk pitch (2024) drew Amnesty warnings of discrimination and miscarriages of justice.",
+        "openDemocracy: Cabinet Office border contract won after ex-MI6 chief introduction, no competitive tender; Palantir hired four ex-MoD officials before the \u00a3240m defence win.",
+        "Concerns over ties to Peter Thiel / Louis Mosley and US data-sovereignty / surveillance reputation; majority of NHS hospital trusts had not adopted FDP by end-2024 (rollout failures per Corporate Watch FOIs)."
+      ],
+      "datasets": [
+        "NHS operational data: elective waiting lists, bed occupancy, theatre rosters, medical supply chain, patient records (identifiable at trust level for direct care; de-identified when shared to ICB/national)",
+        "Police: crime/PNC records fused with financial and intelligence data plus special-category data (political opinions, philosophical beliefs, health, trade-union membership, sexual orientation, race) and records on victims, children, witnesses, vulnerable people",
+        "Cabinet Office border: combined Home Office, Defra, HMRC, DfT, DVSA, Highways England, Port Health Authority data",
+        "MoJ (pitched only): state-held reoffending/prison-capacity data",
+        "MoD/AWE: classified strategic/tactical/operational defence and nuclear-deterrent data",
+        "NOTE: NO documented Splink-linked Data First dataset or ONS Integrated Data Service dataset is shown flowing into any Palantir platform."
+      ],
+      "unverified_flags": [
+        "DWP/HMRC: a Palantir person-level OPERATIONAL fraud/welfare contract is implied by the broader trajectory and the Cabinet Office HMRC-data permission, but I found no confirmed signed Palantir-DWP welfare-data deal \u2014 treat as unverified.",
+        "Aggregate UK contract value ranges (\u00a3600m / \u00a3670m / up to \u00a3900m) vary by source and counting method \u2014 \u00a3670m (The Nerve, Jan 2026) is the best-documented floor.",
+        "Foundry\u2194Gotham 'drag and drop' interoperability is a documented CAPABILITY; no source proves a specific cross-domain (e.g. NHS\u2192Home Office/enforcement) data flow actually occurred.",
+        "Exact NHS FDP headline figure cited as both \u00a3330m (core) and ~\u00a3480m (with associated services) \u2014 disambiguate when citing.",
+        "MoJ reoffending engagement: confirmed as lobbying/discussion via FOI; any progression to a contract is unverified."
+      ],
+      "summary": "Palantir is deeply embedded in UK government but its tooling is categorically different from Splink: Palantir Foundry/Gotham are proprietary OPERATIONAL data-fusion platforms (NHS FDP \u00a3330m/Nov 2023; MoD \u00a3240m/Dec 2025; Cabinet Office border \u00a327m/2020; police 'Nectar' real-time network live Jun 2025; AWE nuclear \u00a315m), whereas Splink is an open-source MoJ record-linkage library used mainly for statistics/research (ONS Census, Data First). The honest, rigorous answer to the core question is that NO documented technical pipeline or data-sharing flow connects Splink (or Splink-linked Data First / ONS IDS outputs) to any Palantir platform \u2014 that link does not exist in the public record and should not be manufactured. The real connection is institutional and trajectory-based: Palantir and Splink both operate inside the Ministry of Justice (Splink runs reoffending/Data First linkage; Palantir pitched the MoJ in 2024 to compute prisoners' 'reoffending risks'), and Palantir embodies the operational end-state \u2014 identifiable, real-time, action-oriented \u2014 toward which the Splink dossier warned record-linkage could be pulled. I therefore tier this SAME_DEPARTMENT_OVERLAP (anchored at the MoJ) with strong THEMATIC_ADJACENCY on the statistics\u2192operations gradient, not a DIRECT_DOCUMENTED_LINK.",
+      "caveats": "Tiered SAME_DEPARTMENT_OVERLAP rather than DIRECT_DOCUMENTED_LINK precisely because no shared Splink\u2194Palantir pipeline is documented; the MoJ overlap (Splink in-house + Palantir's 2024 reoffending pitch) and the statistics\u2192operations trajectory are real, but the technical data flow between them is NOT and must not be asserted. Several figures are source-dependent (see unverified_flags). Some sourcing leans on advocacy/journalism (Medact, Liberty Investigates, The Nerve, openDemocracy) corroborated by NHS England's own pages, Hansard and SEC-context; campaigner framings of harm are contested by NHS England's official statements.",
+      "confidence": "high",
+      "citations": [
+        {
+          "title": "NHS England awards Federated Data Platform contract to Palantir (\u00a3330m)",
+          "url": "https://www.digitalhealth.net/2023/11/nhs-england-awards-330m-federated-data-platform-contract-to-palantir/",
+          "date": "2023-11"
+        },
+        {
+          "title": "NHS England \u2014 Federated Data Platform: Contract explainer / FAQs",
+          "url": "https://www.england.nhs.uk/digitaltechnology/nhs-federated-data-platform/security-privacy/contract-explainer/"
+        },
+        {
+          "title": "Briefing: Concerns Regarding Palantir Technologies and NHS Data Systems \u2014 Medact",
+          "url": "https://www.medact.org/2026/resources/briefings/briefing-palantir-fdp/",
+          "date": "2026"
+        },
+        {
+          "title": "Palantir lobbies UK Ministry of Justice to use AI for prisoner risk assessment \u2014 OECD.AI (citing The Guardian)",
+          "url": "https://oecd.ai/en/incidents/2024-11-13-65f2",
+          "date": "2024-11-13"
+        },
+        {
+          "title": "Palantir won borders contract after introduction from ex-MI6 boss \u2014 openDemocracy",
+          "url": "https://www.opendemocracy.net/en/palantir-mi6-spymaster-cabinet-office-contract-brexit-john-sawers/"
+        },
+        {
+          "title": "UK police working with controversial tech giant Palantir on real-time surveillance network \u2014 Liberty Investigates",
+          "url": "https://libertyinvestigates.org.uk/articles/uk-police-working-with-controversial-tech-giant-palantir-on-real-time-surveillance-network/",
+          "date": "2025-06-16"
+        },
+        {
+          "title": "Revealed: Palantir deals with UK government amount to at least \u00a3670m \u2014 The Nerve",
+          "url": "https://www.thenerve.news/p/palantir-technologies-uk-government-contracts-size-nuclear-deterrent-atomic-peter-thiel-louis-mosley",
+          "date": "2026-01"
+        },
+        {
+          "title": "Ministry of Defence: Palantir Contracts \u2014 Hansard, UK Parliament",
+          "url": "https://hansard.parliament.uk/commons/2026-02-10/debates/FECED111-4FA8-4343-BFAF-18D6C13808D0/MinistryOfDefencePalantirContracts",
+          "date": "2026-02-10"
+        },
+        {
+          "title": "Government committee says Palantir NHS contract should be ditched \u2014 Electronics Weekly (Commons SIT Committee)",
+          "url": "https://www.electronicsweekly.com/news/business/government-committee-says-palantir-nhs-contract-should-be-ditched-2026-06/",
+          "date": "2026-06"
+        },
+        {
+          "title": "Splink \u2014 official site/docs (MoJ open-source probabilistic record linkage; ONS/MoJ use cases)",
+          "url": "https://moj-analytical-services.github.io/splink/index.html"
+        },
+        {
+          "title": "Palantir Foundry \u2014 Data Integration / Data Connection docs (capability reference)",
+          "url": "https://www.palantir.com/docs/foundry/data-integration/overview"
+        },
+        {
+          "title": "No Palantir in our NHS \u2014 Amnesty International UK",
+          "url": "https://www.amnesty.org.uk/issues/international-crisis/no-palantir-in-our-nhs/"
+        }
+      ]
+    },
+    "verification": {
+      "verdict": "MIXED",
+      "adjusted_connection_tier": "SAME_DEPARTMENT_OVERLAP",
+      "overclaims": [
+        "Citation date error: the profile repeatedly attributes the aggregate UK-contract figure to 'The Nerve, Jan 2026'. The Nerve investigation (Carole Cadwalladr) was published FEBRUARY 2026, not January. The \u00a315m AWE contract is cited as 'revealed Jan 2026' but is part of the same Feb 2026 reporting \u2014 verify and correct the date or it weakens every aggregate citation.",
+        "Aggregate-value incoherence: the profile presents '\u2265\u00a3670m across 10+ bodies' as the documented floor while also itemising the MoD \u00a3240m (Dec 2025) contract. The \u00a3670m figure PREDATES the \u00a3240.6m MoD Dec 2025 deal; sources now put the documented total >\u00a3900m. As written, the headline \u2265\u00a3670m either excludes a contract the profile itself lists (internally inconsistent) or risks double-counting. The \u00a3900m upper range is the post-MoD figure, not merely a looser 'tally'.",
+        "MoD figure inconsistency: contract_value_dates lists MoD as \u00a3240m + \u00a375.2m + \u00a328m, but The Nerve reports MoD aggregate ~\u00a3388m across a dozen contracts/extensions. The three cited line-items are real but do not equal the documented MoD total \u2014 do not imply the three figures are the complete MoD picture.",
+        "Foundry<->Gotham 'drag and drop' interoperability is asserted as 'documented' but the profile's own citation is only the generic Foundry data-integration overview page, which describes data connection/lineage generically and does not document a Foundry-to-Gotham 'drag and drop' transfer specifically. This phrasing should be downgraded to 'general data-integration capability' or sourced more precisely.",
+        "NHS '~\u00a3480m including associated services' and 'first-year >=\u00a325.6m' figures are stated without a dedicated citation; the only sourced NHS figure verified is the \u00a3330m / 7-yr / Nov 2023 headline. The Nerve reports NHS-related deals >\u00a3244m across 12 contracts, which does not obviously reconcile with either \u00a3330m or \u00a3480m \u2014 flag and source or drop the secondary figures."
+      ],
+      "strongest_sourced_claims": [
+        "NHS Federated Data Platform: \u00a3330m, 7-yr, awarded Nov 2023 to Palantir \u2014 verified (digitalhealth.net, NHS England, The Register, Electronics Weekly).",
+        "MoJ 2024 reoffending engagement was a PITCH/lobbying via FOI, NOT a signed contract or deployment \u2014 verified (Guardian via OECD.AI/Magzter/Medianama); profile correctly does not assign it a contract value.",
+        "Cabinet Office / Border Operations Centre \u00a327m, Aug 2020, no competitive tender, preceded by Sawers-brokered 16 July 2019 Karp\u2013Manzoni meeting \u2014 verified (openDemocracy, Computing, Privacy International).",
+        "Police 'Nectar' real-time network across East of England forces processing 11 categories of special-category data on suspects, victims, children and witnesses; reported June 2025 \u2014 verified (Liberty Investigates, Bedford Independent).",
+        "Commons Science, Innovation and Technology Committee called for termination of the NHS FDP contract on 3 June 2026, recommending use of the Feb 2027 break clause \u2014 verified (Foxglove, The Register, Electronics Weekly, gurufocus).",
+        "CENTRAL CLAIM: No documented technical integration or data-sharing pipeline between Splink (or Splink-linked Data First / ONS IDS outputs) and any Palantir platform \u2014 independently verified; searches surface only generic Foundry data-integration docs with zero Splink/Data First/ONS linkage reference. The profile's refusal to manufacture this link is correct and is the strongest analytical move in the dossier."
+      ],
+      "unsupported_to_remove": [
+        "The unqualified phrase 'Foundry<->Gotham are documented as interoperable (\"drag and drop\" data transfer)' \u2014 remove the quoted 'drag and drop' characterisation or replace with a precise source; the cited Foundry overview does not support that specific wording.",
+        "Remove or re-source the NHS '~\u00a3480m (with associated services)' and 'first-year >=\u00a325.6m' figures unless a specific citation is added; currently uncited and unreconciled with The Nerve's >\u00a3244m NHS tally.",
+        "Remove the implication that MoD = \u00a3240m + \u00a375.2m + \u00a328m is a complete accounting; either add the ~\u00a3388m aggregate or explicitly label the three as selected line-items."
+      ],
+      "corrections": [
+        "Change 'The Nerve, Jan 2026' to 'The Nerve, Feb 2026' (Carole Cadwalladr) wherever it appears (what_palantir_does, contract_value_dates, unverified_flags).",
+        "Reframe the aggregate: state that \u00a3670m is the Feb-2026-documented floor that PREDATES the \u00a3240.6m MoD Dec 2025 contract, and that the post-MoD documented total exceeds \u00a3900m. Do not present \u2265\u00a3670m and the itemised MoD \u00a3240m as a coherent single tally without this caveat.",
+        "Note the MoD \u00a3240m Dec 2025 figure should be \u00a3240.6m if precision is wanted, and that MoD aggregate per The Nerve is ~\u00a3388m across ~12 contracts/extensions.",
+        "Tighten the AWE date: '\u00a315m, revealed as part of The Nerve's Feb 2026 reporting' rather than 'revealed Jan 2026'."
+      ],
+      "notes": "VERDICT RATIONALE: The profile's connection_tier of SAME_DEPARTMENT_OVERLAP is CORRECT and should NOT be upgraded \u2014 I confirm it should not be downgraded to pure THEMATIC_ADJACENCY either, because the MoJ anchor is genuine (Splink is the MoJ's in-house tool; Palantir demonstrably pitched the same MoJ in 2024). However, as the hostile critic / Palantir lawyer, I stress the SAME_DEPARTMENT overlap is the ONLY thing elevating this above thematic: the two operate on overlapping subject-matter within one department but via entirely separate tooling with NO common pipeline. The Splink<->Palantir technical/data link is correctly characterised as non-existent and well-defended \u2014 this is the dossier's analytical strength, not a weakness, and nothing in my searches contradicts it; do not let editing pressure push it toward a manufactured DIRECT link. The MIXED verdict is driven NOT by the core analysis (which is sound) but by sloppy citation hygiene on the aggregate contract values and dates (Jan vs Feb 2026; \u00a3670m vs \u00a3900m double-counting tension; uncited NHS/MoD secondary figures; over-stated Foundry<->Gotham 'drag and drop' sourcing). These must be fixed before publication. The qualitative contract claims (NHS \u00a3330m, Cabinet Office \u00a327m/no-tender/Sawers, police Nectar special-category data, MoJ pitch-not-contract, SIT Committee termination call) all independently verified. Confidence in the institutional/trajectory framing: high. Confidence in the numeric aggregate as currently worded: low until corrected."
+    }
+  }
+]
