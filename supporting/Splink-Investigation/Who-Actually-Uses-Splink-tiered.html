@@ -1,0 +1,84 @@
+<!doctype html><meta charset=utf-8>
+<style>
+  :root{--bg:#0b0d10;--panel:#161b22;--ink:#e7edf3;--mut:#9aa7b4;--line:#2a323c;--acc:#5aa9ff;
+    --g:#3fd07f;--a:#f4b740;--gr:#8a93a0;--r:#ff5d5d;
+    --serif:Georgia,serif;--sans:-apple-system,Helvetica,Arial,sans-serif;--mono:"SF Mono",Menlo,Consolas,monospace}
+  *{margin:0;box-sizing:border-box}
+  body{width:1200px;background:var(--bg);color:var(--ink);font-family:var(--sans);padding:48px 56px}
+  .kick{font-family:var(--mono);font-size:13px;letter-spacing:3px;color:var(--acc);text-transform:uppercase}
+  h1{font-family:var(--serif);font-size:46px;font-weight:700;margin:10px 0 6px}
+  .sub{color:var(--mut);font-size:17px;max-width:80ch;margin-bottom:26px}
+  .tier{border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:18px;background:var(--panel)}
+  .tier h2{font-family:var(--sans);font-size:20px;display:flex;align-items:center;gap:12px;margin-bottom:4px}
+  .dot{width:13px;height:13px;border-radius:50%}
+  .tier .lbl{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mut);margin-bottom:14px}
+  .row{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{border:1px solid var(--line);border-radius:9px;padding:9px 13px;background:#0e1116;min-width:0}
+  .chip b{display:block;font-size:15px;color:#fff}
+  .chip span{display:block;font-size:12.5px;color:var(--mut);margin-top:2px}
+  .t1 .dot{background:var(--g)} .t1{border-color:rgba(63,208,127,.4)}
+  .t2 .dot{background:var(--a)} .t2{border-color:rgba(244,183,64,.35)}
+  .t3 .dot{background:var(--gr)}
+  .neg .dot{background:var(--r)} .neg{border-color:rgba(255,93,93,.35)}
+  .neg .chip{text-decoration:none} .neg .chip b{color:#ffd0d0}
+  .strike{position:relative}
+  .foot{font-family:var(--mono);font-size:12px;color:var(--mut);margin-top:14px;line-height:1.7}
+  .brand{color:var(--acc);font-weight:700}
+</style>
+<body>
+  <div class="kick">Public-Interest Investigation · brandonmyers.net</div>
+  <h1>Who Actually Uses Splink</h1>
+  <div class="sub">Documented government &amp; institutional adopters of the UK Ministry of Justice's record-linkage tool — tiered by what can actually be proven from primary sources, after adversarial verification. A maintainer's logo-wall is not proof.</div>
+
+  <div class="tier t1">
+    <h2><span class="dot"></span>Tier 1 — Independently proven, operational on real population data</h2>
+    <div class="lbl">First-party government documentation · 3</div>
+    <div class="row">
+      <div class="chip"><b>🇬🇧 UK — Ministry of Justice</b><span>Courts, prisons, probation + real-time Core Person Record; daily PNC→police feed</span></div>
+      <div class="chip"><b>🇬🇧 UK — Office for National Statistics</b><span>2021 Census ↔ tax / benefits / NHS, near-total population</span></div>
+      <div class="chip"><b>🇦🇺 Australia — Bureau of Statistics</b><span>2025 Person Linkage Spine: Medicare + Centrelink + Tax</span></div>
+    </div>
+  </div>
+
+  <div class="tier t2">
+    <h2><span class="dot"></span>Tier 2 — Listed only on Splink's own “Used By” page (self-reported, unaudited)</h2>
+    <div class="lbl">Real linkage, but Splink attribution not independently verified · 5</div>
+    <div class="row">
+      <div class="chip"><b>🇬🇧 UK — wider public sector</b><span>DfE, CMA, Welsh Revenue, councils (debt, free-school-meals)</span></div>
+      <div class="chip"><b>🇬🇧 NHS England</b><span>Live spine is deterministic — Splink in development</span></div>
+      <div class="chip"><b>🇨🇦 Canada — Ontario MCCSS · ECCC</b><span>Social-assistance↔health linkage (Splink unnamed in paper)</span></div>
+      <div class="chip"><b>🇩🇪 Germany — Destatis</b><span>Register census — one uncited line</span></div>
+      <div class="chip"><b>🇪🇺 EU — Medicines Agency</b><span>Veterinary adverse-event dedup — asserted</span></div>
+      <div class="chip"><b>🌍 UNHCR</b><span>Dataset dedup — public code uses fastLink, not Splink</span></div>
+    </div>
+  </div>
+
+  <div class="tier t3">
+    <h2><span class="dot"></span>Tier 3 — Pilot · evaluation · research</h2>
+    <div class="lbl">Not production on real citizen data · 6</div>
+    <div class="row">
+      <div class="chip"><b>🇺🇸 US — Indiana Dept of Health</b><span>Pilot, synthetic data</span></div>
+      <div class="chip"><b>🇺🇸 US — Florida Cancer Registry</b><span>Evaluation, simulated data</span></div>
+      <div class="chip"><b>🇦🇺 AIHW</b><span>Evaluating; still on SAS “DALI”</span></div>
+      <div class="chip"><b>🇱🇦 Laos — child health record</b><span>Research study</span></div>
+      <div class="chip"><b>🇨🇱 Chile — Ministry of Health</b><span>Research: migrant immunisation</span></div>
+      <div class="chip"><b>🇬🇲 Gambia — 2024 census</b><span>Asserted (uncited)</span></div>
+    </div>
+  </div>
+
+  <div class="tier neg">
+    <h2><span class="dot"></span>Checked &amp; NOT Splink — benchmarked and rejected, or never used</h2>
+    <div class="lbl">Stated plainly, to keep the rest honest · 4</div>
+    <div class="row">
+      <div class="chip"><b>🇺🇸 US Census Bureau</b><span>Uses BigMatch — evaluated Splink, rejected it</span></div>
+      <div class="chip"><b>🇺🇸 NIH “All of Us”</b><span>Uses Datavant tokenisation</span></div>
+      <div class="chip"><b>🇨🇦 Statistics Canada</b><span>Uses its own G-Link</span></div>
+      <div class="chip"><b>🇦🇺 State linkage units</b><span>ChoiceMaker · DLS3 · FEBRL</span></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="brand">brandonmyers.net</span> · 14 adopters profiled, adversarially verified · Sources: Splink “Used By” page + agencies' own methodology documents, algorithmic-transparency records &amp; peer-reviewed papers.<br>
+    The maths is sound. The issue is consent, transparency &amp; scope — linkage is lawful by design and disclosed to almost no one. Self-reported entries flagged; nothing upgraded beyond its evidence.
+  </div>
+</body>
