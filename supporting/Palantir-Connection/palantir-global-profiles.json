@@ -1,0 +1,1136 @@
+[
+  {
+    "target": "usa",
+    "title": "United States \u2014 Palantir federal footprint",
+    "profile": {
+      "country_or_body": "United States \u2014 Palantir federal government footprint (ICE, DoD/Army, IRS/HHS/CDC, intelligence community)",
+      "connection_tier": "THEMATIC_ADJACENCY",
+      "summary": "The US is Palantir's home turf and largest single government market: roughly $1.88B of its $4.5B FY2025 revenue came from the government segment, ~74% of total revenue from US customers (Palantir FY2025 10-K). Palantir is deeply operational across federal agencies: ICE deportation tooling (ImmigrationOS, $30M, 2025), DoD/Army (Maven Smart System ceiling raised to ~$1.3B; TITAN $178.4M; Army Vantage ~$458M; a 2025 Army enterprise agreement worth up to $10B), CDC/HHS public-health data (HHS Protect, Tiberius, a $443M CDC consolidated disease-surveillance contract), and an IRS-led federal data-consolidation (\"mega-database\") effort following Trump's March 20, 2025 executive order to eliminate inter-agency information silos. By contrast, Splink (the UK MoJ's open-source probabilistic record-linkage library) has only a marginal, mostly negative US footprint: the Census Bureau evaluated Splink against its in-house BigMatch and chose BigMatch (faster/more accurate at scale); the NIH All of Us Research Program uses Datavant's privacy-preserving record linkage, not Splink. The honest characterization is DIFFERENT TOOLS, SAME COUNTRY: Palantir (proprietary Foundry/Gotham platform) and Splink (an open-source statistical linkage library) occupy the same broad \"joining-up government data\" trajectory but are not the same body, dataset, or tool, and Palantir is vastly more operational. Palantir does NOT use Splink. Tiered THEMATIC_ADJACENCY: same national trajectory, no shared body/dataset, and Splink's US use is pilot/evaluation/negative.",
+      "palantir_product": "Foundry; Gotham; Maven Smart System; Army Vantage; TITAN ground stations; AIP",
+      "palantir_presence": [
+        "ICE / DHS \u2014 ImmigrationOS ('Immigration Lifecycle Operating System'): ~$30M modification to an existing ICE contract, awarded ~April 2025, prototype due Sept 25, 2025, contract running through Sept 2027. Cited as supporting Executive Orders 14159 and 13773. Purpose: near-real-time visibility into the 'immigration lifecycle' \u2014 identify/apprehend removal-priority individuals, track self-deportations, and streamline deportation logistics.",
+        "ICE \u2014 reporting (EFF, Jan 2026) that ICE is using a Palantir tool fed by Medicaid data to identify immigrants; EFF asked a federal judge to block use of Medicaid data for deportation and filed an amicus brief in litigation over ICE's grab for IRS taxpayer data.",
+        "USCIS \u2014 Dec 2025 reporting (Fortune) of a new Palantir contract for a tech platform at another ICE-adjacent federal agency.",
+        "US Army / DoD \u2014 Maven Smart System: ceiling raised to ~$1.3B through 2029 (up from initial ~$480M); demand-driven increase reported May 2025. Battlefield AI/targeting and sensor-data fusion.",
+        "US Army \u2014 TITAN (Tactical Intelligence Targeting Access Node): $178.4M OTA awarded March 2024 for 10 AI-enabled ground-station prototypes (next-gen targeting/intelligence).",
+        "US Army \u2014 Army Vantage: ~$458M four-year agreement, unified data management across personnel, logistics, combat readiness.",
+        "US Army \u2014 2025 enterprise software agreement reported worth up to $10B over 10 years, consolidating numerous prior contracts.",
+        "CDC \u2014 five-year, $443M consolidated disease-surveillance / 'common operating picture' contract (announced ~late 2022) leveraging Palantir for outbreak planning/response; ties together HHS Protect, ASPR Engage, Tiberius, and the DCIPHER program.",
+        "HHS \u2014 Tiberius: built mid-2020 under Operation Warp Speed for vaccine allocation; contract renewed/expanded to ~$31M. HHS Protect: ~$24.9M no-bid contract (April 2020) building the COVID-19 data system.",
+        "IRS / federal data consolidation \u2014 Palantir engineers embedded at the IRS reportedly building a 'mega API'/single searchable hub unifying IRS data, expanding from Trump's March 20, 2025 EO on inter-agency data sharing; talks reported with SSA and Dept. of Education on adopting Foundry; existing work with HHS and the Pentagon (NYT reporting; Intercept, April 2026, describing 'massive-scale' IRS data mining). Palantir denies it can 'proactively share data across federal government sources' (May 30, 2025 blog post).",
+        "Intelligence community \u2014 long history with CIA (In-Q-Tel early investor) and work with FBI/NSA-adjacent bodies; relationship reported as more limited/rocky than Palantir's public reputation implies (BuzzFeed 2017)."
+      ],
+      "contract_values_dates": "ICE ImmigrationOS: ~$30M, awarded ~April 2025, prototype due Sept 25 2025, runs to Sept 2027. Maven Smart System: ceiling ~$1.3B through 2029 (from ~$480M), increase reported May 23 2025. TITAN: $178.4M OTA, March 6 2024. Army Vantage: ~$458M, four-year. Army enterprise agreement: up to $10B / 10 years, reported Aug 2025. CDC: $443M / five years (announced ~Nov 2022). HHS Tiberius: renewed/expanded to ~$31M. HHS Protect: ~$24.9M no-bid, April 2020. IRS mega-database: contract values not fully public; congressional letters June 17 2025; EO signed March 20 2025. FY2025 government-segment revenue ~$1.88B (54% of $4.5B); ~74% of revenue from US customers (Palantir FY2025 10-K).",
+      "operational_use": "Palantir's Foundry/Gotham/AIP platforms ingest, integrate, and make searchable large volumes of citizen and operational data across agencies. Operational uses: ICE uses ImmigrationOS to locate, prioritize, and track immigrants for removal and to monitor self-deportations (reportedly drawing on cross-agency data including, per EFF, Medicaid records); DoD/Army uses Maven and TITAN for AI-assisted targeting and battlefield/intelligence sensor fusion and Vantage for readiness/logistics data; CDC/HHS uses Palantir for disease surveillance, vaccine allocation (Tiberius) and pandemic data (HHS Protect); and the IRS/federal effort aims to build a unified, searchable cross-agency data hub (tax, immigration, Social Security records) \u2014 the core of the 'mega-database' concern.",
+      "datasets": [
+        "IRS taxpayer records (reported core of the 'mega-database')",
+        "Social Security Administration data (reported Foundry-adoption talks)",
+        "Dept. of Education data (reported talks)",
+        "Medicaid / HHS health data (per EFF reporting, fed into an ICE-used Palantir tool)",
+        "Immigration / ICE enforcement and visa-overstay data (ImmigrationOS)",
+        "CDC disease-surveillance, HHS Protect COVID-19, and Tiberius vaccine-allocation data",
+        "DoD/Army operational, intelligence, sensor, personnel, logistics and targeting data (Maven, TITAN, Vantage)"
+      ],
+      "splink_side": "Per the prior global Splink analysis and primary sources, the US use of Splink is pilot/evaluation/negative: (1) the US Census Bureau evaluated Splink against its in-house BigMatch on speed, accuracy and work requirements and chose BigMatch (Census research outputs); (2) the NIH All of Us Research Program does NOT use Splink \u2014 its record linkage is done via Datavant's privacy-preserving record linkage (PPRL) through the Center for Linkage and Acquisition of Data (CLAD); (3) the gov.uk Splink page cites the US Census Bureau only in historical Fellegi-Sunter context, not as a Splink user. So in the US, Splink is largely absent operationally while Palantir is dominant. Palantir relates to the Splink story only as the proprietary, far-more-operational instance of the same broad trajectory (consolidating/joining-up government data on citizens). Different tools, different (or no overlapping) bodies, same country. No evidence Palantir uses Splink, and no documented case of Palantir and Splink in the same agency/dataset.",
+      "adjudications": [
+        "Germany, Federal Constitutional Court (Bundesverfassungsgericht), Judgment of 16 February 2023 (1 BvR 1547/19, 1 BvR 2634/20): the automated data-analysis powers in Hesse's Security and Public Order Act (under which police ran Palantir's Gotham as 'hessenDATA') and Hamburg's police data law were ruled UNCONSTITUTIONAL for violating the right to informational self-determination (insufficient interference thresholds); such tools permissible only to protect particularly weighty legal interests against a sufficiently identifiable danger. NOTE: This is a German, not US, adjudication \u2014 relevant as the leading court ruling against a Palantir deployment internationally; legal challenges (e.g., GFF in Bavaria/NRW) continued afterward.",
+        "United States: EPIC v. ICE \u2014 EPIC settled a FOIA lawsuit against ICE concerning Palantir's role in mass surveillance/profiling and recovered attorneys' fees (settled ~Jan 2020). This is FOIA/transparency litigation, not a substantive court ruling on the legality of Palantir's data use.",
+        "United States (2025\u20132026): EFF litigation/amicus activity challenging cross-agency data consolidation (sued over DOGE access to OPM data; amicus in suit over ICE's grab for IRS taxpayer data; suit vs State/DHS on a mass-surveillance program) \u2014 ongoing, no final adjudication squarely against Palantir located.",
+        "No US court or regulator final ruling specifically holding Palantir's federal data use unlawful was found as of the research date."
+      ],
+      "controversies": [
+        "IRS/federal 'mega-database': June 17, 2025 letter from Sen. Wyden, Rep. Ocasio-Cortez and other Democrats accusing Palantir of enabling/profiting from violations of federal law (Privacy Act notice/transparency requirements, tax-privacy laws) by consolidating Americans' data; Palantir denies it can proactively share data across agencies (May 30, 2025 blog).",
+        "ICE ImmigrationOS: civil-liberties and immigrant-rights groups (American Immigration Council, EPIC, EFF, State of Surveillance) warn it industrializes deportation targeting and self-deportation tracking using cross-agency citizen data.",
+        "EFF (Jan 2026) reporting that an ICE Palantir tool feeds on Medicaid data to identify immigrants.",
+        "Privacy-law concerns that building a single searchable cross-agency hub (tax + immigration + SSA) likely breaches the Privacy Act and IRC tax-confidentiality provisions.",
+        "Germany BVerfG Feb 2023 ruling against Gotham/hessenDATA (international flagship controversy over Palantir policing software).",
+        "Historical: Palantir's cultivated-but-overstated intelligence-community reputation (BuzzFeed 2017)."
+      ],
+      "citations": [
+        {
+          "title": "ICE pays Palantir $30M to build new tool to track and deport immigrants",
+          "url": "https://www.axios.com/local/denver/2025/05/01/palantir-deportations-ice-immigration-trump",
+          "date": "2025-05-01"
+        },
+        {
+          "title": "ICE to Use ImmigrationOS by Palantir, a New AI System, to Track Immigrants' Movements",
+          "url": "https://www.americanimmigrationcouncil.org/blog/ice-immigrationos-palantir-ai-track-immigrants/",
+          "date": "2025"
+        },
+        {
+          "title": "Wyden, Ocasio-Cortez Demand Answers from Palantir About Plans to Build IRS 'Mega-Database' of American Citizens (US Senate Finance Committee)",
+          "url": "https://www.finance.senate.gov/ranking-members-news/wyden-ocasio-cortez-demand-answers-from-palantir-about-plans-to-build-irs-mega-database-of-american-citizens",
+          "date": "2025-06-17"
+        },
+        {
+          "title": "Democrats press Palantir about reported creation of IRS 'mega-database' (Nextgov/FCW)",
+          "url": "https://www.nextgov.com/modernization/2025/06/democrats-press-palantir-about-reported-creation-irs-mega-database/406144/",
+          "date": "2025-06"
+        },
+        {
+          "title": "Palantir Is Helping Trump's IRS Conduct 'Massive-Scale' Data Mining (The Intercept)",
+          "url": "https://theintercept.com/2026/04/24/palantir-irs-contract-data/",
+          "date": "2026-04-24"
+        },
+        {
+          "title": "'Growing demand' sparks DOD to raise Palantir's Maven contract to more than $1B (DefenseScoop)",
+          "url": "https://defensescoop.com/2025/05/23/dod-palantir-maven-smart-system-contract-increase/",
+          "date": "2025-05-23"
+        },
+        {
+          "title": "Palantir wins $178M Army deal for TITAN AI-enabled ground stations (DefenseScoop)",
+          "url": "https://defensescoop.com/2024/03/06/palantir-army-titan-ground-station-award-178-million/",
+          "date": "2024-03-06"
+        },
+        {
+          "title": "Palantir wins $10 billion contract with the US Army (AIN)",
+          "url": "https://en.ain.ua/2025/08/04/palantir-to-supply-us-army/",
+          "date": "2025-08-04"
+        },
+        {
+          "title": "CDC awards Palantir consolidated disease surveillance contract worth $443M (FedScoop)",
+          "url": "https://fedscoop.com/cdc-palantir-common-operating-picture/",
+          "date": "2022"
+        },
+        {
+          "title": "HHS renews, expands Palantir's Tiberius contract to $31M (FedScoop)",
+          "url": "https://fedscoop.com/hhs-palantir-tiberius-contract-renewal/",
+          "date": "2021"
+        },
+        {
+          "title": "Report: ICE Using Palantir Tool That Feeds On Medicaid Data (EFF)",
+          "url": "https://www.eff.org/deeplinks/2026/01/report-ice-using-palantir-tool-feeds-medicaid-data",
+          "date": "2026-01"
+        },
+        {
+          "title": "EPIC v. ICE (Palantir Databases) / EPIC Settles ICE Lawsuit about Palantir and Profiling",
+          "url": "https://epic.org/epic-settles-ice-lawsuit-about-palantir-and-profiling/",
+          "date": "2020-01"
+        },
+        {
+          "title": "Bundesverfassungsgericht \u2014 Press release: Legislation in Hesse and Hamburg on automated data analysis is unconstitutional (Judgment 16 Feb 2023)",
+          "url": "https://www.bundesverfassungsgericht.de/SharedDocs/Pressemitteilungen/EN/2023/bvg23-018.html",
+          "date": "2023-02-16"
+        },
+        {
+          "title": "Bundesverfassungsgericht \u2014 Judgment of 16 February 2023 (1 BvR 1547/19)",
+          "url": "https://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/EN/2023/02/rs20230216_1bvr154719en.html",
+          "date": "2023-02-16"
+        },
+        {
+          "title": "Splink: MoJ's open source library for probabilistic record linkage at scale (GOV.UK)",
+          "url": "https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods/splink-mojs-open-source-library-for-probabilistic-record-linkage-at-scale",
+          "date": "2023"
+        },
+        {
+          "title": "Census Bureau \u2014 Record Linkage & Machine Learning (Splink vs BigMatch evaluation context)",
+          "url": "https://www.census.gov/topics/research/stat-research/expertise/record-linkage.html",
+          "date": "2024"
+        },
+        {
+          "title": "Datavant selected to join NIH's All of Us Research Program Center for Linkage and Acquisition of Data (CLAD)",
+          "url": "https://www.datavant.com/press-release/datavant-selected-join-nihs-us-research-program-center-linkage-acquisition-data-clad",
+          "date": "2023"
+        },
+        {
+          "title": "Palantir Technologies Inc. \u2014 Form 10-K FY2025 (revenue segmentation)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001321655/000132165526000011/pltr-20251231.htm",
+          "date": "2026"
+        },
+        {
+          "title": "New contract shows Palantir is working on a tech platform for another federal agency that works with ICE (Fortune)",
+          "url": "https://fortune.com/2025/12/09/palantir-new-contract-uscis-ice/",
+          "date": "2025-12-09"
+        }
+      ],
+      "confidence": "high",
+      "unverified_flags": [
+        "Exact dollar value of Palantir's IRS/federal data-consolidation work is not fully public; the 'mega-database' characterization comes from NYT/Intercept reporting and congressional letters, and Palantir disputes some claims.",
+        "The $10B Army enterprise-agreement figure is an 'up to / ceiling' value over 10 years reported in trade press, not necessarily obligated spend.",
+        "EFF's report of ICE using a Palantir tool fed by Medicaid data is reporting/allegation, subject to ongoing litigation, not an adjudicated finding.",
+        "Census Bureau 'chose BigMatch over Splink' is drawn from Census research summaries surfaced in search; the precise published evaluation document and date were not individually pinned in this pass.",
+        "The specific 'Indiana pilot' of Splink referenced in the lead brief was not independently located in primary sources during this research.",
+        "Intelligence-community (CIA/NSA/FBI) Palantir relationship is partly historical and reputationally inflated per 2017 reporting; current scope not fully verified.",
+        "FDA-specific Palantir contract not confirmed in this pass (lead mentioned FDA; not independently verified here)."
+      ],
+      "caveats": "Palantir does NOT use Splink, and no documented instance places Palantir and Splink in the same US agency or dataset. The connection is THEMATIC_ADJACENCY only: both belong to the broad 'joining-up government data' trajectory, but in the US Splink is essentially non-operational (Census evaluated and chose BigMatch; All of Us uses Datavant) while Palantir is the dominant, heavily operational data-integration vendor. The flagship court adjudication against a Palantir deployment (Germany's BVerfG, 16 Feb 2023) is German, not US \u2014 included for completeness, not as a US ruling. US litigation (EPIC, EFF) is FOIA/ongoing and has not produced a final ruling holding Palantir's federal data use unlawful. Contract values for the IRS/data-consolidation effort are partly unconfirmed and disputed by Palantir."
+    },
+    "verification": {
+      "verdict": "MIXED",
+      "adjusted_connection_tier": "SAME_DOMAIN_SAME_COUNTRY",
+      "overclaims": [
+        "INTERNAL MATH CONTRADICTION: The summary states '$1.88B of its $4.5B FY2025 revenue came from the government segment,' but the contract_values_dates field says government segment = '54% of $4.5B.' 54% of $4.5B is $2.43B, not $1.88B. The two figures are mutually inconsistent and at least one is fabricated. The 10-K confirms 54% government / 74% US-customer, so the dollar figure '$1.88B' has no source and must be removed or corrected to ~$2.43B.",
+        "TIER OVERSTATED IN THE WRONG DIRECTION \u2014 but note this is a downgrade-resistance point, not an upgrade: as a hostile critic I flag that 'THEMATIC_ADJACENCY' is actually generous to the linkage thesis because it implies a meaningful thematic tie. The profile's own evidence shows Splink is non-operational in the US (Census rejected it for BigMatch; All of Us uses Datavant, not Splink) and Palantir does not use Splink. The honest tier is SAME_DOMAIN_SAME_COUNTRY at most: the ONLY shared attribute is 'US government' + the vague abstraction 'joining-up data.' There is zero shared body, dataset, tool, contract, or document. The 'same broad trajectory' framing is editorializing, not a documented connection.",
+        "The phrase 'Palantir... occupy the same broad joining-up government data trajectory' is an analyst's narrative construct, not a sourced fact. No primary source links the two; it should be explicitly labeled as the author's framing, not presented as characterization of record.",
+        "USCIS Dec 2025 'new Palantir contract' (Fortune) is described in palantir_presence as fact ('a new Palantir contract for a tech platform at another ICE-adjacent federal agency') but the cited Fortune headline frames it as a platform for 'another federal agency that works with ICE' \u2014 the specific scope/value is single-source trade reporting and should carry an unverified flag, which it currently lacks.",
+        "'Indiana pilot' of Splink and 'FDA-specific Palantir contract' are referenced in unverified_flags as NOT located \u2014 correct to flag, but the lead brief that introduced them should not be relied upon; these must stay out of any asserted findings.",
+        "Army '$10B over 10 years' is a ceiling/'up to' figure from trade press (AIN), not obligated spend \u2014 the profile does flag this, but the summary and operational_use sections repeat 'worth up to $10B' without the obligated-vs-ceiling caveat inline."
+      ],
+      "strongest_sourced_claims": [
+        "ICE ImmigrationOS ~$30M modification, awarded ~April 2025, prototype due Sept 25 2025, running through Sept 2027 \u2014 corroborated by Axios, American Immigration Council, State of Surveillance, and ICE policy trackers.",
+        "Maven Smart System ceiling raised to ~$1.3B through 2029 (from ~$480M), reported May 23 2025 \u2014 confirmed by DefenseScoop, SpaceNews, InsideDefense; the $795M increment is consistent across sources.",
+        "TITAN: $178.4M OTA (Phase 3), awarded March 6 2024, 10 ground-station prototypes (5 advanced / 5 basic) \u2014 confirmed by US Army (army.mil), DefenseScoop, C4ISRNET, Breaking Defense.",
+        "CDC $443M five-year consolidated disease-surveillance 'Common Operating Picture' contract, announced Dec 2022, uniting HHS Protect / ASPR Engage / Tiberius / DCIPHER \u2014 confirmed by FedScoop, CDC/Palantir PRNewswire release, MeriTalk.",
+        "Bundesverfassungsgericht Judgment of 16 Feb 2023 (1 BvR 1547/19, 1 BvR 2634/20) ruling Hesse (HSOG 25a) and Hamburg (HmbPolDVG 49) automated-data-analysis provisions unconstitutional re informational self-determination; Gotham ran as 'hessenDATA' \u2014 confirmed by BVerfG press release and judgment. Correctly flagged as GERMAN, not US.",
+        "FY2025 10-K segmentation: 54% government / 46% commercial, 74% US revenue, on $4.5B total \u2014 confirmed against the SEC 10-K and multiple summaries.",
+        "Splink-side negative US footprint: Census Bureau evaluated Splink vs in-house BigMatch and favored BigMatch on speed/accuracy (Census CSRM materials); NIH All of Us uses Datavant PPRL via CLAD, NOT Splink (Datavant press release, NIH) \u2014 both confirmed.",
+        "EPIC v. ICE (Palantir/FALCON databases) FOIA suit settled ~Jan 31 2020 with attorneys' fees recovered \u2014 confirmed via EPIC; correctly characterized as FOIA/transparency, not a substantive ruling on legality."
+      ],
+      "unsupported_to_remove": [
+        "The unsourced dollar figure '$1.88B' for FY2025 government-segment revenue \u2014 remove or correct to the 10-K-consistent ~$2.43B (54% of $4.5B); as written it contradicts the profile's own 54% statement.",
+        "Any implication that Splink and Palantir share a technical, methodological, or operational connection \u2014 there is NONE documented. The profile mostly handles this correctly (explicit 'Palantir does NOT use Splink'), but the recurring 'same broad trajectory' editorial framing should be demoted from summary/caveats to a clearly-labeled author inference, not a finding.",
+        "The 'Indiana pilot' of Splink \u2014 not located in primary sources; must not appear as an asserted fact anywhere (currently only in unverified_flags, which is acceptable, but it must never be promoted).",
+        "FDA-specific Palantir contract \u2014 not confirmed; keep out of palantir_presence and findings."
+      ],
+      "corrections": [
+        "Replace '$1.88B of its $4.5B FY2025 revenue came from the government segment' with '~54% ($~2.43B) of $4.5B FY2025 revenue from the government segment (Palantir FY2025 10-K)' to remove the internal contradiction.",
+        "Downgrade connection_tier from THEMATIC_ADJACENCY to SAME_DOMAIN_SAME_COUNTRY: the only documented common factor is 'US federal data-integration domain.' No shared body, dataset, tool, or document exists, and Splink is non-operational in the US per the profile's own evidence. 'Thematic adjacency' overstates the strength of the tie.",
+        "Label the 'same broad joining-up government data trajectory' language explicitly as analyst framing/inference, not as a documented characterization.",
+        "Add an unverified flag to the USCIS Dec 2025 Fortune contract item (single-source trade reporting; scope/value not independently confirmed).",
+        "Keep the inline obligated-vs-ceiling caveat next to every mention of the '$10B' Army figure, including in summary and operational_use, not only in unverified_flags."
+      ],
+      "notes": "Adversarial verdict: The Palantir-side factual scaffolding is SOLID \u2014 ImmigrationOS $30M, Maven $1.3B, TITAN $178.4M, CDC $443M, the BVerfG 16 Feb 2023 ruling, EPIC settlement, and the 10-K 54%/74% segmentation all check out against primary or strong secondary sources. The profile is also commendably honest that Palantir does NOT use Splink and that no US court has ruled Palantir's federal data use unlawful. The defects are: (1) a hard internal math contradiction ($1.88B vs 54% of $4.5B = $2.43B) that must be fixed \u2014 the dollar figure is unsupported; (2) the connection_tier is overstated and should drop to SAME_DOMAIN_SAME_COUNTRY because the only real linkage is 'US government data-integration domain,' with Splink essentially absent operationally (Census chose BigMatch; All of Us uses Datavant) and zero shared body/dataset/tool; (3) the 'same trajectory' narrative is editorializing and must be marked as inference. As Palantir's lawyer I additionally note the profile already correctly hedges the IRS 'mega-database' (reporting/congressional-letter-sourced, Palantir disputes, no contract value, no adjudication) and the EFF Medicaid-data allegation (allegation, in active litigation, not adjudicated) \u2014 those hedges should remain firmly in place. No Splink<->Palantir technical link is asserted as fact, which is correct; the only required action is to demote the thematic 'trajectory' framing from characterization to labeled inference. Net: MIXED \u2014 strong sourcing, but the revenue-figure contradiction and an overstated tier require correction before this profile is defensible."
+    }
+  },
+  {
+    "target": "germany",
+    "title": "Germany \u2014 Palantir Gotham policing + the Constitutional Court ruling",
+    "profile": {
+      "country_or_body": "Germany \u2014 Palantir Gotham in state police (Hesse \"hessenDATA\", NRW \"DAR\", Bavaria \"VeRA\", Baden-W\u00fcrttemberg) and the Federal Constitutional Court (Bundesverfassungsgericht); Splink side: Federal Statistical Office (Destatis) register census",
+      "connection_tier": "SAME_DOMAIN_SAME_COUNTRY",
+      "summary": "Two distinct data-linkage layers exist in the same country with no documented operational overlap. PALANTIR LAYER (policing/security): Palantir's Gotham platform powers automated cross-database police data-analysis systems in multiple German states \u2014 Hesse \"hessenDATA\" (since 2017), North Rhine-Westphalia \"DAR\" (since ~2019/20), Bavaria \"VeRA\" (live 2024), and Baden-W\u00fcrttemberg (contract signed March 2025, deployment from Q2 2026). On 16 February 2023 the Federal Constitutional Court (1 BvR 1547/19 and 1 BvR 2634/20, First Senate) struck down the enabling provisions in Hesse (\u00a725a(1) 1st alt. HSOG) and Hamburg (\u00a749(1) 1st alt. HmbPolDVG) as unconstitutional for violating the right to informational self-determination (Art. 2(1) in conjunction with Art. 1(1) Basic Law). Palantir/Gotham/hessenDATA is explicitly named in the judgment. This is a genuine Tier-1 court ruling touching Palantir-enabled policing. SPLINK LAYER (statistics): entirely separate \u2014 Germany's Federal Statistical Office (Destatis) self-reports on Splink's official MoJ page that it \"uses Splink to conduct projects in linking register-based census data\" for the German register census. CONNECTION: Same country, but different bodies (state police/interior ministries vs. federal statistics office), different data domains (criminal/security intelligence vs. census/register statistics), and different tools (Palantir Gotham vs. open-source Splink). There is NO evidence Palantir uses Splink, and NO evidence the police systems and Destatis census linkage share data, datasets, or infrastructure. The thread is thematic: both reflect German state \"joining-up\" of citizen records via automated linkage, but only the Palantir/policing layer has triggered a constitutional adjudication. Classified SAME_DOMAIN_SAME_COUNTRY in the loose sense (same country, automated record-linkage trajectory) but bordering THEMATIC_ADJACENCY because the bodies and data domains differ entirely.",
+      "palantir_presence": [
+        "Hesse 'hessenDATA': Palantir Gotham acquired 2017 by direct award citing 'special urgency', later made permanent. Links previously unconnected police databases (records, telecoms metadata, social media) to surface time-critical cross-database connections about persons/places/events. Contract value deliberately concealed \u2014 purchase order reportedly listed a nominal 0.01 EUR with the true price kept secret citing Hesse's 'security interests'.",
+        "North Rhine-Westphalia 'DAR' (Datenbank\u00fcbergreifende Analyse und Recherche): Palantir Gotham deployed since ~2019/20; GFF has filed a pending constitutional/legal challenge.",
+        "Bavaria 'VeRA' (Verfahrens\u00fcbergreifende Recherche und Analyse): Palantir Gotham, operational 2024; GFF (with Chaos Computer Club support) filed a constitutional complaint in July 2024/2025 against the Bavarian police law's automated data-analysis powers.",
+        "Baden-W\u00fcrttemberg: state parliament approved a police-law revision; Gotham contract signed March 2025 for ~25 million EUR (price-locked; without the price-binding clause cost would have ~doubled to ~50M EUR; reportedly no exit clause), deployment from Q2 2026.",
+        "2025 reporting (heise) indicates German investigators also use the Palantir big-data analysis for minor crimes, broadening the scope beyond serious/terrorism cases."
+      ],
+      "splink_side": "Splink's official MoJ-hosted page lists Germany's Federal Statistical Office (Destatis) as a user: 'The German Federal Statistical Office (Destatis) uses Splink to conduct projects in linking register-based census data.' This is the German entry the prior global Splink analysis would have captured (self-reported on Splink's page). It sits in the federal statistics / census domain. Palantir relates to it only as 'same country, different layer': different body (Destatis, a federal statistics authority, vs. state police forces and interior ministries), different data domain (anonymised/administrative census register linkage vs. operational police intelligence), and different tool (open-source Splink vs. proprietary Palantir Gotham). No documented data-sharing, shared dataset, or shared infrastructure between the two. Palantir does NOT use Splink.",
+      "citations": [
+        {
+          "title": "Bundesverfassungsgericht \u2014 Judgment of 16 February 2023, 1 BvR 1547/19, 1 BvR 2634/20 (English)",
+          "url": "https://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/EN/2023/02/rs20230216_1bvr154719en.html",
+          "date": "2023-02-16"
+        },
+        {
+          "title": "Bundesverfassungsgericht \u2014 Press release: Regelungen in Hessen und Hamburg zur automatisierten Datenanalyse ... sind verfassungswidrig (bvg23-018)",
+          "url": "https://www.bundesverfassungsgericht.de/SharedDocs/Pressemitteilungen/DE/2023/bvg23-018.html",
+          "date": "2023-02-16"
+        },
+        {
+          "title": "Splink official documentation \u2014 list of organisations using Splink (Destatis register census)",
+          "url": "https://moj-analytical-services.github.io/splink/index.html",
+          "date": "2026-06-23"
+        },
+        {
+          "title": "Destatis \u2014 Register census (Federal Statistical Office)",
+          "url": "https://www.destatis.de/EN/Themes/Society-Environment/Register-census/_node.html",
+          "date": "2026-06-23"
+        },
+        {
+          "title": "heise online \u2014 Baden-W\u00fcrttemberg decides on the use of Palantir (~25M EUR, signed March 2025)",
+          "url": "https://www.heise.de/en/news/Baden-Wuerttemberg-decides-on-the-use-of-Palantir-11075477.html",
+          "date": "2025-03"
+        },
+        {
+          "title": "heise online \u2014 Palantir: German investigators also use big data for minor crimes",
+          "url": "https://www.heise.de/en/news/Palantir-German-investigators-also-use-big-data-for-minor-crimes-10453589.html",
+          "date": "2025"
+        },
+        {
+          "title": "Ulbricht & Egbert, 'In Palantir we trust? Regulation of data analysis platforms in public security', Big Data & Society (2024)",
+          "url": "https://journals.sagepub.com/doi/10.1177/20539517241255108",
+          "date": "2024"
+        },
+        {
+          "title": "LDI NRW \u2014 Court rules against automated data analysis in Hesse and Hamburg",
+          "url": "https://www.ldi.nrw.de/urteilt-gegen-automatisierte-datenanalyse-hessen-und-hamburg",
+          "date": "2023"
+        },
+        {
+          "title": "police-it.net \u2014 Consequences of the BVerfG judgment for VeRA and other Palantir systems",
+          "url": "https://police-it.net/folgen-des-bverfg-urteils-fuer-vera-und-andere-palantir-systeme",
+          "date": "2023"
+        },
+        {
+          "title": "LTO \u2014 Constitutional complaint against controversial police software (GFF, Bavaria)",
+          "url": "https://www.lto.de/recht/nachrichten/n/gff-verfassungsbeschwerde-gegen-palantir-bayern-polizei-ueberwachung",
+          "date": "2024"
+        }
+      ],
+      "confidence": "high",
+      "adjudications": [
+        "Bundesverfassungsgericht (Federal Constitutional Court), First Senate, Judgment of 16 February 2023, 1 BvR 1547/19 (Hesse) and 1 BvR 2634/20 (Hamburg): held \u00a725a(1) 1st alt. HSOG (Hesse) and \u00a749(1) 1st alt. HmbPolDVG (Hamburg) \u2014 the automated police data-analysis/data-evaluation powers \u2014 UNCONSTITUTIONAL for breaching the right to informational self-determination (Art. 2(1) in conjunction with Art. 1(1) Basic Law) due to insufficient intervention thresholds. Palantir/Gotham/hessenDATA is explicitly named. Hamburg provision declared void immediately; Hesse provision allowed to continue under restrictive conditions until 30 September 2023 (or until new legislation) to give the legislature time to revise it. This is a genuine Tier-1 ruling directly touching Palantir-enabled policing.",
+        "Follow-on constitutional complaints (Gesellschaft f\u00fcr Freiheitsrechte / GFF): pending challenge to Bavaria's VeRA-enabling police law (filed 2024/2025, with Chaos Computer Club support); GFF also pursuing challenges relating to NRW and revised Hesse provisions. Outcomes not yet decided as of June 2026.",
+        "Splink side: NONE FOUND \u2014 no court or regulator ruling touching Destatis's Splink use or the register census linkage."
+      ],
+      "palantir_product": "Palantir Gotham (deployed under state-specific names: hessenDATA in Hesse, DAR in North Rhine-Westphalia, VeRA in Bavaria; unnamed/Gotham in Baden-W\u00fcrttemberg)",
+      "contract_values_dates": "Hesse hessenDATA: direct award 2017 (urgency procedure), later permanent; true price secret (purchase order reportedly nominal 0.01 EUR, real value withheld on 'security interests' grounds). NRW DAR: ~2019/20, value not publicly confirmed. Bavaria VeRA: operational 2024, value not publicly confirmed in sources reviewed. Baden-W\u00fcrttemberg: contract signed March 2025, ~25 million EUR (price-locked; would have ~doubled to ~50M EUR without price-binding clause; reportedly no exit clause), deployment from Q2 2026.",
+      "operational_use": "Police use Gotham to fuse and cross-reference previously siloed databases (police records, telecommunications/metadata, possibly social media and other administrative sources) to rapidly surface relationships between persons, places, and events for preventive crime-fighting and investigations. The BVerfG objected that the broad statutory powers permitted dragnet 'analysis by association' sweeping in unsuspected third parties without adequate intervention thresholds. 2025 reporting indicates use has extended to minor crimes, not just serious/terrorism cases.",
+      "datasets": [
+        "Hesse: linked police operational databases plus external/telecoms data via hessenDATA (specific dataset inventory not fully public)",
+        "Destatis register census: administrative and statistical registers linked via Splink (entirely separate from police data; no documented overlap with Palantir systems)"
+      ],
+      "controversies": [
+        "Secrecy of the Hesse contract value (nominal 0.01 EUR on paper; real price withheld citing state security interests) \u2014 transparency/procurement concerns.",
+        "Direct, no-tender award to a US firm (Palantir) on 'special urgency' grounds, raising sovereignty and dependency concerns about a US-controlled platform handling German citizen/police data.",
+        "Reported expansion of Palantir analysis to minor crimes, widening surveillance scope.",
+        "Civil-society opposition (GFF, Chaos Computer Club) and continued state adoption (Baden-W\u00fcrttemberg 2025) despite the 2023 ruling \u2014 'Palantir is hungry, Germany is on the menu' framing in critical press.",
+        "Baden-W\u00fcrttemberg contract reportedly has no exit clause and a price-binding clause, raising long-term lock-in concerns."
+      ],
+      "unverified_flags": [
+        "Exact contract values for NRW (DAR) and Bavaria (VeRA) not confirmed in sources reviewed.",
+        "The '0.01 EUR' nominal Hesse purchase-order figure is from secondary reporting; the true contract value remains officially undisclosed.",
+        "Precise scope of datasets ingested by each Palantir deployment is not fully public.",
+        "Status/outcome of the pending GFF constitutional complaints (Bavaria, NRW, revised Hesse) not yet adjudicated as of June 2026.",
+        "Destatis's Splink use is self-reported on Splink's page; the precise scale, which specific register-census projects, and dates were not independently cross-verified from a Destatis primary publication in this pass."
+      ],
+      "caveats": "No documented link connects the Palantir policing layer and the Destatis/Splink census layer \u2014 different bodies, data domains, and tools. The connection is one of national context and the broad 'automated record-linkage of citizens' trajectory, not shared systems or data. I make no claim that Palantir uses Splink (it does not). The 2023 BVerfG ruling is the load-bearing, well-verified Tier-1 fact and is squarely on the Palantir side. Tiering reflects that 'same country' is solid but 'same domain/body' is NOT met; if a stricter reading is preferred this case is closer to THEMATIC_ADJACENCY than to a true SAME_DOMAIN link."
+    },
+    "verification": {
+      "verdict": "MIXED",
+      "adjusted_connection_tier": "THEMATIC_ADJACENCY",
+      "overclaims": [
+        "connection_tier is set to SAME_DOMAIN_SAME_COUNTRY, but the profile's own caveats concede the 'same domain/body' criterion is NOT met: Palantir sits in state-police/interior-ministry criminal-intelligence; Splink sits in the federal statistics office's anonymised census-register domain. Different body, different data domain, different tool, no shared data/dataset/infrastructure. As a hostile critic and as Palantir's lawyer, the only honest link is 'same country + thematic record-linkage trajectory' = THEMATIC_ADJACENCY. SAME_DOMAIN is an overstatement and should be downgraded.",
+        "The Hesse '0.01 EUR nominal purchase order / true price secret' figure is presented in palantir_presence and contract_values_dates as near-fact ('reportedly'). It is uncorroborated secondary reporting not backed by any cited primary procurement document. As Palantir's lawyer I demand it be flagged unverified or removed; as a hostile critic I note the profile itself can produce no citation for the 0.01 EUR claim.",
+        "NRW 'DAR' (~2019/20) and Bavaria 'VeRA' contract VALUES are asserted as deployments but the profile admits values are 'not publicly confirmed' \u2014 yet they are listed in palantir_presence as established facts of deployment. Deployment is supportable; any implied contract figure is not. No citation supplies a NRW or Bavaria contract value.",
+        "The GFF Bavaria complaint is dated '2024/2025' in summary and adjudications; the actual filing was 23 July 2025. The '2024' alternative is wrong and should be removed for precision.",
+        "Summary phrase 'powers automated cross-database police data-analysis systems in multiple German states' risks implying uniform live operational Palantir deployment in all four states. Baden-W\u00fcrttemberg is contract-signed (March 2025) with deployment only from Q2 2026 \u2014 not yet operational. This must be stated as future/contracted, not current."
+      ],
+      "strongest_sourced_claims": [
+        "BVerfG Judgment of 16 Feb 2023 (1 BvR 1547/19, 1 BvR 2634/20, First Senate) struck down \u00a725a(1) 1st alt. HSOG (Hesse) and \u00a749(1) 1st alt. HmbPolDVG (Hamburg) as violating informational self-determination (Art. 2(1) in conjunction with Art. 1(1) Basic Law); Palantir, the 'Gotham' system, and 'hessenDATA' are EXPLICITLY named in the judgment text; Hamburg provision void immediately, Hesse permitted under restrictive conditions until 30 September 2023. Verified directly against the court's official English judgment page.",
+        "Baden-W\u00fcrttemberg: Palantir contract signed March 2025 at ~25 million EUR under a price-binding clause (cost would otherwise have ~doubled to ~50M EUR), no exit clause, police use expected from Q2 2026. Verified against the cited heise article.",
+        "Destatis (German Federal Statistical Office) is listed verbatim on Splink's official MoJ-hosted page: 'The German Federal Statistical Office (Destatis) uses Splink to conduct projects in linking register-based census data.' Verified directly on the Splink page.",
+        "GFF filed a constitutional complaint against Bavaria's VeRA/Palantir police data-analysis powers, supported by the Chaos Computer Club (filed 23 July 2025); outcome pending. Verified via GFF press release and heise/LTO reporting.",
+        "NO documented technical or operational link between the Palantir policing layer and the Splink/Destatis census layer: the Splink page mentions neither Palantir nor police; Palantir does not use Splink. This 'no-link' conclusion is correctly stated and is itself well-supported."
+      ],
+      "unsupported_to_remove": [
+        "Remove or hard-flag the Hesse '0.01 EUR nominal purchase order' figure as uncorroborated secondary reporting with no primary citation; do not present it in contract_values_dates as a near-established fact.",
+        "Remove any implied NRW (DAR) and Bavaria (VeRA) contract VALUES \u2014 none are cited; keep only the deployment existence, which the GFF/court/press sources support.",
+        "Remove the '2024' alternative from the GFF Bavaria complaint date; the filing is July 2025.",
+        "Downgrade connection_tier from SAME_DOMAIN_SAME_COUNTRY to THEMATIC_ADJACENCY to match the profile's own (correct) reasoning that body/domain/tool all differ.",
+        "Soften summary wording so Baden-W\u00fcrttemberg reads as 'contracted, deployment from Q2 2026' rather than implying it currently 'powers' a live system."
+      ],
+      "corrections": [
+        "GFF Bavaria VeRA constitutional complaint: filed 23 July 2025 (supported by Chaos Computer Club), not '2024/2025'.",
+        "connection_tier -> THEMATIC_ADJACENCY (same country and shared record-linkage theme only; different bodies, data domains, and tools; no shared data or infrastructure).",
+        "Baden-W\u00fcrttemberg Palantir deployment is prospective (from Q2 2026), not currently operational; only Hesse (2017), NRW (~2019/20), and Bavaria (2024) are described as operational."
+      ],
+      "notes": "No Splink<->Palantir technical link is asserted anywhere in the profile, and that absence is correct and independently confirmed: the Splink page names neither Palantir nor police, and the profile explicitly states 'Palantir does NOT use Splink.' No such overclaim needs removal \u2014 the profile is appropriately careful here. The load-bearing Palantir-side facts (the 2023 BVerfG ruling and the Baden-W\u00fcrttemberg contract terms) are solidly sourced and verified directly against the cited primary/near-primary pages. The profile is downgraded to MIXED (not WEAK) because its core adjudication and contract claims hold; the defects are the overstated connection_tier and several uncited/over-hedged contract and date assertions that must be flagged or removed. After those fixes this is a clean THEMATIC_ADJACENCY profile whose real value is the one genuine Tier-1 Palantir-policing court ruling \u2014 wholly on the Palantir side, with the Splink/Destatis entry correctly isolated as a separate, non-connected layer."
+    }
+  },
+  {
+    "target": "australia",
+    "title": "Australia \u2014 Palantir defence/government",
+    "profile": {
+      "country_or_body": "Australia (federal) \u2014 Palantir in Defence / AUSTRAC / ACIC / ASD vs. ABS Person Linkage Spine (PLIDA/MADIP) using Splink",
+      "connection_tier": "THEMATIC_ADJACENCY",
+      "summary": "Palantir has a substantial, documented Australian government footprint \u2014 but it sits in the national-security / law-enforcement / defence data domains, NOT in the statistical data-integration domain where Splink is used. Australia's Splink deployment is at the Australian Bureau of Statistics (ABS), which used Splink for the first time in 2025 to build the Person Linkage Spine (\"the Spine\"), the linkage backbone of the Person Level Integrated Data Asset (PLIDA, formerly MADIP). The Spine is built from Medicare (Services Australia), DOMINO Centrelink data (Department of Social Services) and Personal Income Tax (ATO) records, and is used by approved researchers for statistics/policy. Palantir, by contrast, holds contracts with the Department of Defence (Foundry data integration/analytics, ~$26m+ cumulative since 2013; latest $7.6m Feb 2026 limited-tender for the Cyber & Electronic Warfare Division), AUSTRAC (data analytics, $8.1m 2023 grown past $12m via variations) and the ACIC (criminal-intelligence work; a Palantir Gotham-style system documented sorting ~42 million data points on Australians, ~$5.7m). Total federal spend reported at ~$50-60m, plus a ~$160m+ Future Fund equity stake. There is NO public evidence that Palantir contracts with the ABS, ATO, DSS or Services Australia for statistical integration, and NO evidence Palantir touches the Spine/PLIDA or uses Splink. The connection is therefore thematic \u2014 both are \"joining up\" siloed citizen data \u2014 but they occupy different bodies, different data domains, and different governance/legal regimes. Tier: THEMATIC_ADJACENCY (NOT same-domain-same-body, because Palantir's bodies and data domains differ from the ABS statistical-linkage environment).",
+      "palantir_product": "Foundry (and AIP) for Defence data integration/analytics; Gotham (or Gotham-style intelligence platform) for ACIC criminal-intelligence work; data-analytics platform for AUSTRAC financial intelligence. In Nov 2025 Palantir Foundry + AIP were assessed to PROTECTED level under the Australian IRAP scheme, broadening eligible government use.",
+      "palantir_presence": [
+        "Department of Defence \u2014 Foundry data integration/analytics; cumulative ~$26m+ since 2013; $7.6m one-year limited-tender contract via AusTender 11 Feb 2026 for Cyber & Electronic Warfare Division; reporting of embedded Palantir staff and a 2024 contract ~$7.1m",
+        "AUSTRAC \u2014 $8.1m data-analytics contract (2023) expanded past $12m via five variations within ~12 months",
+        "ACIC \u2014 criminal-intelligence analytics; leaked Palantir manual documents system holding ~42m data points on Australians (intercepts, police/government databases, location data); ~$5.7m committed",
+        "Australian Signals Directorate (ASD) \u2014 listed among agencies with Palantir contracts",
+        "Victorian Department of Justice \u2014 named as Palantir customer (state level)",
+        "Future Fund \u2014 Palantir equity stake reported >$160m",
+        "Nov 2025 \u2014 Palantir Foundry + AIP assessed to IRAP PROTECTED level"
+      ],
+      "splink_side": "Australia's Splink use is at the ABS: Splink (the UK MoJ open-source probabilistic record-linkage tool) was used for the first time in 2025 to construct the Person Linkage Spine, the core linkage infrastructure of PLIDA (formerly MADIP). Splink was also used for the 2024 National Linkage Spine underpinning the National Disability Data Asset. The Spine integrates Medicare Consumer Directory (Services Australia), DOMINO Centrelink Administrative Data (Department of Social Services) and Personal Income Tax (ATO); it is operational (covering Jan 2006\u2013Jun 2025, updated at least annually) and serves approved-researcher statistical/policy projects. Palantir relates to this only thematically: it operates in DIFFERENT bodies (Defence, AUSTRAC, ACIC, ASD \u2014 not ABS/ATO/DSS/Services Australia), a DIFFERENT data domain (national security / law enforcement / defence, not de-identified statistical research integration), and uses DIFFERENT tools (Foundry/Gotham, not Splink). No documented overlap of body, dataset, or tool. Note one ostensible adjacency: Services Australia (Medicare) and DSS (Centrelink) feed the ABS Spine, and these are mainstream service-delivery agencies \u2014 but Palantir has no documented contract with either for the Spine or any other purpose.",
+      "contract_values_dates": "Defence: ~$26m+ cumulative since 2013; $7.6m one-year contract via AusTender 11 Feb 2026 (limited tender), Cyber & Electronic Warfare Division; earlier 2024 contract ~$7.1-7.15m (Foundry). AUSTRAC: $8.1m in 2023, grown past $12m via five variations within ~12 months. ACIC: ~$5.7m across contracts/extensions (hardware/software maintenance 2015-16 to 2023-24, shifting to data analytics from 2024-25). Total federal spend on Palantir reported ~$50m (since 2016-17) to ~$60m, with ~$26m of that since 2023-24. Future Fund equity stake reported >$160m. (Figures sourced from journalism citing AusTender; treat precise totals as approximate.)",
+      "operational_use": "Defence: Foundry-based data integration/analytics to map and manage defence-industry capacity and supply-chain logistics for the Cyber & Electronic Warfare Division; reporting indicates embedded Palantir staff. AUSTRAC: data analytics over financial-transaction/AML intelligence. ACIC: integrating and searching criminal-intelligence data \u2014 linking people, events and locations; the documented system held ~42m data points (intercepted calls/texts, police/government databases, phone/address location data) with workflows for warrant-number automation and geographic mapping. Splink/ABS side is operationally separate: probabilistic linkage of administrative datasets to a Spine for de-identified statistical/research use, not operational policing or targeting.",
+      "datasets": [
+        "Palantir/ACIC: intercepted phone call and text records, police reference databases, government records databases, phone-number/address location data (~42m data points on Australians)",
+        "Palantir/AUSTRAC: financial transaction / AML reporting data",
+        "Palantir/Defence: defence-industry / supply-chain and ICT systems data",
+        "ABS Spine (Splink, SEPARATE from Palantir): Medicare Consumer Directory (Services Australia), DOMINO Centrelink Administrative Data (DSS), Personal Income Tax (ATO) \u2014 feeding PLIDA/MADIP"
+      ],
+      "adjudications": [
+        "No Australian court or regulator ruling on Palantir located (NONE FOUND for Australia as of research date)",
+        "Germany \u2014 Bundesverfassungsgericht (Federal Constitutional Court), Judgment of 16 February 2023 (1 BvR 1547/19 and 1 BvR 2634/20): provisions of the Hesse Security and Public Order Act and the Hamburg police data-processing act authorising automated data analysis were unconstitutional, violating the right to informational self-determination for lacking sufficient interference thresholds. The software at issue was Palantir's 'hessenDATA' (Gotham-based), used by Hesse police since 2017; Hamburg's provision was void, Hesse's allowed to continue under restrictions until new law by 30 Sept 2023. Brought by Gesellschaft fuer Freiheitsrechte (GFF). This is the landmark adjudication touching Palantir, but it is a German precedent \u2014 not binding in Australia and not connected to Australia's Splink/ABS use."
+      ],
+      "controversies": [
+        "Defence used a limited/sole-source tender (provision normally for replacement parts/essential extensions) to award the $7.6m contract, bypassing competitive process \u2014 criticised by Canberra Times/Crikey",
+        "Reported $60m federal spend and >$160m Future Fund stake with 'zero documents' assessing the ethics/responsibility of investing in Palantir",
+        "'Contract creep' \u2014 AUSTRAC and ACIC engagements expanded through successive variations rather than new competitive tenders",
+        "Palantir reportedly embedding staff inside Defence and 'mining Australian data'; concerns it is unrestricted in where it stores data and who can access it (Digital Rights Watch)",
+        "Civil-society alarm over Palantir's ties to US/Israeli defence and Trump-aligned ownership; 'We kill enemies' clearance reporting; ACIC manual exposing surveillance of 42m data points on Australians",
+        "Broader privacy/oversight gap: no public assurance Palantir's profiling systems are constrained as they were in Germany"
+      ],
+      "citations": [
+        {
+          "title": "Palantir helped Australian intelligence agency sort 42m data points (ACIC / Gotham-style system)",
+          "url": "https://www.crikey.com.au/2026/04/27/palantir-australia-manual-gotham-intelligence-agency-acic/",
+          "date": "2026-04-27"
+        },
+        {
+          "title": "Palantir embedding staff in Defence and mining Australian data",
+          "url": "https://www.crikey.com.au/2026/03/09/palantir-defence-contract-australia-embedding-staff-data-mining/",
+          "date": "2026-03-09"
+        },
+        {
+          "title": "Defence signs biggest ever contract with Palantir for 'Cyber Warfare Division'",
+          "url": "https://www.crikey.com.au/2026/02/17/australian-defence-department-palantir-biggest-ever-contract/",
+          "date": "2026-02-17"
+        },
+        {
+          "title": "Defence skips competitive tender process to award Palantir multimillion-dollar contract (Canberra Times)",
+          "url": "https://www.canberratimes.com.au/story/9178631/defence-awards-palantir-76m-defence-contract/",
+          "date": "2026-02-12"
+        },
+        {
+          "title": "Palantir in Australia (Digital Rights Watch)",
+          "url": "https://digitalrightswatch.org.au/2026/02/01/palantir-in-australia/",
+          "date": "2026-02-01"
+        },
+        {
+          "title": "Palantir secures $7.6m Defence contract to supply ICT system platform (Defence Connect)",
+          "url": "https://www.defenceconnect.com.au/industry/17697-palantir-secures-7-6-million-defence-contract-to-supply-ict-system-platform",
+          "date": "2026-02-12"
+        },
+        {
+          "title": "ABS Person Linkage Spine (datasets; Splink used from 2025)",
+          "url": "https://www.abs.gov.au/about/data-services/data-integration/person-linkage-spine",
+          "date": "2025"
+        },
+        {
+          "title": "ABS Person Level Integrated Data Asset (PLIDA, formerly MADIP)",
+          "url": "https://www.abs.gov.au/about/data-services/data-integration/integrated-data/person-level-integrated-data-asset-plida",
+          "date": "2023"
+        },
+        {
+          "title": "Splink (UK MoJ Analytical Services)",
+          "url": "https://moj-analytical-services.github.io/splink/index.html",
+          "date": "2024"
+        },
+        {
+          "title": "Bundesverfassungsgericht press release \u2014 automated data analysis (Palantir/hessenDATA) unconstitutional, 16 Feb 2023",
+          "url": "https://www.bundesverfassungsgericht.de/SharedDocs/Pressemitteilungen/EN/2023/bvg23-018.html",
+          "date": "2023-02-16"
+        },
+        {
+          "title": "Bundesverfassungsgericht full judgment 1 BvR 1547/19, 1 BvR 2634/20",
+          "url": "https://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/EN/2023/02/rs20230216_1bvr154719en.html",
+          "date": "2023-02-16"
+        },
+        {
+          "title": "AusTender keyword search: Palantir",
+          "url": "https://www.tenders.gov.au/Search/KeywordSearch?keyword=palantir",
+          "date": "2026"
+        }
+      ],
+      "confidence": "high",
+      "caveats": "Confidence is high on the core tiering (Palantir present in AU defence/security domains; Splink at ABS in the statistical-integration domain; no documented overlap of body/dataset/tool \u2192 THEMATIC_ADJACENCY). Dollar figures and totals derive from journalism citing AusTender rather than direct AusTender line-items (the AusTender keyword page returned 403 to automated fetch), so treat exact aggregate totals (~$50-60m, $26m, $5.7m ACIC) as approximate. 'Gotham' for ACIC is described as a Gotham-style/Palantir intelligence platform via a leaked training manual; the exact product name on the ACIC contract is not formally confirmed. The Defence platform is reported as Foundry. No Australian court/regulator has adjudicated Palantir; the only relevant adjudication is the German BVerfG 2023 ruling, which is foreign precedent and not legally connected to Australia's Splink use. Critically: I found NO evidence Palantir uses Splink, NO evidence Palantir contracts with the ABS/ATO/DSS/Services Australia, and NO evidence Palantir touches the Spine/PLIDA \u2014 these were checked and are absent, not merely unsearched.",
+      "unverified_flags": [
+        "Exact AusTender contract line-items not directly retrieved (403 on automated fetch); totals rely on secondary reporting",
+        "ACIC system named as Palantir Gotham via leaked manual \u2014 formal contract product name unconfirmed",
+        "Victorian Department of Justice Palantir use cited by an advocacy source with thin detail; state-level scope not independently confirmed",
+        "ASD/Palantir contract noted in reporting but specifics (value/dates/use) not detailed",
+        "Future Fund stake figure (>$160m / ~$100m) varies across sources",
+        "No verification sought or found of any technical or contractual link between Palantir systems and ABS Splink/Spine infrastructure"
+      ]
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "adjusted_connection_tier": "THEMATIC_ADJACENCY",
+      "overclaims": [
+        "The German BVerfG citation does NOT itself name Palantir. I fetched the court's own English press release (bvg23-018.html) \u2014 it identifies the Hesse platform only as 'hessenDATA' and does NOT mention Palantir at all. The profile asserts 'The software at issue was Palantir's hessenDATA (Gotham-based)' as if the court said so; that vendor attribution comes from secondary reporting/GFF, not the cited primary source. Must be sourced to journalism/GFF, not to the BVerfG release.",
+        "ACIC product called 'Gotham' / 'Gotham-style': the profile already flags this as unconfirmed, but the summary and palantir_product fields still lean on 'Gotham (or Gotham-style)'. The ~42m-data-points and Gotham naming rest on a single leaked-manual Crikey story; my searches did not independently corroborate the 42m figure. Should be explicitly hedged as single-source/uncorroborated in the body, not just caveats.",
+        "ASD ('Australian Signals Directorate \u2014 listed among agencies with Palantir contracts') is asserted in palantir_presence with no value, date, or use. unverified_flags concedes specifics are absent. This is thin enough that listing ASD as a confirmed 'presence' overclaims; downgrade to 'reported, unverified'.",
+        "Victorian Department of Justice as 'Palantir customer' is sourced to a single advocacy source (Digital Rights Watch) with thin detail and is state-level (out of the federal scope named in the title). Overclaims as a firm presence item.",
+        "Future Fund '>$160m' equity stake is stated in summary as a near-fact, but unverified_flags admits the figure varies across sources (>$160m vs ~$100m). The precise figure overclaims certainty.",
+        "Aggregate totals ('~$50-60m', '~$26m since 2013', '$5.7m ACIC') are presented with specific precision in contract_values_dates while the caveats admit they derive from journalism citing AusTender, not retrieved line-items (AusTender returned 403). The body should carry the 'approximate' hedge inline, not only in caveats."
+      ],
+      "strongest_sourced_claims": [
+        "$7.6m Defence one-year limited-tender contract via AusTender 11 Feb 2026 for the Cyber/Electronic Warfare Division, bringing Defence's Palantir total past ~$26m \u2014 corroborated across Crikey, Canberra Times, Defence Connect, InnovationAus and an AusTender CN page (CN4218984).",
+        "ABS used Splink for the FIRST time in 2025 to construct the Person Linkage Spine for PLIDA, integrating Medicare Consumer Directory (Services Australia), DOMINO Centrelink (DSS) and Personal Income Tax (ATO), covering Jan 2006\u2013Jun 2025 \u2014 confirmed directly on the ABS Person Linkage Spine page.",
+        "AUSTRAC awarded Palantir an $8.1m data-analytics contract in 2023 that grew past $12m via five variations within ~12 months \u2014 corroborated by ARN, Palantir investor release and Canberra Times.",
+        "~$50m total federal Palantir spend since 2016-17, ~$26m of it since 2023-24, with documented 'contract creep' via variations at AUSTRAC and ACIC \u2014 consistent across multiple outlets.",
+        "BVerfG, 16 Feb 2023 (1 BvR 1547/19; 1 BvR 2634/20): Hesse \u00a725a(1) HSOG and Hamburg \u00a749(1) HmbPolDVG automated-data-analysis powers unconstitutional for violating informational self-determination; Hamburg void, Hesse usable under restriction until 30 Sept 2023 \u2014 confirmed verbatim from the court's own press release.",
+        "The core tiering holds: no documented overlap of body, dataset, or tool between Palantir (Defence/AUSTRAC/ACIC/ASD) and the ABS Splink/Spine statistical-integration environment. THEMATIC_ADJACENCY is correctly NOT upgraded."
+      ],
+      "unsupported_to_remove": [
+        "REMOVE or rewrite the implication that the German Constitutional Court named Palantir/hessenDATA \u2014 the cited primary source (bvg23-018.html) does not name Palantir. Either re-attribute the 'hessenDATA = Palantir/Gotham-based' claim to GFF/journalism, or drop it from the adjudication summary.",
+        "REMOVE 'Gotham' as a stated ACIC product wherever it appears unqualified (palantir_product, summary). Replace with 'a Palantir intelligence platform described in a leaked training manual as Gotham-style; exact contracted product unconfirmed'.",
+        "REMOVE ASD from the firm palantir_presence list, or relabel it 'reported, no value/date/use verified'.",
+        "REMOVE Victorian Department of Justice as a confirmed customer, or relabel as 'single advocacy-source claim, state-level, unverified' \u2014 and note it is outside the federal scope of this profile.",
+        "DOWNGRADE the Future Fund figure from '>$160m' to 'reported between ~$100m and >$160m depending on source'.",
+        "Any phrasing that could imply a technical or contractual Splink<->Palantir link \u2014 none exists. The profile is already clean on this (it repeatedly states NO evidence Palantir uses Splink / touches the Spine / contracts ABS-ATO-DSS-Services Australia), and that disclaimer must be retained, not softened."
+      ],
+      "corrections": [
+        "Re-source the hessenDATA/Palantir attribution: the BVerfG release says only 'hessenDATA'; the Palantir/Gotham link must be cited to GFF or to reporting, not to the court.",
+        "Add an inline 'approximate / per secondary reporting (AusTender returned 403 to automated fetch)' hedge to the dollar figures in contract_values_dates, not only in caveats.",
+        "Mark the ACIC '42m data points' figure as single-source (Crikey leaked manual), uncorroborated by independent retrieval.",
+        "Confidence 'high' is defensible for the TIERING and for the Defence/AUSTRAC/Splink-ABS core facts, but should be explicitly downgraded to 'medium/low' for ASD, Victorian DoJ, the ACIC product name, and the Future Fund figure."
+      ],
+      "notes": "As a hostile critic AND Palantir lawyer, I find the profile is honestly built and survives adversarial review on its load-bearing claims. Critically, it does NOT manufacture a Splink<->Palantir link: it repeatedly and correctly states there is no documented overlap of body, dataset, or tool, and that this absence was checked rather than merely unsearched. The THEMATIC_ADJACENCY tier is correct and should NOT be upgraded (Palantir's bodies/data domains/tools all differ from the ABS statistical-linkage environment) nor downgraded (Palantir's substantial AU-government footprint plus the shared 'joining up citizen data' theme is real, so it is not SPECULATIVE_EXCLUDE). The defensible Palantir-lawyer objections are narrow: (1) the German court did not name Palantir \u2014 the profile must not let its own primary citation be read as the court attributing the software to Palantir; (2) 'Gotham' at ACIC is leaked-manual-sourced, not contractually confirmed; (3) ASD, Victorian DoJ, and the Future Fund figure are thinly sourced and overstated as firm facts; (4) dollar totals are secondary-reporting estimates and should carry the 'approximate' hedge inline. None of these undermine the verdict. Verified live: $7.6m Defence/Feb 2026, $8.1m\u2192$12m AUSTRAC, ABS Splink-from-2025 Spine composition, and the BVerfG 16 Feb 2023 ruling text. Verdict SOLID with the listed reductions applied."
+    }
+  },
+  {
+    "target": "canada",
+    "title": "Canada \u2014 Palantir presence",
+    "profile": {
+      "country_or_body": "Canada (federal DND/CANSOFCOM + Ontario Provincial Police); Splink side = Ontario MCCSS and Environment and Climate Change Canada",
+      "connection_tier": "SAME_DOMAIN_SAME_COUNTRY",
+      "summary": "Palantir has a substantial, well-documented Canadian government footprint, but it sits in DIFFERENT bodies and a DIFFERENT data domain than Canada's documented Splink use. Federally, the Department of National Defence (DND) ran Palantir Gotham for the Canadian Special Operations Forces Command (CANSOFCOM/JTF2) under a sole-source contract that grew from CAD 14.4M (2020) to ~CAD 44.4M via 12 amendments (DND reports ~CAD 46.8M spent), preceded by a CAD 997,434 sole-source pilot (March 2019), plus a separate ~CAD 3.7M Foundry evaluation (used intermittently 2022-2024). Provincially, the Ontario Provincial Police (OPP) confirmed using Gotham for crime analysis (2022) and was re-awarded a CAD 36.6M contract in October 2023. Canada's documented Splink use, by contrast, is self-reported by the Ontario Ministry of Children, Community and Social Services (MCCSS) Data Integration Unit and by Environment and Climate Change Canada \u2014 social-services and environmental administrative data linkage, NOT policing or defence. There is NO documented Palantir presence in MCCSS or Environment Canada, and no evidence Palantir uses or touches Splink. The strongest geographic overlap is the province of Ontario (Palantir in OPP / Splink in MCCSS), but these are different agencies, different tools, and different data domains, so the honest tier is SAME_DOMAIN_SAME_COUNTRY (same country/province, different body and domain), edging toward THEMATIC_ADJACENCY because the data domains differ (policing vs social assistance/environment). NOTE: Statistics Canada uses its own G-Link tool (and the Social Data Linkage Environment/SDLE), not Splink.",
+      "palantir_presence": [
+        "DND / CANSOFCOM (JTF2): Palantir Gotham, sole-source, CAD ~14.4M (signed 27 Mar 2020) expanded to ~CAD 44.4M via 12 amendments through ~Mar 2025; DND reports ~CAD 46.8M total spent. Disclosed only in Sept 2025 after Conservative MP questioning; withheld for ~5 years on national-security grounds. Integrates/collates data from disparate stores for analyst visualization with access controls.",
+        "DND / CANSOFCOM: CAD 997,434 one-year sole-source evaluation licence for an information-processing tool, signed 28 Mar 2019 (the first publicly disclosed federal Palantir procurement).",
+        "DND: Palantir Foundry, ~CAD 3.7M, used intermittently May 2022-Mar 2024 as an evaluation activity for data processing/analytics; DND says no longer active. A 2025-reported CAD 3.7M figure was the basis for press concern about military data access.",
+        "Ontario Provincial Police (OPP): Palantir Gotham for crime analysis, confirmed Oct 2022; CAD 36.6M contract re-awarded Oct 2023 after a Sept 2022 Request for Qualifications (9 vendors qualified). Builds a searchable knowledge graph fusing crime/arrest records, ALPR hits, social-network mappings, physical descriptions, tattoos, vehicle info, relational links. Configuration undisclosed, citing investigative techniques.",
+        "Federal Software Licensing Supply Arrangement (SLSA): Palantir added Jan 2024-Jul 2028 via Carahsoft as distributor, making products available to all federal departments/agencies/Crown corps through simplified procurement (CanadaBuys ProServices/TBIPS/SLSA records exist for Palantir Technologies Canada Inc.)."
+      ],
+      "palantir_product": "Palantir Gotham (DND/CANSOFCOM and OPP); Palantir Foundry (DND evaluation 2022-2024)",
+      "operational_use": "Defence/special-forces intelligence fusion and analyst visualization (Gotham for CANSOFCOM/JTF2); provincial policing crime analysis via a fused knowledge graph (OPP Gotham ingesting crime reports, arrest records, ALPR/license-plate hits, social-network mappings, descriptions, vehicles, relational links). Foundry was a federal data-processing/analytics evaluation. Palantir does NOT perform record-linkage of social-assistance or environmental data \u2014 that is the Splink domain (MCCSS, Environment Canada).",
+      "contract_values_dates": "CAD 997,434 (28 Mar 2019, sole-source pilot, CANSOFCOM); CAD ~14.4M signed 27 Mar 2020 expanding to ~CAD 44.4M (12 amendments through ~Mar 2025), DND reports ~CAD 46.8M spent (Gotham, CANSOFCOM); ~CAD 3.7M Foundry (used May 2022-Mar 2024); OPP CAD 36.6M (awarded Oct 2023, use confirmed Oct 2022); SLSA supply arrangement 23 Jan 2024-4 Jul 2028.",
+      "splink_side": "Canada's documented Splink users are the Ontario MCCSS Data Integration Unit (Splink is its main tool for intra-/inter-ministerial social-services data linking; MCCSS Social Assistance database 2003-2016 linked to health data such as the Registered Persons Database) and Environment and Climate Change Canada (linking administrative/reporting program datasets). Both are self-reported (e.g., via the UK MoJ Splink project's user list and CRDCN/PopData webinars). Palantir relates to this only by SHARED COUNTRY and, for MCCSS, SHARED PROVINCE (Ontario) \u2014 but a DIFFERENT body (OPP, not MCCSS; DND, not Environment Canada), a DIFFERENT tool (Gotham/Foundry, not Splink), and a DIFFERENT data domain (defence/policing vs social assistance/environment). No overlap of dataset, agency, or tool; Palantir does not use Splink.",
+      "datasets": [
+        "DND/CANSOFCOM: classified/operational defence and intelligence data (specifics withheld on national-security grounds)",
+        "OPP Gotham: crime reports, arrest records, ALPR/license-plate-reader hits, social-network mappings, physical descriptions/tattoos, vehicle information, relational links",
+        "Splink side (NOT Palantir): MCCSS Social Assistance database (2003-2016) linked to Registered Persons Database / health-care administrative data; Environment Canada administrative & reporting-program datasets"
+      ],
+      "controversies": [
+        "Secrecy: the ~CAD 44.4M DND/CANSOFCOM Gotham contract was kept confidential for ~5 years and only surfaced via MP questioning; 12 amendments on a sole-source basis.",
+        "2025 press concern that Palantir's military data access 'may enable' facial recognition / social-media monitoring of Canadian civilians \u2014 FLAGGED AS SPECULATIVE: drugdatadecoded.ca connected it to separate documented tools (Meltwater social-media monitoring at DND ~CAD 991,706 since 2019; Clearview AI at Calgary police; Edmonton bodycam FR), not to a documented Palantir FR capability.",
+        "OPP 'secretive' use: contracts shielded under Ontario's Financial Administration Act exemption; OPP refuses to disclose platform configuration, drawing civil-liberties criticism (pre-crime/predictive-policing concerns).",
+        "Conflict-of-interest: Palantir Canada president David MacNaughton (former Ambassador to the US) pitched pro-bono COVID-19 services to senior officials, leading to a federal ruling against him (see adjudications).",
+        "2017 vs later contradictions: DND and Public Safety Canada told CBC in 2017 they had never bought/used Palantir; later disclosures (and LinkedIn evidence) appear to contradict the Public Safety position."
+      ],
+      "adjudications": [
+        "Canada \u2014 Conflict of Interest and Ethics Commissioner (Mario Dion), 16 Sept 2020: ruled Palantir Canada president David MacNaughton contravened the Conflict of Interest Act by offering Palantir's services to the federal COVID-19 response; nine officials (incl. Freeland, Bains) ordered to restrict dealings with him for one year. MacNaughton consented and acknowledged the breach. (No contract resulted.) Also a related Office of the Commissioner of Lobbying matter.",
+        "Germany \u2014 Federal Constitutional Court (BVerfG), Judgment of 16 Feb 2023, 1 BvR 1547/19 & 1 BvR 2634/20: held Hesse and Hamburg automated-data-analysis policing provisions (implemented via Palantir Gotham, 'hessenDATA') unconstitutional for violating informational self-determination; Hamburg act void, Hesse provision time-limited to 30 Sept 2023. This is a German ruling, NOT Canadian \u2014 included only as the requested external Palantir adjudication; it does not adjudicate any Canadian deployment.",
+        "No Canadian court or privacy-regulator (e.g., OPC) decision squarely adjudicating a Palantir deployment was found."
+      ],
+      "citations": [
+        {
+          "title": "Canada Spent $46.8 Million on Secret Palantir Contract for Special Forces, Records Show",
+          "url": "https://thedeepdive.ca/canada-spent-46-8-million-on-secret-palantir-contract-for-special-forces-records-show/",
+          "date": "2026"
+        },
+        {
+          "title": "The Defence Department had a $14M contract with Palantir for data management software",
+          "url": "https://thelogic.co/news/palantir-department-of-national-defence-contract-canada/",
+          "date": "2025"
+        },
+        {
+          "title": "Canadian government spent tens of millions on secret Palantir contract",
+          "url": "https://theijf.org/brief/canadian-palantir-contract-amendments-obd",
+          "date": "2025"
+        },
+        {
+          "title": "The Palantir Map: What Canada Has Actually Disclosed, And What It Tells Us About Sovereignty",
+          "url": "https://www.b2bnn.com/2026/04/the-palantir-map-what-canada-has-actually-disclosed-and-what-it-tells-us-about-sovereignty/",
+          "date": "2026-04"
+        },
+        {
+          "title": "Palantir's access to Canadian military data may include facial recognition of civilian social media (flagged speculative)",
+          "url": "https://drugdatadecoded.ca/canadian-military-palantir-contract-could-analyze-civilians-social-media-posts-and-photos/",
+          "date": "2025"
+        },
+        {
+          "title": "Ontario Provincial Police use controversial data-mining platform Palantir for crime analysis",
+          "url": "https://thelogic.co/news/exclusive/ontario-provincial-police-use-controversial-data-mining-platform-palantir-for-crime-analysis/",
+          "date": "2022-10"
+        },
+        {
+          "title": "Unlimited Access: The OPP's Spying Program and Pre-Crime Partnership with Palantir",
+          "url": "https://wiretapmedia.ca/unlimited-access-the-opps-spying-program-and-pre-crime-partnership-with-palantir/",
+          "date": "2023"
+        },
+        {
+          "title": "Ethics commissioner rules Palantir's MacNaughton broke conflict-of-interest rules",
+          "url": "https://thelogic.co/news/ethics-commissioner-rules-palantirs-macnaughton-broke-conflict-of-interest-rules-orders-top-federal-officials-to-cease-contact/",
+          "date": "2020-09"
+        },
+        {
+          "title": "Freeland, Vance and several federal officials barred from official dealings with ex-ambassador (CBC)",
+          "url": "https://www.cbc.ca/news/politics/palantir-macnaughton-ethics-1.5726443",
+          "date": "2020-09-17"
+        },
+        {
+          "title": "A secretive Silicon Valley tech giant set up shop in Canada. But what does it do? (CBC, 2017 RCMP/Public Safety denials)",
+          "url": "https://www.cbc.ca/news/science/palantir-silicon-valley-technology-giant-data-canada-1.4111163",
+          "date": "2017"
+        },
+        {
+          "title": "CanadaBuys \u2014 Palantir Technologies Canada Inc. (ProServices SA) contract history",
+          "url": "https://canadabuys.canada.ca/en/tender-opportunities/contract-history/e60zt-180026-cw2346051-acm148920350-001",
+          "date": "2024"
+        },
+        {
+          "title": "Splink (UK MoJ / Ministry of Justice analytical services) documentation",
+          "url": "https://moj-analytical-services.github.io/splink/index.html",
+          "date": "2024"
+        },
+        {
+          "title": "Describing the linkage between administrative social assistance and health care databases in Ontario, Canada (MCCSS Social Assistance to Registered Persons Database)",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8900651/",
+          "date": "2022"
+        },
+        {
+          "title": "Record Linkage Methodology for the Social Data Linkage Environment at Statistics Canada (G-Link / SDLE, not Splink)",
+          "url": "https://ijpds.org/article/view/49/34",
+          "date": "2020"
+        },
+        {
+          "title": "BVerfG \u2014 Legislation in Hesse and Hamburg on automated data analysis is unconstitutional (16 Feb 2023)",
+          "url": "https://www.bundesverfassungsgericht.de/SharedDocs/Pressemitteilungen/EN/2023/bvg23-018.html",
+          "date": "2023-02-16"
+        }
+      ],
+      "confidence": "high",
+      "caveats": "Tiering rationale: I rated this SAME_DOMAIN_SAME_COUNTRY rather than DIRECT because there is NO Palantir presence in either documented Canadian Splink user (Ontario MCCSS or Environment Canada), and no dataset/agency/tool overlap; Palantir's Ontario footprint is the OPP (policing), a different ministry and data domain than MCCSS (social services). One could argue THEMATIC_ADJACENCY since domains differ, but I retained SAME_DOMAIN_SAME_COUNTRY because of the same-province (Ontario) government data-integration trajectory. Per instructions I did NOT claim Palantir uses Splink \u2014 it does not. Statistics Canada uses G-Link/SDLE, not Splink (explicitly noted). The facial-recognition/social-media-surveillance claim against the Canadian military Palantir contract is SPECULATIVE and unconfirmed. CANSOFCOM dataset specifics are withheld on national-security grounds. RCMP and CSE have neither confirmed nor denied current Palantir use (declined to answer, 2017, no update). Dollar figures are CAD; the CANSOFCOM total varies by source (~CAD 44.4M contract value vs ~CAD 46.8M reported spent) due to amendments. The German BVerfG ruling is included as requested context but adjudicates German, not Canadian, deployments.",
+      "unverified_flags": [
+        "Facial-recognition / civilian social-media surveillance capability attributed to the Canadian military Palantir contract \u2014 SPECULATIVE (press inference from separate tools like Meltwater/Clearview, not documented for Palantir).",
+        "Whether RCMP, CSE, or CBSA currently use Palantir \u2014 UNVERIFIED; RCMP & CSE declined to answer (2017), no public update; no CBSA Palantir contract found.",
+        "Public Safety Canada's 2017 'not used' statement appears contradicted by later LinkedIn/disclosure evidence but no formal record resolves it.",
+        "Exact OPP Gotham configuration and active features \u2014 undisclosed by OPP.",
+        "No evidence of any Palantir contract in Canadian federal/provincial health agencies (PHAC/Health Canada) \u2014 search returned none (effectively NONE_FOUND for health)."
+      ]
+    },
+    "verification": {
+      "verdict": "MIXED",
+      "adjusted_connection_tier": "THEMATIC_ADJACENCY",
+      "overclaims": [
+        "TIER OVERSTATED: connection_tier 'SAME_DOMAIN_SAME_COUNTRY' is too strong. The profile's own caveats concede the bodies (OPP/DND vs MCCSS/ECCC), tools (Gotham/Foundry vs Splink), and data domains (defence/policing vs social-assistance/environment) are ALL different, with 'No overlap of dataset, agency, or tool.' The only overlap is country (Canada) and, for OPP vs MCCSS, province (Ontario). Different domain is the explicit reason the profile flags it as 'edging toward THEMATIC_ADJACENCY' \u2014 but SAME_DOMAIN by definition requires same data domain, which the profile says is absent. The honest tier is THEMATIC_ADJACENCY (shared jurisdiction + government-data-integration theme, but different domain/agency/tool). The 'same Ontario data-integration trajectory' rationale is an inference, not a documented link, and cannot upgrade the tier.",
+        "CONFLATED SOURCING (MCCSS health linkage): The profile presents 'MCCSS Social Assistance database 2003-2016 linked to Registered Persons Database' as a Splink datapoint, but its own cited source (PMC8900651) explicitly used 'deterministic and probabilistic linkage methods' / a 'many-to-1 hybrid' approach and NEVER names Splink. The Splink attribution for MCCSS comes from a DIFFERENT source (the MoJ Splink user list). Citing the 2003-2016 RPDB linkage in the same breath as Splink implies that specific linkage was a Splink job \u2014 it was not, per the source. These two facts must be decoupled.",
+        "GERMAN RULING / PALANTIR LINK NOT IN CITED SOURCE: The profile states the Hesse/Hamburg provisions were 'implemented via Palantir Gotham (hessenDATA)'. The cited BVerfG press release (bvg23-018) mentions 'hessenDATA' but does NOT mention Palantir at all. The Palantir-hessenDATA link is real and widely reported elsewhere, but it is NOT supported by the citation given. Either add a source that names Palantir or soften to 'reported to be implemented via Palantir Gotham.'",
+        "SPECULATIVE FR/SURVEILLANCE CLAIM still present in body text: The facial-recognition / civilian social-media monitoring claim is correctly flagged speculative in unverified_flags, but it also appears in the controversies array and the drugdatadecoded citation is included. As a Palantir lawyer I'd demand it be quarantined to the unverified section only, not narrated as a controversy, since the source attributes the capability to Meltwater/Clearview, not Palantir."
+      ],
+      "strongest_sourced_claims": [
+        "DND/CANSOFCOM Palantir Gotham contract: $997,434 pilot (28 Mar 2019), succeeded by initial $14,359,980.68 contract (signed 27 Mar 2020), grown via amendments to $44,384,072.09 value with $46.8M reported spent, disclosed only Sept 2025 after an MP's written question. All figures, dates and the 5-year secrecy are confirmed by thedeepdive.ca and corroborated by thelogic.co and theijf.org.",
+        "OPP Palantir Gotham use confirmed Oct 2022 (The Logic) and $36.6M contract by Oct 2023, shielded under Ontario's Financial Administration Act exemption, OPP declining to disclose configuration \u2014 confirmed by The Logic and wiretapmedia.ca.",
+        "Conflict-of-Interest ruling: Commissioner Mario Dion (Sept 2020) found Palantir Canada president David MacNaughton breached the Conflict of Interest Act by pitching COVID-19 services; nine officials incl. Freeland and Bains ordered to restrict dealings for one year; MacNaughton consented; no contract resulted. Confirmed by The Logic, Globe and Mail, CTV, Global News.",
+        "BVerfG judgment 1 BvR 1547/19 & 1 BvR 2634/20 (16 Feb 2023): Hamburg provision void, Hesse provision time-limited to 30 Sept 2023, for violating informational self-determination; hessenDATA named. Confirmed directly against the court's own press release. (Caveat: this is a German, not Canadian, adjudication \u2014 correctly labelled as such.)",
+        "Splink users: Ontario MCCSS Data Integration Unit (Splink as 'main data-integration tool') and Environment and Climate Change Canada \u2014 both confirmed verbatim on the official MoJ Splink documentation user list. StatsCan uses G-Link/SDLE not Splink \u2014 also consistent with sources.",
+        "No documented Palantir<->Splink technical link, and no Palantir presence in MCCSS or ECCC \u2014 correctly stated. Nothing in any verified source implies Palantir uses, touches, or interoperates with Splink. This negative claim is sound and must be preserved."
+      ],
+      "unsupported_to_remove": [
+        "Remove or rewrite the implication that the 'MCCSS Social Assistance database 2003-2016 linked to Registered Persons Database' was a Splink linkage \u2014 the cited PMC8900651 article used deterministic/probabilistic 'many-to-1 hybrid' methods, not Splink. Keep MCCSS as a Splink user (per MoJ list) but stop attaching the 2003-2016 RPDB linkage as a Splink example.",
+        "Remove the unqualified phrase 'implemented via Palantir Gotham' tied to the BVerfG citation, OR add a source that actually names Palantir; the bvg23-018 press release does not mention Palantir.",
+        "Remove the facial-recognition / civilian social-media surveillance item from the 'controversies' narrative (retain only as an explicitly-labelled speculative entry); the cited source ties the capability to Meltwater and Clearview, not to a documented Palantir capability.",
+        "Downgrade or remove the caveat sentence reasoning that 'same-province (Ontario) government data-integration trajectory' justifies retaining SAME_DOMAIN_SAME_COUNTRY \u2014 this trajectory is an unsourced inference and should not drive the tier."
+      ],
+      "corrections": [
+        "connection_tier: change SAME_DOMAIN_SAME_COUNTRY -> THEMATIC_ADJACENCY. The profile's own evidence shows different body, tool, and data domain with zero dataset/agency/tool overlap; only country (and incidentally province) is shared. 'Same domain' is contradicted by the profile's own text.",
+        "Decouple the Splink-user attribution (source: MoJ Splink docs user list) from the MCCSS 2003-2016 RPDB health-linkage study (source: PMC8900651, which did NOT use Splink). Present them as two separate facts.",
+        "Qualify the Palantir/hessenDATA link in the German adjudication as 'reported' unless a Palantir-naming source is cited; the BVerfG release itself names only hessenDATA.",
+        "Keep confidence at 'high' only for the directly-sourced Palantir contract facts; the cross-link conclusion (Palantir vs Splink relationship) is a documented NEGATIVE and is sound, but the overall tier framing should reflect THEMATIC_ADJACENCY."
+      ],
+      "notes": "Verified against primary/near-primary sources: thedeepdive.ca, thelogic.co, theijf.org (DND/CANSOFCOM figures and secrecy), thelogic.co + wiretapmedia.ca (OPP $36.6M and FAA exemption), The Logic/Globe/CTV/Global (MacNaughton COI ruling), bundesverfassungsgericht.de press release bvg23-018 (German ruling, hessenDATA named, Palantir NOT named), moj-analytical-services.github.io Splink docs (MCCSS + ECCC confirmed users), PMC8900651 (MCCSS social-assistance-to-RPDB linkage used deterministic/probabilistic methods, NOT Splink). The profile is factually strong on the Palantir-side contracts and correctly refuses to claim any Palantir<->Splink technical link (none is documented \u2014 that negative is well-handled). Two real defects: (1) the connection_tier is overstated given the profile's own admission of no domain/agency/tool overlap, and (2) the MCCSS 2003-2016 RPDB linkage is sourced to a study that did not use Splink, so presenting it as a Splink datapoint is a sourcing conflation. The German-ruling Palantir attribution is true-in-fact but not in the cited source. No claim was found asserting Palantir uses Splink, and none should be added."
+    }
+  },
+  {
+    "target": "eu-institutions",
+    "title": "EU institutions \u2014 Europol, Frontex, EMA",
+    "profile": {
+      "country_or_body": "EU institutions \u2014 Europol, Frontex, European Medicines Agency (EMA)",
+      "connection_tier": "THEMATIC_ADJACENCY",
+      "summary": "The Splink \"users\" page lists the European Medicines Agency (EMA) as using Splink to detect duplicate adverse-event reports for veterinary medicines (EudraVigilance Veterinary) \u2014 a pharmacovigilance/data-quality use, NOT a Palantir product. Palantir has NO documented presence at EMA. Palantir's actual EU-institution footprint is at EUROPOL, where its Gotham platform was procured via a Capgemini framework contract (signed 2012, ~EUR 7.5m for a new Europol Analysis System), entered operational big-data use from ~2016, and was used until Q3 2021 before Europol replaced it. Europol's Palantir dealings are extremely opaque (released only 2 of 69 requested documents, citing trade secrets / public security; one disclosed record showed Europol even considered legal action against Palantir). FRONTEX: no Palantir contract found \u2014 Frontex's analytics rely on Microsoft, not Palantir. Because the Splink entry (EMA, veterinary pharmacovigilance) and Palantir's documented EU footprint (Europol, law enforcement / counter-terror data mining) sit in entirely different bodies AND different data domains, the connection is THEMATIC_ADJACENCY at most: both reflect EU bodies \"joining up\" previously siloed records, but there is NO same-body, same-domain, or same-dataset overlap. Do not claim Palantir uses Splink \u2014 there is no such link. The landmark adjudication touching Palantir is Germany's Federal Constitutional Court (BVerfG) judgment of 16 Feb 2023, which struck down Hesse/Hamburg laws authorising automated data analysis (Hesse ran Palantir Gotham as \"hessenDATA\") as unconstitutional \u2014 but that is a member-state matter, not an EU-institution one.",
+      "palantir_presence": [
+        "EUROPOL \u2014 Palantir Gotham: procured via French consultancy Capgemini under a framework contract signed in 2012 (reported value ~EUR 7.5m, 'new Europol Analysis System'); Gotham reportedly entered operational use ~2016 for big-data evaluation and ran until the third quarter of 2021, when Europol said it terminated/replaced the licence. The framework contract related to customised Palantir software is reported to have expired Dec 2019.",
+        "EUROPOL \u2014 what it did with citizen data: Gotham ingested and cross-linked massive personal datasets (phone/communications records, social-media posts, images, profile metadata) to identify patterns and map networks of individuals; deployed against Europol's large analytical data stores.",
+        "FRONTEX \u2014 NO documented Palantir contract found. Frontex's data-analytics stack is reported to rely on Microsoft BI, not Palantir. (Advocacy campaigns lump Frontex with Palantir/ICE rhetorically, but no Frontex\u2013Palantir procurement is evidenced.)",
+        "EMA \u2014 NO Palantir presence found. EMA is the Splink user (veterinary adverse-event deduplication in EudraVigilance Veterinary); no Palantir Foundry/Gotham contract with EMA was identified."
+      ],
+      "splink_side": "The Splink documentation's users/use-cases page states verbatim: \"The European Medicines Agency uses Splink to detect duplicate adverse event reports for veterinary medicines.\" This is the EU entry on the Splink page. Splink is the UK MoJ-built open-source probabilistic record-linkage (Fellegi-Sunter) Python library; EMA applies it to deduplicate suspected-adverse-event reports in its EudraVigilance Veterinary (Union Pharmacovigilance Database) \u2014 a data-quality/pharmacovigilance function. Palantir relates to this ONLY thematically: it operates in a DIFFERENT EU body (Europol) and a DIFFERENT data domain (law-enforcement/counter-terror network analysis), with no shared body, dataset, or tool. There is no evidence Palantir uses, supplies, or touches Splink, and none that Palantir is involved in EMA pharmacovigilance.",
+      "palantir_product": "Palantir Gotham (at Europol, as the Europol Analysis System; in Germany/Hesse as 'hessenDATA'). Foundry is Palantir's health/life-sciences platform but no EMA deployment was found.",
+      "contract_values_dates": "Europol/Palantir Gotham via Capgemini framework contract signed 2012, reported ~EUR 7.5m; operational use ~2016\u2013Q3 2021; framework contract for customised Palantir software reportedly expired Dec 2019. No Frontex or EMA Palantir contract values exist (none found).",
+      "operational_use": "Europol used Gotham for automated big-data analysis: linking communications records, social media, images and profile metadata to map networks of individuals and surface patterns across Europol's analytical data holdings. EMA's (non-Palantir) Splink use is operational duplicate-detection within veterinary pharmacovigilance reporting.",
+      "datasets": [
+        "Europol analytical data stores / Europol Analysis System (incl. the bulk 'data lake' the EDPS scrutinised \u2014 reported by The Guardian at ~4 petabytes)",
+        "Communications/phone records, social-media posts, images, profile metadata processed via Gotham at Europol",
+        "Germany/Hesse hessenDATA linked POLAS, ComVor, CRIME-ST police databases plus traffic and telecommunications data (Palantir Gotham)",
+        "EMA EudraVigilance Veterinary / Union Pharmacovigilance Database \u2014 veterinary adverse-event reports (Splink, NOT Palantir)"
+      ],
+      "adjudications": [
+        "Germany \u2014 Federal Constitutional Court (BVerfG), Judgment of 16 Feb 2023, 1 BvR 1547/19 & 1 BvR 2634/20: struck down \u00a725a Hesse Security and Public Order Act (HSOG) and \u00a749 Hamburg Police Data Processing Act (HmbPolDVG) authorising automated data analysis/'data mining' for crime prevention. Hesse (which ran Palantir Gotham as hessenDATA) deemed incompatible but allowed under strict conditions until 30 Sept 2023; the Hamburg provision was voided entirely. Court held automated analysis is a distinct interference with informational self-determination (Art. 2(1) + Art. 1(1) Basic Law) requiring separate, strict justification. NB: member-state ruling, not an EU-institution ruling, and does not name Palantir in the operative text but concerns Palantir's software.",
+        "EU \u2014 EDPS (European Data Protection Supervisor): not a court ruling but a regulator decision. 3/10 Jan 2022 order requiring Europol to erase data on individuals with no established link to criminal activity (Data Subject Categorisation), imposing a 6-month retention/filtering window; concluded a 2019 inquiry; concerned Europol's ~4PB bulk data store. This regulator action targets Europol's data-handling generally; sources do NOT establish it was specifically about the Palantir Gotham system. EDPS also separately objected to Europol using Clearview AI (a company linked to Palantir co-founder Peter Thiel)."
+      ],
+      "controversies": [
+        "Extreme opacity: Europol released only 2 of 69 documents on its Palantir dealings, invoking trade secrets / public security; Dutch authorities reportedly hold 45,000+ Palantir-related documents.",
+        "Privacy advocates (Statewatch, EDRi, MEPs) called for a European probe into Palantir; parliamentary questions filed (E-003872/2020, E-000951/2022).",
+        "Reported that Europol considered legal action against Palantir; Gotham reportedly proved 'substandard' and incompatible with Europol's IT environment.",
+        "Peter Thiel / Clearview AI linkage flagged by EDPS as likely violating the Europol Regulation.",
+        "German BVerfG ruling became a landmark constraint on Palantir-style dragnet/automated police data analysis in the EU."
+      ],
+      "citations": [
+        {
+          "title": "Splink \u2014 documentation (users incl. European Medicines Agency duplicate adverse-event detection for veterinary medicines)",
+          "url": "https://moj-analytical-services.github.io/splink/index.html"
+        },
+        {
+          "title": "Behind closed doors: Europol's opaque relations with tech companies \u2014 Statewatch",
+          "url": "https://statewatch.org/analyses/2025/behind-closed-doors-europol-s-opaque-relations-with-tech-companies/",
+          "date": "2025"
+        },
+        {
+          "title": "How Europol is cozying up to Microsoft, Palantir, Clearview & Co. \u2014 heise online",
+          "url": "https://www.heise.de/en/news/How-Europol-is-cozying-up-to-Microsoft-Palantir-Clearview-Co-11072807.html"
+        },
+        {
+          "title": "What is Palantir Doing in Europe? \u2014 Lighthouse Reports",
+          "url": "https://www.lighthousereports.com/investigation/what-is-palantir-doing-in-europe/"
+        },
+        {
+          "title": "Parliamentary question: Use of Palantir software by Europol \u2014 E-000951/2022, European Parliament (Capgemini ~EUR 7.5m, 2012; Gotham used to Q3 2021)",
+          "url": "https://www.europarl.europa.eu/doceo/document/E-9-2022-000951_EN.html",
+          "date": "2022"
+        },
+        {
+          "title": "Europol uses Palantir \u2014 Matthias Monroy / digit.site36.net",
+          "url": "https://digit.site36.net/2020/06/11/europol-uses-palantir/",
+          "date": "2020-06-11"
+        },
+        {
+          "title": "EDPS orders Europol to erase data concerning individuals with no established link to a criminal activity \u2014 EDPS press release",
+          "url": "https://www.edps.europa.eu/press-publications/press-news/press-releases/2022/edps-orders-europol-erase-data-concerning_en",
+          "date": "2022-01-10"
+        },
+        {
+          "title": "Bundesverfassungsgericht \u2014 Judgment of 16 February 2023, 1 BvR 1547/19 (automated data analysis, Hesse/Hamburg; Palantir Gotham 'hessenDATA')",
+          "url": "https://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/EN/2023/02/rs20230216_1bvr154719en.html",
+          "date": "2023-02-16"
+        },
+        {
+          "title": "EMA \u2014 Veterinary Union Pharmacovigilance Database Best Practice Guide (duplicate management in EudraVigilance Veterinary)",
+          "url": "https://www.ema.europa.eu/en/documents/other/veterinary-union-pharmacovigilance-database-best-practice-guide_en.pdf"
+        }
+      ],
+      "confidence": "high",
+      "caveats": "High confidence on the core facts: EMA is the Splink entry (veterinary adverse-event dedup, not Palantir); Palantir's documented EU footprint is at Europol (Gotham); no Palantir contract found at Frontex or EMA. The connection between Palantir's EU footprint and the Splink EMA listing is therefore THEMATIC_ADJACENCY only \u2014 different body and different domain \u2014 and must not be overstated as a direct link. Contract value (~EUR 7.5m) and exact dates derive largely from a European Parliament parliamentary-answer source and investigative journalism rather than a published procurement award document, so treat the precise figure as reported-but-not-primary-verified. The BVerfG Feb 2023 ruling is the key adjudication touching Palantir but is a German member-state matter, not an EU-institution ruling, and does not name Palantir in its operative holding. The EDPS Jan 2022 Europol erasure order addresses Europol's bulk data handling broadly; available sources do not confirm it was specifically about the Palantir Gotham system.",
+      "unverified_flags": [
+        "Exact Europol/Palantir contract value (EUR 5m vs EUR 7.5m figures appear in different sources) \u2014 drawn from EP parliamentary answer / journalism, not a primary award notice.",
+        "Whether the EDPS Jan 2022 erasure order specifically concerned data processed in Palantir Gotham (not established in sources).",
+        "Precise end/termination terms of Europol's Gotham licence in 2021 (Europol's own claim; corroborating contract documents withheld).",
+        "Any Palantir involvement at Frontex \u2014 none found; absence of evidence, not confirmed non-use, though Frontex is documented to use Microsoft analytics.",
+        "Any Palantir involvement at EMA \u2014 none found."
+      ]
+    },
+    "verification": {
+      "verdict": "MIXED",
+      "adjusted_connection_tier": "THEMATIC_ADJACENCY",
+      "overclaims": [
+        "BVerfG adjudication note and caveat both assert the 16 Feb 2023 judgment 'does not name Palantir in the operative text' \u2014 this is FALSE. The official English judgment text explicitly states the Land Hesse purchased the 'Gotham' operating system from 'the software company Palantir' running 'under the name hessenDATA'. Palantir and hessenDATA ARE named.",
+        "Gotham datasets are described as including 'social-media posts' (in palantir_presence, operational_use, datasets). The primary source (Monroy/digit.site36) lists structured data \u2014 contact lists, radio-cell query tables, travel histories \u2014 and unstructured data \u2014 photos, location data. It does NOT mention social media. 'Social-media posts' is unsupported embellishment.",
+        "'Gotham reportedly entered operational use ~2016' overstates the source, which says Gotham was TESTED in 2016 and has been in 'continuous operation since mid-2017'. Operational start should read mid-2017, not 2016.",
+        "'Dutch authorities reportedly hold 45,000+ Palantir-related documents' \u2014 not corroborated in the Statewatch 2025 analysis or other checked sources. No citation supports this figure.",
+        "contract_values_dates field states '~EUR 7.5m' flatly as the framework value; the EP parliamentary answer itself records the 2012 Capgemini contract as EUR 5m, with EUR 7.5m being the framework total (\u2248EUR 4m spent by June 2020). The body text should surface the EUR 5m/EUR 7.5m split, not just bury it in unverified_flags."
+      ],
+      "strongest_sourced_claims": [
+        "Splink EMA listing verified verbatim on the Splink docs page: 'The European Medicines Agency uses Splink to detect duplicate adverse event reports for veterinary medicines.'",
+        "Europol procured Palantir Gotham as a subcontractor (Capgemini Nederland BV) under a 2012 framework; ~EUR 7.5m total with ~EUR 4m spent by June 2020 (Monroy / EP question E-000951/2022, E-003872/2020).",
+        "BVerfG 16 Feb 2023, 1 BvR 1547/19 & 1 BvR 2634/20: Hamburg \u00a749 HmbPolDVG void; Hesse \u00a725a HSOG incompatible but allowed under conditions until 30 Sept 2023; grounded in Art. 2(1)+1(1) Basic Law \u2014 all confirmed against the official judgment text.",
+        "EDPS order of 3 Jan 2022 requiring Europol to erase un-categorised data with no established criminal link; 6-month filtering window; ~4 petabyte data store \u2014 confirmed via EDPS press release/FAQ.",
+        "Europol released only 2 of 69 documents on its Palantir dealings and one disclosed record showed it considered legal action against Palantir \u2014 confirmed via Statewatch 2025."
+      ],
+      "unsupported_to_remove": [
+        "'social-media posts' / 'social media' from the Gotham dataset descriptions in palantir_presence, operational_use, and datasets (unless a specific source naming social media is added).",
+        "'Dutch authorities reportedly hold 45,000+ Palantir-related documents' from controversies \u2014 no supporting citation found.",
+        "The phrase 'does not name Palantir in the operative text' in both the BVerfG adjudication entry and the caveats \u2014 factually wrong; must be deleted or reversed."
+      ],
+      "corrections": [
+        "Change BVerfG note to: the judgment DOES name Palantir and hessenDATA in its reasoning (the Land Hesse purchased Gotham from Palantir, run as hessenDATA). Keep the accurate point that it remains a member-state ruling, not an EU-institution ruling.",
+        "Change Gotham operational-start from '~2016' to 'tested 2016, in continuous operation since mid-2017'.",
+        "Promote the EUR 5m (initial 2012 contract) vs ~EUR 7.5m (framework total) distinction into the contract_values_dates body, not just the flags.",
+        "Remove 'social-media posts' from all three dataset/operational descriptions and replace with the sourced items: contact lists, radio-cell query tables, travel histories, photos, location data."
+      ],
+      "notes": "Connection tier THEMATIC_ADJACENCY is correctly assigned and survives adversarial review \u2014 there is NO same-body, same-domain, or same-dataset overlap, and crucially NO documented technical link between Splink (UK MoJ open-source record-linkage used by EMA for veterinary pharmacovigilance) and Palantir (Europol law-enforcement Gotham). The profile is appropriately explicit that Palantir does not use, supply, or touch Splink, and that no Palantir contract exists at EMA or Frontex; that anti-overclaim discipline is the profile's main strength. No grounds to downgrade further to SPECULATIVE_EXCLUDE because Europol's Palantir footprint is genuinely well-evidenced (EP answers, EDPS, Statewatch, Lighthouse). The verdict is MIXED rather than SOLID solely because of the factual error on the BVerfG text (Palantir IS named), the unsourced 'social media' and '45,000 documents' embellishments, and the imprecise 2016 operational date. Fix those four items and the profile would be SOLID. Lawyer's note: the BVerfG ruling does NOT hold Palantir software unlawful per se \u2014 it struck down the enabling state statutes for inadequate thresholds; phrasing should not imply a finding against Palantir itself. The EDPS Jan 2022 order is correctly hedged as not established to be specifically about the Gotham system. Sources: splink docs, bundesverfassungsgericht.de official judgment, EP E-000951/2022 & E-003872/2020, digit.site36.net (Monroy 2020), Statewatch 2025, EDPS press release/FAQ."
+    }
+  },
+  {
+    "target": "un-humanitarian",
+    "title": "UN / humanitarian \u2014 Palantir + WFP, UNHCR, refugee data",
+    "profile": {
+      "country_or_body": "UN / Humanitarian sector \u2014 World Food Programme (WFP) [Palantir] vs. UNHCR [Splink/fastLink]",
+      "connection_tier": "THEMATIC_ADJACENCY",
+      "palantir_product": "Palantir Foundry",
+      "summary": "Palantir's documented humanitarian footprint is with the UN World Food Programme (WFP), NOT with UNHCR. In Feb 2019 WFP announced a 5-year, reported-$45m partnership using Palantir Foundry to unify WFP's operational, supply-chain and beneficiary data across ~80-120 countries; it drew a major civil-society backlash (65-signatory open letter via the Responsible Data community). On the Splink side, it is UNHCR (a DIFFERENT UN body) that uses probabilistic record-linkage to deduplicate refugee registration lists \u2014 and crucially, UNHCR's public code (unhcr-americas/record_linkage) actually uses fastLink, while Splink only LISTS UNHCR as a user. So Palantir and the Splink/record-linkage use sit in the SAME humanitarian data domain but in DIFFERENT bodies (WFP vs UNHCR) and via DIFFERENT, unrelated tools (Foundry vs Splink/fastLink). There is no documented Palantir contract inside UNHCR, and Palantir does not use Splink. The connection is thematic: both reflect the trajectory of aggregating/linking vulnerable-population (refugee/displaced) data. The lead's framing of the \"$45m Building Blocks deal\" conflates two separate WFP projects: the Palantir analytics deal AND \"Building Blocks\" (WFP's permissioned-blockchain cash-transfer project in Jordan that integrates UNHCR iris-biometric IDs) are distinct \u2014 Building Blocks is not a Palantir product.",
+      "palantir_presence": [
+        "WFP\u2013Palantir partnership, announced 5 Feb 2019: 5-year deal, reported value ~US$45 million (value not confirmed in WFP's own press release; the $45m figure originates in press/Privacy International reporting). Palantir Foundry brings together WFP data sources (programmatic, operational, supply-chain, beneficiary/partner/supplier/transporter data) into a 'secure, unified environment' for HQ and field staff.",
+        "Pre-2019 pilot: Palantir's 'Optimus' tool used for food procurement/supply-chain optimization in Iraq; WFP cited >US$26-30m in savings, with claimed potential up to ~US$100m/year at scale.",
+        "Partnership EXPANDED/continued through 2020-2026; Privacy International (Jun 2026) describes Palantir as 'the cornerstone of the WFP data ecosystem,' now spanning ~120 countries, with partner data potentially integrated into Foundry without informed consent.",
+        "NO documented Palantir contract with UNHCR, UN OCHA, or WHO found in this research. References to Palantir + COVID-19 relate to WFP collaboration framing but no separate UNHCR/WHO contract was verified."
+      ],
+      "splink_side": "UNHCR appears on Splink's user list and performs probabilistic record linkage / deduplication of refugee registration lists (e.g., merging lists from field partners to build survey sampling universes, Unique Entity Estimation). However, UNHCR's actual public tutorial/code (github.com/unhcr-americas/record_linkage) implements fastLink (R), not Splink, and references a DANE/Colombia UN Statistics Commission example. Palantir relates to this ONLY by domain adjacency: Palantir's Foundry sits in a DIFFERENT UN body (WFP), does data INTEGRATION/analytics rather than statistical record-linkage, and there is no evidence Palantir touches UNHCR's registration data or uses Splink. Same humanitarian data domain, different body, different (unrelated) tool.",
+      "contract_values_dates": "Announced 5 Feb 2019; 5-year term. Reported value ~US$45 million (per press / Privacy International; NOT stated in WFP's own release \u2014 flag as unconfirmed in primary source). Pre-deal Optimus pilot claimed US$26-30m savings; partnership extended/expanded through to at least 2026.",
+      "operational_use": "Within WFP: data unification and analytics via Foundry \u2014 operational planning, supply-chain/logistics optimization, food-procurement cost reduction, and management of programmatic + beneficiary/partner/supplier/transporter data across ~80-120 countries serving ~90 million people. WFP states no personally identifiable information is shared with Palantir and that all data remains under WFP control; critics dispute this is meaningful given mosaic-effect/re-identification risk.",
+      "datasets": [
+        "WFP operational, supply-chain and procurement data in Palantir Foundry",
+        "WFP data on partners/suppliers/transporters/beneficiaries integrated into Foundry",
+        "UNHCR refugee registration lists deduplicated via fastLink/Splink (separate from Palantir)",
+        "WFP 'Building Blocks' blockchain + UNHCR iris-biometric IDs (separate from Palantir)"
+      ],
+      "controversies": [
+        "65-signatory open letter (Feb 2019) organized by the Responsible Data community (incl. Privacy International) urging WFP to release the agreement terms, procurement/due-diligence info, establish an independent review panel, and ensure privacy/security.",
+        "Concerns over re-identification / 'mosaic effect': WFP's 'no PII shared' assurance challenged as largely invalid because aggregated humanitarian data can re-identify individuals and reveal population-movement patterns.",
+        "Aggregating refugee/displaced-population data in a CIA-In-Q-Tel-funded US national-security firm; described by critics as 'breathtaking and terrifying' and 'horribly irresponsible.'",
+        "Algorithmic-bias risk in using Palantir to flag 'potential misuse' of aid.",
+        "Palantir's track record serving governments with poor human-rights records and US military/ICE (e.g., ImmigrationOS), raising conflict-of-mission concerns for a humanitarian agency.",
+        "Ongoing concern (2026): partners' data integrated into Foundry without informed consent; data-sovereignty worries; WFP not demonstrating safeguards 7 years on (Privacy International)."
+      ],
+      "adjudications": [
+        "Germany \u2014 Federal Constitutional Court (Bundesverfassungsgericht), Judgment of 16 Feb 2023 (1 BvR 1547/19, 1 BvR 2634/20): struck down \u00a725a(1) (1st alt.) Hesse Security & Public Order Act and \u00a749(1) (1st alt.) Hamburg Police Data Processing Act as unconstitutional \u2014 violating the right to informational self-determination (Art. 2(1) + Art. 1(1) Basic Law) for lacking sufficient interference thresholds. The automated data-analysis software at issue was Palantir's 'Hessendata' (used by Hesse police since 2017); case brought by Gesellschaft f\u00fcr Freiheitsrechte (GFF). NOTE: this is a POLICING/law-enforcement domain matter, NOT humanitarian/UN, and does not touch WFP, UNHCR, or Splink \u2014 included as a Palantir adjudication per task instruction.",
+        "No court or regulator adjudication found touching Palantir's WFP/humanitarian work specifically \u2014 none found."
+      ],
+      "citations": [
+        {
+          "title": "New UN deal with data mining firm Palantir raises protection concerns",
+          "url": "https://www.thenewhumanitarian.org/news/2019/02/05/un-palantir-deal-data-mining-protection-concerns-wfp",
+          "date": "2019-02-05"
+        },
+        {
+          "title": "Palantir and WFP partner to help transform global humanitarian delivery (WFP press release)",
+          "url": "https://www.wfp.org/news/palantir-and-wfp-partner-help-transform-global-humanitarian-delivery",
+          "date": "2019-02-05"
+        },
+        {
+          "title": "Palantir and the UN's World Food Programme are partnering for a reported $45 million \u2014 Privacy International",
+          "url": "https://privacyinternational.org/news-analysis/3405/palantir-and-uns-world-food-programme-are-partnering-reported-45-million",
+          "date": "2019-02-12"
+        },
+        {
+          "title": "Open Letter to WFP re: Palantir Agreement \u2014 Responsible Data",
+          "url": "https://responsibledata.io/2019/02/08/open-letter-to-wfp-re-palantir-agreement/",
+          "date": "2019-02-08"
+        },
+        {
+          "title": "A statement on the WFP-Palantir partnership \u2014 World Food Programme (Medium)",
+          "url": "https://medium.com/world-food-programme-insight/a-statement-on-the-wfp-palantir-partnership-2bfab806340c",
+          "date": "2019-02-08"
+        },
+        {
+          "title": "World Food Programme expand Palantir partnership \u2014 Privacy International",
+          "url": "https://privacyinternational.org/news-analysis/5789/world-food-programme-expand-palantir-partnership",
+          "date": "2026-06-17"
+        },
+        {
+          "title": "WFP and Palantir \u2014 Humanitarian Innovation Guide (Elrha)",
+          "url": "https://higuide.elrha.org/case-studies/wfp-and-palantir/",
+          "date": "2020-01-01"
+        },
+        {
+          "title": "UNHCR-Americas record_linkage tutorial (uses fastLink) \u2014 GitHub",
+          "url": "https://github.com/unhcr-americas/record_linkage",
+          "date": "2023-01-01"
+        },
+        {
+          "title": "Inside the Jordan refugee camp that runs on blockchain (WFP Building Blocks + UNHCR biometrics) \u2014 MIT Technology Review",
+          "url": "https://www.technologyreview.com/2018/04/12/143410/inside-the-jordan-refugee-camp-that-runs-on-blockchain/",
+          "date": "2018-04-12"
+        },
+        {
+          "title": "Bundesverfassungsgericht \u2014 Legislation in Hesse and Hamburg on automated data analysis is unconstitutional (Palantir Hessendata)",
+          "url": "https://www.bundesverfassungsgericht.de/SharedDocs/Pressemitteilungen/EN/2023/bvg23-018.html",
+          "date": "2023-02-16"
+        },
+        {
+          "title": "Bundesverfassungsgericht \u2014 Judgment of 16 February 2023 (1 BvR 1547/19) full text",
+          "url": "https://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/EN/2023/02/rs20230216_1bvr154719en.html",
+          "date": "2023-02-16"
+        }
+      ],
+      "confidence": "high",
+      "unverified_flags": [
+        "The ~US$45m contract value is from press/Privacy International, NOT confirmed in WFP's own primary press release \u2014 treat as reported, not official.",
+        "WFP's claim that 'no PII is shared with Palantir' and 'all data stays under WFP control' is WFP's own assertion, contested by critics; not independently audited/verified.",
+        "Splink page listing UNHCR as a user vs. UNHCR's public code using fastLink \u2014 UNHCR may use Splink elsewhere internally, but only fastLink is evidenced in public code; whether UNHCR operationally runs Splink on live registration data is unverified.",
+        "No evidence of any Palantir contract with UNHCR, UN OCHA, or WHO \u2014 'none found' rather than 'confirmed absent.'",
+        "Claimed cost-savings figures ($26m/$30m/$100m) originate from WFP/Palantir and are not independently verified."
+      ],
+      "caveats": "Do NOT read this as Palantir using Splink or as Palantir holding UNHCR data \u2014 neither is true. The Palantir footprint is at WFP (Foundry); the Splink/record-linkage footprint is at UNHCR (and UNHCR's public code actually uses fastLink). They share only the humanitarian data-aggregation DOMAIN and the broader trajectory of joining-up vulnerable-population data \u2014 hence THEMATIC_ADJACENCY, not SAME_DOMAIN_SAME_COUNTRY (these are distinct UN bodies, not one country's institutions) and not DIRECT. The lead conflated WFP's 'Building Blocks' blockchain project (which integrates UNHCR biometrics) with the Palantir deal \u2014 they are separate; 'Building Blocks' is not a Palantir product. The Germany BVerfG Feb 2023 ruling is a genuine Palantir adjudication but in the policing domain, unrelated to the UN/humanitarian-Splink axis."
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "adjusted_connection_tier": "THEMATIC_ADJACENCY",
+      "strongest_sourced_claims": [
+        "WFP-Palantir partnership is real and primary-sourced: WFP's own press release (wfp.org, 2019-02-05) confirms a five-year partnership using Palantir Foundry, ~80 countries, ~90 million people, 'secure, unified environment' for programmatic/operational data. CONFIRMED.",
+        "The $45m value is correctly flagged as REPORTED/UNCONFIRMED: Privacy International (PI 3405) labels it 'a reported $45 million' and the WFP press release contains no dollar value. The profile's repeated 'not confirmed in WFP's own press release' caveat is accurate and verified.",
+        "The 2026 escalation claims are accurately sourced: PI (5789, 2026-06-17) does call Palantir the 'cornerstone of the WFP data ecosystem,' cites 120 countries, and warns of partner data integrated into Foundry without informed consent. CONFIRMED verbatim.",
+        "The WFP 'no PII shared' claim is correctly attributed to WFP's own Medium statement (not the press release): WFP states 'No access to WFP data that provides beneficiary information' and 'WFP retains full control.' The profile correctly flags this as WFP's contested self-assertion. CONFIRMED.",
+        "The BVerfG ruling is accurately cited: Judgment of 16 Feb 2023, cases 1 BvR 1547/19 and 1 BvR 2634/20, struck down Hesse HSOG \u00a725a(1) and Hamburg HmbPolDVG \u00a749(1) for violating the right to informational self-determination (Art. 2(1) + Art. 1(1) Basic Law); platform is hessenDATA. CONFIRMED, and correctly scoped as a policing matter unrelated to WFP/UNHCR/Splink.",
+        "UNHCR's public code uses fastLink, NOT Splink: the unhcr-americas/record_linkage repo explicitly focuses on fastLink and cites the DANE/Colombia UN Statistics Commission GEIH example. No Palantir reference. CONFIRMED. The Splink<->Palantir non-link is correctly handled \u2014 the profile explicitly states no Splink<->Palantir technical link exists.",
+        "The Optimus/Iraq pilot savings figure is grounded: WFP's Medium statement cites 'savings of more than US$30 million in a pilot programme,' matching the profile's flagged-as-unverified $26-30m range."
+      ],
+      "overclaims": [
+        "The BVerfG primary source (court press release) does NOT name 'Palantir' \u2014 it names only 'hessenDATA.' The profile asserts the software 'was Palantir's Hessendata' as established fact. While widely reported elsewhere that hessenDATA is built on Palantir Gotham, the profile should attribute the Palantir-hessenDATA equation to secondary reporting, not imply the court itself named Palantir.",
+        "The phrase 'serving ~90 million people across ~80-120 countries' blends the 2019 figure (80 countries / 90 million, per WFP release) with the 2026 figure (120 countries, per PI). The 90-million figure is a 2019 number and should not be presented as current alongside the 120-country 2026 figure.",
+        "'CIA-In-Q-Tel-funded' is stated in the controversies as critic framing; it is accurate that In-Q-Tel was an early Palantir investor, but as worded it reads slightly as profile voice rather than quoted critic voice. Minor \u2014 keep but ensure attribution to critics."
+      ],
+      "unsupported_to_remove": [
+        "Nothing requires removal. Every contract value, court ruling, and data-flow claim is either primary-sourced or explicitly flagged as reported/unverified. The $26m vs $30m vs $100m savings spread should be tightened to the WFP-stated 'more than US$30 million' pilot figure plus the clearly-labelled '~$100m/year at scale' aspiration; the loose '$26-30m' lower bound is not independently grounded and should be dropped in favor of the sourced '>$30m.'"
+      ],
+      "corrections": [
+        "Attribute the Palantir=hessenDATA identification to secondary reporting (GFF/press), since the BVerfG press release names only 'hessenDATA,' not Palantir.",
+        "Pin '90 million people' to 2019 and '120 countries' to 2026; do not present the country range '80-120' alongside the single 90m figure as if simultaneous.",
+        "Replace the '$26-30m savings' phrasing with the WFP-sourced 'more than US$30 million in a pilot programme,' keeping the '~$100m/year at scale' as a clearly-labelled Palantir/WFP projection."
+      ],
+      "notes": "Connection tier THEMATIC_ADJACENCY is CORRECT and should NOT be downgraded \u2014 and the lawyer/critic case for downgrade actually fails because the profile already does the hard work of separation. As a hostile critic I tried to break three things and all held: (1) The Splink<->Palantir link \u2014 the profile explicitly and correctly states NONE exists; Palantir is at WFP via Foundry, the record-linkage is at UNHCR via fastLink (verified in the public repo), and Splink merely lists UNHCR as a user. No technical link is implied. (2) The contract value \u2014 correctly flagged as reported/unconfirmed and absent from WFP's primary release (verified). (3) The court ruling \u2014 accurately cited down to case numbers and statute sections (verified against the BVerfG press release), and correctly fenced off as policing-domain, NOT humanitarian. The profile is unusually disciplined: it does not overclaim a DIRECT or SAME_DOMAIN_SAME_COUNTRY tier (correctly noting WFP and UNHCR are distinct UN bodies, not one country's institutions), and it pre-empts the 'Building Blocks' conflation by stating Building Blocks is not a Palantir product. Only minor tightening is warranted (the hessenDATA-Palantir attribution, the 90m/120-country date-mixing, and the savings-figure spread). Verdict SOLID with minor corrections; no removals required."
+    }
+  },
+  {
+    "target": "lmic-gambia-laos",
+    "title": "Gambia / Laos / low-income adopters \u2014 Palantir presence (likely negative)",
+    "profile": {
+      "country_or_body": "The Gambia and Lao PDR (Laos) \u2014 low-income Splink adopters (Gambia census deduplication; Lao PDR Shared Child Health Record pediatric record linkage)",
+      "connection_tier": "NONE_FOUND",
+      "summary": "No evidence of any Palantir Technologies presence \u2014 contract, deployment, pilot, partnership, or proposal \u2014 in either the Gambia or Laos was found across web search, Palantir's SEC disclosures, serious journalism, and the company's own customer disclosures. Palantir's documented government footprint is concentrated in the United States, the Five Eyes (UK), Western/Central Europe (Germany, France, Netherlands, Denmark, Norway), Ukraine, Israel, and select Asia-Pacific allies (notably Japan, South Korea, and Singapore). Mainland low-income Southeast Asia (Laos, Cambodia, Myanmar) is served, where at all, by Chinese surveillance technology transfers, not Palantir. Sub-Saharan low-income Africa, including the Gambia, does not appear in any Palantir customer list. The honest, expected result holds: NONE_FOUND for both countries. This clean negative is meaningful: it shows the two poorest Splink adopters use a free, open-source MoJ tool for benign statistical/health record-linkage with zero Palantir entanglement, sharpening the contrast with rich-country jurisdictions (e.g., Germany's Hesse) where Palantir Gotham was deployed for police data analysis and later constrained by the Federal Constitutional Court. There is NO claim \u2014 and no evidence \u2014 that Palantir uses or touches Splink anywhere; the two are unrelated tools and the Gambia/Laos link to Palantir is simply absent.",
+      "palantir_presence": [
+        "None found in the Gambia: no procurement record, SEC-disclosed contract, news report, or Palantir customer listing references any Gambian government body, agency, or dataset.",
+        "None found in Laos (Lao PDR): no procurement record, SEC-disclosed contract, news report, or Palantir customer listing references any Lao government body. Surveillance buildout in mainland SE Asia (Myanmar PSMS, Cambodia) is documented as Chinese-technology-driven, not Palantir.",
+        "Closest geographic/thematic adjacencies (still NOT Gambia/Laos and NOT government-data deployments there): Palantir's humanitarian work with the UN World Food Programme (a 2019 data partnership, widely criticised by ~60 civil-society groups) operates across many countries but is not documented as a Gambia or Laos government deployment of citizen data; and Palantir's COVID-era public-health tooling was UK/US-centric. Neither establishes any Gambia or Laos footprint."
+      ],
+      "palantir_product": "Not applicable \u2014 no Palantir product (Gotham, Foundry, AIP, Apollo) is deployed in the Gambia or Laos. (For context, the product adjudicated in Germany was Palantir Gotham, branded 'HessenDATA' in Hesse.)",
+      "operational_use": "Not applicable in the Gambia or Laos \u2014 no Palantir operational use exists in either country. For contrast only: where Palantir does operate on government data (e.g., Hesse police 'HessenDATA' / Gotham since 2017), it ingests and cross-links pre-existing police databases into a single searchable graph for crime prevention/investigation \u2014 a fundamentally different activity from the statistical/health record deduplication Splink performs in the Gambia and Laos.",
+      "contract_values_dates": "No contract values or dates exist for Palantir in the Gambia or Laos because no contracts were found. (Reference figures from elsewhere, NOT these countries: Palantir's large public contracts are overwhelmingly US federal, e.g. multi-billion-dollar US Army and DoD/Project Maven awards; UK NHS Federated Data Platform ~\u00a3330m, 2023.)",
+      "datasets": [
+        "No Gambia datasets touched by Palantir (none found).",
+        "No Laos datasets touched by Palantir (none found).",
+        "For contrast, the Splink-linked datasets in these countries are: Gambia \u2014 census records (deduplication/entity resolution); Lao PDR \u2014 pediatric/child health records under a Shared Child Health Record project, in a non-Latin (Lao) script context. These are linked with the open-source MoJ Splink tool, with no Palantir involvement."
+      ],
+      "controversies": [
+        "No Palantir-specific controversy exists in the Gambia or Laos (no presence to generate one).",
+        "General Palantir controversies (not localised to these countries): involvement in US ICE deportation operations (ACLU 2025 reporting); mapping/centralising US citizen data across agencies (2025 reporting in The Conversation, Techdirt, FedScoop, Fast Company); IRS tax-data access scrutiny (Tax Notes, Feb 2026); CEO statements characterised as endorsing a surveillance-state posture; criticism of the UN WFP partnership by civil-society groups."
+      ],
+      "adjudications": [
+        "Germany \u2014 Federal Constitutional Court (Bundesverfassungsgericht), Judgment of 16 February 2023 (1 BvR 1547/19, 1 BvR 2634/20): held \u00a7 25a(1) Hessian Security and Public Order Act (HSOG) and \u00a7 49(1) Hamburg Police Data Processing Act unconstitutional for violating the right to informational self-determination; the automated data-analysis powers lacked sufficient thresholds (no requirement of an identifiable danger). The technology at issue in Hesse was Palantir's Gotham software, deployed since 2017 as 'HessenDATA'; case brought by the Gesellschaft fuer Freiheitsrechte (GFF). Hamburg provision declared void; Hesse provision allowed to continue under restrictions only until new rules / no later than 30 Sept 2023. This adjudication concerns GERMANY, not the Gambia or Laos, and is included only as the requested reference point \u2014 it has no bearing on the Gambia/Laos Splink use.",
+        "The Gambia \u2014 none found (no court or regulator ruling touching Palantir).",
+        "Laos \u2014 none found (no court or regulator ruling touching Palantir)."
+      ],
+      "splink_side": "Splink is the UK Ministry of Justice's free, open-source probabilistic record-linkage / entity-resolution library (moj-analytical-services/splink). The prior global analysis flags two low-income adopters: the Gambia (using Splink for census deduplication) and Lao PDR (using Splink to de-duplicate pediatric records in a Shared Child Health Record project, notable for non-Latin-script matching). Both are benign statistical/health-administration uses. Palantir relates to this in NO way: it does not provide, use, integrate with, or compete for these Splink deployments; there is no shared body, no shared dataset, and no Palantir product in either country. The relationship is therefore strictly NONE_FOUND \u2014 the two countries sit on the open-source/public-good end of the record-linkage spectrum, the polar opposite of the proprietary Palantir Gotham police deployments adjudicated in Germany. No claim is made that Palantir uses Splink.",
+      "citations": [
+        {
+          "title": "Palantir Technologies \u2014 Wikipedia (documented government customers by country; no Gambia/Laos listed)",
+          "url": "https://en.wikipedia.org/wiki/Palantir_Technologies",
+          "date": "2026"
+        },
+        {
+          "title": "Bundesverfassungsgericht \u2014 Judgment of 16 February 2023, 1 BvR 1547/19 (Hesse/Hamburg automated data analysis unconstitutional; HessenDATA = Palantir Gotham)",
+          "url": "https://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/EN/2023/02/rs20230216_1bvr154719en.html",
+          "date": "2023-02-16"
+        },
+        {
+          "title": "Bundesverfassungsgericht \u2014 Press release: Legislation in Hesse and Hamburg on automated data analysis for crime prevention is unconstitutional",
+          "url": "https://www.bundesverfassungsgericht.de/SharedDocs/Pressemitteilungen/EN/2023/bvg23-018.html",
+          "date": "2023-02-16"
+        },
+        {
+          "title": "Splink \u2014 official documentation (MoJ Analytical Services), incl. examples and adopters",
+          "url": "https://moj-analytical-services.github.io/splink/index.html",
+          "date": "2026"
+        },
+        {
+          "title": "Splink \u2014 GitHub repository (moj-analytical-services/splink)",
+          "url": "https://github.com/moj-analytical-services/splink",
+          "date": "2026"
+        },
+        {
+          "title": "Palantir, Seemingly Everywhere All at Once \u2014 PassBlue (review of Palantir's global reach; no Gambia/Laos)",
+          "url": "https://passblue.com/2025/10/12/palantir-seemingly-everywhere-all-at-once/",
+          "date": "2025-10-12"
+        },
+        {
+          "title": "All the Ways Palantir is Assisting Trump's Abusive Removal Campaign \u2014 ACLU",
+          "url": "https://www.aclu.org/news/privacy-technology/palantir-deportation-roundup",
+          "date": "2025"
+        },
+        {
+          "title": "Myanmar's Digital Authoritarianism: Building a Surveillance State with Chinese Technology Transfers \u2014 FULCRUM (SE Asia surveillance is Chinese-tech-driven, not Palantir)",
+          "url": "https://fulcrum.sg/myanmars-digital-authoritarianism-building-a-surveillance-state-with-chinese-technology-transfers/",
+          "date": "2024"
+        }
+      ],
+      "confidence": "high",
+      "caveats": "Absence of evidence is not absolute proof of absence: web/SEC/press searches cannot fully rule out a small, undisclosed, or sub-contracted engagement (e.g., via a systems integrator, a donor-funded project, or a Palantir Foundry for Builders/non-profit tier). However, Palantir government deployments are typically high-visibility and SEC-material when of any scale, and neither the Gambia nor Laos appears in any customer list, news report, or filing. Confidence in NONE_FOUND is therefore high for any material government-data deployment. The German BVerfG adjudication and all Palantir contract figures cited pertain to OTHER jurisdictions and are included strictly for contrast \u2014 they do not indicate any Gambia/Laos link. No claim is made that Palantir uses, competes with, or interacts with Splink.",
+      "unverified_flags": [
+        "Whether Palantir's UN WFP humanitarian partnership ever processed any data physically located in or pertaining to the Gambia or Laos \u2014 not confirmed either way; no evidence of a government-data deployment there regardless.",
+        "Whether any donor-funded or NGO project in the Gambia/Laos quietly used a Palantir non-profit/community tier \u2014 not found, considered unlikely, unverified.",
+        "Exact scope/owner of the Gambia Splink census use and the Lao PDR Shared Child Health Record project is taken from the prior global analysis and a Splink case-study reference; the underlying primary project documents were not independently retrieved in this pass."
+      ]
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "adjusted_connection_tier": "NONE_FOUND",
+      "overclaims": [
+        "WFP open letter signatory count: profile says '~60 civil-society groups' but the documented figure is 65 signatories comprising organisations AND individuals (organised by the Responsible Data community), not 65 'groups'. Minor imprecision; the hedge '~60' keeps it defensible but 'groups' should read 'organisations and individuals'.",
+        "NHS Federated Data Platform figure: profile cites '~\u00a3330m, 2023', which matches the headline contract value, but some reporting frames the total programme/associated-services envelope as up to \u00a3480m. The \u00a3330m core-platform figure is correct; the profile should note the \u00a3480m total-envelope framing exists to avoid a 'cherry-picked low number' challenge.",
+        "The profile asserts Palantir government deployments are 'typically high-visibility and SEC-material when of any scale.' This is an inference, not a sourced claim; it is reasonable but should be framed as analyst judgment rather than fact, since small sub-contracted or donor-funded engagements are precisely the category the caveat admits could be missed."
+      ],
+      "strongest_sourced_claims": [
+        "German Federal Constitutional Court Judgment of 16 February 2023 (1 BvR 1547/19, 1 BvR 2634/20) held the Hesse (\u00a7 25a HSOG) and Hamburg (\u00a7 49 HmbPolDVG) automated-data-analysis provisions unconstitutional for violating informational self-determination, lacking a sufficient danger threshold \u2014 verified against bundesverfassungsgericht.de and multiple outlets (LTO, Handelsblatt, Tagesspiegel).",
+        "HessenDATA = Palantir Gotham, deployed by Hesse police since summer 2017 (pilot 2017, fully operational 2018), used in ~14,000 cases/year, awarded directly to Palantir without tender on urgency grounds \u2014 verified across savageminds, iamexpat, Sage journal article, heise.",
+        "NHS England awarded Palantir the Federated Data Platform contract in November 2023, core value ~\u00a3330m over seven years, selected ahead of Oracle/IBM, with Accenture/PwC/NECS support \u2014 verified via digitalhealth.net, NHS England, Hansard.",
+        "Palantir\u2013WFP partnership announced February 2019 (a $45m pro bono data agreement) drew an open letter signed by 65 organisations/individuals organised by the Responsible Data community \u2014 verified via Privacy International, Devex, The New Humanitarian.",
+        "Mainland low-income SE Asia surveillance buildout (Myanmar, Cambodia) is documented as Chinese-technology-driven, not Palantir \u2014 consistent with the FULCRUM source cited; correctly used only as adjacency, not as a Laos-Palantir link."
+      ],
+      "unsupported_to_remove": [
+        "Nothing in the profile must be removed on factual grounds. The NONE_FOUND verdict, every reference fact, and the explicit disclaimers are all sound. The only edits warranted are tightening: (1) correct '~60 civil-society groups' to '65 organisations and individuals'; (2) note the \u00a3330m vs up-to-\u00a3480m total-envelope framing for the NHS FDP; (3) re-label the 'SEC-material when of any scale' assertion as analyst inference. No claim asserts or implies a Splink<->Palantir technical link \u2014 the profile repeatedly and correctly disclaims one in summary, splink_side, contract_values_dates, adjudications, and caveats, so there is nothing to strip on that axis."
+      ],
+      "corrections": [
+        "Change 'a 2019 data partnership, widely criticised by ~60 civil-society groups' to 'a 2019 data partnership criticised in an open letter signed by 65 organisations and individuals, organised by the Responsible Data community'.",
+        "Add to the NHS reference: core platform value ~\u00a3330m over seven years; total programme/associated-services envelope reported as up to \u00a3480m (digitalhealth.net headline).",
+        "Reframe the caveat line 'Palantir government deployments are typically high-visibility and SEC-material when of any scale' as an analyst inference, not a sourced fact, since it is the basis for the high-confidence call and should be visibly a judgment."
+      ],
+      "notes": "Adversarial verdict from a hostile-critic + Palantir-lawyer stance: the profile survives. As a Palantir lawyer I have no defamatory or false-attribution exposure to object to \u2014 the document attributes nothing to Palantir in Gambia or Laos, and every Palantir-specific claim elsewhere (Hesse/Gotham, NHS, WFP, ICE) is sourced and accurate. As a hostile critic trying to inflate the link, I cannot: there is genuinely no procurement record, SEC filing, news report, or customer listing tying Palantir to either country, and the profile does not pretend otherwise. The connection_tier NONE_FOUND is correct and must NOT be downgraded or upgraded \u2014 it is already at the floor and is honestly earned. Crucially on the requested Splink<->Palantir red flag: the profile contains NO claim of any technical, contractual, or operational link between Splink (MoJ open-source record-linkage) and Palantir, and affirmatively disclaims one in at least five fields. That is the correct, defensible posture; nothing there needs removal. The German adjudication, contract figures, and WFP/ICE controversies are all explicitly walled off as 'contrast / other jurisdictions' and never bleed into a Gambia/Laos assertion. Only three minor tightening edits are warranted (WFP signatory wording, NHS \u00a3480m envelope, labelling one inference as inference); none affect the verdict. Confidence 'high' for NONE_FOUND is appropriate given the caveat honestly preserves the residual possibility of a small undisclosed/sub-contracted/donor-funded engagement.\n"
+    }
+  },
+  {
+    "target": "global-strategy",
+    "title": "Palantir\u2019s global government strategy & which Splink-countries it has penetrated",
+    "profile": {
+      "country_or_body": "GLOBAL CROSS-COUNTRY SCORECARD: Palantir's government footprint across the 10 documented Splink-adopter jurisdictions (UK, Australia, US, Chile, Germany, Canada, Gambia, Laos, EU, UNHCR)",
+      "connection_tier": "SAME_DOMAIN_SAME_COUNTRY",
+      "summary": "This is the comparative backbone synthesising (a) Palantir's global government strategy and financials and (b) which Splink-adopter countries have a documented Palantir government footprint, with per-country tiering. CRITICAL FRAMING: Splink and Palantir are NOT the same thing and there is NO evidence Palantir uses Splink. Splink is the UK MoJ's free, open-source probabilistic record-linkage Python library used by statistics/research bodies to JOIN UP citizen records (e.g. census deduplication). Palantir (Gotham/Foundry/Maven) is a proprietary, paid data-integration and analytics platform used operationally by police, immigration, defence and intelligence bodies. Where both appear in the same country they are almost always (i) different government bodies, (ii) different tools, and (iii) different purposes (statistical research vs. operational enforcement/targeting). The honest connection is THEMATIC/DOMAIN-LEVEL (\"the quiet joining-up of citizen records by government\"), NOT a contractual or technical link.\n\nFINANCIALS (Palantir SEC filings / Q4 2025): FY2025 revenue ~$4.5bn; ~54% government / ~46% commercial; full-year government revenue +53% YoY, commercial +60% YoY; US commercial accelerating to triple-digit YoY growth by Q3 2025. Government remains the larger and strategically anchoring segment.\n\nGLOBAL STRATEGY: (1) US defence anchor \u2014 Maven Smart System DoD IDIQ raised from $480m (May 2024) to a ~$1.3bn ceiling through 2029; ~$10bn US Army enterprise agreement (July 2025). (2) US immigration \u2014 ICE 'ImmigrationOS' $30m sole-source (Apr 2025), up to $159m, through Sep 2027; fuses IRS/SSA/DMV/passport/ALPR data; civil-liberties groups warn it captures data on naturalised citizens and legal residents by design. (3) NATO \u2014 Maven Smart System NATO contract via NCIA signed 25 Mar 2025 for Allied Command Operations (one of the Alliance's fastest-ever procurements). (4) Ukraine \u2014 Maven battle-tested (mixed results); Jan 2026 Brave1 Dataroom built on Palantir infrastructure. (5) Israel/IDF \u2014 Jan 2024 'strategic partnership' / 'Partnership for Battle Tech' with Israel's MoD; serious-journalism and NGO allegations (Al Jazeera, BHRRC, BDS) that Palantir tech supports Gaza targeting/'kill list' workflows (UNVERIFIED in specifics; Palantir disputes characterisations; tools 'Lavender'/'Gospel' are IDF-attributed, not proven Palantir products). (6) Five Eyes / Europe \u2014 embedded across UK (NHS FDP, ~34+ state contracts, \u00a3670m+ cumulative per Lighthouse Reports), Australia, Canada, and EU policing (Europol Gotham).\n\nTIERING RESULT across the 10 Splink jurisdictions: UK = SAME_DOMAIN_SAME_COUNTRY (borderline DIRECT \u2014 NHS England is BOTH a Splink user and the Palantir FDP customer, but different tools/functions); Germany = SAME_DOMAIN_SAME_COUNTRY (Destatis uses Splink; police forces use Palantir; + the landmark BVerfG adjudication); US, Australia, Canada = SAME_DOMAIN_SAME_COUNTRY (Palantir present in-country but in different bodies than the Splink adopters); EU = SAME_DOMAIN_SAME_COUNTRY (Palantir at Europol vs. Splink at EMA \u2014 different EU bodies); Chile, Gambia, Laos = NONE_FOUND; UNHCR = THEMATIC_ADJACENCY (no Palantir-UNHCR contract found, but Palantir has humanitarian-data partnerships, e.g. WFP).",
+      "palantir_presence": [
+        "UK / NHS England: Federated Data Platform (FDP) \u2014 Palantir Foundry-based \u2014 awarded Nov 2023 to Palantir-led consortium (with Accenture, PwC, NECS, Carnall Farrar). Published award ~\u00a3182.2m, max envelope up to \u00a3330m to 2030, 3+2+1+1 structure (first term ends Mar 2027); first-year spend >=\u00a325.6m. Operational, direct-care data integration across trusts. Lighthouse Reports: 34+ UK state contracts across 10+ departments, \u00a3670m+ cumulative.",
+        "Germany / Police (Hesse, Hamburg, Bavaria): Palantir Gotham \u2014 Hesse ran it as 'hessenDATA' from 2017; Hamburg adopted a parallel legal basis; Bavaria runs it as 'VeRA' (cross-case research/analysis platform linking millions of records incl. witnesses, victims, informants). Operational policing data analysis / association-mapping.",
+        "US / ICE: 'ImmigrationOS' $30m sole-source (Apr 2025), up to $159m, through Sep 2027 \u2014 fuses IRS, SSA, DMV, passport, license-plate-reader data to identify/apprehend removal targets and track self-deportations; flagged for sweeping in naturalised citizens/legal residents.",
+        "US / DoD: Maven Smart System \u2014 IDIQ raised from $480m (2024) to ~$1.3bn ceiling through 2029; plus ~$10bn US Army enterprise deal (July 2025). AI-enabled intelligence fusion and targeting.",
+        "Australia / Defence & agencies: $7.6m Defence 'Industrial Intelligence Capability' contract (Foundry, limited tender, 2026) mapping defence-industry supply chains; plus ~$25m+ cumulative since 2013 across ASD, ACIC, AUSTRAC (>$12m after variations), NSW Crime Commission, Victorian Dept of Justice.",
+        "Canada / National Defence: $46.8m contract (awarded 27 Mar 2020, expanded via 12 amendments without retender) for Canadian Special Operations Forces Command (incl. JTF2); separate ~$14m DND data-management contract; Jan 2024 53-month Supply Arrangement opening Palantir licences to federal departments.",
+        "EU / Europol: Palantir Gotham embedded in Europol core operations (route via 2012 Capgemini contract); Palantir also embedded in multiple EU member-state police forces.",
+        "Ukraine: Maven battle-tested; Brave1 Dataroom (Jan 2026) on Palantir infrastructure. NATO: Maven Smart System NATO via NCIA (Mar 2025). Israel: MoD 'strategic partnership' (Jan 2024)."
+      ],
+      "splink_side": "Splink (UK MoJ open-source probabilistic record-linkage library) adopter mapping per the maintainer-curated 'Use Cases' page: UK = pervasive (ONS, NHS England, MoJ Data First, MoD, UKHSA, DfE, CMA, Homes England, Welsh Revenue Authority, ~10 local councils); Australia = ABS (statistics); US = Defense Health Agency (200M+ records), Florida Cancer Registry; Germany = Destatis (register-based census linkage); Canada = Ontario Min. of Children/Community/Social Services (main tool), Environment & Climate Change Canada; Chile = Min. Health + UCL (migrant immunisation linkage); Gambia = 2024 census/post-enumeration linkage; Laos = child health record deduplication; EU = European Medicines Agency (EMA); UNHCR = refugee dataset deduplication. HOW PALANTIR RELATES: In EVERY case the Splink user is a STATISTICS / HEALTH-RESEARCH / CENSUS / SOCIAL-SERVICES / HUMANITARIAN body using a free open-source tool for de-duplication/linkage, whereas Palantir's documented footprint is in POLICING / IMMIGRATION / DEFENCE / INTELLIGENCE bodies using a proprietary operational platform. Same country and same broad data-domain (joining-up citizen records) in UK, Germany, US, Australia, Canada, EU \u2014 but DIFFERENT body + DIFFERENT tool + DIFFERENT purpose. Strongest overlap is UK NHS England (a single body that is both a Splink user for research linkage AND the Palantir FDP customer for operational/direct-care integration \u2014 still different tools, different functions). No body anywhere is documented using Splink and Palantir for the same dataset/task; Palantir does NOT use Splink.",
+      "palantir_product": "Gotham (police/intelligence: Germany hessenDATA/VeRA, EU Europol); Foundry (data integration: UK NHS FDP, Australia Defence IIC); Maven Smart System (DoD/NATO/Ukraine AI targeting & intelligence fusion); ImmigrationOS (ICE deportation platform, Foundry-based); AIP (Artificial Intelligence Platform, cross-segment)",
+      "operational_use": "See structured field; Palantir's documented citizen-data use across these jurisdictions is operational enforcement/targeting/direct-care integration, categorically distinct from the Splink adopters' statistical/research record-linkage. The two streams represent the same societal trajectory ('quiet joining-up of citizen records') executed by different arms of the state with different tools.",
+      "contract_values_dates": "UK NHS FDP: Nov 2023, ~\u00a3182.2m award / up to \u00a3330m to 2030 (first term ends Mar 2027). US ICE ImmigrationOS: Apr 2025, $30m sole-source / up to $159m through Sep 2027. US DoD Maven: $480m (May 2024) raised to ~$1.3bn ceiling through 2029; ~$10bn US Army deal (July 2025). NATO Maven (NCIA): 25 Mar 2025. Israel MoD strategic partnership: Jan 2024 (reported multi-hundred-million). Australia Defence IIC: $7.6m (2026, limited tender); ~$25m+ cumulative since 2013. Canada DND/CANSOFCOM: $46.8m (awarded 27 Mar 2020, 12 amendments); ~$14m DND data-mgmt; Supply Arrangement Jan 2024\u2013Jul 2028. Palantir FY2025: ~$4.5bn revenue, ~54% government.",
+      "adjudications": [
+        "Germany \u2014 Bundesverfassungsgericht (Federal Constitutional Court), Judgment of 16 February 2023, 1 BvR 1547/19 and 1 BvR 2634/20 (brought by Gesellschaft f\u00fcr Freiheitsrechte / GFF). Held that the statutory bases for automated police data analysis in Hesse (\u00a725a HSOG) and Hamburg (\u00a749 Hamburg police data law) violated the right to informational self-determination. Hamburg's provision declared VOID; Hesse's incompatible with the Basic Law but allowed conditionally until 30 Sep 2023, restricted to particularly serious offences with specific facts indicating danger to life/limb or state security. Palantir IS named: the Court noted Hesse 'purchased the Gotham operating system from the software company Palantir and ran it under the name hessenDATA' (2017). The Court found such dragnet 'analysis by association' a distinct, serious constitutional interference.",
+        "Germany \u2014 follow-on constitutional complaint filed by GFF on 23 July 2025 against Bavaria's use of Palantir ('VeRA'); pending before the BVerfG (no ruling yet as of June 2026).",
+        "No court/regulator adjudication found specifically condemning the UK NHS FDP, US ICE, Australian, or Canadian Palantir contracts as of June 2026 (political/parliamentary and FOI scrutiny exists, but not a binding judgment)."
+      ],
+      "controversies": [
+        "Israel/Gaza: Jan 2024 IDF/MoD strategic partnership; Al Jazeera, Business & Human Rights Resource Centre and BDS allege Palantir tech supports Gaza targeting / 'kill lists' (UNVERIFIED specifics; IDF tools 'Lavender'/'Gospel' are not proven to be Palantir products; Palantir disputes the characterisation).",
+        "US ICE ImmigrationOS: ACLU, EFF, American Immigration Council and members of Congress (Menendez letter) warn it tracks Americans/naturalised citizens and enables mass-deportation 'mission creep'.",
+        "Germany: GFF litigation; civil-rights objection to opaque 'black-box' US software creating long-term police dependency.",
+        "UK NHS FDP: medConfidential/Medact/openDemocracy campaigns over patient-data trust, heavily-redacted published contract, low trust uptake, procurement concerns; Peter Thiel's prior disparaging NHS comments.",
+        "Procurement transparency: Australia (limited/no-tender), Canada (secret $46.8m contract, 12 amendments, 'not for public disclosure'), EU Europol (opaque tech relationships per Statewatch).",
+        "Founder/ownership: Peter Thiel association drives much of the political controversy."
+      ],
+      "datasets": [
+        "UK NHS FDP: trust-level operational health/care records (de-identified when shared nationally)",
+        "Germany hessenDATA/VeRA: police-held records incl. suspects, witnesses, victims, informants",
+        "US ImmigrationOS: IRS tax, SSA, DMV, passport, license-plate-reader, immigration-status data",
+        "US DoD/NATO Maven: ISR / sensor / intelligence feeds (military, not citizen civil records)",
+        "Australia: defence-industry supply-chain data (IIC); AUSTRAC financial-intelligence; criminal-intelligence (ACIC)",
+        "Canada: special-forces/defence operational data; possible OSINT/social-media analysis (per reporting)",
+        "EU Europol: cross-border law-enforcement / criminal-intelligence data"
+      ],
+      "unverified_flags": [
+        "Israel/Gaza targeting: claims that Palantir specifically powers IDF 'kill lists' / 'Lavender' / 'Gospel' are allegations from journalism/NGOs, NOT court-confirmed; Lavender/Gospel are IDF-attributed systems not proven to be Palantir products. Do not state as fact.",
+        "Israel MoD contract dollar value ('multi-hundred-million') is reported, not from a verified primary contract document.",
+        "Canada facial-recognition / civilian-social-media analysis: asserted by some outlets (drugdatadecoded.ca) as a capability, not confirmed operational use against Canadians.",
+        "UNHCR\u2013Palantir: NO contract found; Palantir's documented humanitarian link is with the World Food Programme (WFP), a different organisation \u2014 treat UNHCR as thematic adjacency only.",
+        "Chile, Gambia, Laos: no Palantir government footprint found in this research pass (search-summary negatives, not exhaustively proven absent).",
+        "Lighthouse Reports \u00a3670m / 34-contract UK figures are reputable-journalism aggregates; individual line items not each independently re-verified here."
+      ],
+      "citations": [
+        {
+          "title": "Palantir Q3 2025 Earnings Release (Form 8-K) \u2014 revenue & government/commercial split",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001321655/000132165525000130/a2025q3ex991earningsrelease.htm",
+          "date": "2025"
+        },
+        {
+          "title": "Palantir Q4 2025 Investor Presentation (FY2025 ~$4.5bn, ~54% government)",
+          "url": "https://investors.palantir.com/files/Palantir%20-%20Q4%202025%20Investor%20Presentation.pdf",
+          "date": "2026"
+        },
+        {
+          "title": "NHS England awards \u00a3330m/\u00a3480m Federated Data Platform contract to Palantir \u2014 Digital Health",
+          "url": "https://www.digitalhealth.net/2023/11/nhs-england-awards-330m-federated-data-platform-contract-to-palantir/",
+          "date": "2023-11"
+        },
+        {
+          "title": "NHS England \u2014 FDP Contract explainer",
+          "url": "https://www.england.nhs.uk/digitaltechnology/nhs-federated-data-platform/security-privacy/contract-explainer/",
+          "date": "2024"
+        },
+        {
+          "title": "Bundesverfassungsgericht \u2014 Judgment of 16 February 2023, 1 BvR 1547/19, 1 BvR 2634/20 (Palantir Gotham/hessenDATA named)",
+          "url": "https://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/EN/2023/02/rs20230216_1bvr154719en.html",
+          "date": "2023-02-16"
+        },
+        {
+          "title": "German Constitutional Court Strikes Down Predictive Algorithms for Policing \u2014 Communications of the ACM",
+          "url": "https://cacmb4.acm.org/news/270044-german-constitutional-court-strikes-down-predictive-algorithms-for-policing/fulltext",
+          "date": "2023"
+        },
+        {
+          "title": "GFF files constitutional complaint against Palantir use in Bavaria (VeRA), 23 July 2025",
+          "url": "https://freiheitsrechte.org/ueber-die-gff/presse/pressemitteilungen-der-gesellschaft-fur-freiheitsrechte/blackbox-palantir-gff-erhebt-verfassungsbeschwerde-gegen-massenhafte-datenauswertung-durch-polizei-in-bayern",
+          "date": "2025-07-23"
+        },
+        {
+          "title": "ICE Paid Palantir $30 Million to Build a Deportation Operating System (ImmigrationOS) \u2014 State of Surveillance",
+          "url": "https://stateofsurveillance.org/articles/government/palantir-immigrationos-ice-contract-2025/",
+          "date": "2025"
+        },
+        {
+          "title": "ICE to Use ImmigrationOS by Palantir to Track Immigrants' Movements \u2014 American Immigration Council",
+          "url": "https://www.americanimmigrationcouncil.org/blog/ice-immigrationos-palantir-ai-track-immigrants/",
+          "date": "2025"
+        },
+        {
+          "title": "All the Ways Palantir is Assisting Trump's Abusive Removal Campaign \u2014 ACLU",
+          "url": "https://www.aclu.org/news/privacy-technology/palantir-deportation-roundup",
+          "date": "2026"
+        },
+        {
+          "title": "DOD raises Palantir's Maven contract to more than $1B \u2014 DefenseScoop",
+          "url": "https://defensescoop.com/2025/05/23/dod-palantir-maven-smart-system-contract-increase/",
+          "date": "2025-05-23"
+        },
+        {
+          "title": "NATO inks deal with Palantir for Maven AI system (NCIA, Mar 2025) \u2014 DefenseScoop",
+          "url": "https://defensescoop.com/2025/04/14/nato-palantir-maven-smart-system-contract/",
+          "date": "2025-04"
+        },
+        {
+          "title": "Thiel's Palantir, Israel Agree Strategic Partnership for Battle Tech (Jan 2024) \u2014 Palantir",
+          "url": "https://www.palantir.com/assets/xrfr7uokpv1b/3MuEeA8MLbLDAyxixTsiIe/9e4a11a7fb058554a8a1e3cd83e31c09/C134184_finaleprint.pdf",
+          "date": "2024-01"
+        },
+        {
+          "title": "Palantir allegedly enables Israel's AI targeting in Gaza \u2014 Business & Human Rights Resource Centre",
+          "url": "https://www.business-humanrights.org/en/latest-news/palantir-spacex-allegedly-complicit-in-war-crimes-amid-israels-war-in-gaza/",
+          "date": "2024"
+        },
+        {
+          "title": "Defence skips competitive tender to award Palantir $7.6m contract \u2014 Canberra Times",
+          "url": "https://www.canberratimes.com.au/story/9178631/defence-awards-palantir-76m-defence-contract/",
+          "date": "2026-02"
+        },
+        {
+          "title": "Canada Spent $46.8 Million on Secret Palantir Contract for Special Forces \u2014 The Deep Dive",
+          "url": "https://thedeepdive.ca/canada-spent-46-8-million-on-secret-palantir-contract-for-special-forces-records-show/",
+          "date": "2026"
+        },
+        {
+          "title": "What is Palantir Doing in Europe? (Europol Gotham, member-state police) \u2014 Lighthouse Reports",
+          "url": "https://www.lighthousereports.com/investigation/what-is-palantir-doing-in-europe/",
+          "date": "2025"
+        },
+        {
+          "title": "Splink \u2014 Use Cases / official adopter list (UK, Australia ABS, Germany Destatis, US DHA, Canada Ontario, Chile, Gambia, Laos, EMA, UNHCR)",
+          "url": "https://moj-analytical-services.github.io/splink/index.html",
+          "date": "2025"
+        },
+        {
+          "title": "Probabilistic linkage to improve estimates of access to services among migrants (Chile, Splink) \u2014 PMC",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10929394/",
+          "date": "2024"
+        },
+        {
+          "title": "MoJ Splink Master Record \u2014 GOV.UK algorithmic transparency record",
+          "url": "https://www.gov.uk/algorithmic-transparency-records/moj-splink-master-record",
+          "date": "2025-10-06"
+        }
+      ],
+      "confidence": "high",
+      "caveats": "Confidence HIGH on the structural finding (Palantir and Splink are different tools used by different bodies for different purposes; no Palantir-uses-Splink link; tiering as above) and on the primary-sourced items (BVerfG judgment, SEC financials, NHS FDP, ICE/Maven contracts, Splink adopter list). Confidence is LOWER on: (1) Israel/Gaza targeting specifics (allegation-level, disputed); (2) exact Israel MoD contract value; (3) absence of Palantir in Chile/Gambia/Laos/EMA/UNHCR (these are 'not found in this pass', i.e. negative evidence, not proof of absence). The single most defensible cross-country pivot for the post is GERMANY: Destatis (Splink, statistics) vs. Hesse/Hamburg/Bavaria police (Palantir Gotham/VeRA, operational) + the BVerfG Feb 2023 ruling \u2014 same country, same data-joining domain, different body/tool/purpose, with a binding constitutional adjudication naming Palantir. The UK is the tightest single-body overlap (NHS England uses both, different functions). Do NOT assert any contractual or technical relationship between Palantir and Splink anywhere."
+    },
+    "verification": null
+  }
+]

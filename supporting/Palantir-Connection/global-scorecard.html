@@ -1,0 +1,33 @@
+<!doctype html><meta charset=utf-8><body style='margin:0;background:#0b0d10;color:#e7edf3;padding:28px;width:980px'><style>
+.scorecard{border:1px solid var(--border,#2a323c);border-radius:14px;padding:16px;background:rgba(255,255,255,.02);font-family:var(--sans,-apple-system,Helvetica,Arial,sans-serif)}
+.scorecard .sc-head,.scorecard .row{display:grid;grid-template-columns:1.3fr 1.2fr 1.5fr 1.6fr;gap:10px;align-items:center;padding:9px 8px;border-bottom:1px solid #1c232c}
+.scorecard .sc-head{font-family:var(--mono,monospace);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:#9aa7b4;border-bottom:1px solid #2a323c}
+.scorecard .row:last-of-type{border-bottom:none}
+.scorecard .ctry{color:#fff;font-weight:650;font-size:.92rem}
+.scorecard .pill{display:inline-block;border:1px solid;border-radius:7px;padding:4px 9px;font-size:.8rem;background:#0b0d10}
+.scorecard .rul{font-size:.8rem;color:#9aa7b4}
+.scorecard .rul.dim{color:#4a5563}
+.scorecard .rulhot{color:#ff8a8a;font-weight:600;animation:scpulse 1.8s ease-in-out infinite}
+.scorecard .row.hot{background:rgba(255,93,93,.05);border-radius:8px}
+@keyframes scpulse{0%,100%{opacity:.65}50%{opacity:1}}
+.scorecard .sc-legend{margin-top:12px;font-family:var(--mono,monospace);font-size:.7rem;color:#9aa7b4}
+@media(max-width:640px){
+  .scorecard .sc-head{display:none}
+  .scorecard .row{grid-template-columns:1fr;gap:5px;padding:11px 8px;border-bottom:1px solid #2a323c}
+  .scorecard .ctry{font-size:1rem;margin-bottom:2px}
+}
+</style><figure class="diagram"><div class="scorecard">
+<div class="sc-head"><span class="ctry">Country</span><span class="h">Splink (statistical)</span><span class="h">Palantir (operational)</span><span class="h">Adjudication</span></div>
+<div class="row"><span class="ctry">🇬🇧 United Kingdom</span><span class="pill" style="border-color:#3fd07f55;color:#3fd07f">Pervasive</span><span class="pill" style="border-color:#3fd07f55;color:#3fd07f">DIRECT — NHS runs both</span><span class="rul dim">—</span></div>
+<div class="row"><span class="ctry">🇺🇸 United States</span><span class="pill" style="border-color:#8a93a055;color:#8a93a0">Rejected (BigMatch)</span><span class="pill" style="border-color:#5aa9ff55;color:#5aa9ff">Dominant & operational</span><span class="rul dim">—</span></div>
+<div class="row hot"><span class="ctry">🇩🇪 Germany</span><span class="pill" style="border-color:#9aa7b455;color:#9aa7b4">Destatis census</span><span class="pill" style="border-color:#f4b74055;color:#f4b740">Gotham police (Hesse/Bavaria)</span><span class="rul rulhot">⚖ BVerfG 2023 — ruled unconstitutional</span></div>
+<div class="row"><span class="ctry">🇦🇺 Australia</span><span class="pill" style="border-color:#3fd07f55;color:#3fd07f">ABS spine</span><span class="pill" style="border-color:#f4b74055;color:#f4b740">Defence / AUSTRAC / ACIC</span><span class="rul dim">—</span></div>
+<div class="row hot"><span class="ctry">🇨🇦 Canada</span><span class="pill" style="border-color:#9aa7b455;color:#9aa7b4">Ontario · ECCC</span><span class="pill" style="border-color:#f4b74055;color:#f4b740">DND ($46.8M secret) · OPP</span><span class="rul rulhot">⚖ Ethics Commissioner 2020</span></div>
+<div class="row"><span class="ctry">🇪🇺 EU institutions</span><span class="pill" style="border-color:#9aa7b455;color:#9aa7b4">EMA (vet)</span><span class="pill" style="border-color:#f4b74055;color:#f4b740">Gotham at Europol (to 2021)</span><span class="rul ">EDPS 2022 erase-order</span></div>
+<div class="row"><span class="ctry">🌍 UN / UNHCR</span><span class="pill" style="border-color:#9aa7b455;color:#9aa7b4">UNHCR (fastLink)</span><span class="pill" style="border-color:#f4b74055;color:#f4b740">Foundry at WFP (~$45M)</span><span class="rul dim">—</span></div>
+<div class="row"><span class="ctry">🇨🇱 Chile</span><span class="pill" style="border-color:#9aa7b455;color:#9aa7b4">MoH research</span><span class="pill" style="border-color:#39475a55;color:#39475a">None found</span><span class="rul dim">—</span></div>
+<div class="row"><span class="ctry">🇬🇲 The Gambia</span><span class="pill" style="border-color:#9aa7b455;color:#9aa7b4">2024 census</span><span class="pill" style="border-color:#39475a55;color:#39475a">None found</span><span class="rul dim">—</span></div>
+<div class="row"><span class="ctry">🇱🇦 Laos</span><span class="pill" style="border-color:#9aa7b455;color:#9aa7b4">Child health</span><span class="pill" style="border-color:#39475a55;color:#39475a">None found</span><span class="rul dim">—</span></div>
+
+<div class="sc-legend"><b style="color:#3fd07f">■</b> direct / operational &nbsp; <b style="color:#5aa9ff">■</b> same-country &nbsp; <b style="color:#f4b740">■</b> thematic &nbsp; <b style="color:#39475a">■</b> none found &nbsp;·&nbsp; ⚖ = court/regulator ruling</div>
+</div><figcaption>The same well-resourced states run benign statistical linkage (Splink) AND proprietary, US-owned operational platforms (Palantir) — the civil-liberties weight sits on the Palantir side. Germany is the one binding court ruling, and its judgment names Palantir.</figcaption></figure></body>
