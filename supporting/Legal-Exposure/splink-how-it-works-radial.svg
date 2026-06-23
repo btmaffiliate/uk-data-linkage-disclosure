@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1100" viewBox="0 0 1100 1100">
+<rect width="1100" height="1100" fill="#0b0d10"/>
+<text x="550" y="70" text-anchor="middle" fill="#5aa9ff" font-family="Courier,monospace" font-size="15" letter-spacing="3">PUBLIC-INTEREST INVESTIGATION · brandonmyers.net</text>
+<text x="550" y="118" text-anchor="middle" fill="#ffffff" font-family="Georgia,serif" font-size="40" font-weight="700">How Splink Works</text>
+<text x="550" y="150" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="17">One person. Every dataset. No shared ID. No consent. No opt-out.</text>
+<line x1="550" y1="605" x2="550" y2="237" stroke="#ff5d5d" stroke-opacity="0.45" stroke-width="2"/><line x1="550" y1="605" x2="787" y2="323" stroke="#ff5d5d" stroke-opacity="0.45" stroke-width="2"/><line x1="550" y1="605" x2="912" y2="541" stroke="#ff5d5d" stroke-opacity="0.45" stroke-width="2"/><line x1="550" y1="605" x2="869" y2="789" stroke="#ff5d5d" stroke-opacity="0.45" stroke-width="2"/><line x1="550" y1="605" x2="676" y2="951" stroke="#ff5d5d" stroke-opacity="0.45" stroke-width="2"/><line x1="550" y1="605" x2="424" y2="951" stroke="#ff5d5d" stroke-opacity="0.45" stroke-width="2"/><line x1="550" y1="605" x2="231" y2="789" stroke="#ff5d5d" stroke-opacity="0.45" stroke-width="2"/><line x1="550" y1="605" x2="188" y2="541" stroke="#ff5d5d" stroke-opacity="0.45" stroke-width="2"/><line x1="550" y1="605" x2="313" y2="323" stroke="#ff5d5d" stroke-opacity="0.45" stroke-width="2"/>
+<circle cx="550" cy="605" r="150" fill="none" stroke="#ff5d5d" stroke-opacity="0.25" stroke-dasharray="5 6" stroke-width="1.5"/>
+<text x="550" y="437" text-anchor="middle" fill="#ff8a8a" font-family="Courier,monospace" font-size="13" letter-spacing="2">SPLINK · probabilistic record linkage · UK Ministry of Justice</text>
+<circle cx="550" cy="605" r="92" fill="#3a0e12" stroke="#ff5d5d" stroke-width="2"/>
+<text x="550" y="597" text-anchor="middle" fill="#ffffff" font-family="Georgia,serif" font-size="22" font-weight="700">ONE PROFILE</text>
+<text x="550" y="625" text-anchor="middle" fill="#ffffff" font-family="Georgia,serif" font-size="22" font-weight="700">OF YOU</text>
+<g>
+      <rect x="455" y="204" width="190" height="66" rx="12" fill="#161b22" stroke="#2a323c"/>
+      <text x="550" y="231" text-anchor="middle" fill="#e7edf3" font-family="Helvetica,Arial" font-size="20" font-weight="700">Health records</text>
+      <text x="550" y="253" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="13">NHS · Master Person Service</text>
+    </g><g>
+      <rect x="692" y="290" width="190" height="66" rx="12" fill="#161b22" stroke="#2a323c"/>
+      <text x="787" y="317" text-anchor="middle" fill="#e7edf3" font-family="Helvetica,Arial" font-size="20" font-weight="700">Tax</text>
+      <text x="787" y="339" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="13">HMRC · PAYE</text>
+    </g><g>
+      <rect x="817" y="508" width="190" height="66" rx="12" fill="#161b22" stroke="#2a323c"/>
+      <text x="912" y="535" text-anchor="middle" fill="#e7edf3" font-family="Helvetica,Arial" font-size="20" font-weight="700">Courts</text>
+      <text x="912" y="557" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="13">Common Platform</text>
+    </g><g>
+      <rect x="774" y="756" width="190" height="66" rx="12" fill="#161b22" stroke="#2a323c"/>
+      <text x="869" y="783" text-anchor="middle" fill="#e7edf3" font-family="Helvetica,Arial" font-size="20" font-weight="700">Police</text>
+      <text x="869" y="805" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="13">PNC numbers</text>
+    </g><g>
+      <rect x="581" y="918" width="190" height="66" rx="12" fill="#161b22" stroke="#2a323c"/>
+      <text x="676" y="945" text-anchor="middle" fill="#e7edf3" font-family="Helvetica,Arial" font-size="20" font-weight="700">Probation</text>
+      <text x="676" y="967" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="13">DELIUS</text>
+    </g><g>
+      <rect x="329" y="918" width="190" height="66" rx="12" fill="#161b22" stroke="#2a323c"/>
+      <text x="424" y="945" text-anchor="middle" fill="#e7edf3" font-family="Helvetica,Arial" font-size="20" font-weight="700">Prisons</text>
+      <text x="424" y="967" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="13">NOMIS</text>
+    </g><g>
+      <rect x="136" y="756" width="190" height="66" rx="12" fill="#161b22" stroke="#2a323c"/>
+      <text x="231" y="783" text-anchor="middle" fill="#e7edf3" font-family="Helvetica,Arial" font-size="20" font-weight="700">Benefits</text>
+      <text x="231" y="805" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="13">DWP</text>
+    </g><g>
+      <rect x="93" y="508" width="190" height="66" rx="12" fill="#161b22" stroke="#2a323c"/>
+      <text x="188" y="535" text-anchor="middle" fill="#e7edf3" font-family="Helvetica,Arial" font-size="20" font-weight="700">Census</text>
+      <text x="188" y="557" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="13">ONS</text>
+    </g><g>
+      <rect x="218" y="290" width="190" height="66" rx="12" fill="#161b22" stroke="#2a323c"/>
+      <text x="313" y="317" text-anchor="middle" fill="#e7edf3" font-family="Helvetica,Arial" font-size="20" font-weight="700">Immigration</text>
+      <text x="313" y="339" text-anchor="middle" fill="#9aa7b4" font-family="Helvetica,Arial" font-size="13">Home Office</text>
+    </g>
+<text x="550" y="1070" text-anchor="middle" fill="#6b7682" font-family="Courier,monospace" font-size="12">Records that shared no common ID — matched into a single linked identity, across departments, without your knowledge.</text>
+</svg>
