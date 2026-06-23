@@ -120,3 +120,11 @@ The fair framing: the safeguards are real but **largely internal and researcher-
 ## Related — separate track
 
 A software-security advisory for Splink is published separately: [**splink-sql-injection-advisory.md**](splink-sql-injection-advisory.md) — an unquoted SQL-identifier interpolation issue (CWE-89) in the backend `DatabaseAPI`. It concerns **secure coding in multi-tenant wrappers**, not the lawful-linkage governance question this report addresses. The two are kept deliberately distinct: the privacy concern is about *governance of lawful linkage*; the bug is about *code that builds SQL*. Mixing them would misrepresent both.
+
+---
+
+## Part 3 — Legal exposure: *Ruled Unlawful Next Door*
+
+A tier-graded, primary-sourced hunt for where UK government data-linkage has actually been ruled unlawful. Verdict: no on-target Tier-1 adjudication against Data First / Splink / ONS IDS / ADR UK — but the same policy-not-law shortcut was struck down three times in the adjacent immigration regime. Includes a slide deck (HTML/PPTX/PDF) and full source archival (screenshots + Internet Archive).
+
+→ [`supporting/Legal-Exposure/`](supporting/Legal-Exposure/) · published: https://brandonmyers.net/writing/ruled-unlawful-next-door

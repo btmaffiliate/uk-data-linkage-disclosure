@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UK Government Data-Linkage — Tier-1 Legal Exposure · brandonmyers.net</title>
+<meta name="author" content="Brandon Myers">
+<meta name="description" content="A tier-graded, primary-sourced investigation into where UK government data-linkage has actually been ruled unlawful. brandonmyers.net">
+<style>
+  :root{
+    --bg:#0e1116; --panel:#161b22; --ink:#e7edf3; --muted:#9aa7b4; --line:#2a323c;
+    --t1:#ff5d5d; --t2:#f4b740; --t3:#8a93a0; --none:#3fd07f; --accent:#5aa9ff;
+    --serif:"Iowan Old Style","Palatino Linotype",Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:"SF Mono",ui-monospace,"Cascadia Code",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);overflow:hidden}
+  .deck{height:100vh;width:100vw}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;padding:6vh 7vw;animation:fade .35s ease;overflow:auto}
+  .slide.active{display:flex}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:1.1rem}
+  h1{font-family:var(--serif);font-size:clamp(2rem,4.6vw,4rem);line-height:1.04;font-weight:600;letter-spacing:-.01em}
+  h2{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.1;font-weight:600;margin-bottom:1.4rem;letter-spacing:-.01em}
+  p,li{font-size:clamp(.95rem,1.35vw,1.18rem);line-height:1.55;color:var(--ink)}
+  .lead{color:var(--muted);max-width:62ch}
+  .muted{color:var(--muted)} strong{color:#fff}
+  ul{margin:.4rem 0 0 1.1rem} li{margin:.55rem 0}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:.6rem}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.3rem 1.4rem}
+  .card h3{font-family:var(--sans);font-size:1.05rem;margin-bottom:.5rem;font-weight:650}
+  .card p{font-size:.96rem;color:var(--muted)}
+  .pill{display:inline-block;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;padding:.28em .7em;border-radius:999px;font-weight:700}
+  .p-t1{background:rgba(255,93,93,.14);color:var(--t1);border:1px solid rgba(255,93,93,.4)}
+  .p-t2{background:rgba(244,183,64,.14);color:var(--t2);border:1px solid rgba(244,183,64,.4)}
+  .p-t3{background:rgba(138,147,160,.14);color:var(--t3);border:1px solid rgba(138,147,160,.4)}
+  .p-none{background:rgba(63,208,127,.14);color:var(--none);border:1px solid rgba(63,208,127,.4)}
+  table{width:100%;border-collapse:collapse;margin-top:.4rem;font-size:clamp(.82rem,1.1vw,1rem)}
+  th,td{text-align:left;padding:.8rem .9rem;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  td.sys{font-weight:650;color:#fff;white-space:nowrap}
+  .cite{font-family:var(--mono);font-size:.8rem;color:var(--accent)}
+  .big{font-family:var(--serif);font-size:clamp(1.3rem,2.3vw,1.9rem);line-height:1.3;max-width:32ch}
+  .footer{position:absolute;bottom:2.6vh;left:7vw;right:7vw;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.7rem;color:var(--muted);letter-spacing:.08em}
+  .progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);transition:width .3s;z-index:50}
+  .nav{position:fixed;bottom:2.2vh;right:2vw;display:flex;gap:.5rem;z-index:50}
+  .nav button{background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:8px;width:36px;height:32px;font-size:1rem;cursor:pointer}
+  .nav button:hover{border-color:var(--accent)}
+  .quote{border-left:3px solid var(--accent);padding:.4rem 0 .4rem 1.1rem;margin:.9rem 0;font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,1.7vw,1.4rem);color:#fff;max-width:60ch}
+  .tag-row{display:flex;gap:.6rem;flex-wrap:wrap;margin:.3rem 0 1rem}
+  .twocol{display:grid;grid-template-columns:1.2fr .8fr;gap:2.2rem;align-items:start}
+  .stat{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.4rem);line-height:1;color:#fff}
+  .statlbl{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-top:.4rem}
+  .statgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;margin-top:1.2rem}
+  .note{background:rgba(90,169,255,.07);border:1px solid rgba(90,169,255,.25);border-radius:12px;padding:1rem 1.2rem;margin-top:1rem}
+  .note p{color:var(--ink);font-size:.95rem}
+  .warn{background:rgba(244,183,64,.07);border:1px solid rgba(244,183,64,.28)}
+  small.src{display:block;font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:.5rem;word-break:break-all}
+  .brand{font-weight:700;color:var(--accent)}
+  @media print{
+    body{overflow:visible;background:#fff;color:#111}
+    .slide{display:flex!important;position:relative;inset:auto;height:100vh;page-break-after:always;padding:7vh 6vw}
+    .nav,.progress{display:none}
+    .card,.note{break-inside:avoid}
+    h1,h2,strong,td.sys,.stat,.quote{color:#000}
+    .lead,.muted,.card p{color:#333}
+    body{--bg:#fff;--panel:#f5f6f8;--ink:#111;--line:#ddd}
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="bar"></div>
+<div class="deck" id="deck">
+
+  <!-- 1 -->
+  <section class="slide active">
+    <div class="kicker">Public-Interest Investigation · Tier-Graded Legal Exposure</div>
+    <h1>UK Government Data-Linkage:<br>Where has it actually been<br>ruled unlawful?</h1>
+    <p class="lead" style="margin-top:1.6rem">A primary-source hunt for <strong>Tier-1 adjudications</strong> — an ICO enforcement notice, penalty or reprimand, or a court ruling of unlawful processing — against Data&nbsp;First, Splink, ONS&nbsp;IDS and ADR&nbsp;UK, with everything else graded down to regulator concern or criticism.</p>
+    <div class="footer"><span class="brand">brandonmyers.net</span><span>Brandon Myers · June 2026 · 3 research passes · ~300 verification agents</span></div>
+  </section>
+
+  <!-- 2 -->
+  <section class="slide">
+    <div class="kicker">The Bottom Line</div>
+    <h2>No Tier-1 adjudication exists against any named target.</h2>
+    <p class="big">Every genuine ruling of unlawfulness sits <strong>adjacent</strong> — in Home Office immigration data — not on the data-linkage systems themselves.</p>
+    <div class="note"><p><strong>The honest, defensible frame:</strong> the same shortcut — keeping citizens' data-protection safeguards in policy instead of law — has been struck down by the courts three times. <em>Not</em> an asserted violation against Data&nbsp;First, which has never been adjudicated.</p></div>
+    <div class="footer"><span class="brand">brandonmyers.net</span><span>2 / 13</span></div>
+  </section>
+
+  <!-- 3 -->
+  <section class="slide">
+    <div class="kicker">How this was built</div>
+    <h2>Evidence standard</h2>
+    <p class="lead">Three independent deep-research passes. Each claim extracted from fetched primary sources, then put through adversarial verification — a claim is killed unless it survives skeptical refutation. Tiering applied strictly; my own overreach killed too.</p>
+    <div class="statgrid">
+      <div><div class="stat">3</div><div class="statlbl">Independent passes</div></div>
+      <div><div class="stat">99</div><div class="statlbl">Sources fetched</div></div>
+      <div><div class="stat">~300</div><div class="statlbl">Verification agents</div></div>
+      <div><div class="stat">4</div><div class="statlbl">Claims killed for overreach</div></div>
+    </div>
+    <div class="tag-row" style="margin-top:2rem"><span class="pill p-t1">Tier 1 — Enforcement notice / penalty / reprimand, or court ruling of unlawfulness</span></div>
+    <div class="tag-row"><span class="pill p-t2">Tier 2 — Regulator concern short of enforcement, or settled / withdrawn JR</span><span class="pill p-t3">Tier 3 — Criticism, no adjudication</span></div>
+    <div class="footer"><span class="brand">brandonmyers.net</span><span>3 / 13</span></div>
+  </section>
+
+  <!-- 4 -->
+  <section class="slide">
+    <div class="kicker">Per-Target Verdict</div>
+    <h2>The four named systems</h2>
+    <table>
+      <thead><tr><th>System</th><th>Highest tier</th><th>Adjudication found</th><th>Basis</th></tr></thead>
+      <tbody>
+        <tr><td class="sys">MoJ Data First</td><td><span class="pill p-none">None</span></td><td>No legal challenge, ICO action, or court ruling</td><td>Transparency record shows only DPIA + Five Safes + panel oversight</td></tr>
+        <tr><td class="sys">Splink</td><td><span class="pill p-none">None</span></td><td>None</td><td>Open-source record-linkage tool built <em>for</em> Data First</td></tr>
+        <tr><td class="sys">ONS IDS / IDP</td><td><span class="pill p-none">None</span></td><td>None — now <strong>searched</strong>, not inferred</td><td>Highest adverse material is Tier 3 only (next slide)</td></tr>
+        <tr><td class="sys">ADR UK</td><td><span class="pill p-none">None</span></td><td>None</td><td>Statutory safeguards. ICO has <em>endorsed</em> Five Safes</td></tr>
+      </tbody>
+    </table>
+    <small class="src">Sources: GOV.UK MoJ Data First/Splink ATR · ADR UK governance · ICO enforcement register</small>
+    <div class="footer"><span class="brand">brandonmyers.net</span><span>4 / 13</span></div>
+  </section>
+
+  <!-- 5 -->
+  <section class="slide">
+    <div class="kicker">Gap Closed · ONS IDS</div>
+    <h2>ONS IDS: searched directly — still nothing above Tier 3</h2>
+    <p class="lead">An earlier pass only <em>inferred</em> “none” from absence. A dedicated sweep of the ICO register, NSDEC minutes, OSR reports and the March 2026 PAC report confirms it.</p>
+    <div class="grid2" style="margin-top:1.2rem">
+      <div class="card"><span class="pill p-t3">Tier 3</span><h3 style="margin-top:.7rem">PAC, “Government use of data” (Mar 2026)</h3><p>Criticism is <strong>value-for-money and adoption only</strong>. Zero references to ICO, GDPR, or unlawful processing.</p></div>
+      <div class="card"><span class="pill p-t3">Tier 3</span><h3 style="margin-top:.7rem">OSR (statistics regulator)</h3><p>Engaged with IDS only at recommendation level. No enforcement power — structurally cannot reach Tier 1/2.</p></div>
+      <div class="card"><span class="pill p-t3">Tier 3</span><h3 style="margin-top:.7rem">NSDEC ethics committee</h3><p>Names IDS <em>positively</em> as a strategic project to prioritise for ethics review. Prospective assurance, not censure.</p></div>
+      <div class="card"><span class="pill p-none">None</span><h3 style="margin-top:.7rem">ICO / Courts</h3><p>No enforcement notice, penalty, reprimand, audit or opinion; no judicial review touching IDS/IDP linkage.</p></div>
+    </div>
+    <div class="footer"><span class="brand">brandonmyers.net</span><span>5 / 13</span></div>
+  </section>
+
+  <!-- 6 -->
+  <section class="slide">
+    <div class="kicker">Adjacent Tier-1 · Ruled Unlawful Three Times</div>
+    <h2>The immigration exemption — 2021, 2023, 2023</h2>
+    <table>
+      <thead><tr><th>Round</th><th>Court</th><th>Citation</th><th>Holding</th></tr></thead>
+      <tbody>
+        <tr><td class="sys">R1 · 26 May 2021</td><td>Court of Appeal</td><td class="cite">[2021] EWCA Civ 800</td><td>Original exemption <strong>unlawful</strong> — “unauthorised derogation from the GDPR”</td></tr>
+        <tr><td class="sys">R2 · 29 Mar 2023</td><td>High Court (Saini J)</td><td class="cite">[2023] EWHC 713 (Admin)</td><td>Revised exemption <strong>still unlawful</strong> — safeguards can’t live in policy</td></tr>
+        <tr><td class="sys">R3 · 11 Dec 2023</td><td>Court of Appeal</td><td class="cite">[2023] EWCA Civ 1474</td><td>Confirmed breach of Art 23(2). The ruling the 2024 fix answered</td></tr>
+      </tbody>
+    </table>
+    <div class="quote">“…safeguards must appear on the face of the legislation or in a binding code (approved by Parliament) and with statutory force.”</div>
+    <small class="src">Sources: BAILII / caselaw.nationalarchives.gov.uk [2023] EWHC 713 (Admin) · House of Lords Library briefing · Open Rights Group</small>
+    <div class="footer"><span class="brand">brandonmyers.net</span><span>6 / 13</span></div>
+  </section>
+
+  <!-- 7 -->
+  <section class="slide">
+    <div class="kicker">Current Status · 2026</div>
+    <h2>Struck down three times — then legislated back into force</h2>
+    <p>The exemption was never struck down outright: each ruling used a <strong>suspended</strong> declaration, then the government re-legislated.</p>
+    <div class="note warn"><p><strong>Operative text today:</strong> <strong>SI 2024/342</strong> — The Data Protection Act 2018 (Amendment of Schedule 2 Exemptions) Regulations 2024 — made 7 Mar 2024, <strong>in force 8 Mar 2024</strong>. It finally put case-by-case decision-making, a necessity/proportionality test, and vulnerability + Convention-rights safeguards <em>on the face of the statute</em>.</p></div>
+    <div class="note"><p>The successor statute, the <strong>Data (Use and Access) Act 2025</strong> (Royal Assent 19 Jun 2025), left the immigration exemption untouched — it amends only the separate <em>crime</em> exemption. A dedicated search found <strong>no fourth round of litigation</strong> as of mid-2026.</p></div>
+    <small class="src">Confirmed verbatim: legislation.gov.uk SI 2024/342 + Explanatory Memorandum · Data (Use and Access) Act 2025 (c.18) · gov.uk DUAA summary</small>
+    <div class="footer"><span class="brand">brandonmyers.net</span><span>7 / 13</span></div>
+  </section>
+
+  <!-- 8 -->
+  <section class="slide">
+    <div class="kicker">The Decisive Point · Read Before Using</div>
+    <h2>Does the immigration ruling touch data-linkage?</h2>
+    <div class="twocol">
+      <div>
+        <p class="big" style="max-width:38ch">Not directly. The unlawfulness is about an exemption from <strong>individuals’ own data-subject rights</strong> — not about linking or sharing datasets.</p>
+        <p class="muted" style="margin-top:1.1rem">The defect was procedural: Art 23(2) safeguards must live in legislation, not policy. The judgments contain <strong>no</strong> discussion of inter-departmental sharing, record linkage, or bulk matching.</p>
+      </div>
+      <div class="card">
+        <h3>So the framing must be careful</h3>
+        <p style="margin-top:.4rem">✓ <strong>Fair:</strong> the same department, the same trick of keeping safeguards out of the statute, ruled unlawful three times.</p>
+        <p style="margin-top:.8rem">✗ <strong>Overreach:</strong> claiming the courts have condemned government data-<em>linkage</em>. They have not.</p>
+      </div>
+    </div>
+    <small class="src">Basis: [2023] EWHC 713 (Admin) ratio · D. Erdos, UKCLA — case “focuses on data-subject rights, not inter-departmental data sharing or bulk matching.”</small>
+    <div class="footer"><span class="brand">brandonmyers.net</span><span>8 / 13</span></div>
+  </section>
+
+  <!-- 9 -->
+  <section class="slide">
+    <div class="kicker">Closest To The Linkage Machinery</div>
+    <h2>The National Fraud Initiative — a Tier-2 warning</h2>
+    <div class="tag-row"><span class="pill p-t2">Tier 2 — regulator concern, on the record</span></div>
+    <p>On <strong>26 March 2021</strong> the ICO formally responded to the Cabinet Office’s plan to expand the National Fraud Initiative’s <strong>data-matching</strong> purposes. The most on-point item in the whole investigation — but a consultation response, not enforcement.</p>
+    <div class="quote">“…could potentially allow participants to conduct disproportionate searches for information about particular individuals across a wide range of sources without lawful cause.”</div>
+    <p class="muted">The ICO also warned the Cabinet Office <strong>“has not yet undertaken a DPIA”</strong> and should do so before any processing, and that necessity/proportionality were not demonstrated. <strong>No Tier-1 enforcement or court ruling on inter-departmental data-matching was found.</strong></p>
+    <small class="src">Source: ICO consultation response on the NFI (26 Mar 2021), full PDF · related: ICO response on the Eligibility Verification Measure</small>
+    <div class="footer"><span class="brand">brandonmyers.net</span><span>9 / 13</span></div>
+  </section>
+
+  <!-- 10 -->
+  <section class="slide">
+    <div class="kicker">Handle With Care</div>
+    <h2>Four items that look stronger than they are</h2>
+    <div class="grid2">
+      <div class="card"><div class="tag-row"><span class="pill p-t1" style="opacity:.7">Borderline</span></div><h3>Royal Free–DeepMind (3 Jul 2017)</h3><p>ICO <em>found</em> DPA 1998 non-compliance over ~1.6M records — but via a voluntary <strong>undertaking</strong>. No fine, no notice. Cite as “finding via undertaking,” never a penalty.</p></div>
+      <div class="card"><div class="tag-row"><span class="pill p-t2">Tier 2</span></div><h3>Visa-streaming algorithm (2020)</h3><p>Withdrawn before any hearing after the JCWI/Foxglove JR. No ruling, no admission. “Successful JR” is press shorthand.</p></div>
+      <div class="card"><div class="tag-row"><span class="pill p-t3">Irrelevant</span></div><h3>DWP Universal Credit <span class="cite">[2020] EWCA Civ 778</span></h3><p>Real ruling against DWP — but irrationality over salary timing. <strong>Zero</strong> data-protection holding.</p></div>
+      <div class="card"><div class="tag-row"><span class="pill p-t1">Tier 1 · surveillance</span></div><h3>Home Office GPS tagging (1 Mar 2024)</h3><p>Genuine ICO enforcement notice + warning — but DPIA/surveillance failure, <strong>not</strong> data-matching. Strongest Home Office Tier-1 is surveillance, not linkage.</p></div>
+    </div>
+    <div class="footer"><span class="brand">brandonmyers.net</span><span>10 / 13</span></div>
+  </section>
+
+  <!-- 11 -->
+  <section class="slide">
+    <div class="kicker">How To Deploy This Honestly</div>
+    <h2>Positioning</h2>
+    <ul>
+      <li><strong>Lead with the adjacency, not a fabricated violation.</strong> The Tier-1 facts are next door, named and dated — the spine of the argument, not a claim that Data First itself was condemned.</li>
+      <li><strong>The pattern is the argument.</strong> Three times the Home Office put data-protection safeguards in policy rather than law; three times the courts ruled that unlawful. The same governance-by-assurance posture runs through Data First / ONS IDS.</li>
+      <li><strong>Be precise on Royal Free and the visa tool.</strong> An opponent who catches “fine” (it was an undertaking) or “struck down” (it was a withdrawal) discredits the whole brief. Accuracy is the weapon.</li>
+      <li><strong>State plainly the on-target verdict is “none found.”</strong> That is a strength — the honest, searched result — and it pre-empts the “you’re exaggerating” rebuttal.</li>
+    </ul>
+    <div class="footer"><span class="brand">brandonmyers.net</span><span>11 / 13</span></div>
+  </section>
+
+  <!-- 12 -->
+  <section class="slide">
+    <div class="kicker">Caveats &amp; Open Questions</div>
+    <h2>What still needs nailing down</h2>
+    <ul>
+      <li>Whether the Cabinet Office ever completed the DPIA the ICO demanded in 2021, and whether the ICO followed up once expanded NFI matching went live.</li>
+      <li>Any Tier-1 action on the other big sharing regimes — DWP fraud matching, HMRC bulk sharing, Digital Economy Act 2017 powers — beyond the NFI consultation. Not yet searched to exhaustion.</li>
+      <li>The ICO enforcement register renders dynamically; the ONS “none found” rests on converging searches, not a single authoritative query.</li>
+      <li>An unreported or very recent filing against SI 2024/342 cannot be fully excluded.</li>
+    </ul>
+    <div class="footer"><span class="brand">brandonmyers.net</span><span>12 / 13</span></div>
+  </section>
+
+  <!-- 13 -->
+  <section class="slide">
+    <div class="kicker">Primary Sources · Full Series</div>
+    <h2>Citations</h2>
+    <div class="grid2">
+      <div><p class="muted" style="font-size:.88rem;line-height:1.85">
+        • caselaw.nationalarchives.gov.uk / BAILII — [2023] EWHC 713 (Admin); [2020] EWCA Civ 778<br>
+        • [2021] EWCA Civ 800 · [2023] EWCA Civ 1474 (Court of Appeal)<br>
+        • legislation.gov.uk — SI 2024/342 + Explanatory Memorandum<br>
+        • legislation.gov.uk — Data (Use and Access) Act 2025 (c.18)<br>
+        • lordslibrary.parliament.uk — immigration-exemption briefing<br>
+        • ico.org.uk — Royal Free; GPS tagging; immigration-exemption guide
+      </p></div>
+      <div><p class="muted" style="font-size:.88rem;line-height:1.85">
+        • gov.uk — Data First / Splink algorithmic transparency record<br>
+        • adruk.org — governance &amp; ethics<br>
+        • committees.parliament.uk/52403 — PAC, Government use of data (2026)<br>
+        • osr.statisticsauthority.gov.uk — data-sharing &amp; linkage review<br>
+        • ico.org.uk — National Fraud Initiative consultation response (2021)<br>
+        • foxglove.org.uk — visa-streaming algorithm withdrawal (2020)
+      </p></div>
+    </div>
+    <div class="note" style="margin-top:1.2rem"><p>Full series at <span class="brand">brandonmyers.net/writing</span> — <em>The Quiet Joining-Up</em> (with archived evidence locker), <em>Statistics or Operations?</em>, and this report. Repository &amp; evidence: github.com/btmaffiliate/uk-data-linkage-disclosure</p></div>
+    <div class="footer"><span class="brand">brandonmyers.net</span><span>13 / 13</span></div>
+  </section>
+
+</div>
+<div class="nav"><button id="prev" aria-label="Previous">‹</button><button id="next" aria-label="Next">›</button></div>
+<script>
+  const slides=[...document.querySelectorAll('.slide')];let i=0;const bar=document.getElementById('bar');
+  function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('active',k===i));bar.style.width=((i+1)/slides.length*100)+'%';}
+  document.getElementById('next').onclick=()=>show(i+1);document.getElementById('prev').onclick=()=>show(i-1);
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' ')show(i+1);if(e.key==='ArrowLeft'||e.key==='PageUp')show(i-1);if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1);});
+  show(0);
+</script>
+</body>
+</html>

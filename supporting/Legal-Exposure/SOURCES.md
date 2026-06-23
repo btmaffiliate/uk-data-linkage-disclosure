@@ -1,0 +1,34 @@
+# Sources & Archival — "Ruled Unlawful Next Door"
+
+Every primary source is preserved three ways so it cannot be quietly deleted:
+1. **Local screenshot** — full-page PNG in [`screenshots/`](screenshots/), captured 2026-06-23 via headless Chromium.
+2. **Internet Archive** — independent, timestamped, court-citable. The `web/2/` links below always resolve to the most recent Wayback snapshot.
+3. **This repository** — distributed across every clone and GitHub.
+
+PDFs (PAC report, SI 2024/342 Explanatory Memorandum, ICO NFI response) are preserved via the Internet Archive rather than inline screenshot. Two ICO pages (Royal Free 2017, NFI consultation landing) now 404 on the live site after an ICO site restructure — the Internet Archive copies and the primary NFI PDF below preserve them.
+
+| # | Source | Live URL | Wayback | Screenshot |
+|---|--------|----------|---------|-----------|
+| 1 | MoJ Data First / Splink — Algorithmic Transparency Record | https://www.gov.uk/algorithmic-transparency-records/moj-data-first-splink | https://web.archive.org/web/2/https://www.gov.uk/algorithmic-transparency-records/moj-data-first-splink | `01-moj-data-first-splink.png` |
+| 2 | ADR UK — governance & ethics | https://www.adruk.org/about-us/ensuring-adr-uk-data-is-used-ethically-and-responsibly/ | https://web.archive.org/web/2/https://www.adruk.org/about-us/ensuring-adr-uk-data-is-used-ethically-and-responsibly/ | `02-adruk-governance.png` |
+| 3 | OSR — data sharing & linkage follow-up | https://osr.statisticsauthority.gov.uk/publication/data-sharing-and-linkage-for-the-public-good-follow-up-report/pages/3/ | https://web.archive.org/web/2/https://osr.statisticsauthority.gov.uk/publication/data-sharing-and-linkage-for-the-public-good-follow-up-report/pages/3/ | `03-osr-data-sharing-linkage.png` |
+| 4 | ICO — enforcement register | https://ico.org.uk/action-weve-taken/enforcement/ | https://web.archive.org/web/2/https://ico.org.uk/action-weve-taken/enforcement/ | `04-ico-enforcement-register.png` |
+| 5 | [2023] EWHC 713 (Admin) — BAILII | https://www.bailii.org/ew/cases/EWHC/Admin/2023/713.html | https://web.archive.org/web/2/https://www.bailii.org/ew/cases/EWHC/Admin/2023/713.html | `05-bailii-ewhc-713-2023.png` |
+| 6 | [2023] EWHC 713 (Admin) — National Archives | https://caselaw.nationalarchives.gov.uk/ewhc/admin/2023/713 | https://web.archive.org/web/2/https://caselaw.nationalarchives.gov.uk/ewhc/admin/2023/713 | `06-nationalarchives-ewhc-713-2023.png` |
+| 7 | SI 2024/342 — the 2024 remedial instrument | https://www.legislation.gov.uk/uksi/2024/342/made | https://web.archive.org/web/2/https://www.legislation.gov.uk/uksi/2024/342/made | `07-legislation-si-2024-342.png` |
+| 8 | Data (Use and Access) Act 2025 (c.18) | https://www.legislation.gov.uk/ukpga/2025/18 | https://web.archive.org/web/2/https://www.legislation.gov.uk/ukpga/2025/18 | `08-duaa-2025.png` |
+| 9 | gov.uk — DUAA 2025 data-protection summary | https://www.gov.uk/guidance/data-use-and-access-act-2025-data-protection-and-privacy-changes | https://web.archive.org/web/2/https://www.gov.uk/guidance/data-use-and-access-act-2025-data-protection-and-privacy-changes | `09-govuk-duaa-summary.png` |
+| 10 | ICO — immigration exemption guide | https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/exemptions/immigration-exemption-a-guide/ | https://web.archive.org/web/2/https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/exemptions/immigration-exemption-a-guide/ | `10-ico-immigration-exemption-guide.png` |
+| 11 | ICO — NFI data-matching consultation response (primary PDF) | https://ico.org.uk/media2/migrated/2619578/ico-response-expansion-of-the-national-fraud-initiative-data-matching-purposes.pdf | https://web.archive.org/web/2/https://ico.org.uk/media2/migrated/2619578/ico-response-expansion-of-the-national-fraud-initiative-data-matching-purposes.pdf | PDF — Wayback only |
+| 12 | ICO — Home Office GPS tagging enforcement (1 Mar 2024) | https://ico.org.uk/action-weve-taken/enforcement/2024/03/home-office/ | https://web.archive.org/web/2/https://ico.org.uk/action-weve-taken/enforcement/2024/03/home-office/ | `12-ico-home-office-gps-2024.png` |
+| 13 | ICO — Royal Free / DeepMind (3 Jul 2017) | https://ico.org.uk/action-weve-taken/enforcement/royal-free-london-nhs-foundation-trust/ | https://web.archive.org/web/2/https://ico.org.uk/action-weve-taken/enforcement/royal-free-london-nhs-foundation-trust/ | live 404 — Wayback only |
+| 14 | Foxglove — visa-streaming algorithm withdrawn (2020) | https://www.foxglove.org.uk/2020/08/04/home-office-says-it-will-abandon-its-racist-visa-algorithm-after-we-sued-them/ | https://web.archive.org/web/2/https://www.foxglove.org.uk/2020/08/04/home-office-says-it-will-abandon-its-racist-visa-algorithm-after-we-sued-them/ | `14-foxglove-visa-algorithm-2020.png` |
+| 15 | [2020] EWCA Civ 778 — BAILII (DWP UC) | https://www.bailii.org/ew/cases/EWCA/Civ/2020/778.html | https://web.archive.org/web/2/https://www.bailii.org/ew/cases/EWCA/Civ/2020/778.html | `15-bailii-ewca-778-2020.png` |
+| 16 | House of Lords Library — immigration exemption | https://lordslibrary.parliament.uk/data-protection-regulations-and-the-immigration-exemption/ | https://web.archive.org/web/2/https://lordslibrary.parliament.uk/data-protection-regulations-and-the-immigration-exemption/ | `16-lordslibrary-immigration-exemption.png` |
+| 17 | Open Rights Group — immigration exemption campaign | https://www.openrightsgroup.org/campaign/immigration-exemption-campaign-page/ | https://web.archive.org/web/2/https://www.openrightsgroup.org/campaign/immigration-exemption-campaign-page/ | `17-org-immigration-campaign.png` |
+| 18 | PAC — "Government use of data" (Mar 2026, PDF) | https://committees.parliament.uk/publications/52403/documents/290832/default | https://web.archive.org/web/2/https://committees.parliament.uk/publications/52403/documents/290832/default | PDF — Wayback only |
+| 19 | SI 2024/342 — Explanatory Memorandum (PDF) | https://www.legislation.gov.uk/uksi/2024/342/pdfs/uksiem_20240342_en_001.pdf | https://web.archive.org/web/2/https://www.legislation.gov.uk/uksi/2024/342/pdfs/uksiem_20240342_en_001.pdf | PDF — Wayback only |
+| 20 | **PUBLISHED** — the report | https://brandonmyers.net/writing/ruled-unlawful-next-door | https://web.archive.org/web/2/https://brandonmyers.net/writing/ruled-unlawful-next-door | `20-PUBLISHED-report-brandonmyers.png` |
+| 21 | **PUBLISHED** — the slides | https://brandonmyers.net/static/uk-data-linkage-tier1-exposure.html | https://web.archive.org/web/2/https://brandonmyers.net/static/uk-data-linkage-tier1-exposure.html | `21-PUBLISHED-slides-brandonmyers.png` |
+
+*Screenshots captured 2026-06-23 via headless Chromium (full-page). Internet Archive snapshots submitted the same day via Save Page Now.*
