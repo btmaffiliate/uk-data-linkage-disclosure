@@ -1,0 +1,791 @@
+[
+  {
+    "segment": "moj-companions",
+    "title": "Official MoJ / government Splink companion tools & packages",
+    "map": {
+      "segment": "Official MoJ / government Splink companion tools & packages",
+      "items": [
+        {
+          "name": "Splink (v3 / v4)",
+          "what_it_is": "The core MoJ open-source Python library for fast, accurate, scalable probabilistic record linkage / deduplication using the Fellegi-Sunter model, with pluggable SQL backends (DuckDB, Spark, Athena, Postgres, SQLite). v4 is the current major version; v3 is legacy.",
+          "relationship": "CORE_SPLINK",
+          "confidence": "high",
+          "how_tied": "This IS Splink. Maintained in github.com/moj-analytical-services/splink and published on PyPI as 'splink'.",
+          "source": "https://github.com/moj-analytical-services/splink"
+        },
+        {
+          "name": "splink_datasets",
+          "what_it_is": "Repo containing Splink's in-built example datasets (e.g. fake/synthetic person data, FEBRL, historical records), surfaced inside Splink via the splink.datasets module and lazily downloaded on request.",
+          "relationship": "OFFICIAL_COMPANION",
+          "confidence": "high",
+          "how_tied": "Official MoJ org repo; datasets are wired into Splink's in-built datasets functionality (splink.datasets) and documented in the Splink API docs.",
+          "source": "https://github.com/moj-analytical-services/splink_datasets"
+        },
+        {
+          "name": "splink_graph",
+          "what_it_is": "PySpark-parallelised library producing graph-theoretical metrics (e.g. connected-component / cluster quality metrics) over the output clusters of record linkage, used for QA of linkage results and finding false-positive links.",
+          "relationship": "OFFICIAL_COMPANION",
+          "confidence": "high",
+          "how_tied": "Official MoJ org repo (github.com/moj-analytical-services/splink_graph) with its own docs site; consumes Splink linkage output clusters for downstream QA. Separate package, not a Splink dependency.",
+          "source": "https://github.com/moj-analytical-services/splink_graph"
+        },
+        {
+          "name": "splink_udfs",
+          "what_it_is": "A C++ DuckDB extension providing user-defined functions for string matching, phonetic encoding (Soundex, Double Metaphone), distance metrics (Levenshtein, Damerau-Levenshtein), diacritic stripping and n-grams, intended for fuzzy-matching / data-linking workloads.",
+          "relationship": "OFFICIAL_COMPANION",
+          "confidence": "high",
+          "how_tied": "Official MoJ org repo (github.com/moj-analytical-services/splink_udfs). Provides DuckDB UDFs usable in Splink's DuckDB backend comparisons. Named in the org's Splink ecosystem; relationship to Splink is functional rather than a hard import.",
+          "source": "https://github.com/moj-analytical-services/splink_udfs"
+        },
+        {
+          "name": "splink_demos",
+          "what_it_is": "Repository of interactive Jupyter notebooks demonstrating and tutorialising the Splink library (with a splink3_demos branch for v3 and main for v4), runnable interactively.",
+          "relationship": "OFFICIAL_COMPANION",
+          "confidence": "high",
+          "how_tied": "Official MoJ org repo (github.com/moj-analytical-services/splink_demos); pure demonstration/teaching material for Splink, no productised functionality.",
+          "source": "https://github.com/moj-analytical-services/splink_demos"
+        },
+        {
+          "name": "splink_cluster_studio",
+          "what_it_is": "Tooling that creates a self-contained interactive HTML dashboard from Splink output to visualise and analyse a sample of linked clusters (inspect individual clusters and the links between member records) for QA of false positives/negatives.",
+          "relationship": "OFFICIAL_COMPANION",
+          "confidence": "high",
+          "how_tied": "Originated as MoJ org repo github.com/moj-analytical-services/splink_cluster_studio; the Cluster Studio Dashboard is now exposed directly inside Splink (Linker.visualisations / cluster_studio_dashboard) and documented in Splink docs. Effectively folded into core charts in modern Splink.",
+          "source": "https://github.com/moj-analytical-services/splink_cluster_studio"
+        },
+        {
+          "name": "splink_comparison_viewer",
+          "what_it_is": "Tooling producing an interactive comparison-viewer dashboard to rapidly understand and QA the pairwise comparison outputs of record linkage (per-comparison match weights / waterfall views).",
+          "relationship": "OFFICIAL_COMPANION",
+          "confidence": "high",
+          "how_tied": "Originated in the MoJ org ecosystem; the Comparison Viewer Dashboard is now a built-in Splink chart (documented at the Splink charts docs and exposed via Linker.visualisations). Now part of core Splink rather than a separately maintained standalone package.",
+          "source": "https://moj-analytical-services.github.io/splink/charts/comparison_viewer_dashboard.html"
+        },
+        {
+          "name": "Splink charts / visualisations (Linker.visualisations)",
+          "what_it_is": "The built-in charting/visualisation API in Splink itself (match weights chart, waterfall charts, m/u probability charts, cluster studio dashboard, comparison viewer dashboard) used for model diagnostics and QA.",
+          "relationship": "CORE_SPLINK",
+          "confidence": "high",
+          "how_tied": "Shipped inside the splink package (splink.Linker.visualisations) and documented in the official API docs; not a separate package.",
+          "source": "https://moj-analytical-services.github.io/splink/api_docs/visualisations.html"
+        },
+        {
+          "name": "uk_address_matcher",
+          "what_it_is": "High-performance UK address matching tool built on a pre-trained Splink model: a two-pass approach (Splink probabilistic candidate generation + token-level refinement with distinguishing/'punishment' tokens) that matches messy addresses to canonical addresses (e.g. Ordnance Survey), ~100k addresses in ~30s.",
+          "relationship": "OFFICIAL_COMPANION",
+          "confidence": "high",
+          "how_tied": "Now an official MoJ org repo (github.com/moj-analytical-services/uk_address_matcher; also on PyPI; original author Robin Linacre at RobinL/uk_address_matcher). Directly built on and ships a pre-trained Splink model; a hard Splink-dependent application.",
+          "source": "https://github.com/moj-analytical-services/uk_address_matcher"
+        },
+        {
+          "name": "Live DuckDB-WASM Splink model (in-browser / 'live_splink')",
+          "what_it_is": "An in-browser demo (Vite single-file HTML app, DuckDB-WASM loaded from CDN) that runs a Splink linkage model entirely client-side with no backend or install, letting users try real-time Splink record linkage in the browser.",
+          "relationship": "OFFICIAL_COMPANION",
+          "confidence": "medium",
+          "how_tied": "Built and published by Splink's lead author Robin Linacre (robinlinacre.com/live_splink) demonstrating Splink running on the DuckDB-WASM backend. Author-official rather than hosted under the MoJ GitHub org, so technically a personal/companion demo rather than an org-owned package.",
+          "source": "https://www.robinlinacre.com/live_splink/"
+        },
+        {
+          "name": "MoJ Data First (Splink)",
+          "what_it_is": "MoJ programme (funded by ADR UK/ESRC) that uses Splink to link administrative data across courts, prisons and probation in England & Wales, assigning a universal person identifier so researchers can track individuals across justice domains.",
+          "relationship": "GOV_CONSUMER",
+          "confidence": "high",
+          "how_tied": "Documented in the gov.uk Algorithmic Transparency Record 'MoJ: Data First (Splink)'; the linkage engine underpinning the linked datasets is the Splink library.",
+          "source": "https://www.gov.uk/algorithmic-transparency-records/moj-data-first-splink"
+        },
+        {
+          "name": "Splink Master Record (MoJ algorithmic transparency record)",
+          "what_it_is": "The gov.uk Algorithmic Transparency Record documenting MoJ's operational use of Splink to compare records within/across case-management systems, assign match probabilities and build linked clusters across prison, probation and courts data; covers four applications (JustLink, Probation in Court, Core Person Record, police data-sharing pilots).",
+          "relationship": "GOV_CONSUMER",
+          "confidence": "high",
+          "how_tied": "Official transparency disclosure for the deployed Splink algorithm; it documents Splink's government use rather than being a separate software package.",
+          "source": "https://www.gov.uk/algorithmic-transparency-records/moj-splink-master-record"
+        },
+        {
+          "name": "JustLink",
+          "what_it_is": "MoJ product: a weekly-refreshed, fully anonymised lookup table linking records between prisons, probation and courts (containing the links but not personal identifiers), used by analysts for statistical analysis such as case progression times.",
+          "relationship": "GOV_CONSUMER",
+          "confidence": "high",
+          "how_tied": "Described in the Splink Master Record as one of the four Splink applications; the linkage is generated by Splink. Government product built around Splink, not a code package.",
+          "source": "https://www.gov.uk/algorithmic-transparency-records/moj-splink-master-record"
+        },
+        {
+          "name": "Core Person Record",
+          "what_it_is": "MoJ product piloting a single unique person identifier across prisons, probation and the criminal courts to support near real-time identification of individuals across systems.",
+          "relationship": "GOV_CONSUMER",
+          "confidence": "high",
+          "how_tied": "Listed in the Splink Master Record as a Splink application (real-time person identification); uses Splink as the underlying linkage engine. Operational gov product, not a standalone package.",
+          "source": "https://www.gov.uk/algorithmic-transparency-records/moj-splink-master-record"
+        },
+        {
+          "name": "Probation in Court",
+          "what_it_is": "MoJ operational application using Splink to support court operations by linking/identifying individuals across case-management systems.",
+          "relationship": "GOV_CONSUMER",
+          "confidence": "medium",
+          "how_tied": "Named in the Splink Master Record as one of the four Splink-powered applications. Less independently documented than JustLink/Core Person Record, so lower confidence on scope/status.",
+          "source": "https://www.gov.uk/algorithmic-transparency-records/moj-splink-master-record"
+        },
+        {
+          "name": "splinkclickhouse",
+          "what_it_is": "Package adding ClickHouse (server via clickhouse-connect, or in-process chDB via the chdb extra) as an execution engine/backend for Splink. v0.4.1, MIT, on PyPI and conda-forge.",
+          "relationship": "THIRD_PARTY_INTEGRATION",
+          "confidence": "high",
+          "how_tied": "Maintained by Andrew Bond (github.com/ADBond/splinkclickhouse), NOT under the MoJ org, so it is a third-party backend integration rather than an official MoJ companion. Hard-depends on Splink (provides a Splink backend). Included here because the lead named it as a candidate official companion; it is community/third-party.",
+          "source": "https://github.com/ADBond/splinkclickhouse"
+        }
+      ],
+      "summary": "Within the official MoJ / government Splink ecosystem, the genuinely OFFICIAL (moj-analytical-services org) artefacts are: Splink itself (v3/v4, CORE), and companion repos splink_datasets, splink_graph, splink_udfs (DuckDB extension), splink_demos, uk_address_matcher, plus the visualisation tooling splink_cluster_studio and splink_comparison_viewer (which have largely been folded into Splink's built-in charts/Linker.visualisations). The in-browser/WASM Splink ('live_splink') is an author-official demo by Splink lead Robin Linacre running on DuckDB-WASM, not an org-owned package (medium confidence as 'official'). On the government-product side, gov.uk Algorithmic Transparency Records document Splink's operational use as Data First (Splink), the Splink Master Record, and the products built on Splink: JustLink (anonymised cross-justice link table), Core Person Record (unique cross-system person ID pilot), and Probation in Court \u2014 all GOV_CONSUMER. Importantly, splinkclickhouse is NOT an MoJ-official package: it is a third-party Splink backend by Andrew Bond (ADBond), so it is tagged THIRD_PARTY_INTEGRATION despite being listed as a candidate companion.",
+      "caveats": "1) splink_cluster_studio and splink_comparison_viewer began as separate MoJ repos but their dashboards are now exposed as built-in Splink charts; treat them as official companion tooling that has substantially merged into core Splink rather than independently maintained packages. 2) The in-browser/WASM 'live_splink' demo is hosted on Robin Linacre's personal site (he is Splink's creator), not the MoJ GitHub org, so its 'official' status is by authorship, not org ownership (medium confidence). 3) uk_address_matcher exists under both moj-analytical-services and the author's RobinL account; cited the MoJ org repo as the official primary source. 4) splinkclickhouse is community/third-party (ADBond), explicitly NOT MoJ-official despite appearing in the lead's candidate list. 5) Probation in Court is named in the gov transparency record but is sparsely documented elsewhere (medium confidence on current scope). 6) JustLink, Core Person Record, Data First and Splink Master Record are government products/disclosures, not installable software packages. 7) Did not exhaustively crawl the entire moj-analytical-services org (which has many non-Splink repos); scope was limited to repos demonstrably tied to Splink."
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "overclaims": [
+        "splink_datasets: described as datasets 'lazily downloaded on request' and 'wired into Splink' \u2014 the GitHub repo itself is near-empty (~5 commits, no releases, appears stale); the actual dataset-resolution/download logic lives in core Splink's splink.datasets module, not in this repo. The OFFICIAL_COMPANION tag is defensible but the repo is a thin/likely-stale data store, not active companion tooling.",
+        "splink_cluster_studio & splink_comparison_viewer: 'folded into core Splink' / 'rather than independently maintained packages' slightly overstates \u2014 both standalone MoJ repos still exist (not archived/deleted) and coexist with the built-in Linker.visualisations charts. The dashboards ARE now built into Splink (verified), but the framing of being subsumed is hedged correctly only in the caveats, not in the per-item how_tied.",
+        "splink_comparison_viewer: the 'source' field points to the Splink docs charts page (comparison_viewer_dashboard.html) rather than the standalone github.com/moj-analytical-services/splink_comparison_viewer repo that the item claims to originate from. Minor source-precision mismatch \u2014 the repo does exist (confirmed via search), so not a fabrication."
+      ],
+      "strongest_items": [
+        "Splink (CORE) \u2014 confirmed moj-analytical-services org repo + PyPI 'splink'; primary source verified.",
+        "MoJ Splink Master Record (GOV_CONSUMER) \u2014 gov.uk transparency record verified to exist (published 2025-10-06) and explicitly names all four applications: JustLink, Core Person Record, Probation in Court, and the Essex police PNC data-sharing pilot.",
+        "uk_address_matcher (OFFICIAL_COMPANION) \u2014 confirmed under moj-analytical-services, Python lib whose output explicitly shows 'splink: probabilistic match', a genuine hard Splink-dependent application.",
+        "splinkclickhouse (THIRD_PARTY_INTEGRATION) \u2014 correctly tagged; verified owned by ADBond (Andrew Bond), and its own README states it is 'unofficial...not directly supported by the Splink team'. The segment correctly does NOT imply MoJ ownership.",
+        "MoJ Data First (Splink) (GOV_CONSUMER) \u2014 gov.uk record verified; states 'Splink is an open-source tool... developed for the Data First program'."
+      ],
+      "items_to_remove_or_downgrade": [],
+      "notes": "Verified all 17 items against primary sources (GitHub org pages, gov.uk transparency records, robinlinacre.com). Every item exists and is correctly attributed. Critically: there are NO ALTERNATIVE_NOT_TIED items in this segment and no item falsely implies a non-Splink tool 'uses Splink' \u2014 the single third-party item (splinkclickhouse) genuinely hard-depends on Splink as a backend and is correctly flagged as community/non-official. Relationship tags are all correct: CORE_SPLINK (Splink, visualisations API), OFFICIAL_COMPANION (datasets/graph/udfs/demos/cluster_studio/comparison_viewer/uk_address_matcher/live_splink), GOV_CONSUMER (Data First, Master Record, JustLink, Core Person Record, Probation in Court), THIRD_PARTY_INTEGRATION (splinkclickhouse). live_splink correctly held at medium confidence (personal site, not MoJ org). Probation in Court correctly at medium confidence. No items warrant removal. The three overclaims listed are framing/source-precision nits the existing caveats already partially address; none rise to a cut. splink_graph WebFetch returned a transient 404 but search confirmed it is a live moj-analytical-services repo with its own docs site, separate package (not a Splink dependency) \u2014 claim correct. Note: WebFetch transiently 404'd on cluster_studio/comparison_viewer/graph but WebSearch confirmed all three repos are live under the MoJ org."
+    }
+  },
+  {
+    "segment": "backends-deps",
+    "title": "Splink technical backends & runtime dependencies",
+    "map": {
+      "segment": "Splink technical backends & runtime dependencies",
+      "summary": "Splink is architected so that its linkage computation is expressed in SQL and dispatched to a pluggable SQL backend; nothing is hardcoded to one engine. Per the official backends topic guide (moj-analytical-services.github.io/splink/topic_guides/splink_fundamentals/backends/backends.html), the natively supported backends are DuckDB, Apache Spark, AWS Athena, SQLite and PostgreSQL. DuckDB and SQLite ship packaged with the base `pip install splink`; Spark, Athena and Postgres are optional extras (`splink[spark]`, `splink[athena]`, `splink[postgres]`). The docs tier them: DuckDB (recommended default, fastest, complete comparison/fuzzy coverage) and Spark (distributed, complete coverage) are first-class; Athena, SQLite and Postgres have incomplete fuzzy-matching coverage and minimal active dev-team support. ClickHouse is NOT a built-in Splink backend in 4.x core \u2014 it is provided by the third-party `splinkclickhouse` package (ADBond), so it is an integration, not a core backend. Core Python runtime deps (pyproject.toml, master): duckdb>=0.9.2, sqlglot>=17.6.0 (SQL transpilation across dialects), altair>=5.0.1 (Vega-Lite charts), Jinja2 (SQL/template rendering), igraph (clustering/connected components). pandas and pyarrow are optional/extra groups, not hard core deps; rapidfuzz backs the SQLite UDFs; sqlalchemy + psycopg2-binary back Postgres. The statistical engine is the Fellegi-Sunter probabilistic model (m/u probabilities, lambda prior, additive log Bayes-factor match weights, term-frequency adjustments) with parameters trained unsupervised via the Expectation-Maximisation (EM) algorithm run per blocking rule.",
+      "items": [
+        {
+          "name": "DuckDB",
+          "what_it_is": "In-process analytical SQL/OLAP engine. Splink's default and recommended backend; fastest single-machine option, capable of large linkages.",
+          "relationship": "BACKEND_DEPENDENCY",
+          "confidence": "high",
+          "how_tied": "First-class supported backend per the official backends topic guide; ships packaged with base `pip install splink`; listed as a hard core dependency `duckdb>=0.9.2` in pyproject.toml.",
+          "source": "https://moj-analytical-services.github.io/splink/topic_guides/splink_fundamentals/backends/backends.html"
+        },
+        {
+          "name": "Apache Spark (PySpark)",
+          "what_it_is": "Distributed cluster-computing SQL engine for processing across many machines; used by Splink for very large (100M+ record) linkages.",
+          "relationship": "BACKEND_DEPENDENCY",
+          "confidence": "high",
+          "how_tied": "First-class supported backend (complete comparison coverage) per docs; optional extra `pip install splink[spark]` -> pyspark>=3.5.0 in pyproject.toml (spark-3/spark-4 dependency groups for pyspark<4 and pyspark>=4.0.0).",
+          "source": "https://moj-analytical-services.github.io/splink/topic_guides/splink_fundamentals/backends/backends.html"
+        },
+        {
+          "name": "AWS Athena",
+          "what_it_is": "Serverless big-data SQL query service on AWS (Presto/Trino-based) for datasets of 10M+ records; requires a live AWS account.",
+          "relationship": "BACKEND_DEPENDENCY",
+          "confidence": "high",
+          "how_tied": "Supported backend via optional extra `pip install splink[athena]`, but documented as having incomplete fuzzy-matching coverage and minimal dev-team support; reported to be dropped in the upcoming Splink 5 release.",
+          "source": "https://moj-analytical-services.github.io/splink/topic_guides/splink_fundamentals/backends/backends.html"
+        },
+        {
+          "name": "SQLite",
+          "what_it_is": "Embedded file-based SQL database. Splink backend suited to smaller datasets; uses Python UDFs (rapidfuzz) for fuzzy functions.",
+          "relationship": "BACKEND_DEPENDENCY",
+          "confidence": "high",
+          "how_tied": "Supported backend that ships packaged with base install (stdlib sqlite3); fuzzy matching via `splink[sqlite]` extra -> rapidfuzz>=3.10.0. Reasonable but incomplete comparison coverage; minimal dev support per docs.",
+          "source": "https://moj-analytical-services.github.io/splink/topic_guides/splink_fundamentals/backends/backends.html"
+        },
+        {
+          "name": "PostgreSQL",
+          "what_it_is": "Open-source relational database used as a Splink SQL backend, recommended only when a pre-existing Postgres database is available.",
+          "relationship": "BACKEND_DEPENDENCY",
+          "confidence": "high",
+          "how_tied": "Supported backend via optional extra `pip install splink[postgres]` -> sqlalchemy>=2.0.0, psycopg2-binary>=2.9.0. Documented as relatively new with gaps in string fuzzy-matching and minimal active development.",
+          "source": "https://moj-analytical-services.github.io/splink/topic_guides/splink_fundamentals/backends/backends.html"
+        },
+        {
+          "name": "sqlglot",
+          "what_it_is": "Pure-Python SQL parser/transpiler. Splink uses it to generate and translate its SQL across the different backend SQL dialects.",
+          "relationship": "BACKEND_DEPENDENCY",
+          "confidence": "high",
+          "how_tied": "Hard core runtime dependency `sqlglot>=17.6.0` in pyproject.toml; central to Splink's backend-agnostic SQL-generation architecture.",
+          "source": "https://github.com/moj-analytical-services/splink/blob/master/pyproject.toml"
+        },
+        {
+          "name": "Altair (Vega-Lite)",
+          "what_it_is": "Declarative Python visualisation library emitting Vega-Lite specs; powers Splink's interactive diagnostic charts (match weights, m/u, waterfall, comparison viewer).",
+          "relationship": "BACKEND_DEPENDENCY",
+          "confidence": "high",
+          "how_tied": "Hard core runtime dependency `altair>=5.0.1` in pyproject.toml; underlies the 'interactive visualisations' feature advertised in the README.",
+          "source": "https://github.com/moj-analytical-services/splink/blob/master/pyproject.toml"
+        },
+        {
+          "name": "python-igraph",
+          "what_it_is": "Python bindings to the igraph graph library; used by Splink for clustering / connected-components to turn pairwise links into entity clusters.",
+          "relationship": "BACKEND_DEPENDENCY",
+          "confidence": "high",
+          "how_tied": "Hard core runtime dependency `igraph>=0.11.2` in pyproject.toml.",
+          "source": "https://github.com/moj-analytical-services/splink/blob/master/pyproject.toml"
+        },
+        {
+          "name": "Jinja2",
+          "what_it_is": "Templating engine; used by Splink to render SQL templates and HTML for charts/comparison-viewer dashboards.",
+          "relationship": "BACKEND_DEPENDENCY",
+          "confidence": "high",
+          "how_tied": "Hard core runtime dependency `Jinja2>=3.0.3` in pyproject.toml.",
+          "source": "https://github.com/moj-analytical-services/splink/blob/master/pyproject.toml"
+        },
+        {
+          "name": "pandas",
+          "what_it_is": "Python dataframe library used for ingesting/returning tabular data to/from Splink (especially with the DuckDB backend).",
+          "relationship": "BACKEND_DEPENDENCY",
+          "confidence": "medium",
+          "how_tied": "Present in pyproject.toml as a dependency group (pandas>=1.3.5 with numpy>=1.19.3) rather than an unconditional core install requirement in 4.x; commonly used in docs/quickstart for I/O. Optional rather than strictly required to import Splink.",
+          "source": "https://github.com/moj-analytical-services/splink/blob/master/pyproject.toml"
+        },
+        {
+          "name": "PyArrow",
+          "what_it_is": "Apache Arrow Python bindings; used for efficient columnar data interchange (e.g. Arrow/Parquet I/O with backends).",
+          "relationship": "BACKEND_DEPENDENCY",
+          "confidence": "medium",
+          "how_tied": "Optional extra `splink[pyarrow]` -> pyarrow>=15.0.0 and part of testing-core group in pyproject.toml; not a hard core dependency.",
+          "source": "https://github.com/moj-analytical-services/splink/blob/master/pyproject.toml"
+        },
+        {
+          "name": "rapidfuzz",
+          "what_it_is": "Fast C++-backed fuzzy string-matching library; supplies Python UDFs (Levenshtein, Jaro-Winkler, etc.) for the SQLite backend which lacks native fuzzy functions.",
+          "relationship": "BACKEND_DEPENDENCY",
+          "confidence": "high",
+          "how_tied": "Optional extra/dependency group `splink[sqlite]` -> rapidfuzz>=3.10.0 in pyproject.toml, enabling fuzzy comparisons on SQLite.",
+          "source": "https://github.com/moj-analytical-services/splink/blob/master/pyproject.toml"
+        },
+        {
+          "name": "SQLAlchemy + psycopg2-binary",
+          "what_it_is": "Python SQL toolkit/ORM (SQLAlchemy) and PostgreSQL driver (psycopg2-binary) used to connect Splink's Postgres backend to a Postgres database.",
+          "relationship": "BACKEND_DEPENDENCY",
+          "confidence": "high",
+          "how_tied": "Bundled in the `splink[postgres]` extra -> sqlalchemy>=2.0.0, psycopg2-binary>=2.9.0 in pyproject.toml; the connection layer for the Postgres backend.",
+          "source": "https://github.com/moj-analytical-services/splink/blob/master/pyproject.toml"
+        },
+        {
+          "name": "Fellegi-Sunter probabilistic model (m/u, lambda, match weights, term-frequency adjustments)",
+          "what_it_is": "The statistical record-linkage model Splink implements: per-comparison m (P(observation | match)) and u (P(observation | non-match)) probabilities, a lambda match prior, additive log Bayes-factor match weights, plus term-frequency adjustments.",
+          "relationship": "CORE_SPLINK",
+          "confidence": "high",
+          "how_tied": "This is Splink's core scoring engine; the README states 'Splink's linkage algorithm is based on Fellegi-Sunter's model of record linkage, with various customisations to improve accuracy', detailed in the theory docs.",
+          "source": "https://moj-analytical-services.github.io/splink/topic_guides/theory/fellegi_sunter.html"
+        },
+        {
+          "name": "Expectation-Maximisation (EM) training engine",
+          "what_it_is": "Unsupervised iterative algorithm Splink uses to estimate m (and u) probabilities without labelled data, run on record pairs generated by a blocking rule.",
+          "relationship": "CORE_SPLINK",
+          "confidence": "high",
+          "how_tied": "Implemented as Linker.training.estimate_parameters_using_expectation_maximisation(); the core parameter-estimation method of the Fellegi-Sunter engine, documented in the training API and model-training guide.",
+          "source": "https://moj-analytical-services.github.io/splink/api_docs/training.html"
+        },
+        {
+          "name": "ClickHouse / chDB (via splinkclickhouse)",
+          "what_it_is": "ClickHouse OLAP engine (server or in-process chDB) usable as a Splink execution backend through the unofficial third-party splinkclickhouse package.",
+          "relationship": "THIRD_PARTY_INTEGRATION",
+          "confidence": "high",
+          "how_tied": "NOT a built-in Splink 4.x backend (absent from official backends guide and pyproject.toml). Provided by ADBond/splinkclickhouse, an explicitly unofficial integration: `pip install splinkclickhouse` (server) or `splinkclickhouse[chdb]` (in-process). Listed here to correct the common misclassification as a core backend.",
+          "source": "https://github.com/ADBond/splinkclickhouse"
+        }
+      ],
+      "caveats": "Versions reflect Splink 4.0.16 (master pyproject.toml, PyPI March 2026) and may differ in a future Splink 5, where Athena is reported to be dropped (corroborated only by a web summary, not yet confirmed against a primary Splink 5 changelog \u2014 treat as medium confidence). The exact membership of 'core' vs optional dependency groups (notably pandas and pyarrow) is read from a single WebFetch parse of pyproject.toml; pandas appears as a dependency group rather than an unconditional core requirement in 4.x, so its 'required to run' status is nuanced (medium confidence). ClickHouse is deliberately classified THIRD_PARTY_INTEGRATION, not a core backend, because it lives in an external unofficial package. The Spark dependency groups (spark-3 vs spark-4) indicate evolving PySpark version support. No invented dependents were added; only items with a primary GitHub/docs/PyPI source are listed."
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "overclaims": [
+        "Athena item how_tied: 'reported to be dropped in the upcoming Splink 5 release' is stated as near-fact in the item itself. I could not corroborate this against ANY primary source: the official backends guide does not mention it, and web search of GitHub releases/CHANGELOG/PyPI returned no confirmation. The caveats section does honestly flag it as 'corroborated only by a web summary, not yet confirmed against a primary Splink 5 changelog - treat as medium confidence', but the item body does not carry that hedge. Downgrade: strip the Splink-5-drop claim from the Athena how_tied or explicitly mark it unverified/medium.",
+        "Relationship tag 'BACKEND_DEPENDENCY' is overloaded/imprecise on sqlglot, Altair, python-igraph, and Jinja2. These are core RUNTIME/library dependencies, not SQL execution backends. The segment summary itself correctly separates 'natively supported backends' (DuckDB/Spark/Athena/SQLite/Postgres) from 'core Python runtime deps' (sqlglot/altair/Jinja2/igraph), so the per-item tag contradicts the segment's own taxonomy. Not factually false (they are real hard deps), but the tag should distinguish RUNTIME_DEPENDENCY from BACKEND.",
+        "SQLite 'ships packaged with base install (stdlib sqlite3)' - true that Python's sqlite3 is stdlib, but Splink's SQLite backend fuzzy support requires the splink[sqlite]->rapidfuzz extra, which the item does state. Minor: the framing slightly overstates how 'ready' the base SQLite backend is. Acceptable as written."
+      ],
+      "strongest_items": [
+        "DuckDB - confirmed hard core dep duckdb>=0.9.2 in [project] dependencies of master pyproject.toml AND first-class recommended backend ('fastest backend') in official backends guide. Two primary sources align.",
+        "sqlglot - confirmed hard core dep sqlglot>=17.6.0 in [project] dependencies; correctly described as the SQL transpilation layer enabling backend-agnostic architecture. Primary source (pyproject.toml) verified.",
+        "Fellegi-Sunter probabilistic model - README quote verified verbatim: 'Splink's linkage algorithm is based on Fellegi-Sunter's model of record linkage, with various customisations to improve accuracy.' Correctly tagged CORE_SPLINK.",
+        "Expectation-Maximisation training engine - method Linker.training.estimate_parameters_using_expectation_maximisation() confirmed to exist in the training API docs, and the blocking-rule-per-EM-run description matches the docs. Correctly tagged CORE_SPLINK.",
+        "ClickHouse / chDB (splinkclickhouse) - correctly classified THIRD_PARTY_INTEGRATION. ADBond repo explicitly self-describes as 'unofficial... not directly supported by the Splink team'; install commands (splinkclickhouse, [chdb] extra) and server/chDB split all verified against the primary repo. Absent from official backends guide and pyproject.toml as stated.",
+        "altair>=5.0.1, igraph>=0.11.2, Jinja2>=3.0.3 - all confirmed as hard [project] dependencies in master pyproject.toml.",
+        "pandas - correctly downgraded to medium confidence; confirmed it is a [dependency-groups] entry (pandas>=1.3.5, numpy>=1.19.3), NOT an unconditional [project] core requirement.",
+        "rapidfuzz>=3.10.0 (splink[sqlite]), sqlalchemy>=2.0.0 + psycopg2-binary>=2.9.0 (splink[postgres]), pyarrow>=15.0.0 (splink[pyarrow]/testing-core) - all extra/group placements verified verbatim against pyproject.toml."
+      ],
+      "items_to_remove_or_downgrade": [
+        "Athena: downgrade. Keep the item (it is a genuinely supported backend via splink[athena] with minimal dev support per the guide - all confirmed), but remove/hedge the unverified 'dropped in Splink 5' clause from how_tied, since no primary source confirms it. The backends guide does NOT say Athena is being dropped.",
+        "sqlglot / Altair / python-igraph / Jinja2: do not remove (all are real, verified hard dependencies), but consider retagging from BACKEND_DEPENDENCY to a RUNTIME_DEPENDENCY label to match the segment's own summary taxonomy. These are not passing mentions - they are genuine hard deps - so cutting is wrong; only the tag granularity is the issue."
+      ],
+      "notes": "No items are pure passing mentions; every listed dependency/backend is a genuine tie with a primary source (pyproject.toml, official backends guide, README, training API docs, or the splinkclickhouse repo) - all of which I fetched and confirmed. No ALTERNATIVE_NOT_TIED items present, so there is no risk of a non-Splink tool being falsely implied to use Splink. ClickHouse is correctly isolated as an unofficial third-party integration, not a core backend - this is the segment's strongest classification call and it is right. The single substantive overclaim is the Athena-dropped-in-5 assertion, which lacks a primary source; the segment's own caveats already flag it honestly, but the item body should inherit that hedge. Secondary nit: BACKEND_DEPENDENCY tag is overloaded across true backends and true-but-non-backend runtime libs. Overall the segment is accurate, well-sourced, and self-aware about its uncertainties - verdict SOLID.\"}"
+    }
+  },
+  {
+    "segment": "dependents-forks",
+    "title": "PyPI/GitHub packages that depend on or fork Splink",
+    "map": {
+      "segment": "PyPI/GitHub packages that depend on or fork Splink",
+      "summary": "Splink (moj-analytical-services/splink) is heavily used but lightly depended-upon as a library dependency. Primary sources: PyPI ~867k-892k downloads/month and ~19M total (pepy.tech); GitHub shows ~110 dependent repositories and ~16 dependent packages via the dependency graph, ~234+ forks, ~2.1k stars. The dependent population breaks into four real groups: (1) backend adapters/wrappers that genuinely require splink (e.g., splinkclickhouse, healmatcher, entify, Databricks ARC); (2) official MoJ companion packages that are part of the same org but are NOT runtime dependents of the splink package (splink_graph, splink-data-generation/splink_synthetic_data \u2014 they produce inputs or consume outputs, not import splink); (3) forks/mirrors of the splink repo itself (enginux/splink-official, th368/splink_testing); and (4) case-study/tutorial repos that import splink but are not packages (ihmeuw/person_linkage_case_study). Critically, several items surfaced in GitHub's \"Used by\" dependents graph are NOT genuine dependents: goldenmatch (benseverndev-oss) explicitly benchmarks AGAINST and competes with Splink \u2014 its pyproject.toml lists no splink dependency \u2014 so it is an ALTERNATIVE, not a dependent. Many of the 110 dependent repos are 0-star personal/throwaway projects, so the count overstates real productised usage. Genuine, maintained, splink-importing packages on PyPI are few (single digits); most are unofficial/community and small-scale. Databricks ARC, though a real splink wrapper, is officially deprecated (no development since ~2022) with the maintainers recommending Splink directly.",
+      "items": [
+        {
+          "name": "splinkclickhouse (ADBond/splinkclickhouse)",
+          "what_it_is": "Backend adapter package that lets ClickHouse (server via clickhouse-connect, or in-process chDB) be used as the SQL execution engine for Splink. Published on PyPI and conda-forge; ~15 releases, latest ~v0.4.1 (Mar 2025), ~7 GitHub stars.",
+          "relationship": "DEPENDENT_OR_FORK",
+          "confidence": "high",
+          "how_tied": "Requires splink as a runtime dependency and registers ClickHouse as a Splink backend. Explicitly self-described as 'unofficial / not directly supported by the Splink team.'",
+          "source": "https://github.com/ADBond/splinkclickhouse"
+        },
+        {
+          "name": "healmatcher (JosephKBS/healmatcher)",
+          "what_it_is": "Probabilistic healthcare record-matching package from NYULH HEAL Lab, optimized for linking Medicaid/Client Database System records on sex, DOB, last-4 SSN, and first-2 letters of surname. On PyPI; author Joseph Shim.",
+          "relationship": "DEPENDENT_OR_FORK",
+          "confidence": "high",
+          "how_tied": "Wraps Splink to run its core linkage processes ('Splink package is extensively being used to run core linkage processes'); functionally depends on splink.",
+          "source": "https://pypi.org/project/healmatcher/"
+        },
+        {
+          "name": "Databricks ARC (databricks-arc / databricks-industry-solutions/auto-data-linkage)",
+          "what_it_is": "Databricks 'Automated Record Connector' solution accelerator for automated, scalable dedup/linking on the lakehouse; uses Hyperopt/Bayesian optimization to auto-tune linkage parameters. PyPI package 'databricks-arc'; maintained by Databricks staff.",
+          "relationship": "DEPENDENT_OR_FORK",
+          "confidence": "high",
+          "how_tied": "Wraps Splink as its linking engine ('ARC's linking engine is the UK MoJ's open-sourced entity resolution package, Splink') and depends on it. NOTE: officially deprecated \u2014 README says not under development since ~2022 and recommends using Splink directly.",
+          "source": "https://github.com/databricks-industry-solutions/auto-data-linkage"
+        },
+        {
+          "name": "entify (rasinmuhammed/entify)",
+          "what_it_is": "Early-stage open-source 'workspace' / web app for configuring entity-resolution and record-linkage workflows; backend backed by Splink and DuckDB. Developer-preview stage, ~0 stars, ~15 commits.",
+          "relationship": "DEPENDENT_OR_FORK",
+          "confidence": "medium",
+          "how_tied": "Backend depends on/imports Splink (described as 'Splink-powered matching workflows', 'backed by Splink and DuckDB'). Genuine dependent but very early/low-adoption; PyPI availability unconfirmed.",
+          "source": "https://github.com/rasinmuhammed/entify"
+        },
+        {
+          "name": "splink_graph / splink-graph (moj-analytical-services, author Theodore Manassis 'mamonu')",
+          "what_it_is": "PySpark graph-metrics library (built on networkx/graphframes) that computes cluster quality metrics and flags likely false-positive links. On PyPI; co-owned by moj-analytical-services org.",
+          "relationship": "OFFICIAL_COMPANION",
+          "confidence": "high",
+          "how_tied": "Official MoJ-org companion that CONSUMES Splink's candidate-pair/cluster OUTPUTS for QA, but does NOT require or import the splink package itself (no splink dependency). Complementary, not a runtime dependent.",
+          "source": "https://pypi.org/project/splink-graph/"
+        },
+        {
+          "name": "splink-data-generation / splink_synthetic_data (moj-analytical-services, author Robin Linacre)",
+          "what_it_is": "Tooling to generate fully-labelled synthetic person datasets (from open data) for testing/benchmarking linkage. PyPI 'splink-data-generation' (first released Jan 2022) plus the splink_synthetic_data repo.",
+          "relationship": "OFFICIAL_COMPANION",
+          "confidence": "high",
+          "how_tied": "Official MoJ-org sister project authored by Splink's lead (Robin Linacre); produces synthetic linkage INPUTS / labelled datasets used to evaluate Splink. Not a runtime dependent that imports the splink package.",
+          "source": "https://github.com/moj-analytical-services/splink_synthetic_data"
+        },
+        {
+          "name": "Tuva EMPI (tuva-health/tuva_empi)",
+          "what_it_is": "Open-source healthcare Enterprise Master Patient Index (Python + TypeScript) that links/dedupes patient records across EHR/claims/labs and assigns a persistent EMPI ID. ~11 stars. (Tuva's newer 'EMPI Lite' dbt package is a separate, non-Splink reimplementation.)",
+          "relationship": "DEPENDENT_OR_FORK",
+          "confidence": "medium",
+          "how_tied": "Tuva's own docs describe the legacy/open-source Tuva EMPI matching engine as 'built on Splink' with a frontend. Strongly corroborated by vendor docs; exact splink line in backend/pyproject.toml not directly verified (repo layout moved). Newer EMPI Lite does NOT use Splink.",
+          "source": "https://github.com/tuva-health/tuva_empi"
+        },
+        {
+          "name": "ihmeuw/person_linkage_case_study",
+          "what_it_is": "Case-study repository from IHME (Institute for Health Metrics and Evaluation, U. of Washington) that emulates US Census Bureau person-linkage methods using Splink, scaling from small samples to USA-scale simulation.",
+          "relationship": "DEPENDENT_OR_FORK",
+          "confidence": "medium",
+          "how_tied": "Imports/uses Splink as the linkage engine, but is a tutorial/case-study repo for experimentation, NOT a distributed package or library. Genuine code dependent, low productisation.",
+          "source": "https://github.com/ihmeuw/person_linkage_case_study"
+        },
+        {
+          "name": "enginux/splink-official (and related enginux/splink, enginux/DataCleaner)",
+          "what_it_is": "A fork/mirror of moj-analytical-services/splink (splink-official, 0 stars/forks, no apparent modifications) plus enginux's own 'splink' workflow repo and a 'DataCleaner' CSV-prep utility feeding Splink.",
+          "relationship": "DEPENDENT_OR_FORK",
+          "confidence": "high",
+          "how_tied": "splink-official is an explicit GitHub fork of the upstream splink repo (mirror, no added value detected). DataCleaner is a preprocessing helper intended to feed Splink.",
+          "source": "https://github.com/enginux/splink-official"
+        },
+        {
+          "name": "th368/splink_testing",
+          "what_it_is": "A repo carrying Splink's exact tagline ('Fast, accurate and scalable probabilistic data linkage using your choice of SQL backend'), appearing to be a fork/copy used for testing/experimentation. Low/no community engagement.",
+          "relationship": "DEPENDENT_OR_FORK",
+          "confidence": "low",
+          "how_tied": "Appears to be a fork/derivative of the splink codebase (mirrors description and structure); not independently corroborated as a maintained dependent. Likely a personal test fork.",
+          "source": "https://github.com/th368/splink_testing"
+        },
+        {
+          "name": "goldenmatch (benseverndev-oss/goldenmatch)",
+          "what_it_is": "Zero-config entity-resolution / data-quality toolkit (Golden Suite) implementing Fellegi-Sunter plus fuzzy/exact/PPRL/LLM matching; scales CSV\u2192100M rows on Ray; claims ~96.4% F1. PyPI package, MIT, author Ben Severn. The single most 'starred' (117 stars) entry in Splink's GitHub dependents graph.",
+          "relationship": "ALTERNATIVE_NOT_TIED",
+          "confidence": "high",
+          "how_tied": "NOT a dependent despite appearing in GitHub 'Used by'. Its pyproject.toml lists NO splink dependency; Splink appears only as a BENCHMARK comparison (goldenmatch markets itself as outperforming hand-tuned Splink). It is a competing alternative tool.",
+          "source": "https://github.com/benseverndev-oss/goldenmatch"
+        },
+        {
+          "name": "GitHub dependency-graph long tail (~110 repos / ~16 packages 'Used by')",
+          "what_it_is": "The aggregate of repos GitHub lists as depending on splink: e.g., datakind/permanent-colandr-back, thegoodparty/gp-data-platform, lumogis, getcommunityone/open-navigator, codeforamerica/cfa-sebt-address-validation, plus many 0-star personal repos.",
+          "relationship": "DEPENDENT_OR_FORK",
+          "confidence": "low",
+          "how_tied": "GitHub's dependents graph reports ~110 repositories and ~16 packages, but the graph conflates lockfile pins, manifest mentions, and competitor benchmarks (see goldenmatch). Most are low-/zero-star and individually unverified; the count overstates genuine productised dependents.",
+          "source": "https://github.com/moj-analytical-services/splink/network/dependents"
+        }
+      ],
+      "caveats": "Source-quality and verification notes: (1) GitHub's 'Used by'/dependents graph is unreliable as a list of true dependents \u2014 goldenmatch (the highest-starred entry) has no splink dependency and is a competitor, so the ~110-repo / ~16-package counts should be treated as upper bounds, not productised-integration counts. (2) Libraries.io reverse-dependency view is disabled ('disabled for performance reasons') and PyPI does not surface a 'Required by' section for splink, so a definitive PyPI reverse-dependency list could not be obtained from primary sources; the genuine importing packages enumerated here were verified individually. (3) Download scale is well-corroborated: ~19M total and ~867k-892k/month (pepy.tech / pypistats), with the project's own README citing '8 million+ downloads' (older figure). (4) splink_graph and splink-data-generation are MoJ-org companions but are NOT runtime importers of the splink package \u2014 splink_graph consumes Splink's outputs and splink_synthetic_data produces test inputs; I classified them OFFICIAL_COMPANION rather than DEPENDENT to avoid overstating. (5) Tuva EMPI's Splink dependency is corroborated by Tuva's own docs but the exact manifest line was not directly confirmed (repo restructured); medium confidence, and note Tuva's newer 'EMPI Lite' is a non-Splink dbt reimplementation. (6) Several wrappers are explicitly 'unofficial' (splinkclickhouse) or deprecated (Databricks ARC, unmaintained since ~2022). (7) th368/splink_testing is an unverified low-engagement fork (low confidence). (8) Items not investigated for this segment that may warrant follow-up: splinkdataframe-style helpers, any conda-forge-only wrappers, and academic paper code repos beyond IHME (Harvard/Vanderbilt mortality-linkage and Graetz et al. eviction studies used Splink but their code packaging was not located)."
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "overclaims": [
+        "healmatcher 'functionally depends on splink' (high confidence) rests on the package's own prose ('Splink package is extensively being used to run core linkage processes') \u2014 the actual pyproject/requirements splink pin was not surfaced on the PyPI page. The dependency direction is almost certainly correct, but 'high' is one notch generous relative to splinkclickhouse/ARC where the splink dependency is explicit; treat as high-medium.",
+        "Item splink-data-generation/splink_synthetic_data cites https://github.com/moj-analytical-services/splink_synthetic_data as primary source, but that GitHub URL returns 404 (repo renamed/moved/removed). The OFFICIAL_COMPANION classification is still sound (PyPI 'splink-data-generation' and Robin Linacre authorship are independently credible), but the cited GitHub source link is dead and should be replaced with the live PyPI URL.",
+        "Tuva EMPI 'built on Splink' could NOT be confirmed from the repo (no dependency/algorithm info exposed on the page) \u2014 but the segment already self-flags this as medium confidence with the manifest line unverified, so this is a disclosed limitation rather than a hidden overclaim."
+      ],
+      "strongest_items": [
+        "goldenmatch (benseverndev-oss/goldenmatch) correctly tagged ALTERNATIVE_NOT_TIED \u2014 independently confirmed: its pyproject.toml declares only dev tooling (pytest/ruff/pyright/etc.) and NO splink dependency in any group/extra, yet it is the #1 starred entry (117 stars) in Splink's GitHub dependents graph. This validates both the tag and the core thesis that the dependents graph overstates real dependents.",
+        "splinkclickhouse (ADBond/splinkclickhouse) DEPENDENT_OR_FORK \u2014 confirmed as a ClickHouse execution-engine backend adapter for Splink, explicitly self-described as 'unofficial / not directly supported by the Splink team.'",
+        "Databricks ARC DEPENDENT_OR_FORK with deprecation note \u2014 confirmed verbatim: README opens with 'ARC has not been under development since early 2022. It is highly recommended you do not use this tool' and recommends using Splink directly. ARC's linking engine is explicitly Splink.",
+        "splink-graph OFFICIAL_COMPANION (consumes outputs, not a runtime importer) \u2014 confirmed: deps are networkx/graphframes/pyspark/pyarrow and it operates on 'candidate pair results produced by splink,' i.e. it post-processes Splink outputs rather than importing the splink package. The deliberate choice to NOT tag it DEPENDENT is the correct, conservative call.",
+        "GitHub dependents-graph caveat (110 repos / 16 packages are upper bounds, conflate lockfile pins + manifest mentions + competitor benchmarks) \u2014 confirmed, and the goldenmatch counter-example proves it concretely."
+      ],
+      "items_to_remove_or_downgrade": [
+        "th368/splink_testing \u2014 already low confidence; keep but flagged as unverified personal fork, do not present as a meaningful dependent.",
+        "entify (rasinmuhammed/entify) \u2014 already medium confidence; PyPI availability unconfirmed, ~0 stars/~15 commits, so keep but do not count toward 'genuine maintained productised' dependents.",
+        "Tuva EMPI \u2014 keep at medium confidence; the splink manifest line remains unverified (repo page exposes no dependency info), so it should not be promoted to high without confirming backend/pyproject.",
+        "GitHub long-tail (~110 repos) item \u2014 correctly kept at low confidence as an aggregate upper-bound, not enumerated as verified dependents."
+      ],
+      "notes": "No ALTERNATIVE_NOT_TIED tool is implied to use Splink \u2014 goldenmatch is the only such item and is explicitly and correctly carved out as a competitor (verified via its pyproject.toml). The OFFICIAL_COMPANION items are correctly distinguished from runtime dependents. Confidence levels are honest and mostly conservative. Main fixable defect: the dead GitHub source URL for splink_synthetic_data should be swapped to the live PyPI link. The segment's own caveats (Libraries.io disabled, no PyPI 'Required by', genuine importing PyPI packages are single-digit) are accurate and appropriately hedged. Verdict SOLID: every independently-checkable load-bearing claim verified against a primary source; remaining soft spots are already disclosed in-segment."
+    }
+  },
+  {
+    "segment": "gov-consumers",
+    "title": "Government systems/apps that CONSUME Splink output",
+    "map": {
+      "segment": "Government systems/apps that CONSUME Splink output",
+      "items": [
+        {
+          "name": "MoJ JustLink batch pipeline",
+          "what_it_is": "Weekly Ministry of Justice batch linkage pipeline that links and deduplicates person records across justice datasets (NOMIS prisons, DELIUS probation, Common Platform/LIBRA courts, plus FamilyMan family courts and CaseMan civil courts), producing a fully anonymised lookup table of links (no PII in output). Runs as containerised Splink+DuckDB jobs on EC2/ECR, orchestrated by Airflow, with S3 storage and Athena prep.",
+          "relationship": "GOV_CONSUMER",
+          "confidence": "high",
+          "how_tied": "Splink IS the linkage engine of the pipeline: the 'predict' and 'cluster' stages run Splink with DuckDB as the execution engine, generating scored edges and clusters that become the weekly anonymised lookup table. Operates in batch mode; model training is separated from weekly prediction, persisting versioned .json model specs.",
+          "source": "https://www.gov.uk/algorithmic-transparency-records/moj-splink-master-record"
+        },
+        {
+          "name": "Splink Master Record (MoJ)",
+          "what_it_is": "MoJ's master person record / clustering output: records scored above a Fellegi-Sunter threshold are grouped into clusters, each representing one person across courts, prisons and probation. Logged in the gov.uk Algorithmic Transparency Recording Standard (ATRS) register.",
+          "relationship": "GOV_CONSUMER",
+          "confidence": "high",
+          "how_tied": "The Master Record is directly the consolidated/clustered output of Splink. Splink's Bayesian Fellegi-Sunter model produces match probabilities; records above threshold are clustered into the master person record. This is the named subject of the ATRS algorithmic transparency record.",
+          "source": "https://www.gov.uk/algorithmic-transparency-records/moj-splink-master-record"
+        },
+        {
+          "name": "Core Person Record (MoJ real-time pilot)",
+          "what_it_is": "A real-time linkage system being piloted by MoJ that aims to create a unique identifier for each person across prisons, probation and the criminal courts, performing linkage as records are created or updated (vs the weekly batch JustLink).",
+          "relationship": "GOV_CONSUMER",
+          "confidence": "high",
+          "how_tied": "Fed by Splink running in real-time deployment mode: as new/updated records arrive, Splink linkage assigns/maintains the unique person identifier. Explicitly described in the ATRS record as a real-time Splink deployment, contrasted with the batch JustLink pipeline. Pilot status (not full production).",
+          "source": "https://www.gov.uk/algorithmic-transparency-records/moj-splink-master-record"
+        },
+        {
+          "name": "North Essex Probation Delivery Unit Case Information Dashboard (MoJ / BOLD)",
+          "what_it_is": "Operational probation data product (won 2025 Civil Service Award for Excellence in Delivery) supporting the North Essex Probation Delivery Unit, developed under MoJ's BOLD (Better Outcomes through Linked Data) programme. Identifies Police National Computer (PNC) numbers for individuals under probation supervision and sends them to police daily to detect arrests.",
+          "relationship": "GOV_CONSUMER",
+          "confidence": "high",
+          "how_tied": "Splink performs the record linkage that identifies the PNC numbers associated with supervised individuals; those Splink-derived numbers are then transmitted to police each day for arrest checking. ATRS record states verbatim: 'Splink is used to identify Police National Computer (PNC) numbers associated with individuals supervised by North Essex Probation Delivery Unit.'",
+          "source": "https://www.gov.uk/algorithmic-transparency-records/moj-splink-master-record"
+        },
+        {
+          "name": "ADR UK / MoJ Data First research datasets",
+          "what_it_is": "MoJ programme funded by ADR UK (ESRC) that produces de-identified, research-ready linked administrative datasets spanning seven justice domains (Magistrates, Crown, Family, Civil courts; Prisons; Probation; Offender Assessment) across ~43 tables, made available to accredited researchers via the ONS Secure Research Service and SAIL Databank. Splink itself was originally built within the Data First programme.",
+          "relationship": "GOV_CONSUMER",
+          "confidence": "high",
+          "how_tied": "Splink produces the linkage: per-dataset deduplication models plus cross-domain linkage models generate links and a new linked identifier (cluster) that joins records of the same person across systems. The resulting deduplicated/linked, PII-stripped datasets are transferred to ONS SRS and SAIL Databank for research. Documented in the MoJ Data First (Splink) ATRS record.",
+          "source": "https://www.gov.uk/algorithmic-transparency-records/moj-data-first-splink"
+        },
+        {
+          "name": "NHS England Master Person Service (MPS) / Person_ID + new probabilistic linkage service",
+          "what_it_is": "NHS England Data Linkage Hub work. The Master Person Service (MPS) generates the Person_ID, a standardised unique patient identifier used to link patient-level data across NHS datasets, linking against the Personal Demographics Service (PDS) spine. A new Splink-based probabilistic data linkage service is being built to improve linkage quality and explainability.",
+          "relationship": "GOV_CONSUMER",
+          "confidence": "high",
+          "how_tied": "NHS England is building an alternative/next-generation linkage service with Splink as the core engine: an IJPDS paper states they 'used Splink ... to build a pipeline that links any health data set to the Personal Demographics Service (PDS)', reporting up to 19% linkage-quality improvement and exposing linkage probability to end-users. Status: in development / building in-house capability at scale (not yet the production Person_ID engine, which is the existing MPS).",
+          "source": "https://nhsengland.github.io/datascience/our_work/data-linkage-hub/"
+        },
+        {
+          "name": "ONS Business Index (formerly Inter-Departmental Business Register, IDBR)",
+          "what_it_is": "ONS's authoritative register/index of UK businesses (built mainly from HMRC VAT/PAYE plus Companies House, Dun & Bradstreet, ONS surveys), being modernised into the 'Business Index' under the Reference Data Management Framework (RDMF). Used to link/match administrative business sources and reduce duplication at a scale of 100M+ records.",
+          "relationship": "GOV_CONSUMER",
+          "confidence": "high",
+          "how_tied": "ONS uses Splink to link/match records into the index. The cross-government 'Joined-up data' implementation plan names ONS's Business Index (ex-IDBR) as a Splink user; ONS engineering describes using MoJ's Splink to update records near real-time across 100M+ records as part of RDMF index-building pipelines.",
+          "source": "https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods/implementation-plan"
+        },
+        {
+          "name": "ONS Demographic Index (DI) / DIMS and 2021 Census linkage",
+          "what_it_is": "The Demographic Index is a composite ONS dataset built from administrative sources providing a linked-data spine (underlying the Statistical Population Dataset). DIMS is the pipeline that indexes datasets against the DI to return a Demographic Entry ID. The 2021 Census was indexed/linked to the DI (and to PDS) using deterministic + probabilistic + associative methods, achieving ~95.75% census-ID linkage.",
+          "relationship": "GOV_CONSUMER",
+          "confidence": "medium",
+          "how_tied": "ONS publicly lists the Demographic Index and 2021 Census among its Splink applications (cross-government implementation plan; ONS UN/UNSD Splink presentation). However, the specific ONS Census/DI methodology articles describe 'probabilistic methods' generically and do NOT name Splink at the article level, so the precise extent to which Splink (vs other probabilistic tooling) feeds the DI/DIMS Census linkage is not pinned down in the per-product technical reports.",
+          "source": "https://www.gov.uk/government/publications/joined-up-data-in-government-the-future-of-data-linking-methods/implementation-plan"
+        }
+      ],
+      "summary": "Nine government systems consume Splink output, in two clusters. MoJ (high confidence, all in the gov.uk ATRS records and the Splink production blog): the JustLink weekly batch pipeline (Splink+DuckDB on EC2 producing an anonymised links lookup table across NOMIS/DELIUS/Common Platform/LIBRA + family/civil courts); the Splink Master Record (the clustered person output); the Core Person Record real-time pilot (Splink in real-time mode assigning a cross-justice unique ID); the North Essex Probation Delivery Unit dashboard (Splink derives PNC numbers sent to police daily for arrest detection, BOLD programme, 2025 Civil Service Award); and the ADR UK / MoJ Data First research datasets (Splink dedup + cross-domain linkage producing de-identified linked datasets served via ONS SRS and SAIL Databank). ONS (Splink consumer, scale 100M+ records): the Business Index/ex-IDBR via RDMF index pipelines (high confidence per the cross-government implementation plan and ONS engineering), and the Demographic Index/DIMS + 2021 Census linkage (medium confidence: ONS lists these as Splink applications, but the per-product methodology reports name only 'probabilistic methods', not Splink specifically). NHS England (Data Linkage Hub): a new Splink-cored probabilistic linkage service to PDS feeding Person_ID/Master Person Service work, reporting up to 19% quality improvement \u2014 explicitly in development rather than the current production Person_ID engine.",
+      "caveats": "All MoJ items (JustLink, Master Record, Core Person Record, North Essex, Data First) are strongly sourced to the gov.uk Algorithmic Transparency (ATRS) records and the MoJ 'Running Splink in Production' blog, with verbatim quotes confirming Splink as the linkage engine. Caveats: (1) The MoJ production blog describes the pipeline mechanics but does NOT by name reference 'JustLink', 'Master Record' or 'Core Person Record' \u2014 those names come from the ATRS records; I treated them as the same body of work. (2) Core Person Record is explicitly a pilot, not full production. (3) NHS England's Splink work is self-described as 'currently working on implementing' / building in-house capability \u2014 it is NOT yet the live Person_ID/MPS production engine, so it consumes Splink in a development/pilot capacity. (4) ONS Demographic Index/DIMS/2021 Census Splink attribution is MEDIUM confidence: ONS top-line materials (implementation plan, UN presentation) list Census and DI as Splink applications, but the detailed ONS Census/DI methodology articles I checked (the Demographic Index quality article and IJPDS view/2201) describe generic 'deterministic + probabilistic' methods without naming Splink, so I could not fully corroborate that Splink (vs other probabilistic tooling) is the engine for that specific linkage. (5) The ONS UN/UNSD Splink PDF was an image-only scan and could not be parsed for direct quotes. (6) The ONS Business Index/ex-IDBR Splink tie is high confidence but partly rests on an ONS engineering interview plus the cross-government plan rather than a dedicated ATRS-style record. No invented dependents; nothing here is an alternative tool."
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "overclaims": [
+        "JustLink item: the cited source (gov.uk ATRS moj-splink-master-record) does NOT mention DuckDB, EC2/ECR, Airflow, S3, or Athena. I verified the ATRS record names Splink, NOMIS, DELIUS, Common Platform, LIBRA, FamilyMan, CaseMan and the weekly batch framing, but the containerised Splink+DuckDB-on-EC2/Airflow/Athena pipeline mechanics come from the separate 'Running Splink in Production' blog, which is not the cited URL. Either cite the blog for those mechanics or drop them.",
+        "NHS England MPS item: the load-bearing claims (the verbatim 'used Splink ... to build a pipeline that links any health data set to PDS', the up-to-19% improvement, exposing linkage probability) are NOT on the cited NHS GitHub Data Linkage Hub page. That page only says they are 'currently working on implementing a probabilistic linkage model using Splink'. The 19%/PDS quote is in the IJPDS paper (https://ijpds.org/article/view/3271). Source is mismatched and must be corrected to the IJPDS article.",
+        "ONS Business Index/IDBR item: the cited source (joined-up-data implementation plan) does NOT name the Business Index/IDBR as a Splink user. I verified the plan only states the RDMF team 'has been testing the Splink tool with the view to use it'. The verbatim Splink+Business-Index+100M claim lives in the government-transformation.com ONS engineer interview. Citation mismatched; the interview is the real primary source.",
+        "ONS Demographic Index / Census item is UNDER-claimed in one part and OVER-claimed in another. Under-claimed: the segment says per-product methodology reports name only generic 'probabilistic methods', but the ONS Census 2021 to PDS linkage report explicitly states 'Splink 2 was used, which is a probabilistic linkage library implementing the Fellegi Sunter method'. The Census-to-PDS Splink tie should be UPGRADED to high. Over-claimed: that confirms the Census->PDS linkage, NOT that the Demographic Index/DIMS pipeline itself runs on Splink, which remains uncorroborated. The item conflates two distinct linkages.",
+        "Summary/caveats line claiming 'the per-product methodology reports name only probabilistic methods, not Splink specifically' is factually wrong for the Census 2021-to-PDS report, which names Splink 2 by version."
+      ],
+      "strongest_items": [
+        "North Essex Probation Delivery Unit dashboard: verbatim ATRS quote confirmed - 'Splink is used to identify Police National Computer (PNC) numbers' and 'Those numbers are sent to the police each day to identify if any arrests have occurred'. Cleanest GOV_CONSUMER tie, correct source.",
+        "ADR UK / MoJ Data First research datasets: fully corroborated by the gov.uk Data First (Splink) ATRS record - Splink developed for the Data First programme, within/cross-domain linkage, seven domains across the stated tables (3+5+12+3+12+14+1), output transferred to ONS Secure Research Service and SAIL Databank. Correct source, correct tag.",
+        "Splink Master Record (MoJ): the named subject of the cited ATRS record; clustering of Fellegi-Sunter-scored records into a per-person master record is directly the Splink output. Correctly tagged.",
+        "Core Person Record (MoJ real-time pilot): ATRS verbatim confirms 'Core Person Record. This is a real-time linkage system that is currently being piloted', correctly flagged as pilot not production."
+      ],
+      "items_to_remove_or_downgrade": [
+        "Do not remove any item - all eight are genuine Splink consumers/integrations, none are passing mentions, and none are ALTERNATIVE_NOT_TIED tools wrongly implied to use Splink.",
+        "ONS Demographic Index / Census (item 8): SPLIT and re-rate. Upgrade the Census-2021-to-PDS linkage to HIGH confidence (ONS report names 'Splink 2' explicitly; cite https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthinequalities/methodologies/census2021topersonaldemographicsservicelinkagereport). Keep the Demographic Index/DIMS attribution at MEDIUM/unconfirmed since no source names Splink as the DI/DIMS engine specifically.",
+        "No relationship-tag corrections needed - all eight are correctly GOV_CONSUMER."
+      ],
+      "notes": "Verdict SOLID because every item is a real integration with Splink as the actual linkage engine (not a passing mention), all relationship tags (GOV_CONSUMER) are correct, and no ALTERNATIVE_NOT_TIED tools are wrongly implied to use Splink. The issues are source-citation hygiene, not substance: three items cite a URL that does not contain the load-bearing claim (JustLink->DuckDB mechanics belong to the production blog; NHS 19%/PDS belongs to IJPDS 3271; ONS Business Index belongs to the government-transformation interview, since the implementation plan only says RDMF was 'testing' Splink). One self-imposed hedge is wrong: the ONS Census 2021-to-PDS report DOES name Splink ('Splink 2 was used'), so that linkage should be upgraded, while the broader Demographic Index/DIMS attribution stays unconfirmed. Recommended fixes: (1) correct the three mismatched source URLs, (2) split item 8 into a high-confidence Census-PDS tie and a medium DI/DIMS tie, (3) remove the false caveat that per-product reports never name Splink. Sources verified: gov.uk/algorithmic-transparency-records/moj-splink-master-record; gov.uk/algorithmic-transparency-records/moj-data-first-splink; joined-up-data implementation-plan; ijpds.org/article/view/3271; ONS Census 2021 to PDS linkage report; government-transformation.com ONS engineer interview."
+    }
+  },
+  {
+    "segment": "third-party-commercial",
+    "title": "Third-party / commercial platforms integrating Splink",
+    "map": {
+      "segment": "Third-party / commercial platforms integrating Splink",
+      "items": [
+        {
+          "name": "Databricks ARC (Automated/Automatic Record Connector)",
+          "what_it_is": "A Databricks solution accelerator / pip-installable Python package (databricks-arc) for automated, unsupervised probabilistic data de-duplication and linking on the Databricks Lakehouse. It wraps Splink as its linking engine and auto-tunes Splink's parameters (blocking rules, comparisons, m/u settings) via Hyperopt Bayesian search, removing the need for manual calibration.",
+          "relationship": "THIRD_PARTY_INTEGRATION",
+          "confidence": "high",
+          "source": "https://github.com/databricks-industry-solutions/auto-data-linkage",
+          "how_tied": "Directly productised on top of Splink: ARC's core linking engine IS Splink (the MoJ package); ARC adds an auto-optimisation layer. Published by Databricks Industry Solutions, pip-installable as 'databricks-arc' on PyPI (v0.1.18, 3 Nov 2023). NOTE: repo now carries a deprecation warning advising users to use Splink directly instead."
+        },
+        {
+          "name": "Antigranular op_splink",
+          "what_it_is": "A differentially-private variant of the Splink library (imported as op_splink) offered inside Antigranular's restricted/private-Python commercial data-science platform. It exposes Splink's probabilistic record-linkage capabilities under differential-privacy constraints for privacy-preserving data integration.",
+          "relationship": "THIRD_PARTY_INTEGRATION",
+          "confidence": "high",
+          "source": "https://docs.antigranular.com/private-python/packages/splink/",
+          "how_tied": "Antigranular states it 'created a differentially private version of the SPlink library, op_splink', accessed via '%%agimport op_splink' inside their proprietary platform. This is a productised, hosted wrapper of Splink (not merely a blog mention). Their docs link back to the official Splink docs/GitHub."
+        },
+        {
+          "name": "Mphasis Datalytyx (consultancy)",
+          "what_it_is": "A UK data-engineering/DataOps consultancy (acquired by Mphasis in 2020; Databricks/Snowflake/Talend partner) that published a Medium article on using Databricks ARC + Splink to break down data silos and build golden records.",
+          "relationship": "THIRD_PARTY_INTEGRATION",
+          "confidence": "low",
+          "source": "https://medium.com/mphasis-datalytyx/conquer-your-data-beast-mastering-data-silos-with-databricks-arc-and-splink-b7eaea03ca7d",
+          "how_tied": "WEAK / NOT PRODUCTISED. Evidence is a single blog post advocating ARC+Splink, not a named product or a documented client offering wrapping Splink. As a Databricks delivery partner they may implement ARC/Splink for clients, but no productised Splink offering is corroborated. Flagged low confidence; arguably closer to 'blog mention' than a true integration."
+        },
+        {
+          "name": "National Innovation Centre for Data (NICD)",
+          "what_it_is": "A UK government/Newcastle-University-funded data-skills centre (created 2017, GBP 30m). Published an 'end-to-end guide to overcoming unique identifier challenges with Splink' on its knowledge hub and invites organisations to collaborate on entity-resolution projects.",
+          "relationship": "THIRD_PARTY_INTEGRATION",
+          "confidence": "low",
+          "source": "https://nicd.org.uk/knowledge-hub/an-end-to-end-guide-to-overcoming-unique-identifier-challenges-with-splink",
+          "how_tied": "WEAK / NOT PRODUCTISED. Evidence is an educational how-to guide plus a generic offer to collaborate on entity resolution. No named Splink-based product or service. Borderline between a 'blog/tutorial mention' and a consultancy offering; flagged low confidence. (NICD is part-government-funded but appears here as a skills-transfer body, not a gov data consumer.)"
+        },
+        {
+          "name": "Quantexa",
+          "what_it_is": "UK commercial decision-intelligence / entity-resolution platform (e.g. GBP 175m HMRC tax-fraud contract; bid for NHS FDP with IBM).",
+          "relationship": "ALTERNATIVE_NOT_TIED",
+          "confidence": "high",
+          "source": "https://thenextweb.com/news/quantexa-hmrc-ai-tax-fraud-sovereignty",
+          "how_tied": "NOT TIED. Quantexa is a competing/alternative commercial entity-resolution product, not a Splink integration. Listed only to disambiguate market leads. No evidence it embeds or wraps Splink."
+        },
+        {
+          "name": "Palantir Foundry (Federated Data Platform / Foundry Entity Resolution)",
+          "what_it_is": "Palantir's data-integration platform; holder of the NHS Federated Data Platform contract and provider of 'Foundry Entity Resolution'.",
+          "relationship": "ALTERNATIVE_NOT_TIED",
+          "confidence": "high",
+          "source": "https://www.palantir.com/foundry-entity-resolution/",
+          "how_tied": "NOT TIED. Palantir's FDP and its native entity-resolution capability are proprietary and a market alternative; no evidence Splink is embedded. The FDP was an explicit lead to check but does not productise Splink."
+        },
+        {
+          "name": "Senzing / Tilores / AWS Entity Resolution / Tamr / Reltio / Informatica / Data Ladder / Zingg",
+          "what_it_is": "A cluster of commercial (and one OSS, Zingg) entity-resolution / MDM products frequently listed alongside Splink in 'top entity-resolution tools' roundups.",
+          "relationship": "ALTERNATIVE_NOT_TIED",
+          "confidence": "high",
+          "source": "https://github.com/J535D165/data-matching-software",
+          "how_tied": "NOT TIED. These are competing/alternative record-linkage products, repeatedly compared against Splink (e.g. Splink GitHub discussion 'Splink vs AWS Entity Resolution'). None is documented as embedding or wrapping Splink. Grouped to close out the alternatives leads and avoid mis-tagging."
+        }
+      ],
+      "summary": "In the third-party/commercial segment, only two entities show a genuinely PRODUCTISED integration of Splink: (1) Databricks ARC, a pip-installable Databricks Industry Solutions accelerator (databricks-arc) whose linking engine IS Splink, adding Hyperopt auto-tuning - now carrying a deprecation notice advising direct Splink use; and (2) Antigranular's op_splink, a differentially-private Splink wrapper offered inside their commercial private-Python platform. Both are high-confidence THIRD_PARTY_INTEGRATION. Two consultancy/centre items (Mphasis Datalytyx blog; NICD how-to guide + collaboration offer) are NOT productised - they are blog/tutorial mentions, flagged low confidence. The much-publicised market leads Quantexa, Palantir Foundry/FDP, Senzing, Tilores, AWS Entity Resolution, Tamr, Reltio, Informatica, Data Ladder and Zingg are competing/ALTERNATIVE_NOT_TIED tools with no evidence of embedding Splink, and are tagged accordingly to prevent false positives.",
+      "caveats": "No web access to LinkedIn/some pages limited Antigranular/Mphasis depth; op_splink productisation is confirmed via Antigranular's own docs but its current maintenance/availability was not separately verified. Databricks ARC is real and pip-installable but effectively unmaintained since ~early 2022 with a deprecation warning. Mphasis Datalytyx and NICD are flagged low confidence because evidence is a blog post / tutorial plus a generic collaboration offer, not a named Splink-based product or documented client deliverable - they sit on the boundary between 'integration' and 'mere mention'. I found NO credible evidence of a hosted no-code commercial SaaS wrapper around Splink despite a community discussion proposing one (GitHub discussion #2837), so none was included. NHS England's probabilistic linkage service and other UK public-sector users are government consumers (a different segment) and were intentionally excluded here. The fintech company 'Splink' (splink.io, Dublin payments) and Splunk are name-collisions, not related."
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "overclaims": [
+        "Internal date inconsistency for Databricks ARC: how_tied cites PyPI 'databricks-arc v0.1.18, 3 Nov 2023' while caveats say ARC has been unmaintained 'since ~early 2022.' The GitHub README deprecation text confirms 'not been under development since early 2022,' so the 3 Nov 2023 release date (if a later patch) and the 'early 2022' claim should be reconciled; do not present both as settled fact.",
+        "op_splink wrapper-status is slightly overstated: Antigranular's docs say they 'created a differentially private version of the SPlink library' but the page does NOT explicitly state it WRAPS the upstream Splink library internally. Calling it a 'wrapper of Splink' is a reasonable inference, not a directly sourced claim. The item's own how_tied is appropriately hedged ('productised, hosted wrapper'), but the summary's framing as a definitive 'Splink wrapper' is marginally stronger than the primary source supports.",
+        "Palantir Foundry Entity Resolution 'NOT TIED' is correct by absence of evidence, but the cited source (palantir.com/foundry-entity-resolution/) returned no substantive content \u2014 the negative claim rests on lack of evidence rather than a positive primary-source statement. Acceptable for ALTERNATIVE_NOT_TIED but the source does not actively corroborate anything."
+      ],
+      "strongest_items": [
+        "Databricks ARC (databricks-arc) \u2014 primary source (GitHub repo README) confirms verbatim: 'ARC's linking engine is the UK Ministry of Justice's open-sourced entity resolution package, Splink' and the deprecation warning 'It is recommended that you instead use Splink directly.' Genuine productised THIRD_PARTY_INTEGRATION, high confidence justified.",
+        "Antigranular op_splink \u2014 primary source (docs.antigranular.com) confirms verbatim: 'Antigranular has created a differentially private version of the SPlink library, op_splink' imported via '%%agimport op_splink.' Genuine hosted productised integration inside a commercial platform; THIRD_PARTY_INTEGRATION high confidence justified.",
+        "Quantexa and Palantir Foundry/FDP correctly tagged ALTERNATIVE_NOT_TIED \u2014 web verification found no evidence either embeds or wraps Splink; both are competing proprietary entity-resolution platforms. The Senzing/Tilores/AWS/Tamr/Reltio/Informatica/Data Ladder/Zingg cluster is likewise correctly tagged as alternatives, not Splink integrations."
+      ],
+      "items_to_remove_or_downgrade": [
+        "Mphasis Datalytyx \u2014 already self-flagged low confidence; recommend DOWNGRADE further to a 'mention' / drop from the integration list. Evidence is a single Medium blog post advocating ARC+Splink, not a named product or documented client deliverable. It is a passing mention, not a real dependency/integration. Keep only as a footnote.",
+        "National Innovation Centre for Data (NICD) \u2014 already self-flagged low confidence; recommend DOWNGRADE to 'tutorial/mention' or drop. Evidence is an educational how-to guide plus a generic 'collaborate with us' offer. No productised Splink-based service exists. Belongs in a tutorials/community segment, not third-party/commercial integrations."
+      ],
+      "notes": "Verified against primary sources: Databricks ARC GitHub README (confirms Splink is the linking engine + deprecation notice + databricks-arc PyPI name), Antigranular docs (confirms op_splink DP variant + %%agimport usage). Both high-confidence THIRD_PARTY_INTEGRATION items hold up. Relationship taxonomy is correct: no ALTERNATIVE_NOT_TIED tool (Quantexa, Palantir, Senzing/Tilores/AWS/Tamr/Reltio/Informatica/Data Ladder/Zingg) is implied to use Splink, and web checks found no Splink-embedding evidence for any of them. The two consultancy/center items (Mphasis, NICD) are correctly identified by the author as boundary/non-productised and should be cut or downgraded to mentions. Net: segment is SOLID with honest self-flagging; only fixes needed are (a) reconcile the ARC date inconsistency (early-2022 unmaintained vs 3-Nov-2023 release), (b) soften op_splink 'wrapper' to 'DP variant' to match source wording, and (c) cut/downgrade Mphasis + NICD out of the integration list. Caveats section is appropriately thorough and the name-collision disambiguation (splink.io fintech, Splunk) is a good guard."
+    }
+  },
+  {
+    "segment": "lineage-alternatives",
+    "title": "Splink lineage and the alternatives (NOT tied \u2014 included to avoid confusion)",
+    "map": {
+      "segment": "Splink lineage and the alternatives (NOT tied \u2014 included to avoid confusion)",
+      "items": [
+        {
+          "name": "Fellegi-Sunter model (1969)",
+          "what_it_is": "The canonical probabilistic record-linkage statistical theory (Fellegi & Sunter, 'A Theory for Record Linkage', JASA 1969) that scores candidate record pairs using match/non-match weights (m and u probabilities). It is the mathematical foundation Splink implements.",
+          "relationship": "LINEAGE",
+          "confidence": "high",
+          "how_tied": "Splink is explicitly an implementation of the Fellegi-Sunter model; the Splink docs dedicate a theory topic guide to it and the gov.uk/MoJ materials describe Splink as estimating a Fellegi-Sunter linkage model via EM. This is conceptual/theoretical ancestry, not a software dependency.",
+          "source": "https://moj-analytical-services.github.io/splink/topic_guides/theory/fellegi_sunter.html"
+        },
+        {
+          "name": "fastLink (R package, kosukeimai/fastLink)",
+          "what_it_is": "R package by Ted Enamorado, Ben Fifield and Kosuke Imai (Harvard/Princeton) implementing fast probabilistic record linkage with missing data using an EM algorithm to estimate a Fellegi-Sunter model (Enamorado, Fifield & Imai 2019). Accompanied by a rigorous academic paper.",
+          "relationship": "LINEAGE",
+          "confidence": "high",
+          "how_tied": "MoJ's own gov.uk write-up states Splink was built to 'build on fastLink's implementation in R of an Expectation-Maximisation algorithm to estimate a Fellegi-Sunter linkage model', adding scalability/customisation. fastLink is the direct intellectual/algorithmic predecessor \u2014 not a runtime dependency of Splink (which is Python/SQL).",
+          "source": "https://github.com/kosukeimai/fastLink"
+        },
+        {
+          "name": "sparklink (moj-analytical-services/sparklink)",
+          "what_it_is": "The original name/repository for Splink. The GitHub repo now carries the banner 'THIS REPO HAS MOVED to github.com/moj-analytical-services/splink'. Reflects Splink's origins as a Spark-based linkage tool ('Spark' + 'link').",
+          "relationship": "LINEAGE",
+          "confidence": "high",
+          "how_tied": "It is literally the predecessor repo for the same MoJ project, since renamed to Splink. Same maintainers, same lineage; redirects to the current Splink repo.",
+          "source": "https://github.com/moj-analytical-services/sparklink"
+        },
+        {
+          "name": "splink_analysis_match / splink_scalaudfs (early MoJ repos)",
+          "what_it_is": "Earlier MoJ-analytical-services repos: splink_analysis_match ('Implementation of Fellegi-Sunter's canonical model of record linkage in Apache Spark, including EM algorithm to estimate parameters') and splink_scalaudfs (Scala UDFs for use in a PySpark environment). Precursor/companion artefacts to the Spark-era Splink.",
+          "relationship": "LINEAGE",
+          "confidence": "medium",
+          "how_tied": "Same MoJ org and the same Fellegi-Sunter-in-Spark genesis as Splink; represent the early Spark-based work that fed into the Splink package. Low/medium confidence on the exact developmental relationship (could partly be companion tooling); flagged as ancestry within the same org.",
+          "source": "https://github.com/moj-analytical-services/splink_analysis_match"
+        },
+        {
+          "name": "US Census Bureau BigMatch",
+          "what_it_is": "Census Bureau record-linkage program (William Yancey) for matching a very large file against a moderate-size file, extracting probable matches across several blocking criteria without sorting either file. In-house US federal statistical tooling.",
+          "relationship": "ALTERNATIVE_NOT_TIED",
+          "confidence": "high",
+          "how_tied": "NOT tied to Splink. It is a separate, independently developed government record-linkage tool that agencies use instead of Splink. Listed here only to avoid confusion as a competitor in the same problem space.",
+          "source": "https://www.census.gov/library/working-papers/2007/adrm/rrc2007-01.html"
+        },
+        {
+          "name": "Statistics Canada G-Link (Generalized Record Linkage System)",
+          "what_it_is": "SAS-based Windows application from Statistics Canada implementing the Fellegi-Sunter model within a GUI; part of StatCan's Generalized Systems suite, replacing the older GRLS system.",
+          "relationship": "ALTERNATIVE_NOT_TIED",
+          "confidence": "high",
+          "how_tied": "NOT tied to Splink. An independent national-statistics-agency linkage product; a competitor/alternative tool, not built on or integrating with Splink. Shares only the common Fellegi-Sunter heritage.",
+          "source": "https://www150.statcan.gc.ca/n1/en/catalogue/10H0036"
+        },
+        {
+          "name": "AIHW DALI",
+          "what_it_is": "The Australian Institute of Health and Welfare's in-house, SAS-based probabilistic data-linkage software used to link national health/welfare datasets.",
+          "relationship": "ALTERNATIVE_NOT_TIED",
+          "confidence": "high",
+          "how_tied": "NOT tied to Splink. It is an alternative/predecessor tool; notably AIHW has been considering REPLACING DALI with Splink \u2014 which underscores that DALI is a competing tool in the same niche, not a Splink integration or dependency.",
+          "source": "https://www.aihw.gov.au/our-services/data-linkage"
+        },
+        {
+          "name": "ChoiceMaker (ChoiceMaker Technologies / CHeReL)",
+          "what_it_is": "Commercial probabilistic record-linkage software from ChoiceMaker LLC (Princeton, NJ), used by Australia's Centre for Health Record Linkage (CHeReL) for NSW/ACT health data. The 'NSW ChoiceMaker' lead refers to CHeReL's use of this product.",
+          "relationship": "ALTERNATIVE_NOT_TIED",
+          "confidence": "high",
+          "how_tied": "NOT tied to Splink. Independent commercial/third-party linkage product used by a state linkage centre instead of Splink. Included only to avoid confusion as a peer tool.",
+          "source": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8142947/"
+        },
+        {
+          "name": "Western Australia DLS3 (WA Data Linkage System software)",
+          "what_it_is": "Bespoke third-generation in-house linkage software ('DLS3') developed by the WA Department of Health Data Linkage Branch to build/maintain the WA Data Linkage System; runs multiple matching strategies concurrently and de-duplicates results.",
+          "relationship": "ALTERNATIVE_NOT_TIED",
+          "confidence": "high",
+          "how_tied": "NOT tied to Splink. A custom government linkage engine used in place of Splink. Separate codebase and organisation; a competitor/alternative.",
+          "source": "https://ijpds.org/article/view/1138"
+        },
+        {
+          "name": "FEBRL (Freely Extensible Biomedical Record Linkage)",
+          "what_it_is": "Open-source Python data-cleaning, deduplication and probabilistic record-linkage system with a GUI (Peter Christen, ANU), aimed at health/biomedical data.",
+          "relationship": "ALTERNATIVE_NOT_TIED",
+          "confidence": "high",
+          "how_tied": "NOT tied to Splink as software. It is a separate open-source linkage tool / academic peer. Note: FEBRL's bundled demo datasets are reused by Splink (and recordlinkage) for demos/benchmarks, but that is shared sample data, not a code dependency or integration \u2014 so it remains an alternative, not a dependency.",
+          "source": "https://users.cecs.anu.edu.au/~Peter.Christen/Febrl/febrl-0.2.2/febrldoc-0.2.2.pdf"
+        },
+        {
+          "name": "Datavant (PPRL / tokenization)",
+          "what_it_is": "Commercial privacy-preserving record-linkage / tokenization platform (US healthcare) that replaces direct identifiers with keyed, salted hashed tokens to link patient records across systems without exposing PII.",
+          "relationship": "ALTERNATIVE_NOT_TIED",
+          "confidence": "high",
+          "how_tied": "NOT tied to Splink. A proprietary PPRL vendor solving the linkage problem via tokenization rather than open-source probabilistic matching. Competing/alternative approach; no integration with Splink.",
+          "source": "https://www.datavant.com/blog/privacy-preserving-record-linkage"
+        },
+        {
+          "name": "Match*Pro (NCI/SEER)",
+          "what_it_is": "Windows record-linkage application from the US National Cancer Institute's surveillance program (SEER/NAACCR), implementing a Fellegi-Sunter probabilistic framework and supporting both raw-PII and PPRL (hashed-token) linkage, with a clerical-review UI.",
+          "relationship": "ALTERNATIVE_NOT_TIED",
+          "confidence": "high",
+          "how_tied": "NOT tied to Splink. A separate government/cancer-registry linkage tool. Shares Fellegi-Sunter heritage but is an independent alternative, not built on or integrating with Splink.",
+          "source": "https://seer.cancer.gov/tools/matchpro/"
+        },
+        {
+          "name": "dedupe / dedupe.io (dedupeio/dedupe)",
+          "what_it_is": "Open-source Python library for fuzzy matching, deduplication and entity resolution using active learning, plus dedupe.io, the hosted cloud service built on it.",
+          "relationship": "ALTERNATIVE_NOT_TIED",
+          "confidence": "high",
+          "how_tied": "NOT tied to Splink. An independent open-source/SaaS entity-resolution peer; users choose it instead of Splink. No dependency or integration relationship.",
+          "source": "https://github.com/dedupeio/dedupe"
+        },
+        {
+          "name": "Zingg (zinggAI/zingg)",
+          "what_it_is": "Open-source (Python/Java, Spark-based) ML tool for master data management, identity/entity resolution and deduplication using active learning; runs on Spark and connects to Snowflake, Databricks, RDBMS, etc.",
+          "relationship": "ALTERNATIVE_NOT_TIED",
+          "confidence": "high",
+          "how_tied": "NOT tied to Splink. A separate, independently maintained entity-resolution project (different vendor/org) that competes with Splink in the scalable-linkage space. No code or product integration.",
+          "source": "https://github.com/zinggAI/zingg"
+        },
+        {
+          "name": "Python Record Linkage Toolkit (recordlinkage, J535D165)",
+          "what_it_is": "Open-source Python library/toolkit for building entity-resolution and record-linkage systems (indexing, comparison, classification), commonly used for prototyping.",
+          "relationship": "ALTERNATIVE_NOT_TIED",
+          "confidence": "high",
+          "how_tied": "NOT tied to Splink. A separate open-source Python linkage library and a direct peer/alternative. Splink does not depend on it; both happen to use FEBRL demo data, which is incidental, not integration.",
+          "source": "https://github.com/J535D165/recordlinkage"
+        },
+        {
+          "name": "Apache Spark MLlib",
+          "what_it_is": "The general-purpose machine-learning library within Apache Spark (classification, clustering, feature transforms). Sometimes used to hand-build distributed matching/entity-resolution pipelines.",
+          "relationship": "ALTERNATIVE_NOT_TIED",
+          "confidence": "medium",
+          "how_tied": "NOT tied to Splink as a record-linkage product. It is a generic ML toolkit that teams could use to roll their own linkage instead of adopting Splink, hence listed as an alternative. Caveat: it is not a dedicated linkage tool, and although Splink historically ran on Spark, Splink uses Spark SQL as a backend rather than depending on MLlib \u2014 so the 'alternative' framing is the appropriate, low-coupling classification here.",
+          "source": "https://spark.apache.org/mllib/"
+        }
+      ],
+      "summary": "This segment separates Splink's LINEAGE (what it derives from) from the ALTERNATIVES that governments/orgs use instead of Splink \u2014 none of which are 'tied to' Splink. LINEAGE: Splink is a Python/SQL implementation of the Fellegi-Sunter (1969) probabilistic-linkage model; MoJ's own gov.uk documentation states it was built to extend the R package fastLink (Enamorado/Fifield/Imai, Harvard/Princeton) \u2014 fastLink's EM-on-Fellegi-Sunter approach is the direct algorithmic predecessor. The project was originally named 'sparklink' (Spark + link) and the repo has since moved to /splink; early MoJ repos splink_analysis_match and splink_scalaudfs represent the Spark-era genesis. ALTERNATIVES (explicitly NOT tied): in-house/commercial government tools \u2014 US Census BigMatch, StatCan G-Link, AIHW DALI (which AIHW is reportedly considering replacing WITH Splink, confirming it is a competing predecessor), NSW CHeReL's ChoiceMaker, and WA's bespoke DLS3; the academic/health tool FEBRL; PPRL vendors Datavant and NCI/SEER Match*Pro; and open-source peers dedupe/dedupe.io, Zingg, the Python recordlinkage toolkit, and (loosely) Spark MLlib. All alternatives are independent products competing in the same record-linkage space with no code dependency or productised integration with Splink; many share only the common Fellegi-Sunter heritage.",
+      "caveats": "No invented dependents. All items are corroborated by primary or strong secondary sources (GitHub repos, gov.uk/MoJ, StatCan catalogue, AIHW, Census working papers, SEER, vendor sites, IJPDS, ANU). Lower-confidence/uncorroborated points flagged: (1) splink_analysis_match/splink_scalaudfs are placed as lineage on the basis of shared MoJ org + Fellegi-Sunter-in-Spark purpose, but their exact developmental relationship to the final Splink package is not fully documented (medium). (2) Spark MLlib is a generic ML library, not a dedicated linkage tool; classifying it as an ALTERNATIVE follows the lead's framing but is a loose fit \u2014 Splink uses Spark SQL as a backend, not MLlib, so it is neither a Splink dependency nor a true like-for-like competitor (medium). (3) The FEBRL and recordlinkage demo-dataset reuse by Splink is shared sample data only and explicitly NOT an integration or dependency \u2014 both remain alternatives. (4) 'NSW ChoiceMaker' from the lead resolves to CHeReL (NSW/ACT) using ChoiceMaker Technologies' commercial software. (5) The Fellegi-Sunter citation year is 1969 (JASA), per the lead. Per-source URLs are the best primary/canonical pages found; some confirmations came via secondary literature (PMC/IJPDS/researchgate) where vendor pages were thin."
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "overclaims": [
+        "Spark MLlib as ALTERNATIVE_NOT_TIED is a category error, not just a weak alternative. MLlib is a generic ML library, not a record-linkage product; it is not a like-for-like alternative to Splink in the way G-Link/DALI/dedupe/Zingg are. The item's own caveat concedes 'it is neither a Splink dependency nor a true like-for-like competitor' and that Splink uses Spark SQL (not MLlib) as a backend. Listing it alongside dedicated linkage tools risks implying a closer relationship than exists. Recommend downgrading to a note or cutting.",
+        "splink_analysis_match / splink_scalaudfs LINEAGE (confidence: medium) is correctly hedged, but the source only proves the repos exist under the same MoJ org with a Fellegi-Sunter-in-Spark purpose; it does NOT document that these specific repos fed into the released Splink package. The 'represent the early Spark-based work that fed into the Splink package' phrasing slightly overstates a developmental link that the cited source does not establish. The medium confidence and caveat (4) appropriately flag this, so it is a minor overclaim, not a fabrication.",
+        "The single source URL per item is sometimes a thin/non-primary page for the 'NOT tied' framing (e.g., the BigMatch working paper, the AIHW services page). The actual ALTERNATIVE_NOT_TIED corroboration (e.g., AIHW considering Splink as DALI replacement) comes from a secondary source not listed as the item's primary URL. This is a sourcing-hygiene gap, not a false claim."
+      ],
+      "strongest_items": [
+        "fastLink (LINEAGE, high) \u2014 directly confirmed by MoJ's own gov.uk publication, which states Splink 'builds on fastLink's implementation in R of an Expectation-Maximisation algorithm to estimate a Fellegi-Sunter linkage model.' Correctly tagged as algorithmic predecessor, NOT a runtime dependency (Splink is Python/SQL). Primary source verified.",
+        "sparklink (LINEAGE, high) \u2014 the GitHub repo literally carries the banner 'THIS REPO HAS MOVED to github.com/moj-analytical-services/splink.' Same maintainers, same project, verified directly.",
+        "Fellegi-Sunter 1969 (LINEAGE, high) \u2014 canonical theoretical foundation; Splink docs dedicate a theory topic guide to it and gov.uk/MoJ materials describe Splink as estimating an FS model via EM. Correctly framed as conceptual ancestry, not software dependency.",
+        "AIHW DALI (ALTERNATIVE_NOT_TIED, high) \u2014 confirmed independent SAS-based tool; the 'AIHW considering replacing DALI WITH Splink' claim is corroborated (realworlddatascience.net case study) and actually reinforces that DALI is a competing tool, not a Splink integration. Relationship tag is correct.",
+        "FEBRL and recordlinkage (ALTERNATIVE_NOT_TIED, high) \u2014 verified that both Splink and recordlinkage reuse FEBRL demo datasets, and the segment correctly characterizes this as shared sample data and explicitly NOT a code dependency or integration. The relationship tag is correctly NOT tied.",
+        "Match*Pro (ALTERNATIVE_NOT_TIED, high) \u2014 SEER source confirms Fellegi-Sunter framework plus raw-PII and PPRL/hashed-token support; correctly tagged as independent alternative sharing only FS heritage."
+      ],
+      "items_to_remove_or_downgrade": [
+        "Apache Spark MLlib \u2014 downgrade from ALTERNATIVE_NOT_TIED to a parenthetical note, or cut. It is not a record-linkage product and not a true alternative; the segment's own caveat admits this. Keeping it as a listed 'alternative' is the loosest fit in the segment.",
+        "splink_analysis_match / splink_scalaudfs \u2014 keep but retain the medium confidence; soften 'fed into the Splink package' to 'same-org Spark-era artefacts of uncertain developmental relationship,' since the source establishes existence/purpose but not the causal contribution to the released package."
+      ],
+      "notes": "Verified via primary sources: MoJ gov.uk Splink publication (fastLink/FS/EM lineage), sparklink GitHub redirect banner, splink_analysis_match repo description, SEER Match*Pro page, realworlddatascience.net (AIHW DALI->Splink consideration), and Splink/recordlinkage FEBRL demo-data reuse. CONFIRMED: every relationship tag is directionally correct. No ALTERNATIVE_NOT_TIED item is implied to use, depend on, or integrate with Splink \u2014 the segment is disciplined about this, explicitly stating each is independent and sharing at most common Fellegi-Sunter heritage. The two demo-data overlaps (FEBRL, recordlinkage) are correctly flagged as shared sample data, NOT integration. No fabricated dependents. Overall the segment is honest and well-hedged; it pre-empts its own weak points in the caveats. Only genuine soft spots are the Spark MLlib category fit and the under-documented causal link for the early MoJ repos, both already flagged at medium confidence by the author. Verdict SOLID rather than perfect because of the MLlib loose fit and per-item primary-source thinness on a few ALTERNATIVE items (corroboration exists but is not always the listed URL)."
+    }
+  }
+]
