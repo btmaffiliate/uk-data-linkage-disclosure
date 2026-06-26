@@ -5,6 +5,7 @@ Read/send in this order:
 
 | # | File | What it is |
 |---|------|-----------|
+| ★ | **START HERE — What They Did: The Case** (5 pp) | The whole case in one document — the two systems (Met/Palantir trial and MoJ Splink) side by side, the stonewalled questions, what the record shows anyway, the "struck down next door" legal frame, and the asks. The summary to read first and hand to anyone who has five minutes. |
 | 00 | **The Questions That Matter** (2 pp) | The one-page spine — the "why" questions, built to be unbreakable (anchored to confirmed facts or conditional; can't be dodged with "we don't hold that"). Lift straight into Parliament. |
 | 01 | **Point 1 — The Oversight Question** (4 pp) | The Met–Palantir threshold deep-dive. The pilot escaped MOPAC scrutiny; the £500k approval line (MOPAC para 4.8) and the Procurement Act anti-subdivision rule explain *why the question is legitimate*. **Figures are reported, not confirmed — put to the Met as questions, not asserted.** |
 | 02 | **Part 1 — Their Questions, Answered** (9 pp) | The four Home Office WPQs (UINs 7091/7092/7093/7202) the Government stonewalled, answered from the public record: verbatim question → verbatim non-answer → what the record shows. |
