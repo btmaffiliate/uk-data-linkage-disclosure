@@ -1,0 +1,170 @@
+{
+  "total": 233,
+  "ok": 192,
+  "suspect": [
+    {
+      "url": "https://breakingdefense.com/2025/08/army-consolidates-dozens-of-palantir-software-contracts-into-one-deal-worth-up-to-10-billion/",
+      "status": 403
+    },
+    {
+      "url": "https://edm.parliament.uk/early-day-motion/65235/government-contract-with-palantir-technologies",
+      "status": 403
+    },
+    {
+      "url": "https://hansard.parliament.uk/commons/2026-02-10/debates/FECED111-4FA8-4343-BFAF-18D6C13808D0/MinistryOfDefencePalantirContracts",
+      "status": 403
+    },
+    {
+      "url": "https://lobbycanada.gc.ca/en/investigations/reports-on-investigation/david-macnaughton-president-of-palantir-canada/",
+      "status": "ERR:RemoteDisconnected"
+    },
+    {
+      "url": "https://newsroom.parexel.com/news-releases/news-release-details/parexel-and-palantir-expand-collaboration-accelerate-clinical",
+      "status": "ERR:TimeoutError"
+    },
+    {
+      "url": "https://orangeslices.ai/nih-inks-order-for-palantir-evaluation-license-to-support-llm4dms-pilot/",
+      "status": 403
+    },
+    {
+      "url": "https://seekingalpha.com/article/4550266-palantir-why-foundrycon-milestone-moment",
+      "status": 403
+    },
+    {
+      "url": "https://seekingalpha.com/news/4549904-palantir-extends-multi-year-data-platform-contract-with-airbus",
+      "status": 403
+    },
+    {
+      "url": "https://www.americanimmigrationcouncil.org/blog/ice-immigrationos-palantir-ai-track-immigrants/",
+      "status": 403
+    },
+    {
+      "url": "https://www.axios.com/local/denver/2025/05/01/palantir-deportations-ice-immigration-trump",
+      "status": 403
+    },
+    {
+      "url": "https://www.bloomberg.com/news/articles/2024-01-12/palantir-israel-agree-to-strategic-partnership-for-battle-tech",
+      "status": 403
+    },
+    {
+      "url": "https://www.business-humanrights.org/en/latest-news/dutch-pension-fund-divests-from-palantir-citing-social-responsibility/",
+      "status": 403
+    },
+    {
+      "url": "https://www.business-humanrights.org/en/latest-news/investor-pressure-on-palantir-builds-in-response-to-human-rights-and-governance-concerns-sparking-examples-of-divestment/",
+      "status": 403
+    },
+    {
+      "url": "https://www.business-humanrights.org/en/latest-news/israel-opt-norwegian-investor-storebrand-divests-from-palantir-over-israeli-ai-surveillance-of-palestinians/",
+      "status": 403
+    },
+    {
+      "url": "https://www.business-humanrights.org/en/latest-news/nbim-announces-it-will-vote-in-favor-of-palantir-publishing-a-human-rights-impact-assessment/",
+      "status": 403
+    },
+    {
+      "url": "https://www.business-humanrights.org/en/latest-news/palantir-allegedly-supplying-israel-with-ai-tools-amid-israels-war-in-gaza/",
+      "status": 403
+    },
+    {
+      "url": "https://www.business-humanrights.org/en/latest-news/palantir-response-to-the-allegations-over-its-complicity-in-war-crimes-amid-israels-war-in-gaza/",
+      "status": 403
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20210528005069/en/Palantir-Awarded-%24111m-Contract-to-Provide-Mission-Command-Platform-for-the-United-States-Special-Operations-Command",
+      "status": 403
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20220105005384/en/Palantir-Technologies-to-Expand-in-South-Korea",
+      "status": 403
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20220210005312/en/Palantir-Technologies-Extends-Partnership-with-Ferrari-to-Bring-Data-Driven-Performance-Decisions-to-Race-Operations",
+      "status": 403
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20230421005433/en/Palantir-to-Support-Ukrainian-Prosecutor-Generals-Investigation-into-War-Crimes",
+      "status": 403
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20230525005248/en/Palantir-and-Ministry-of-Digital-Transformation-of-Ukraine-strike-reconstruction-partnership",
+      "status": 403
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20240304069003/en/Palantir-and-Ministry-of-Economy-of-Ukraine-Sign-Demining-Partnership",
+      "status": 403
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20240605318018/en/palantir-to-unveil-new-customers-and-product-announcements-at-aipcon/",
+      "status": 403
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20241209729523/en/U.S.-Special-Operations-Command-Expands-Contract-with-Palantir-to-Deliver-Advanced-AI-and-Mission-Manager-Capabilities",
+      "status": 403
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20250812905441/en/Palantir-and-SOMPO-Expand-Partnership-in-Multi-Year-Agreement",
+      "status": 403
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20251210738739/en/U.S.-Navy-Partners-with-Palantir-to-Modernize-Shipbuilding-Supply-Chain-and-Accelerate-Shipbuilding",
+      "status": 403
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20260210301221/en/Palantir-and-Airbus-Extend-Strategic-Collaboration",
+      "status": 403
+    },
+    {
+      "url": "https://www.businesswire.com/news/home/20260330921521/en/Palantir-Technologies-Announces-the-Renewal-and-Expansion-of-Its-Partnership-With-Stellantis-for-an-Additional-Five-Years",
+      "status": 403
+    },
+    {
+      "url": "https://www.eurasiareview.com/06092025-software-on-the-front-line-how-palantir-is-aiding-ukraine-in-its-war-with-russia-analysis/",
+      "status": 403
+    },
+    {
+      "url": "https://www.finance.senate.gov/ranking-members-news/wyden-ocasio-cortez-demand-answers-from-palantir-about-plans-to-build-irs-mega-database-of-american-citizens",
+      "status": 403
+    },
+    {
+      "url": "https://www.israelhayom.com/2025/09/01/watch-palantirs-alex-karp-shuts-down-pro-palestinian-heckler-in-resurfaced-clip/",
+      "status": 403
+    },
+    {
+      "url": "https://www.itv.com/news/london/2026-06-25/mayor-u-turns-on-met-police-tech-contract-after-blocking-50m-palantir-contract",
+      "status": "ERR:TimeoutError"
+    },
+    {
+      "url": "https://www.kedglobal.com/shipping-shipbuilding/newsView/ked202209210008",
+      "status": 502
+    },
+    {
+      "url": "https://www.lettertopalantiremployees.com/",
+      "status": "ERR:URLError"
+    },
+    {
+      "url": "https://www.news10.com/capitol/pension-palantir-divestment-petition/",
+      "status": 403
+    },
+    {
+      "url": "https://www.ombudsman.parliament.nz/sites/default/files/2022-01/Request%20for%20expenditure%20on%20goods%20and%20services%20provided%20by%20Palantir%20Technologies.pdf",
+      "status": 403
+    },
+    {
+      "url": "https://www.rocu.police.uk/news/2025/july/police-pilot-advanced-data-platform-to-tackle-serious-and-organised-crime/",
+      "status": 403
+    },
+    {
+      "url": "https://www.techmonitor.ai/government-computing/palantir-homes-for-ukraine-contracts-dluhc/",
+      "status": 403
+    },
+    {
+      "url": "https://www.timesofisrael.com/norways-storebrand-divests-from-palantir-over-israeli-ai-surveillance-of-palestinians/",
+      "status": 404
+    },
+    {
+      "url": "https://www.whatdotheyknow.com/request/contracts_with_palantir",
+      "status": 403
+    }
+  ]
+}
