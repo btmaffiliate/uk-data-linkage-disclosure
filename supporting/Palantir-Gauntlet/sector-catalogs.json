@@ -3515,5 +3515,767 @@
       ],
       "notes": "Overall the catalog is sourced with real, checkable URLs (BVerfG, EDPS, lobbycanada.gc.ca, foxglove, UN unispal, heise, BHRRC, NL Times, City AM all verified live) and is unusually disciplined about tagging alleged-vs-confirmed and reported-vs-primary; the gaps section is honest. Two material defects pull it to MIXED rather than SOLID: (1) a FACTUAL MISSTATEMENT of the Canada Lobbying Commissioner outcome (presented as a breach finding when the report found NO breach) \u2014 this is a fabricated outcome, the most serious issue; and (2) a one-year date error on the Palantir AGM ('3 June 2025' should be '3 June 2026'), repeated in the summary, the deployment, and value_dates. The cited URLs themselves are genuine in both cases; the errors are in the asserted facts. No invented URLs were found. Allegation tagging (Gaza/Lavender/AIP), blocked/ended tagging (Hesse, Europol, MOPAC, divestments), and reported-value discipline are all handled correctly. Fix the Canada prose and the AGM year and this becomes SOLID."
     }
+  },
+  {
+    "key": "europe-rest",
+    "title": "Rest of Europe & EU institutions (excluding Germany, covered separately)",
+    "result": {
+      "sector": "Rest of Europe & EU institutions (excluding Germany)",
+      "summary": "Palantir's footprint across Europe-ex-Germany and EU bodies spans intelligence, policing, defence, and pandemic response, with a marked recent reversal driven by sovereignty and human-rights concerns. EU-institution use centred on Europol, which ran Palantir Gotham (via a 2012 Capgemini-awarded \"Europol Analysis System\" contract) for operational/counter-terror analysis until Europol says it terminated the licence in 2021; the EDPS's January 2022 erasure order against Europol (datasets lacking Data Subject Categorisation) is the major adjudication, though it does not name Palantir. National policing: Denmark's POL-INTEL (Gotham, won via 2016 tender, operational) is the clearest live deployment; Norway's Project Omnia (Gotham, bought 2016) FAILED and was cancelled in 2020. Intelligence: France's DGSI ran Palantir since 2016 (renewed 2022 and Dec 2025) but in June 2026 announced it will replace Palantir with French ChapsVision (ArgonOS) on sovereignty grounds, triggered by a US restriction on foreign access to Anthropic's \"Fable\" model \u2014 Palantir tools stay live during a 1-3 year migration. Defence: Poland signed a letter of intent (Oct 2025) for data/AI/cybersecurity (value undisclosed; early-stage). Pandemic-era Foundry deployments in the Netherlands (safety regions COP) and Greece (PM dashboard, controversial, no procurement registration/DPIA) were operational in 2020-21. Ukraine's Prosecutor-General's Office signed with Palantir UK (2023) for war-crimes evidence processing (pro bono). Investor backlash is a distinct strand: Dutch fund ABP divested its ~\u20ac825m stake (Q4 2025); Norway's Storebrand divested ~$24m (2024); Norway's $2.3tn sovereign wealth fund (NBIM) voted FOR a human-rights review at the June 2026 AGM. No sourced confirmation of a direct Frontex-Palantir contract was found (Frontex is reported to use Microsoft BI; Palantir-Frontex remains unverified).",
+      "deployments": [
+        {
+          "customer": "Europol (European Union Agency for Law Enforcement Cooperation)",
+          "country": "EU institutions (The Hague, Netherlands)",
+          "product": "Palantir Gotham",
+          "status_tag": "ended",
+          "what_done": "Operational/counter-terrorism analysis: data fusion and network analysis across phone records, social media, images and metadata. Gotham entered Europol's core 'Europol Analysis System' via a 2012 contract awarded to Capgemini; Europol used Gotham for 'operational analysis' alongside an iBase repository. Europol states it terminated the Palantir/Gotham licence in 2021.",
+          "value_dates": "Software embedded via 2012 Capgemini-awarded contract; in use through ~2016-2021; Europol says licence terminated 2021. No public contract value for the Palantir component.",
+          "controversies_adjudications": [
+            "EDPS inquiry (opened 2019) led to a 3 Jan 2022 order requiring Europol to erase datasets lacking Data Subject Categorisation (6-month categorise-or-erase for new data; 12 months for legacy data) with quarterly reporting; the order does not name Palantir.",
+            "A later Europol Regulation amendment retroactively legalised the data, prompting EDPS to take legal action (the action was later ruled inadmissible by the General Court).",
+            "Transparency: journalists seeking documents on Europol-Palantir received only 2 of 69; disclosures showed Europol had considered legal action against Palantir."
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "title": "Behind closed doors: Europol's opaque relations with tech companies",
+              "url": "https://statewatch.org/analyses/2025/behind-closed-doors-europol-s-opaque-relations-with-tech-companies/",
+              "date": "2025"
+            },
+            {
+              "title": "EU: Europol data repositories 'beyond iBase and Palantir' (Statewatch)",
+              "url": "https://www.statewatch.org/news/2021/october/eu-europol-data-repositories-beyond-ibase-and-palantir/",
+              "date": "2021-10"
+            },
+            {
+              "title": "EDPS orders Europol to erase data concerning individuals with no established link to criminal activity",
+              "url": "https://www.edps.europa.eu/press-publications/press-news/press-releases/2022/edps-orders-europol-erase-data-concerning_en",
+              "date": "2022-01-10"
+            },
+            {
+              "title": "EDPS Orders Erasure of Personal Data Not Categorised by Europol (eucrim)",
+              "url": "https://eucrim.eu/news/edps-orders-erasure-of-personal-data-not-categorised-by-europol/",
+              "date": "2022"
+            },
+            {
+              "title": "Parliamentary question: Use of Palantir software by Europol (E-000951/2022)",
+              "url": "https://www.europarl.europa.eu/doceo/document/E-9-2022-000951_EN.html",
+              "date": "2022"
+            }
+          ]
+        },
+        {
+          "customer": "Danish National Police (Rigspolitiet)",
+          "country": "Denmark",
+          "product": "Palantir Gotham (customised as 'POL-INTEL')",
+          "status_tag": "operational",
+          "what_done": "Data integration and analysis platform connecting roughly twelve police and non-police databases (e.g. National Motor Vehicle registry, National Photo registry, POLSAS case-handling system, Interpol). Compiles, visualises and analyses data from police databases, social media, CCTV and automatic number-plate recognition.",
+          "value_dates": "Palantir won a public tender in 2016 to customise Gotham; system live thereafter and still in use.",
+          "controversies_adjudications": [
+            "Public debate over 'predictive policing' and mass surveillance.",
+            "Denmark introduced a new legal framework for predictive policing (criticised by EDRi).",
+            "Academic scrutiny (Tandfonline 2024; Sage 2025) on privatisation/'scientification' of policing."
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "title": "A world of Palantir \u2013 ontological politics in the Danish police's POL-INTEL",
+              "url": "https://www.tandfonline.com/doi/full/10.1080/1369118X.2024.2410255",
+              "date": "2024"
+            },
+            {
+              "title": "Scientification through privatization: POL-INTEL in Denmark (Sage)",
+              "url": "https://journals.sagepub.com/doi/10.1177/13624806251345461",
+              "date": "2025"
+            },
+            {
+              "title": "New legal framework for predictive policing in Denmark (EDRi)",
+              "url": "https://edri.org/our-work/new-legal-framework-for-predictive-policing-in-denmark/",
+              "date": "2021"
+            }
+          ]
+        },
+        {
+          "customer": "Norwegian Police Directorate (Politidirektoratet)",
+          "country": "Norway",
+          "product": "Palantir Gotham (Project 'Omnia')",
+          "status_tag": "ended",
+          "what_done": "Intended to let police find links between cases, persons, networks and incidents to solve cases faster. Project failed to integrate with Norway's siloed legacy systems and was cancelled.",
+          "value_dates": "Gotham purchased 2016 for ~EUR 7.3m; intended go-live 2018; Police Directorate announced cancellation Feb 2020 after spending ~NOK 100m.",
+          "controversies_adjudications": [
+            "Failed/abandoned project; ~NOK 100m spent for no operational system.",
+            "Research (Tandfonline 2024) documents internal resistance and how the software's embedded classifications shaped police work."
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "title": "Resistance to platformization: Palantir in the Norwegian police (Tandfonline)",
+              "url": "https://www.tandfonline.com/doi/full/10.1080/1369118X.2024.2325533",
+              "date": "2024"
+            },
+            {
+              "title": "The digitalisation of the police is not neutral, but political (NordForsk)",
+              "url": "https://www.nordforsk.org/news/digitalisation-police-not-neutral-political",
+              "date": "2024"
+            }
+          ]
+        },
+        {
+          "customer": "Direction g\u00e9n\u00e9rale de la s\u00e9curit\u00e9 int\u00e9rieure (DGSI)",
+          "country": "France",
+          "product": "Palantir (big-data analysis platform; reported Gotham-class) \u2014 being replaced by ChapsVision ArgonOS",
+          "status_tag": "ended",
+          "what_done": "Mass-dataset analysis for domestic intelligence/counter-terrorism. France has decided to phase Palantir out in favour of French ChapsVision's ArgonOS AI data-processing platform; Palantir tools remain operational during a 1-3 year migration.",
+          "value_dates": "Contract held since 2016; renewed 2022 and again (3-year extension) announced Dec 2025; PM S\u00e9bastien Lecornu announced replacement on 16 June 2026. Migration expected to take 1-3 years. No public contract values disclosed.",
+          "controversies_adjudications": [
+            "Sovereignty-driven reversal: Lecornu framed it as avoiding dependence on partners able to 'cut off access'.",
+            "Multiple outlets tie the trigger to a US restriction on foreign nationals' access to Anthropic's 'Fable' AI model.",
+            "Accompanied by \u20ac655m AI investment through 2030 and a Mistral-powered state assistant."
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "title": "French spy service drops Palantir in favour of French company, says Lecornu (Euronews)",
+              "url": "https://www.euronews.com/business/2026/06/16/dgsi-drops-palantir-for-french-firm-says-sebastien-lecornu",
+              "date": "2026-06-16"
+            },
+            {
+              "title": "ChapsVision to replace Palantir in major contract with French intelligence agency (Sifted)",
+              "url": "https://sifted.eu/articles/chapsvision-to-replace-palantir-in-major-contract-with-french-intelligence-agency",
+              "date": "2026-06"
+            },
+            {
+              "title": "France's Security Service to Replace Palantir With Local Software (Bloomberg)",
+              "url": "https://www.bloomberg.com/news/articles/2026-06-16/french-security-service-to-replace-palantir-with-local-software",
+              "date": "2026-06-16"
+            }
+          ]
+        },
+        {
+          "customer": "Polish Ministry of National Defence / Polish Armed Forces",
+          "country": "Poland",
+          "product": "Palantir solutions for data integration, AI and cybersecurity (battlefield management/logistics reportedly of interest; Maven-class)",
+          "status_tag": "proposed",
+          "what_done": "Letter of intent to implement Palantir's data/AI/cybersecurity solutions within the Polish Armed Forces; Warsaw reportedly interested in battlefield-management and logistics systems. Follows workshops/exercises evaluating AI automation tools.",
+          "value_dates": "Letter of intent signed 27 Oct 2025 by Defence Minister W\u0142adys\u0142aw Kosiniak-Kamysz and Palantir CEO Alex Karp. Contract value undisclosed; not yet a binding contract.",
+          "controversies_adjudications": [
+            "No adjudications specific to Poland found; OpenDemocracy's 'ex-MoD officials' reporting concerns the UK, not Poland."
+          ],
+          "confidence": "medium",
+          "citations": [
+            {
+              "title": "Poland Signs Palantir, Anduril Deals Amid Record Army Spending (Bloomberg)",
+              "url": "https://www.bloomberg.com/news/articles/2025-10-27/poland-signs-palantir-anduril-deals-amid-record-army-spending",
+              "date": "2025-10-27"
+            },
+            {
+              "title": "Palantir to Sign Letter of Intent With Polish Defense Ministry (Bloomberg)",
+              "url": "https://www.bloomberg.com/news/articles/2025-10-26/palantir-to-sign-letter-of-intent-with-polish-defense-ministry",
+              "date": "2025-10-26"
+            }
+          ]
+        },
+        {
+          "customer": "Netherlands COVID-19 response (six southern safety regions / 'veiligheidsregio's')",
+          "country": "Netherlands",
+          "product": "Palantir Foundry (COVID-19 Common Operating Picture)",
+          "status_tag": "ended",
+          "what_done": "Powered a COVID-19 Common Operating Picture integrating publicly accessible demographic, economic, traffic/mobility and COVID data to support crisis response by authorised team members in six southern safety regions.",
+          "value_dates": "Deployed during the 2020-21 pandemic (per Palantir's own blog).",
+          "controversies_adjudications": [
+            "Part of the wider European pandemic-contracts scrutiny (Guardian, NBC).",
+            "Extent of direct RIVM/Health Ministry use via Palantir not established in sources reviewed."
+          ],
+          "confidence": "medium",
+          "citations": [
+            {
+              "title": "Powering pandemic response in the Netherlands (Palantir Blog)",
+              "url": "https://blog.palantir.com/powering-pandemic-response-in-the-netherlands-9ecc608081c",
+              "date": "2020"
+            },
+            {
+              "title": "Seeing stones: pandemic reveals Palantir's troubling reach in Europe (Guardian, reposted)",
+              "url": "https://1covidnews.com/2021/04/02/seeing-stones-pandemic-reveals-palantirs-troubling-reach-in-europe-world-news/",
+              "date": "2021-04-02"
+            }
+          ]
+        },
+        {
+          "customer": "Greek Government (Prime Minister's office)",
+          "country": "Greece",
+          "product": "Palantir Foundry",
+          "status_tag": "ended",
+          "what_done": "Per the government, a dashboard summarising key COVID-19 data for the Prime Minister. The contract (seen by the Guardian) refers to categories of data that can be processed, including personal data; the government denies sharing patient data, while Palantir says processing was limited to open-source pandemic and high-level state-owned demographic data.",
+          "value_dates": "Zero-cost agreement reportedly beginning March 2020.",
+          "controversies_adjudications": [
+            "Not registered on the public procurement system; no Data Protection Impact Assessment carried out \u2014 alleged GDPR breach.",
+            "Subject of EU Parliament written question E-007026/2020."
+          ],
+          "confidence": "medium",
+          "citations": [
+            {
+              "title": "Parliamentary question: Non-transparent partnership of the Greek Government with Palantir (E-007026/2020)",
+              "url": "https://www.europarl.europa.eu/doceo/document/E-9-2020-007026_EN.html",
+              "date": "2020"
+            },
+            {
+              "title": "Seeing stones: pandemic reveals Palantir's troubling reach in Europe (Guardian, reposted)",
+              "url": "https://1covidnews.com/2021/04/02/seeing-stones-pandemic-reveals-palantirs-troubling-reach-in-europe-world-news/",
+              "date": "2021-04-02"
+            }
+          ]
+        },
+        {
+          "customer": "Office of the Prosecutor General of Ukraine (OPG)",
+          "country": "Ukraine",
+          "product": "Palantir (war-crimes evidence processing; entity: Palantir Technologies UK Ltd)",
+          "status_tag": "operational",
+          "what_done": "Enables investigators on the ground and across Europe to share, integrate and process data relating to 78,000+ registered war crimes \u2014 integrating open-source intelligence, satellite imagery, drone footage, timestamped social posts and intercepts to map and structure evidence for court use.",
+          "value_dates": "Announced 21 April 2023. Provided pro bono ('not charging for the war-crimes work').",
+          "controversies_adjudications": [
+            "No specific adjudication; part of wider scrutiny of Palantir's reach.",
+            "Ukraine is outside the EU but included as a 'rest of Europe' lead."
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "title": "Palantir to Support Ukrainian Prosecutor-General's Investigation into War Crimes (Palantir IR)",
+              "url": "https://investors.palantir.com/news-details/2023/Palantir-to-Support-Ukrainian-Prosecutor-Generals-Investigation-into-War-Crimes/",
+              "date": "2023-04-21"
+            },
+            {
+              "title": "Data company Palantir to help Ukraine prosecute alleged Russian war crimes (CNBC)",
+              "url": "https://www.cnbc.com/2023/04/22/data-company-palantir-to-help-ukraine-prosecute-alleged-russian-war-crimes.html",
+              "date": "2023-04-22"
+            }
+          ]
+        },
+        {
+          "customer": "Stichting Pensioenfonds ABP (Dutch civil service pension fund) \u2014 investor, not deployment",
+          "country": "Netherlands",
+          "product": "N/A (equity holding divested)",
+          "status_tag": "ended",
+          "what_done": "Largest Dutch pension fund sold its entire Palantir shareholding citing socially responsible investment, after criticism (originating from Follow The Money) over Palantir's work with US ICE and the Israeli military.",
+          "value_dates": "Held ~\u20ac825m of Palantir shares at end-Sep 2025; fully sold by end-Dec 2025 (Q4 2025).",
+          "controversies_adjudications": [
+            "Divestment is the social-responsibility adjudication; cites Amnesty International warnings on human-rights implications of Palantir software."
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "title": "Largest Dutch pension fund cuts ties with controversial tech firm Palantir (NL Times)",
+              "url": "https://nltimes.nl/2026/04/02/largest-dutch-pension-fund-cuts-ties-controversial-tech-firm-palantir",
+              "date": "2026-04-02"
+            },
+            {
+              "title": "Dutch civil service pension fund has ditched its Palantir stake (DutchNews.nl)",
+              "url": "https://www.dutchnews.nl/2026/04/dutch-civil-service-pension-fund-has-ditched-its-palantir-stake/",
+              "date": "2026-04"
+            }
+          ]
+        },
+        {
+          "customer": "Storebrand (Norwegian asset manager) \u2014 investor, not deployment",
+          "country": "Norway",
+          "product": "N/A (equity holding divested)",
+          "status_tag": "ended",
+          "what_done": "Excluded/divested Palantir over its provision of products and services (incl. AI-based predictive policing systems) to Israel for use in the occupied Palestinian territories, citing risk of violations of international humanitarian law.",
+          "value_dates": "Divested in 2024; had held ~NOK 262m (~USD 24m) of Palantir shares.",
+          "controversies_adjudications": [
+            "Storebrand reported no response from Palantir to multiple information requests since April 2024."
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "title": "Norway's Storebrand divests from Palantir over use of its software by Israeli forces (Times of Israel)",
+              "url": "https://www.timesofisrael.com/norways-storebrand-divests-from-palantir-over-use-of-its-software-by-israeli-forces/",
+              "date": "2024"
+            },
+            {
+              "title": "Israel/OPT: Norwegian investor Storebrand divests from Palantir (BHRRC)",
+              "url": "https://www.business-humanrights.org/en/latest-news/israel-opt-norwegian-investor-storebrand-divests-from-palantir-over-israeli-ai-surveillance-of-palestinians/",
+              "date": "2024"
+            }
+          ]
+        },
+        {
+          "customer": "Norges Bank Investment Management (Norway's sovereign wealth fund) \u2014 investor, not deployment",
+          "country": "Norway",
+          "product": "N/A (shareholder action)",
+          "status_tag": "operational",
+          "what_done": "$2.3tn fund announced it would vote FOR shareholder proposals at Palantir's AGM requiring a human-rights due-diligence/impact assessment and greater transparency on political contributions, citing concern over Palantir's work with US immigration enforcement and the Israeli government.",
+          "value_dates": "Voting intention published ahead of the 3 June 2026 AGM; fund held ~1.22% of shares / 0.89% of votes at end-2025.",
+          "controversies_adjudications": [
+            "Proposals expected to fail because founders (Thiel, Karp, Cohen) control the board in perpetuity.",
+            "Central proposal filed by the Congregation of the Sisters of St Joseph of Peace, citing an 84% rise in US immigration detentions since early 2025."
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "title": "Norway Wealth Fund Backs Human Rights Review at Palantir (Bloomberg)",
+              "url": "https://www.bloomberg.com/news/articles/2026-05-29/-2-3-trillion-norway-fund-backs-human-rights-review-at-palantir",
+              "date": "2026-05-29"
+            },
+            {
+              "title": "NBIM announces it will vote in favor of Palantir publishing a human rights impact assessment (BHRRC)",
+              "url": "https://www.business-humanrights.org/en/latest-news/nbim-announces-it-will-vote-in-favor-of-palantir-publishing-a-human-rights-impact-assessment/",
+              "date": "2026-05"
+            }
+          ]
+        },
+        {
+          "customer": "Frontex (European Border and Coast Guard Agency)",
+          "country": "EU institutions (Warsaw)",
+          "product": "Unconfirmed (no Palantir product verified; Frontex reported to use Microsoft BI)",
+          "status_tag": "alleged",
+          "what_done": "Frequently cited in campaigning material as among agencies using data-mining firms 'like Palantir', but no sourced, specific Frontex-Palantir contract was found. Frontex's databases are reported to rely on Microsoft BI; Palantir products with Frontex remain unverified.",
+          "value_dates": "No verifiable dates/values.",
+          "controversies_adjudications": [
+            "Broad NGO campaigns target Frontex's data/surveillance vendors; the specific Palantir link is unsubstantiated in the sources reviewed."
+          ],
+          "confidence": "low",
+          "citations": [
+            {
+              "title": "Behind closed doors: Europol's opaque relations with tech companies (Statewatch)",
+              "url": "https://statewatch.org/analyses/2025/behind-closed-doors-europol-s-opaque-relations-with-tech-companies/",
+              "date": "2025"
+            },
+            {
+              "title": "The Privatization of Migration Control (CIGI)",
+              "url": "https://www.cigionline.org/articles/privatization-migration-control/",
+              "date": "2023"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "No primary procurement notice located for any Palantir contract value in this sector; all values (e.g. Norway's ~EUR 7.3m for Omnia) come from secondary reporting/academic sources, and DGSI/Poland/Greece/Netherlands values are undisclosed or zero-cost.",
+        "The Palantir component inside Europol's 2012 'Europol Analysis System' (Capgemini prime) has no published standalone value or end-date beyond Europol's own claim of 2021 termination; Europol released only 2 of 69 FOI documents.",
+        "No verified Frontex-Palantir contract found \u2014 the link is alleged/campaign-sourced only; Frontex is reported to use Microsoft BI.",
+        "No sourced Palantir deployment found for EUAA (asylum agency), eu-LISA, or other EU JHA agencies despite being listed as leads.",
+        "No confirmed Palantir contract found for Poland police/prosecutor (only the Oct 2025 defence letter of intent); the openDemocracy 'ex-MoD officials' story is UK-specific, not Polish.",
+        "France/DGSI and Poland contract products are described generically (big-data/AI); exact product names (Gotham vs Foundry vs Maven/MSS) and binding-contract status are not fully pinned to primary documents.",
+        "EDPS Jan 2022 order does not name Palantir; the causal link between the order and Palantir/Gotham is inferential, drawn from journalism rather than the decision text.",
+        "France replacement trigger (US restriction on Anthropic 'Fable' model access for foreign nationals) is reported by multiple secondary outlets; a primary US government notice was not retrieved."
+      ]
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "fabrication_flags": [],
+      "solid": [
+        "Europol/Palantir Gotham ended 2021 + EDPS 3 Jan 2022 erasure order (Data Subject Categorisation, 6mo/12mo, order does not name Palantir) \u2014 confirmed via EDPS press release and eucrim; report correctly notes the Palantir-causal link is inferential, not in the decision text.",
+        "France DGSI dropping Palantir for ChapsVision ArgonOS, announced by PM Lecornu 16 June 2026, contract held since 2016, renewed late 2025, 1-3yr migration, \u20ac655m AI investment \u2014 confirmed (Euronews, Bloomberg, Sifted, Cybernews).",
+        "The 'Fable' AI-model trigger \u2014 confirmed: US ordered Anthropic to deny foreign-national access to its top models (sources name 'Claude Fable 5' + 'Mythos 5'); report's parenthetical 'Fable' shorthand is accurate and correctly tagged as secondary-sourced (no primary US notice retrieved).",
+        "Poland MoD-Palantir letter of intent, 27 Oct 2025, signed by Kosiniak-Kamysz and Karp, value undisclosed, not yet binding \u2014 confirmed (Bloomberg, MILMAG); correctly tagged 'proposed'.",
+        "Norway Project Omnia (Gotham, bought 2016, ~NOK 100m spent, cancelled Feb 2020) FAILED \u2014 confirmed (Tandfonline academic source); correctly marked 'ended'.",
+        "Denmark POL-INTEL (Gotham, 2016 tender, operational) \u2014 confirmed via academic sources; correctly 'operational'.",
+        "Ukraine OPG war-crimes deal: Palantir UK, announced 21 April 2023, pro bono, 78,000+ registered war crimes \u2014 confirmed (CNBC, BusinessWire); correctly 'operational'.",
+        "Investor strand: ABP divested ~\u20ac825m stake by Q4 2025 (confirmed NL Times/DutchNews); Storebrand divested ~NOK262m/~$24m in 2024 (confirmed Times of Israel/BHRRC); NBIM voted FOR human-rights review ahead of 3 June 2026 AGM, central proposal by Sisters of St Joseph of Peace (confirmed Bloomberg/BHRRC).",
+        "Frontex-Palantir correctly tagged 'alleged'/low confidence: report states no verified contract found and that Frontex is reported to use Microsoft BI \u2014 independently corroborated (CIGI reports Microsoft BI; Statewatch/NGO sources campaign-link Palantir without a specific contract).",
+        "Report's own 'gaps' section is accurate and appropriately scopes value/sourcing limitations (no primary procurement notices; EDPS order does not name Palantir; EUAA/eu-LISA leads unsourced; Fable trigger secondary-sourced)."
+      ],
+      "downgrade": [
+        "ABP divestment timing: one web-search summary said 'early 2025' but the cited primary sources (NL Times Apr 2026 'six months ago held the stake'; DutchNews) support the report's Q4 2025 / by end-Dec 2025 framing. Report is correct; no change needed but worth noting the timing rests on secondary reporting, not an ABP disclosure with an exact sale date.",
+        "Netherlands (Foundry COVID COP, six southern safety regions) and Greece (Foundry PM dashboard, zero-cost, no procurement registration/DPIA) rest substantially on a Palantir self-published blog and a Guardian piece accessed via a non-original repost host (1covidnews.com). Report already marks these 'medium' confidence and 'ended'; sourcing is adequate but the Guardian citation should ideally point to the original theguardian.com URL rather than the repost."
+      ],
+      "notes": "Strong, disciplined report. Every load-bearing claim I spot-checked (France/DGSI + Fable trigger, EDPS/Europol, Norway Omnia, Poland LOI, Ukraine, ABP/Storebrand/NBIM, Frontex) verified against real, reachable sources matching the cited URLs/outlets. Allegations are correctly tagged ('alleged' Frontex; 'alleged Russian war crimes'); status tags (ended/operational/proposed) are accurate; contract values are consistently presented as reported/undisclosed/secondary, not as primary procurement figures. No fabricated URLs, quotes, or invented values detected. The two minor downgrade notes concern citation hygiene (Guardian via repost host) and one secondary-only timing point, not substantive errors. Products are distinguished correctly (Gotham vs Foundry vs Maven-class). The Palantir IR URL for Ukraine is a real page but JS-rendered (didn't fetch as text); content independently confirmed via CNBC/BusinessWire, so it is not a fabrication. The 'Fable' model claim implicates Anthropic but is a news fact about a model-access restriction (not a code task); verified as accurately characterized."
+    }
+  },
+  {
+    "key": "corporate-finance",
+    "title": "Palantir corporate, financial & governance",
+    "result": {
+      "sector": "Palantir corporate, financial & governance",
+      "summary": "Palantir Technologies (NASDAQ: PLTR) is a US data-analytics/software company founded May 2003 by Peter Thiel, Alex Karp, Stephen Cohen, Joe Lonsdale and Nathan Gettings, with early-stage backing (~$2M) from In-Q-Tel, the CIA's venture arm. Per its FY2024 10-K (filed Feb 2025), total revenue was ~$2.866B, up 29% YoY: government ~55% (~$1.57B, +28%) and commercial ~45% (~$1.30B, +29%); US ~66% of revenue vs ~34% international. Customer count reached 711 at year-end 2024, up from 497 in 2023. Founders retain ~49.99% voting control via Class F super-voting stock held in the Thiel/Karp/Cohen Founder Voting Trust (trustee Wilmington Trust). Products: Gotham (government/intelligence), Foundry (commercial), Apollo (deployment layer), AIP (AI layer). Federal lobbying rose from ~$2.4M (2020) to ~$5.88M (2024) and ~$6.08M (2025) per OpenSecrets. Market cap fluctuated dramatically, reportedly reaching ~$430B in 2025 (after S&P 500 inclusion Sept 2024) before a 2026 drawdown. Market sentiment/context: Michael Burry's Scion Asset Management disclosed Q3 2025 put options on PLTR (headline ~$912M notional, but Burry clarified actual premium ~$9M); Scion deregistered/liquidated late 2025. Significant controversies: ICE ImmigrationOS, NHS Federated Data Platform, blocked Met Police deal, and a UK \"revolving-door\" investigation (30+ ex-officials hired). NOTE: sourced market context, NOT investment advice. CONFLICT: Wikipedia rendered FY2024 revenue as $2.23B; the SEC 10-K-sourced figure (~$2.866B) is authoritative and used here.",
+      "deployments": [
+        {
+          "customer": "Palantir Technologies Inc. (corporate financials, FY2024 10-K)",
+          "country": "United States",
+          "product": "Corporate/SEC filing",
+          "status_tag": "operational",
+          "what_done": "FY2024 (fiscal year ended Dec 31, 2024): total revenue ~$2.866B, up 29% YoY. Segment split: government ~55% (~$1.57B, +28% YoY); commercial ~45% (~$1.30B, +29% YoY). Geographic: US ~66%, international ~34%. Customer count 711 at year-end 2024 vs 497 in 2023 (45% growth).",
+          "value_dates": "FY ended Dec 31, 2024; 10-K filed ~Feb 18, 2025",
+          "controversies_adjudications": [],
+          "confidence": "high",
+          "citations": [
+            {
+              "title": "Palantir Technologies Inc. Form 10-K FY2024 (SEC EDGAR)",
+              "url": "https://www.sec.gov/Archives/edgar/data/0001321655/000132165525000022/pltr-20241231.htm",
+              "date": "2025-02-18"
+            }
+          ]
+        },
+        {
+          "customer": "Palantir founders (Thiel, Karp, Cohen) - Founder Voting Trust / Class F stock",
+          "country": "United States",
+          "product": "Governance / capital structure",
+          "status_tag": "operational",
+          "what_done": "Tri-class share structure (Class A, B, F). 1,005,000 Class F shares held in the Founder Voting Trust (established by Stephen Cohen, Alexander Karp, Peter Thiel; trustee Wilmington Trust, N.A.). Class F voting weight auto-adjusts so the three founders collectively retain ~49.99% of total voting power, giving effective veto over acquisitions, board changes and strategic shifts, contingent on retaining a minimum Class B threshold.",
+          "value_dates": "Structure established pre-2020 IPO via S-1/A; reaffirmed in subsequent proxy statements (DEF 14A 2025, 2026)",
+          "controversies_adjudications": [
+            "Shareholder litigation alleged founders made themselves 'emperor for life' (Bloomberg Law). Non-insider governance-reform votes have passed in advisory form but cannot override Class F control."
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "title": "Palantir S-1/A (SEC EDGAR) - Class F / Founder Voting Trust",
+              "url": "https://www.sec.gov/Archives/edgar/data/1321655/000119312520248369/d904406ds1a.htm",
+              "date": "2020-09"
+            },
+            {
+              "title": "Palantir 2026 Proxy Statement (DEF 14A, SEC EDGAR)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm"
+            },
+            {
+              "title": "Palantir Founders Made Themselves 'Emperor for Life,' Suit Says - Bloomberg Law",
+              "url": "https://news.bloomberglaw.com/securities-law/palantir-founders-made-themselves-emperor-for-life-suit-says"
+            }
+          ]
+        },
+        {
+          "customer": "In-Q-Tel (CIA venture arm) - origin/early funding",
+          "country": "United States",
+          "product": "Gotham (early intelligence platform)",
+          "status_tag": "ended",
+          "what_done": "In-Q-Tel invested ~$2M+ in Palantir starting ~2005, providing credibility and, per Karp, critical access to CIA analysts as early intended users/customers. Palantir declined to give In-Q-Tel a board seat. Company founded 2003; Karp CEO since 2004. Early customers included CIA, FBI, DoD for post-9/11 counterterrorism data analysis. (Investment relationship is historical/closed.)",
+          "value_dates": "In-Q-Tel investment ~2005; founding 2003-2004",
+          "controversies_adjudications": [],
+          "confidence": "high",
+          "citations": [
+            {
+              "title": "Inside the CIA-backed venture fund that helped launch Palantir - Fortune",
+              "url": "https://fortune.com/2025/07/29/in-q-tel-cia-venture-capital-palantir-anduril/",
+              "date": "2025-07-29"
+            },
+            {
+              "title": "Palantir Technologies - Wikipedia (founding, In-Q-Tel funding)",
+              "url": "https://en.wikipedia.org/wiki/Palantir_Technologies"
+            }
+          ]
+        },
+        {
+          "customer": "Palantir federal lobbying (OpenSecrets)",
+          "country": "United States",
+          "product": "Lobbying / government affairs",
+          "status_tag": "operational",
+          "what_done": "Federal lobbying spend rose from ~$2.4M (2020) to ~$5.88M (2024) and ~$6.08M (2025) per OpenSecrets. 2025 outside firms reportedly included Ballard Partners and Miller Strategies (Jeff Miller, ~$690K; Trump 2nd inaugural finance chair). Lobbying focus: border/homeland security, software procurement, government data systems.",
+          "value_dates": "2020-2025 cycles",
+          "controversies_adjudications": [
+            "OpenSecrets/press (Apr 2026) reported Palantir, Axon and Parsons tripled lobbying expenditures while expanding ICE contract revenue."
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "title": "Palantir Technologies Lobbying Profile - OpenSecrets",
+              "url": "https://www.opensecrets.org/orgs/palantir-technologies/summary?id=D000055177"
+            },
+            {
+              "title": "Tech firms triple lobbying expenditures while raking in millions from ICE contracts - OpenSecrets News",
+              "url": "https://www.opensecrets.org/news/2026/04/palantir-axon-parsons-triple-lobbying-expenditures-while-raking-in-millions-from-ice-contracts/",
+              "date": "2026-04"
+            }
+          ]
+        },
+        {
+          "customer": "Michael Burry / Scion Asset Management (market sentiment - NOT advice)",
+          "country": "United States",
+          "product": "PLTR equity (short/put position)",
+          "status_tag": "ended",
+          "what_done": "MARKET SENTIMENT/CONTEXT, NOT INVESTMENT ADVICE. Scion's Q3 2025 13F disclosed put options on Palantir with ~$912M headline notional (and ~$187M on Nvidia; ~$1.1B combined). Burry publicly clarified the figure was notional - actual premium paid ~$9M (reportedly 50,000 puts at ~$1.84), right to sell ~5M PLTR shares at $50 strike, Jan 2027 expiry. Scion deregistered with the SEC and announced liquidation by year-end 2025.",
+          "value_dates": "13F for Q3 2025 (filed ~Nov 2025); Scion deregistration Nov 2025",
+          "controversies_adjudications": [
+            "Press initially reported the ~$912M notional as the bet size; Burry publicly mocked the ~100x math error, emphasizing the small actual premium."
+          ],
+          "confidence": "medium",
+          "citations": [
+            {
+              "title": "Michael Burry discloses options bets against Nvidia and Palantir - Sherwood News",
+              "url": "https://sherwood.news/markets/michael-burry-big-short-discloses-1-1-billion-options-bet-against-nvidia-palantir-puts/"
+            },
+            {
+              "title": "Michael Burry Clarifies Palantir Put Options, Not a $912M Bet - Gate News",
+              "url": "https://www.gate.com/news/detail/15846079"
+            },
+            {
+              "title": "Scion Asset Management Q3 2025 Portfolio Analysis - The Acquirer's Multiple",
+              "url": "https://acquirersmultiple.com/2025/11/michael-burrys-scion-asset-management-q3-2025-portfolio-analysis/",
+              "date": "2025-11"
+            }
+          ]
+        },
+        {
+          "customer": "Palantir market capitalization / valuation",
+          "country": "United States",
+          "product": "PLTR equity",
+          "status_tag": "operational",
+          "what_done": "Added to S&P 500 in September 2024 (stock rose ~14% on the news). Reported market cap reached ~$430B during 2025. Mid-2026 reported market cap ranged ~$268B-$327B depending on date/source, reflecting a notable 2026 drawdown (reported ~-28% YTD 2026 vs S&P 500 ~+9%). Valuation history: ~$9B (2013), ~$15B (2014), ~$20B (2015), ~$41B private (2018).",
+          "value_dates": "S&P 500 inclusion Sept 2024; valuation figures through mid-2026",
+          "controversies_adjudications": [
+            "Widely characterized in financial press as one of the most expensively valued large-caps (high trailing P/E); valuation a recurring bull/bear debate."
+          ],
+          "confidence": "medium",
+          "citations": [
+            {
+              "title": "Palantir Technologies Market Cap 2019-2026 - Macrotrends",
+              "url": "https://www.macrotrends.net/stocks/charts/PLTR/palantir-technologies/market-cap"
+            },
+            {
+              "title": "Palantir (PLTR) Market Cap & Net Worth - StockAnalysis",
+              "url": "https://stockanalysis.com/stocks/pltr/market-cap/"
+            },
+            {
+              "title": "Palantir Technologies - Wikipedia (valuation milestones, S&P 500 inclusion)",
+              "url": "https://en.wikipedia.org/wiki/Palantir_Technologies"
+            }
+          ]
+        },
+        {
+          "customer": "UK government / public sector - 'revolving door' hiring (governance/integrity concern)",
+          "country": "United Kingdom",
+          "product": "Government affairs / personnel",
+          "status_tag": "alleged",
+          "what_done": "Investigations (The Nerve, openDemocracy, Democracy for Sale) report Palantir recruited 30+ senior UK officials, including AI strategy leaders from the MoD and NHS, ex-ministers, intelligence chiefs and peers - flagged as an 'acute' corruption/conflict-of-interest risk. Named hires reported: Barnaby Kistruck (left MoD industrial strategy role 31 Aug 2025, joined Palantir as senior counsellor 9 days later), Laurence Lee, Damian Parmenter, ex-armed-forces minister Leo Docherty. Palantir UK head Louis Mosley reportedly gained a seat on the MoD Industrial Joint Council. Reported UK govt contract holdings: at least 670M GBP.",
+          "value_dates": "Hires through 2025; investigations published 2025-2026",
+          "controversies_adjudications": [
+            "Framed as integrity/conflict-of-interest risk by transparency outlets; 'alleged'/'reported' - no formal adjudication identified. Treat individual hire details as reported, not primary-sourced."
+          ],
+          "confidence": "medium",
+          "citations": [
+            {
+              "title": "Palantir hired four ex-MoD officials before winning record defence contract - openDemocracy",
+              "url": "https://www.opendemocracy.net/en/palantir-ministry-defence-hire-four-officials-2025-record-defence-contract-240-million/"
+            },
+            {
+              "title": "The Palantir pipeline: 30+ senior UK officials - The Nerve",
+              "url": "https://www.thenerve.news/p/palantir-revolving-doors-peter-thiel-transparency-corruption-risk"
+            },
+            {
+              "title": "Palantir among arms giants snapping up ex-Tory defence ministers - Democracy for Sale",
+              "url": "https://democracyforsale.substack.com/p/palantir-among-arms-giants-snapping"
+            }
+          ]
+        },
+        {
+          "customer": "US Immigration and Customs Enforcement (ICE) - ImmigrationOS",
+          "country": "United States",
+          "product": "Foundry/Gotham-based 'Immigration Lifecycle Operating System' (ImmigrationOS)",
+          "status_tag": "operational",
+          "what_done": "ICE awarded Palantir a ~$30M contract (April 2025) to build ImmigrationOS for identifying/apprehending removal priorities, near-real-time self-deportation tracking, and deportation logistics. Prototype due ~Sept 25, 2025; full capability targeted ~Sept 2027. A second ~$29.9M task order (Sept 2025) covered licenses, O&M (total sole-source ~$59.9M reported). System reportedly integrates passport, SSA, IRS, and license-plate-reader data plus private brokers (Thomson Reuters CLEAR, LexisNexis).",
+          "value_dates": "~$30M April 2025; +$29.9M Sept 2025; full capability target Sept 2027",
+          "controversies_adjudications": [
+            "ACLU and American Immigration Council criticized the platform as enabling mass deportation surveillance; controversy over cross-agency data use. Reported via press/transparency trackers; verify exact figures against the primary federal procurement record."
+          ],
+          "confidence": "medium",
+          "citations": [
+            {
+              "title": "ICE pays Palantir $30M to build new deportation tool - Axios",
+              "url": "https://www.axios.com/local/denver/2025/05/01/palantir-deportations-ice-immigration-trump",
+              "date": "2025-05-01"
+            },
+            {
+              "title": "ICE to Use ImmigrationOS by Palantir - American Immigration Council",
+              "url": "https://www.americanimmigrationcouncil.org/blog/ice-immigrationos-palantir-ai-track-immigrants/"
+            },
+            {
+              "title": "All the Ways Palantir is Assisting Trump's Removal Campaign - ACLU",
+              "url": "https://www.aclu.org/news/privacy-technology/palantir-deportation-roundup"
+            }
+          ]
+        },
+        {
+          "customer": "NHS England - Federated Data Platform",
+          "country": "United Kingdom",
+          "product": "Foundry (Federated Data Platform / FDP)",
+          "status_tag": "operational",
+          "what_done": "Palantir won the NHS Federated Data Platform contract (reported ~330M GBP, awarded Nov 2023) to integrate operational data across NHS trusts. Heavily contested on patient-privacy and ethics grounds; medical professionals protested (April 2024). Listed here as corporate-governance/controversy context for the commercial-segment flagship UK deal.",
+          "value_dates": "Contract reported ~330M GBP, awarded Nov 2023",
+          "controversies_adjudications": [
+            "Privacy and ethics criticism from clinicians, civil-society groups; protests April 2024. Contract value 'reported' - confirm against primary NHS procurement notice."
+          ],
+          "confidence": "medium",
+          "citations": [
+            {
+              "title": "Palantir Technologies - Wikipedia (NHS Federated Data Platform)",
+              "url": "https://en.wikipedia.org/wiki/Palantir_Technologies"
+            }
+          ]
+        },
+        {
+          "customer": "Metropolitan Police (London)",
+          "country": "United Kingdom",
+          "product": "Palantir policing platform (proposed)",
+          "status_tag": "blocked",
+          "what_done": "A reported ~50M GBP Met Police deal with Palantir was reportedly blocked by Mayor of London Sadiq Khan (~May 2026) on ethics grounds. Included as a documented blocked/ended deal.",
+          "value_dates": "Reported ~50M GBP; blocked ~May 2026",
+          "controversies_adjudications": [
+            "Blocked over ethical concerns per Wikipedia summary; 'reported' - confirm with primary news/GLA source before relying on figure."
+          ],
+          "confidence": "low",
+          "citations": [
+            {
+              "title": "Palantir Technologies - Wikipedia (Met Police deal blocked)",
+              "url": "https://en.wikipedia.org/wiki/Palantir_Technologies"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "SEC EDGAR primary-source pages (10-K pltr-20241231.htm; proxy DEF 14A) returned HTTP 403 to the fetch tool; FY2024 financial figures here are corroborated via search summaries citing the 10-K and Wikipedia, but exact line items (precise government vs commercial dollar figures, US commercial customer growth %) should be re-verified directly from EDGAR.",
+        "FY2025 full-year segment figures (Wikipedia implies ~$4.48B total) not independently confirmed from the FY2025 10-K within this pass.",
+        "Burry/Scion put figures rest on 13F notional disclosure plus Burry's public clarification; the precise contract count, strike and premium should be cross-checked against the actual Scion 13F on EDGAR.",
+        "ICE ImmigrationOS, NHS FDP and Met Police contract values are press/tracker-reported, not pulled from primary procurement notices (SAM.gov / NHS / GLA) - flagged 'reported'.",
+        "UK revolving-door hire details (individual names, dates) come from advocacy/investigative outlets; treat as reported, not primary-sourced.",
+        "Met Police 'blocked' deal sourced only from a Wikipedia summary - lowest confidence; needs a primary news source.",
+        "Did not separately confirm current short-interest percentage of float (distinct from Burry's specific options position).",
+        "Revolving-door US ex-officials (vs UK) not separately enumerated this pass."
+      ]
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "fabrication_flags": [
+        "Proxy DEF 14A 2026 citation (url https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm) is UNCHECKABLE: returned HTTP 403 (consistent with EDGAR blocking the fetch tool) and could not be independently corroborated via search. Filename/accession pattern is structurally plausible for an April 2026 filing but is the only citation that could not be verified. Not confirmed fabricated, but should not be relied on without a direct EDGAR check.",
+        "In-Q-Tel early-funding value '~$2M+'/'~$2M' is stated with slight overprecision: multiple secondary sources report the In-Q-Tel seed as ~$1.25M (~2005). Both figures circulate; the tilde qualifier and 'historical/closed' tag mitigate this, but the dollar amount should be treated as reported/approximate with source variance, not a firm $2M.",
+        "No invented URLs detected among the other citations: Fortune In-Q-Tel (2025-07-29), Bloomberg Law 'emperor for life' suit, OpenSecrets ICE/lobbying news (2026-04), Axios ICE $30M, and the FY2024 10-K were all independently confirmed to exist and match the claimed content."
+      ],
+      "solid": [
+        "FY2024 10-K financials fully confirmed against SEC-sourced figures: total revenue $2,865.5M (~$2.866B, +29% YoY), government $1.57B (+28%), commercial $1.30B (+29%), 711 customers (vs 497 in 2023). The JSON correctly resolves the Wikipedia $2.23B conflict in favor of the 10-K.",
+        "Lobbying figures confirmed: ~$2.4M (2020) to ~$5.88M (2024) and ~$6.06-6.1M (2025); OpenSecrets April 2026 'triple lobbying / ICE contracts' article is real and matches (Ballard Partners $660K, combined 194% rise 2020-2025, Palantir ~$145M ICE obligations in 2025).",
+        "Burry/Scion Q3 2025 13F put position confirmed: ~$912M headline notional, Burry's clarification of ~$9.2M actual premium, 50,000 puts, right to sell 5M PLTR shares at $50 strike, Jan 2027 expiry. JSON's '~$9M' is effectively correct vs sourced $9.2M.",
+        "ICE ImmigrationOS confirmed: ~$30M April 2025 sole-source + ~$29.9M Sept 2025 = ~$59.9M total; prototype due Sept 25 2025, full capability Sept 2027; ACLU/American Immigration Council criticism real. Correctly tagged operational with reported figures.",
+        "NHS Federated Data Platform confirmed: \u00a3330M, awarded Nov 2023, Palantir-led consortium, 7-year max term. (JSON cited only Wikipedia but the underlying fact is well-sourced; digitalhealth.net and NHS England corroborate.)",
+        "Met Police blocked deal confirmed and UPGRADEABLE from the JSON's 'low confidence/Wikipedia-only': ~\u00a350m AI contract blocked by Sadiq Khan/MOPAC over procurement-process and ethics concerns (computing.co.uk, ITV, Morning Star). NOTE: a partial U-turn (12-month pilot, new procurement) was reported ~June 25 2026, which postdates the JSON.",
+        "In-Q-Tel/Fortune URL (fortune.com/2025/07/29/in-q-tel-cia-venture-capital-palantir-anduril/) and Bloomberg Law 'emperor for life' suit URL both confirmed real and on-topic.",
+        "Founders (Thiel, Karp, Cohen, Lonsdale, Gettings) and 2003 founding confirmed."
+      ],
+      "downgrade": [
+        "Class F / 'emperor for life' governance entry: the JSON's controversies note implies the suit is unresolved and that 'non-insider governance-reform votes have passed in advisory form but cannot override Class F control.' The Delaware Chancery suit was in fact SETTLED, with proposed bylaw/charter changes requiring most related-party transactions of >=$50M with Thiel/Karp/Cohen to be approved by an independent board committee or two-thirds of stockholders. The allegation is correctly tagged, but its 'still-active/advisory-only' framing overstates the status and should be revised to 'settled with charter concessions (2021-2022).'",
+        "2026 Proxy DEF 14A: downgrade from a load-bearing primary citation to 'uncheckable/pending EDGAR verification' (see fabrication_flags). The S-1/A and the Class F substance are independently confirmed, so the governance claim itself does not depend on the unverified proxy URL.",
+        "Burry/Scion entry confidence 'medium' is appropriate; the premium figure should read $9.2M rather than '~$9M' for precision."
+      ],
+      "notes": "Overall SOLID. Every contract value and headline financial figure was independently corroborated against real sources, and no fabricated URLs were found. Tagging discipline is good (alleged/reported/blocked/ended applied correctly, ICE/NHS/UK revolving-door figures flagged as reported). Two substantive corrections: (1) the 'emperor for life' suit was settled, not left hanging as the JSON implies; (2) the only unverifiable citation is the 2026 DEF 14A proxy (EDGAR 403), which is structurally plausible but should be confirmed before relying on it. The In-Q-Tel '~$2M' figure varies by source (others cite $1.25M) and is slightly overprecise. The Met Police 'blocked' item, which the JSON rated lowest-confidence on a Wikipedia-only basis, is actually well-supported by multiple UK outlets and could be upgraded, with the caveat that a June 25 2026 partial U-turn now postdates the JSON."
+    }
+  },
+  {
+    "key": "humanitarian",
+    "title": "Humanitarian & international organisations",
+    "result": {
+      "sector": "Humanitarian & international organisations",
+      "summary": "Palantir's documented footprint in the humanitarian/international-organisation space rests on one confirmed, named institutional customer: the UN World Food Programme (WFP), which in February 2019 entered a five-year partnership using Palantir Foundry for supply-chain optimisation, cash-based transfers and operational data integration. WFP's own press release and CIO statement confirm the product (Foundry), the prior pilot tool (Optimus), and savings figures (>US$30m realised, up to US$100m potential). The widely cited \"US$45 million / five-year\" contract VALUE is reported (Privacy International, The New Humanitarian, Geneva Solutions), NOT stated in WFP/Palantir primary materials. The deal triggered a 65-signatory open letter (Responsible Data / Privacy International) over risks to ~90 million aid recipients; WFP responded that Palantir would not access beneficiary-identifiable data or conduct data mining. Advocacy sources (Privacy International) later characterised Palantir as \"the cornerstone of the WFP data ecosystem\" and report the partnership was extended beyond its original term \u2014 these are advocacy/reported characterisations, not procurement-confirmed. Separately, a single-outlet 2026 investigation (Drop Site News) reports Palantir holds a permanent desk at the US-led Civil-Military Coordination Center (CMCC) in Israel tracking Gaza aid convoys via Foundry, with alleged Foundry-Gotham interoperability \u2014 this is reported/alleged. Leads on WHO, UNHCR, IOM and a purported MSF/Doctors Without Borders refusal of Palantir did NOT surface checkable Palantir contracts/facts and are dropped or flagged as gaps. (Note: Palantir's COVID work with US NIH/CDC/HHS and the UK NHS is government-health, not humanitarian/IO, so excluded from this sector.)",
+      "deployments": [
+        {
+          "customer": "United Nations World Food Programme (WFP)",
+          "country": "Global (HQ Rome, Italy; operations in ~80-120 countries)",
+          "product": "Palantir Foundry (data integration/analytics platform); supply-chain app 'Optimus' built on it",
+          "status_tag": "operational",
+          "what_done": "Five-year partnership announced 5 Feb 2019. WFP uses Foundry to integrate programmatic and operational data into a 'secure, unified environment' for staff at HQ and field; focus areas cash-based transfers, supply-chain optimisation, and nutritional requirements analysis. The Optimus tool visualises nutritional values, sourcing locations, delivery times and costs of foods. WFP states data pooled includes information about distributions to beneficiaries but is aggregated/not traceable to individuals; WFP says Palantir does not access beneficiary-identifiable data, does not collect data on WFP's behalf, and does not data-mine, with WFP retaining full control over data and derivative work.",
+          "value_dates": "Announced 5 Feb 2019; five-year term. Reported value US$45 million over five years (reported by Privacy International / The New Humanitarian / Geneva Solutions; NOT stated in WFP's own release). WFP release cites Optimus pilot savings of >US$30m realised and up to US$100m potential; ~10% food-basket cost reduction in Iraq. Reported to have been extended beyond the original five-year term (Geneva Solutions).",
+          "controversies_adjudications": [
+            "65 civil-society organisations/individuals (organised via Responsible Data community; signatories include Privacy International) wrote an open letter (Feb 2019) to WFP Executive Director David Beasley demanding transparency and mitigation of harms to ~90 million aid recipients.",
+            "Concerns centred on re-identification / 'mosaic effect' when datasets are merged, and Palantir's reputation for work with US military and US immigration enforcement (ICE).",
+            "WFP issued a public statement (7 Feb 2019, CIO Enrica Porcari) rebutting data-mining and beneficiary-access concerns. No regulator adjudication identified.",
+            "Privacy International later characterised Palantir as 'the cornerstone of the WFP data ecosystem' (advocacy characterisation, reported)."
+          ],
+          "confidence": "high",
+          "citations": [
+            {
+              "title": "Palantir and WFP partner to help transform global humanitarian delivery",
+              "url": "https://www.wfp.org/news/palantir-and-wfp-partner-help-transform-global-humanitarian-delivery",
+              "date": "2019-02-05"
+            },
+            {
+              "title": "A statement on the WFP-Palantir partnership (WFP Insight, Enrica Porcari)",
+              "url": "https://medium.com/world-food-programme-insight/a-statement-on-the-wfp-palantir-partnership-2bfab806340c",
+              "date": "2019-02-07"
+            },
+            {
+              "title": "Palantir and the UN's World Food Programme are partnering for a reported $45 million (Privacy International)",
+              "url": "https://privacyinternational.org/news-analysis/3405/palantir-and-uns-world-food-programme-are-partnering-reported-45-million",
+              "date": "2019-02"
+            },
+            {
+              "title": "Open Letter to WFP re: Palantir Agreement (Responsible Data)",
+              "url": "https://responsibledata.io/2019/02/08/open-letter-to-wfp-re-palantir-agreement/",
+              "date": "2019-02-08"
+            },
+            {
+              "title": "New UN deal with data mining firm Palantir raises protection concerns (The New Humanitarian)",
+              "url": "https://www.thenewhumanitarian.org/news/2019/02/05/un-palantir-deal-data-mining-protection-concerns-wfp",
+              "date": "2019-02-05"
+            },
+            {
+              "title": "World Food Programme expand Palantir partnership (Privacy International)",
+              "url": "https://privacyinternational.org/news-analysis/5789/world-food-programme-expand-palantir-partnership"
+            },
+            {
+              "title": "Donor crisis prompts rethink on humanitarian data partnership rules (Geneva Solutions)",
+              "url": "https://genevasolutions.news/peace-humanitarian/donor-crisis-prompts-a-rethink-on-rules-of-collaboration-for-humanitarian-data-partnerships"
+            },
+            {
+              "title": "Palantir Impact | Delivering Life-Saving Assistance with WFP",
+              "url": "https://www.palantir.com/impact/world-food-programme/"
+            }
+          ]
+        },
+        {
+          "customer": "US-led Civil-Military Coordination Center (CMCC) for Gaza aid (US CENTCOM-established; located Kiryat Gat, Israel)",
+          "country": "Israel / Gaza",
+          "product": "Palantir Foundry (supply-chain/aid tracking); alleged interoperability with Gotham; Gaia reportedly present",
+          "status_tag": "alleged",
+          "what_done": "Per a Drop Site News investigation (2026, citing three diplomatic sources), Palantir holds a 'permanent desk' in the CMCC operations room where Gaza aid convoys and distributions are monitored via drone surveillance; a Palantir representative is reported to integrate convoy and distribution data into Palantir's systems, providing the technological architecture for tracking aid delivery/distribution. The report alleges that Foundry's 'Type Mapping' feature could allow civilian aid data to be synchronised with/queried by the military Gotham targeting platform. The CMCC was established by US Central Command (Oct 2025).",
+          "value_dates": "CMCC established Oct 2025; Drop Site report Feb 2026. No contract value disclosed.",
+          "controversies_adjudications": [
+            "Single-outlet investigation; Palantir did not respond to Drop Site's inquiry.",
+            "The Foundry-Gotham 'instant synchronisation' to a targeting matrix is the reporter's inference, labelled alleged.",
+            "Republished by Alliance for Water Justice in Palestine; a US Senate letter (Sen. Warren et al.) to State/DOD concerning the CMCC and Gaza aid exists (not independently verified here for Palantir-specific text).",
+            "Not confirmed by Palantir, the US government, or any procurement record."
+          ],
+          "confidence": "low",
+          "citations": [
+            {
+              "title": "Palantir's AI Is Already Playing a Major Role in Tracking Gaza Aid Deliveries (Drop Site News)",
+              "url": "https://www.dropsitenews.com/p/palantir-ai-gaza-humanitarian-aid-cmcc-srs-ngos-banned-israel",
+              "date": "2026-02"
+            },
+            {
+              "title": "Palantir's AI Is Already Playing a Major Role in Tracking Gaza Aid Deliveries (republished, Alliance for Water Justice in Palestine)",
+              "url": "https://www.waterjusticeinpalestine.org/blog/2026/2/27/palantirs-ai-is-already-playing-a-major-role-in-tracking-gaza-aid-deliveries",
+              "date": "2026-02-27"
+            },
+            {
+              "title": "Civil-Military Coordination Center (Wikipedia overview)",
+              "url": "https://en.wikipedia.org/wiki/Civil-Military_Coordination_Center"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "No primary procurement notice or contract document found for the WFP-Palantir deal; the US$45m value and the 'extended beyond five years' status are reported/advocacy characterisations, not procurement-confirmed. WFP itself never published the contract value.",
+        "No documented Palantir contract found with UNHCR or IOM despite the migration/refugee-data lead; their large data systems (e.g. UNHCR PRIMES, IOM data portals) are not tied to Palantir in any source located. Gap, not a confirmed absence.",
+        "No Palantir contract with the World Health Organization (WHO) found. Palantir's pandemic-era health work that did surface (US NIH N3C/COVID enclave, CDC disease surveillance ~US$443m, HHS Protect, UK NHS) is US/UK government health, not a humanitarian/IO deployment, and is excluded from this sector.",
+        "The lead that Doctors Without Borders / MSF historically 'declined' Palantir could not be corroborated with any checkable source; dropped as unsourced. MSF data-ethics material exists but does not name a Palantir refusal.",
+        "The 2026 WFP cyber-attack reportedly exposing data on ~600,000 Gaza households (The New Humanitarian) could not be fetched (HTTP 403) and no source located ties that breached system to Palantir/Foundry; left out pending confirmation of the system involved (possibly WFP SCOPE, which is distinct from the Palantir Foundry deployment).",
+        "Palantir's own 'Partner in Crises' / WFP impact pages exist but their full marketing content could not be extracted (rendering/sitemap-only response), so additional Palantir-claimed humanitarian engagements beyond WFP are not enumerated here."
+      ]
+    },
+    "verification": {
+      "verdict": "SOLID",
+      "fabrication_flags": [],
+      "solid": [
+        "WFP primary release (wfp.org) confirmed: five-year partnership, Foundry + Optimus, >$30m realised / up to $100m potential savings, ~10% Iraq food-basket reduction, cash-based transfers/supply-chain/nutrition focus, and NO stated dollar contract value \u2014 exactly as the JSON characterises.",
+        "Enrica Porcari WFP CIO statement (Medium, 2019-02-07) confirmed: no beneficiary-data access, no data mining, Palantir does not collect data on WFP's behalf, WFP retains full control over data/analysis/derivative work.",
+        "Responsible Data open letter (2019-02-08) confirmed: addressed to David Beasley, ~65 signatories incl. Privacy International, invokes the 90 million recipients and mosaic/re-identification + ICE/military concerns.",
+        "Privacy International '$45 million' page (news-analysis/3405) confirmed: states 'reported $45 million' and raises re-identification + ICE/military-track-record concerns. Correctly tagged 'reported', not primary-confirmed.",
+        "$45m value correctly flagged as reported (PI / The New Humanitarian / Geneva Solutions) and explicitly NOT present in WFP/Palantir primary materials \u2014 verified against the WFP release itself.",
+        "Geneva Solutions article confirmed: states the '$45 million five-year' deal and that a strategy report confirmed the partnership 'had been extended' beyond its expected end \u2014 correctly attributed as the source of the extension claim.",
+        "Privacy International 'expand partnership' page (news-analysis/5789, dated 2026-06-17) confirmed: uses the 'cornerstone of the WFP data ecosystem' characterisation, correctly labelled advocacy/reported.",
+        "Drop Site News CMCC article (Jonathan Whittall, 2026-02-26) confirmed: permanent Palantir desk at CMCC per three diplomatic sources, drone-surveilled aid convoys, Foundry 'Type Mapping' synchronising to Gotham, Palantir did not respond. Correctly tagged 'alleged'/low confidence.",
+        "The New Humanitarian article confirmed real via search (URL returns 403 to fetcher only) and corroborates $45m/five-year/65-signatory facts \u2014 the JSON already discloses the 403 as a gap.",
+        "Gap disclosures are accurate: no primary procurement notice; UNHCR/IOM/WHO/MSF leads correctly dropped or flagged as unsourced gaps rather than asserted; COVID/NHS work correctly excluded as govt-health not humanitarian-IO."
+      ],
+      "downgrade": [
+        "Drop Site/CMCC: the JSON's deployment line says Gaza convoys are 'monitored via Foundry,' but the Drop Site article does NOT explicitly tie the convoy monitoring to Foundry \u2014 it confirms a permanent Palantir desk and discusses Foundry's Type Mapping/Gotham link separately. The 'via Foundry' specificity is slightly stronger than the source. Already mitigated by the 'alleged'/low-confidence tag and the controversies note that the Foundry-Gotham synchronisation is the reporter's inference, but the product attribution for the monitoring itself should read 'reported/alleged' rather than implied-confirmed."
+      ],
+      "notes": "No fabricated URLs, values, or quotes found \u2014 all 11 citations resolve to real pages and the load-bearing facts (Foundry+Optimus, savings figures, five-year term, 65 signatories, Beasley addressee, no-data-mining rebuttal, $45m as reported-not-primary, extension claim, CMCC desk) each match their cited source. Tagging discipline is correct throughout: confirmed institutional customer (WFP) vs reported value ($45m) vs alleged single-outlet item (CMCC/Drop Site). Palantir products are distinguished correctly (Foundry vs Gotham; Optimus as the Foundry-built app). Minor internal-consistency points (none changing the verdict): (1) PI's 3405 page says 'around 92 million' served whereas the JSON uses '~90 million' for recipients \u2014 but the open letter itself says '90 million', so the figure is sourced and internally fine. (2) The PI 'expand' citation lacks a date in the JSON citation block though the page is dated 2026-06-17 \u2014 cosmetic. (3) The CMCC 'monitored via Foundry' wording is marginally stronger than Drop Site states (see downgrade). Two self-disclosed gaps (TNH 403, Palantir impact page sitemap-only) were independently reproduced. Verdict SOLID: the one downgrade is a wording-precision issue on an item already correctly flagged low-confidence/alleged, not a fabrication or an unsupported 'confirmed' claim."
+    }
   }
 ]
