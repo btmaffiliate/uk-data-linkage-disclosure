@@ -44,6 +44,26 @@ def fig(title, sub, inner):
     return ('<figure class="diagram"><div class="gpk"><div class="gcard">'
             f'<h4>{title}</h4><p class="sub">{sub}</p>{inner}</div></div></figure>')
 
+# 0) STAT BAND — the punch line, big numbers
+STATS=[("16","sectors &amp; jurisdictions","#5aa9ff"),
+       ("82","catalogued deployments<br><small style='color:#8a93a0'>57 live &middot; counted, not estimated</small>","#3fd07f"),
+       ("1","constitutional-court ruling<br><small style='color:#8a93a0'>against it (Germany, 2023)</small>","#ff5d5d"),
+       ("&euro;850m+","investor divestment<br><small style='color:#8a93a0'>ABP + Storebrand</small>","#a78bfa"),
+       ("$646m","largest primary-sourced deal<br><small style='color:#8a93a0'>NGA &lsquo;Glacier Bay&rsquo;</small>","#3fd07f"),
+       ("0","fabricated sources<br><small style='color:#8a93a0'>~290 URLs checked</small>","#f4b740")]
+statcards="".join(
+  f'<div class="statc" style="--c:{c}"><div class="snum">{n}</div><div class="slab">{l}</div></div>'
+  for n,l,c in STATS)
+STATBAND_CSS=("<style>.statband{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;"
+  "border:1px solid var(--border,#2a323c);border-radius:14px;padding:16px;background:rgba(255,255,255,.02);"
+  "font-family:var(--sans,-apple-system,Helvetica,Arial,sans-serif)}"
+  ".statc{border-left:3px solid var(--c);padding:6px 12px}"
+  ".snum{font-family:var(--display,Georgia,serif);font-size:2rem;font-weight:800;color:var(--c);line-height:1.05}"
+  ".slab{font-size:.8rem;color:#c2cbd5;margin-top:3px;line-height:1.3}.slab small{font-size:.7rem}</style>")
+f_stats=('<figure class="diagram">'+STATBAND_CSS+f'<div class="statband">{statcards}</div>'
+  '<figcaption>The catalogue in six numbers &mdash; each counted or primary-sourced, not estimated. '
+  'The full evidence, tiered confirmed / reported / alleged, follows.</figcaption></figure>')
+
 # 1) STATUS segmented bar (82 rows)
 STAT=[("operational",57,"#3fd07f"),("ended",7,"#5b6b7a"),("alleged",6,"#8a93a0"),
       ("blocked",4,"#ff5d5d"),("pilot",4,"#5aa9ff"),("proposed/eval",2,"#a78bfa"),
@@ -131,16 +151,16 @@ PROC=[("ICE ImmigrationOS","$30m awarded 'urgent and compelling' &mdash; no comp
       ("UK MoD £240.6m","direct-awarded under Procurement Act 2023 s.41","direct award"),
       ("Cabinet Office border (~£27m)","awarded Aug 2020 with no tender","no tender"),
       ("NHS Federated Data Platform","contract released heavily redacted","secret"),
-      ("Met UDP Phase 1","~£489,999 &mdash; structured just under the £500k scrutiny line","threshold-gamed"),
+      ("Met UDP Phase 1","reportedly ~£489,999 &mdash; below the £500k scrutiny threshold (intent not established)","sub-threshold"),
       ("EMSOU NECTAR (£818,750)","FOI request for the contract refused","secret"),
       ("AUSTRAC (Australia)","official quote: 'not competitive at all'","sole-source"),
       ("NIH N3C ($36m)","awarded 'no other sources capable'","sole-source")]
 pg="".join(f'<div class="pc"><b>{a}</b><small>{b}</small><br><i>{c}</i></div>' for a,b,c in PROC)
-f_proc=fig("How the deals got done: sole-source, secret, threshold-gamed",
+f_proc=fig("How the deals got done: sole-source, secret, sub-threshold",
     "The procurement pattern &mdash; not just the technology &mdash; is what auditors, parliaments and mayors keep challenging. A sample of the documented cases.",
     f'<div class="pgrid">{pg}</div>')
 
-DASH=CSS+f_status+f_geo+f_money+f_tl+f_proc
+DASH=CSS+f_stats+f_status+f_geo+f_money+f_tl+f_proc
 pathlib.Path(B+"graphs_embed.txt").write_text(DASH)
 # standalone page for PNG capture
 pathlib.Path(B+"graphs.html").write_text(

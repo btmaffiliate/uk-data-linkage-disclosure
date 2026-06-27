@@ -200,7 +200,7 @@ Palantir is, by reported accounts, **ICE's largest data/analytics contractor**.
 
 ### 3.8 UK Policing
 
-- **Met UDP Phase 1** — `pilot`. ~£489,999 (kept just below the £500k MOPAC scrutiny threshold); officer anti-misconduct profiling (sickness, overtime, geolocation); ~98 officers assessed, ~500 prevention notices. Met Police Federation called geolocation tracking an "outrageous… invasion of privacy."
+- **Met UDP Phase 1** — `pilot`. reportedly ~£489,999 &mdash; below the £500k MOPAC scrutiny threshold (the figure is reported, not primary-confirmed, and whether the structuring was deliberate is a question to put to the Met, not an established fact); officer anti-misconduct profiling (sickness, overtime, geolocation); ~98 officers assessed, ~500 prevention notices. Met Police Federation called geolocation tracking an "outrageous… invasion of privacy."
 - **Met Unified Operational Analytics (UOA)** — `blocked`. Up to ~£50m (£25.3m + £24.8m optional); **blocked 20 May 2026** by Deputy Mayor Comer-Schwartz on procurement-rules grounds (single supplier, no approved strategy, VFM), City Hall also citing Palantir's Israeli-military and US-ICE work. Palantir sent a pre-action letter; CEO Mosley called it politicised.
 - **Met interim extension** — `operational` (medium conf.). 12-month pilot extension (~24–25 Jun 2026 U-turn); **value not disclosed by any located source** (Met called it "commercially sensitive" — *the "~£2m" figure has been dropped as unsourced*). Sources tie the extension to the existing misconduct pilot, not a revived UOA capability.
 - **Bedfordshire "Project Nectar" (Foundry)** — `pilot`. Up to ~80 data sources; 11 special-category data types; ICO noted compliance duty.
@@ -365,7 +365,7 @@ Three patterns recur across jurisdictions and bind the catalog together:
 
 2. **A US national-security firm running others' sovereign data.** Whether in the UK ("data remains sovereign" assurances over the £240.6m MoD deal; the revolving-door concern), Ukraine (the 2024 Swiss CLOUD Act audit), Germany (BfV/BKA digital-sovereignty pushback), or the UAE (Palantir-staffed Aither), the recurring anxiety is **US-government/intelligence access** and dependence on a founder-controlled American firm with overt political ties. The dual-class structure that defeated the 2026 human-rights vote underscores the foreign-ownership-of-the-operational-layer concern.
 
-3. **Sole-source, secret, and threshold-gaming procurement.** ICE ImmigrationOS ("urgent and compelling," sole-source); NIH N3C ("no other sources capable"); UK MoD £240.6m (s.41 direct award); Cabinet Office Border Flow (no tender); AUSTRAC ("not competitive at all"); the Met UDP Phase 1 (~£489,999, structured below the £500k scrutiny threshold); EMSOU (FOI refused); the heavily redacted NHS FDP contract. The procurement pattern — not just the technology — is what regulators, auditors (NAO), parliaments (EDMs, Hansard, Senate Finance), and mayors keep challenging.
+3. **Sole-source, secret, and sub-threshold procurement.** ICE ImmigrationOS ("urgent and compelling," sole-source); NIH N3C ("no other sources capable"); UK MoD £240.6m (s.41 direct award); Cabinet Office Border Flow (no tender); AUSTRAC ("not competitive at all"); the Met UDP Phase 1 (reportedly ~£489,999, below the £500k scrutiny threshold &mdash; intent not established); EMSOU (FOI refused); the heavily redacted NHS FDP contract. The procurement pattern — not just the technology — is what regulators, auditors (NAO), parliaments (EDMs, Hansard, Senate Finance), and mayors keep challenging.
 
 ---
 
@@ -408,7 +408,7 @@ Marine Corps MSS license value; Glacier Bay scope; Space Force follow-on; exact 
 
 ## 8. Sources verified (June 2026)
 
-~290 cited URLs across all 16 sectors were liveness-checked. The large majority resolved automatically. The remainder return **HTTP 403 to automated requests** but are **legitimate outlets that load normally in a browser** — including **Bloomberg, SEC.gov (primary 10-K/S-1 filings), BusinessWire, Hansard, the UK Parliament EDM database, the US Senate Finance Committee, business-humanrights.org, Taylor & Francis and Statewatch.** **Exactly one genuinely dead link** was found (a *Times of Israel* URL on the Storebrand divestment); that fact is corroborated by business-humanrights.org and should be re-cited to it. **No fabricated URLs were found anywhere in the catalog.** Sources are current as of June 2026; allegations are labelled as such throughout.
+~290 cited URLs across all 16 sectors were liveness-checked. The large majority resolved automatically. The remainder return **HTTP 403 to automated requests** but are **legitimate outlets that load normally in a browser** — including **Bloomberg, SEC.gov (primary 10-K/S-1 filings), BusinessWire, Hansard, the UK Parliament EDM database, the US Senate Finance Committee, business-humanrights.org, Taylor & Francis and Statewatch.** On a browser-UA recheck **every cited URL resolved** &mdash; including the *Times of Israel* Storebrand link, which had briefly returned an error during automated checks and is in any case corroborated by business-humanrights.org. **No fabricated URLs were found anywhere in the catalog.** Sources are current as of June 2026; allegations are labelled as such throughout.
 
 ---
 
