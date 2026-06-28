@@ -39,3 +39,20 @@ The hypothesis tested was "connect Parscale to the Palantir/surveillance stack."
 ## Method
 
 Three independent research passes (Palantir/surveillance; the Trump data operation; the money trail), then an adversarial verification pass that read the **primary FARA filings directly** (not just press). Spine = confirmed from the sworn registration; onward payments and tactics tagged reported and attributed. Built from public records only; no non-public source accessed; not legal advice.
+
+---
+
+## UPDATE (2026-06-28) — full report + original infrastructure forensics
+
+**It is an apparatus, not one man.** Clock Tower X (#7649) is the largest US node of an Israel-MFA → Havas Media operation with ≥5 FARA registrants: Show Faith by Works (#7653, ~$4.1m, evangelical/church geofencing — separate registrant, execution possibly scrapped), Bridges Partners (#7652, ~$900k, the "Esther Project" paid influencers), Davis Media NY (#7662), and the earlier terminated SKDK (#7552, $600k, Jan 2024). Israel's global public-diplomacy budget (~$150m 2025) is GLOBAL — the US FARA tranche is a subset (low tens of millions). Keep distinct from domestic advocacy (AIPAC).
+
+**Original evidence — the 12-site network (our own passive check, 28 Jun 2026):**
+- Cluster A: 9 .org sites on ONE Cloudflare account — identical anycast IPs (162.159.136.54 / .137.54), identical name servers, identical WordPress+Elementor+Yoast stack — registered in two ~10-minute bursts (18 Sep & 10 Oct 2025); `factsignal.org` is the hub linking the other eight.
+- Cluster B: feedingyoufiction.com + alliesforpeace.com on shared Squarespace.
+- **CRITICAL: every site carries the FARA disclosure footer** ("distributed by Clock Tower X LLC on behalf of the State of Israel"). The network is LABELED, not hidden. Do NOT frame as an undisclosed/illegal network — the story is coordination + scale + self-dealing + AI intent.
+
+**Money (recipients):** Clock Tower X → SparkFire Technologies ~$6m (AI chatbot/texting; founders Jeremy Haile / Tree McGlown, Atlanta), Portman Road Strategies ~$5m (Mike Shields, GOP operative; 14 of 18 Clock Tower staff are his Convergence Media employees), Salem Media Representatives >$500k (SELF-DEALING — Parscale is Salem CSO), Three Tech ~$500k (Medina OH; "80 Serbian engineers"). Contract: $9m FARA-confirmed, ~$15m reported paid.
+
+**AI-manipulation: method documented, effect unproven.** Built to bend ChatGPT/Gemini/Claude/Grok via MarketBrew (predictive-SEO tool), the content ring, Salem authority-laundering, and SparkFire's chatbot funnel. BUT reporters could not get any model to cite the network, and Snopes debunked the "Israel signed a deal with ChatGPT" claim (no OpenAI/Anthropic deal). State as intent, not effect.
+
+Full report live at https://brandonmyers.net/writing/brad-parscale-israel (now ~48KB: stat band, apparatus map, infra forensics table, AI-architecture, money flow, do-not-overstate, FAQ).
