@@ -2,8 +2,10 @@
 import pathlib, re, markdown
 b="/private/tmp/claude-501/-Users-btmaffiliate/02450b35-2455-41ae-8079-f578e21574b5/scratchpad/bm/"
 G=pathlib.Path(b+"firstwave_embed.txt").read_text()
-assert "'''" not in G and not G.rstrip().endswith("'")
-SENT="@@G@@"
+SF=pathlib.Path(b+"sparkfire_embed.txt").read_text()
+ES=pathlib.Path(b+"esther_embed.txt").read_text()
+for s in (G,SF,ES): assert "'''" not in s and not s.rstrip().endswith("'")
+SENT="@@G@@"; SENT_SF="@@SF@@"; SENT_ES="@@ES@@"
 MD="/Users/btmaffiliate/uk-data-linkage-disclosure/supporting/Parscale-Israel/AI-INFLUENCE-BEAT.md"
 raw=pathlib.Path(MD).read_text()
 i=raw.find("## The thesis")
@@ -35,6 +37,11 @@ GH="https://github.com/btmaffiliate/uk-data-linkage-disclosure/blob/main/support
 content=[
  "<em style='color:var(--text2)'>The bigger frame the <a href=\"/writing/parscale\" style=\"color:var(--accent)\">Parscale investigation</a> opened. Strip away the one man and a pattern is visible: <strong>governments have begun buying the manipulation of what AI tells you.</strong> Israel&rsquo;s FARA-registered contract with Brad Parscale&rsquo;s Clock Tower X is the first <em>disclosed</em> case; Russia&rsquo;s &lsquo;Pravda&rsquo; network is the only state peer in actually shaping model outputs; a commercial industry has industrialized the technique; the poisoning science is settled; and the AI platforms have said almost nothing. No one has connected those into one thesis &mdash; this is that synthesis, with the one honest caveat (does it work?) kept in full view.</em>",
  SENT,
+ "---",
+ "<strong style='font-family:var(--display);font-size:1.4rem;color:var(--white);display:block;margin-top:8px'>The operatives &mdash; who runs the machine</strong>",
+ "Two operational nodes the headline coverage skips &mdash; both freshly profiled, both with a precise, actionable open lead.",
+ SENT_SF,
+ SENT_ES,
  "<a href=\""+GH+"\" style=\"color:var(--accent)\">&#8599; The full dossier with every per-claim source (GitHub)</a> &nbsp;&middot;&nbsp; companion: <a href=\"/writing/brad-parscale-israel\" style=\"color:var(--accent)\">the Israel/Clock Tower X case</a>.",
  "---",
  REPORT,
@@ -57,9 +64,9 @@ essay={
  "og_image":"/static/og/parscale-israel-card.png",
  "content":content,
 }
-bodyrepr=repr(essay).replace(repr(SENT),"_FW_G")
+bodyrepr=repr(essay).replace(repr(SENT),"_FW_G").replace(repr(SENT_SF),"_FW_SF").replace(repr(SENT_ES),"_FW_ES")
 block=("\n\n\n# -*- coding: utf-8 -*-\n# Appended 2026-06-28: THE FIRST WAVE (AI-influence beat) flagship.\n"
- "_FW_G = r'''"+G+"'''\n"
+ "_FW_G = r'''"+G+"'''\n_FW_SF = r'''"+SF+"'''\n_FW_ES = r'''"+ES+"'''\n"
  'ESSAYS["the-first-wave"] = '+bodyrepr+"\n")
 p=b+"host_live_essays.py"
 src=pathlib.Path(p).read_text()
